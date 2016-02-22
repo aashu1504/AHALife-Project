@@ -15,7 +15,8 @@ class BrandsLogin extends GenericClass {
     
     static String expectedAdminLoginText = null;
     static String actualAdminLoginText = null;
-    
+    static String expectedUserLoginText = null;
+    static String actualUserLoginText = null;
         
     public void enterBrandUserName(HashMap<String, String> userName)
     {
