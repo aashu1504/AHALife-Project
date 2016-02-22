@@ -39,6 +39,10 @@ class BrandsLogin extends GenericClass {
         {
             Assert.assertTrue(true);
         }
+        else
+        {
+            Assert.assertTrue(false);
+        }
         expectedUserLoginText = userLogin.get("UserLoginText");
         actualUserLoginText = getTextFromAnElement(ADMIN_LOGIN_TEXT);
         Assert.assertTrue(expectedUserLoginText.equalsIgnoreCase(actualUserLoginText));
