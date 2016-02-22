@@ -13,7 +13,7 @@ class BrandsLogin extends GenericClass {
     private final By ADMIN_LOGIN_TEXT = By.xpath(".//a[@href='/admin']");
     private final By LOGIN_SITE_LOGO = By.xpath(".//div[@class='site-logo']");
     private final By BRAND_LOGOUT_CLICK = By.xpath(".//a[@href='/logout']");
-    private final By BRAND_ADMIN_SIGNOUT_CLICK = By.xpath(".//div[@class='site-logo']"); 
+    private final By BRAND_ADMIN_SIGNOUT_CLICK = By.xpath(".//ul[@class='nav navbar-nav navbar-right']/li[2]/a"); 
     private final By USER_PROFILE_ICON_CLICK = By.xpath(".//span[@class='glyphicon glyphicon-user']");
         
     static String expectedAdminLoginText = null;
