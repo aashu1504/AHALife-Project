@@ -10,9 +10,9 @@ class Login extends GenericClass {
     private final By FB_USER_PASSWORD = By.xpath(".//input[@id='pass']");
     private final By FB_LOGIN_NEW = By.xpath(".//button[@type='submit']");
         
-    public void enterFBUserName(HashMap<String, String> userFB)
+    public void enterFBUserName(HashMap<String, String> userName)
     {
-        enterText(FB_USER_NAME,userFB.get("FBUserName"));
+        enterText(FB_USER_NAME,userName.get("FBUserName"));
     }
     
     public void enterFBPassword(HashMap<String, String> userFBPassword)
