@@ -20,7 +20,7 @@ class Login extends GenericClass {
         enterText(BRAND_USER_PASSWORD,userPassword.get("BrandPassword"));
     }
     
-    public void loginFBClick(HashMap<String, String> loginToFB)
+    public void loginClick(HashMap<String, String> loginToFB)
     {
         if(isElementExist(FB_LOGIN_NEW))
 		{
