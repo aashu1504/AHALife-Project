@@ -1,6 +1,8 @@
 package AHALIFEBRANDSPORTAL;
 
 import java.util.*;
+import Utility.GenericClass;
+import org.openqa.selenium.By;
 
 class Login extends GenericClass {
     public void run(HashMap<String, Object> params){
