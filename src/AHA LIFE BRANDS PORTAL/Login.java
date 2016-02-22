@@ -12,12 +12,12 @@ class Login extends GenericClass {
         
     public void enterBrandUserName(HashMap<String, String> userName)
     {
-        enterText(FB_USER_NAME,userName.get("BrandUserName"));
+        enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
     }
     
     public void enterBrandPassword(HashMap<String, String> userFBPassword)
     {
-        enterText(FB_USER_PASSWORD,userFBPassword.get("BrandPassword"));
+        enterText(BRAND_USER_PASSWORD,userFBPassword.get("BrandPassword"));
     }
     
     public void loginFBClick(HashMap<String, String> loginToFB)
