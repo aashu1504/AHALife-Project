@@ -35,6 +35,9 @@ class BrandsLogin extends GenericClass {
     
     public void verifyUserLoginToBrandPortal(HashMap<String, String> userLogin)
     {   
+        
+        boolean islogo = isElementExist(LOGIN_SITE_LOGO);
+        boolean isadmin = isElementExist(ADMIN_LOGIN_TEXT);
         if(!isElementExist(ADMIN_LOGIN_TEXT) && isElementExist(LOGIN_SITE_LOGO))
         {
             Assert.assertTrue(true);
