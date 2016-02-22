@@ -22,13 +22,6 @@ class Login extends GenericClass {
     
     public void loginClick(HashMap<String, String> loginToBrandPortal)
     {
-        if(isElementExist(FB_LOGIN_NEW))
-		{
-		   buttonClick(FB_LOGIN_NEW);
-		}
-		else
-		{
-		   buttonClick(FB_LOGIN_OLD);
-		}
+		   buttonClick(BRAND_LOGIN_CLICK);
     }
 }
