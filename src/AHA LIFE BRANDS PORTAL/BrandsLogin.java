@@ -25,16 +25,16 @@ class BrandsLogin extends GenericClass {
 		   buttonClick(BRAND_LOGIN_CLICK);
     }
     
-    public void verifyUserLoginToBrandPortal(HashMap<String, String> userLoginToBI)
+    public void verifyUserLoginToBrandPortal(HashMap<String, String> userLogin)
     {
-        expectedSignOutText = userLoginToBI.get("SignOutLinkText");
+        expectedSignOutText = userLogin.get("SignOutLinkText");
         actualSignOutText = getTextFromAnElement(SIGN_OUT);
         Assert.assertTrue(expectedSignOutText.equalsIgnoreCase(actualSignOutText));
     }
     
-    public void verifyAdminLoginToBrandPortal(HashMap<String, String> userLoginToBI)
+    public void verifyAdminLoginToBrandPortal(HashMap<String, String> adminLogin)
     {
-        expectedSignOutText = userLoginToBI.get("SignOutLinkText");
+        expectedSignOutText = adminLogin.get("SignOutLinkText");
         actualSignOutText = getTextFromAnElement(SIGN_OUT);
         Assert.assertTrue(expectedSignOutText.equalsIgnoreCase(actualSignOutText));
     }
