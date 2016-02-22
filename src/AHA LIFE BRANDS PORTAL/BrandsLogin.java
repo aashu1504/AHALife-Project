@@ -10,6 +10,7 @@ class BrandsLogin extends GenericClass {
     private final By BRAND_USER_NAME = By.xpath(".//input[@id='username']");
     private final By BRAND_USER_PASSWORD = By.xpath(".//input[@id='password']");
     private final By BRAND_LOGIN_CLICK = By.xpath(".//input[@type='submit']");
+    private final By ADMIN_LOGIN_TEXT = By.xpath(".//a[@href='/admin']");
     
     
     static String expectedSignOutText = null;
