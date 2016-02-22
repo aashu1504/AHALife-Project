@@ -35,6 +35,7 @@ class BrandsLogin extends GenericClass {
     
     public void verifyUserLoginToBrandPortal(HashMap<String, String> userLogin)
     {
+        isElementExist(ADMIN_LOGIN_TEXT);
         expectedUserLoginText = userLogin.get("UserLoginText");
         actualUserLoginText = getTextFromAnElement(ADMIN_LOGIN_TEXT);
         Assert.assertTrue(expectedUserLoginText.equalsIgnoreCase(actualUserLoginText));
