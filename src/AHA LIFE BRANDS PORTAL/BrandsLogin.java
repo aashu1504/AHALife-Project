@@ -13,8 +13,8 @@ class BrandsLogin extends GenericClass {
     private final By ADMIN_LOGIN_TEXT = By.xpath(".//a[@href='/admin']");
     
     
-    static String expectedSignOutText = null;
-    static String actualSignOutText = null;
+    static String expectedAdminLoginText = null;
+    static String actualAdminLoginText = null;
     
         
     public void enterBrandUserName(HashMap<String, String> userName)
