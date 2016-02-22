@@ -37,7 +37,7 @@ class BrandsLogin extends GenericClass {
     {
         if(!isElementExist(ADMIN_LOGIN_TEXT))
         {
-            Assert.assertTrue(True);
+            Assert.assertTrue(true);
         }
         expectedUserLoginText = userLogin.get("UserLoginText");
         actualUserLoginText = getTextFromAnElement(ADMIN_LOGIN_TEXT);
