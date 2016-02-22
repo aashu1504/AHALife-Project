@@ -57,7 +57,7 @@ class BrandsLogin extends GenericClass {
         Assert.assertTrue(expectedAdminLoginText.equalsIgnoreCase(actualAdminLoginText));
     }
     
-    public void logoutClick(HashMap<String, String> logoutFromBrandPortal)
+    public void userLogout(HashMap<String, String> logoutFromBrandPortal)
     {
            buttonClick(USER_PROFILE_ICON_CLICK);
 		   buttonClick(BRAND_LOGOUT_CLICK);
