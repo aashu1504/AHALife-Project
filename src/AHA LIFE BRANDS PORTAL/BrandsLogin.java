@@ -11,7 +11,7 @@ class BrandsLogin extends GenericClass {
     private final By BRAND_USER_PASSWORD = By.xpath(".//input[@id='password']");
     private final By BRAND_LOGIN_CLICK = By.xpath(".//input[@type='submit']");
     private final By ADMIN_LOGIN_TEXT = By.xpath(".//a[@href='/admin']");
-    
+    private final By LOGIN_SITE_LOGO = By.xpath(".//div[@class='site-logo']");
     
     static String expectedAdminLoginText = null;
     static String actualAdminLoginText = null;
