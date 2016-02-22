@@ -62,4 +62,10 @@ class BrandsLogin extends GenericClass {
            buttonClick(USER_PROFILE_ICON_CLICK);
 		   buttonClick(BRAND_LOGOUT_CLICK);
     }
+    
+    public void adminSignout(HashMap<String, String> logoutFromBrandPortal)
+    {
+           buttonClick(USER_PROFILE_ICON_CLICK);
+		   buttonClick(BRAND_LOGOUT_CLICK);
+    }
 }
