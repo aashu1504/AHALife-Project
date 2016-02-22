@@ -3,12 +3,18 @@ package AHALIFEBRANDSPORTAL;
 import java.util.*;
 import Utility.GenericClass;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 class BrandsLogin extends GenericClass {
       
     private final By BRAND_USER_NAME = By.xpath(".//input[@id='username']");
     private final By BRAND_USER_PASSWORD = By.xpath(".//input[@id='password']");
     private final By BRAND_LOGIN_CLICK = By.xpath(".//input[@type='submit']");
+    
+    
+    static String expectedSignOutText = null;
+    static String actualSignOutText = null;
+    
         
     public void enterBrandUserName(HashMap<String, String> userName)
     {
