@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 class Login extends GenericClass {
       
     private final By BRAND_USER_NAME = By.xpath(".//*[@id='username']");
-    private final By BRAND_USER_PASSWORD = By.xpath(".//input[@id='pass']");
+    private final By BRAND_USER_PASSWORD = By.xpath(".//*[@id='password']");
     private final By BRAND_LOGIN_CLICK = By.xpath(".//button[@type='submit']");
         
     public void enterBrandUserName(HashMap<String, String> userName)
