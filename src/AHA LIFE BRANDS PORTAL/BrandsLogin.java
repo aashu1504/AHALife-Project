@@ -77,7 +77,7 @@ class BrandsLogin extends GenericClass {
 		   buttonClick(STOREFRONT_CLICK);
     }
     
-    public void logoUploadClick(HashMap<String, String> logoUpload) throws InterruptedException
+    public void logoUploadClick(HashMap<String, String> logoUpload)
     {
         pageToLoad();
 		buttonClick(LOGO_UPLOAD);
