@@ -15,8 +15,8 @@ class StoreFront extends GenericClass{
     
     public void storeFrontClick(HashMap<String, String> storeFront)
     {
-           pageToLoad();
-		   buttonClick(STOREFRONT_CLICK);
+        pageToLoad();
+		buttonClick(STOREFRONT_CLICK);
     }
     
     public void logoUploadClick(HashMap<String, String> logoUpload)
