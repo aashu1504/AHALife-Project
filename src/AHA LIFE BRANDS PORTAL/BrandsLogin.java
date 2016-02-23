@@ -89,5 +89,13 @@ class BrandsLogin extends GenericClass {
 		   buttonClick(ADMIN_HOME);
     }
     
-    
+    public void enterBrandEmailIDForInvite(HashMap<String, String> adminHome)
+    {
+		   buttonClick(BRAND_EMAIL_INVITE);
+    }
+                                             
+    public void inviteBrandClick(HashMap<String, String> adminHome)
+    {
+		   buttonClick(INVITE_BRAND);
+    }
 }
