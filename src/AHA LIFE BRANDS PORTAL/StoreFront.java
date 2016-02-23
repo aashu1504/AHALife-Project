@@ -43,7 +43,7 @@ class StoreFront extends GenericClass{
     public void logoUploadClick(HashMap<String, String> logoUpload)
     {
         pageToLoad();
-		buttonClick(LOGO_UPLOAD);
+		buttonClick(STOREFRONT_IMAGERY_UPLOAD);
         pageToLoad();
         driver.switchTo().frame("filepicker_dialog");
     }
