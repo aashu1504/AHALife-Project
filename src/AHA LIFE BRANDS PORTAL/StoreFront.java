@@ -29,7 +29,7 @@ class StoreFront extends GenericClass{
     public void chooseFileToUpload(HashMap<String, String> chooseFile)
     {
         enterText(CHOOSE_UPLOAD_FILE, chooseFile.get("UploadImageFile"));
-        Thread.sleep(5000L);
+        Thread.sleep(6000L);
     }
     
     public void chooseFileToUpload(HashMap<String, String> chooseFile)
