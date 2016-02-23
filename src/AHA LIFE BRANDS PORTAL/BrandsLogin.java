@@ -87,13 +87,5 @@ class BrandsLogin extends GenericClass {
         //System.out.println(windows.size());
     }
     
-    public void chooseFileToUpload(HashMap<String, String> chooseFile) throws InterruptedException,IOException
-    {
-           pageToLoad();
-		   buttonClick(CHOOSE_UPLOAD_FILE);
-        Thread.sleep(4000L);
-        
-        String uploadPath = "D:\\FileUpload\\fileUploadNew.exe" +" " + "C:\\Users\\Public\\Pictures\\Sample Pictures\\Desert.jpeg";
-        Runtime.getRuntime().exec(uploadPath);
-    }
+    
 }
