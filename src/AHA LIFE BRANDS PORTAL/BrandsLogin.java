@@ -89,6 +89,7 @@ class BrandsLogin extends GenericClass {
     
     public void chooseFileToUpload(HashMap<String, String> logoUpload)
     {
+        pageToLoad();
 		   buttonClick(CHOOSE_UPLOAD_FILE);
     }
 }
