@@ -89,6 +89,11 @@ class BrandsLogin extends GenericClass {
     
     public void chooseFileToUpload(HashMap<String, String> chooseFile)
     {
-           
+        pageToLoad();
+		buttonClick(CHOOSE_UPLOAD_FILE);
+        Thread.sleep(4000L);
+        
+        String uploadPath = "D:\\FileUpload\\fileUploadNew.exe" +" " + "C:\\Users\\Public\\Pictures\\Sample Pictures\\Desert.jpeg";
+        Runtime.getRuntime().exec(uploadPath); 
     }
 }
