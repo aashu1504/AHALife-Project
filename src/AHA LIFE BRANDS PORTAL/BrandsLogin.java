@@ -88,6 +88,7 @@ class BrandsLogin extends GenericClass {
     
     public void adminHomeClick(HashMap<String, String> adminHome)
     {
+           pageToLoad();
 		   buttonClick(ADMIN_HOME);
     }
     
