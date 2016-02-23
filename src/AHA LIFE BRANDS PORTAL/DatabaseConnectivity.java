@@ -10,7 +10,7 @@ class DatabaseConnectivity{
 	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306/onboarding;databaseName=DummyDatabase;instance=SQLEXPRESS";                   
        String username = "onboarding";           
        String password = "cV3qz2W4a";             
-       //Load SQL Server jdbc driver        
+       //Load My SQL Server jdbc driver        
        Class.forName("com.mysql.jdbc.Driver ");         
        //Create Connection to DB       
        Connection con = DriverManager.getConnection(dbUrl,username,password);
