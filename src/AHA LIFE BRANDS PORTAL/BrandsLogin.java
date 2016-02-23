@@ -73,6 +73,7 @@ class BrandsLogin extends GenericClass {
     
     public void storeFrontClick(HashMap<String, String> storeFront)
     {
+           pageToLoad();
 		   buttonClick(STOREFRONT_CLICK);
     }
     
