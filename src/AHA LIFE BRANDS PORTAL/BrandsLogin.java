@@ -100,7 +100,7 @@ class BrandsLogin extends GenericClass {
 		   enterText(BRAND_EMAIL_INVITE,inviteBrandEmail.get("BrandEmailIDToInvite"));
     }
                                              
-    public void inviteBrandClick(HashMap<String, String> inviteBrand)
+    public void inviteBrandClick(HashMap<String, String> inviteBrand) throws InterruptedException
     {
 		   buttonClick(INVITE_BRAND);
            Thread.sleep(4000L);
