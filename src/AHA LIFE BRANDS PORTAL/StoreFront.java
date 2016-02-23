@@ -34,7 +34,7 @@ class StoreFront extends GenericClass{
     
     public void saveChangesClick(HashMap<String, String> chooseFile)
     {
-        enterText(CHOOSE_UPLOAD_FILE, chooseFile.get("UploadImageFile"));
+        buttonClick(SAVE_UPLOAD_CHANGES);
     }
     
 }
