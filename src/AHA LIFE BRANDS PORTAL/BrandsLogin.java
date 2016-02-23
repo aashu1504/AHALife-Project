@@ -24,6 +24,7 @@ class BrandsLogin extends GenericClass {
     static String actualAdminLoginText = null;
     static String expectedUserLoginText = null;
     static String actualUserLoginText = null;
+    static String invitedBrandEmailID = null;
         
     public void verifyBrandPortalLaunch(HashMap<String, String> brandsLaunch)
     {   
@@ -91,6 +92,7 @@ class BrandsLogin extends GenericClass {
     
     public void enterBrandEmailIDForInvite(HashMap<String, String> inviteBrandEmail)
     {
+           invitedBrandEmailID = inviteBrandEmail.get("InvitedBrandEmail");
 		   enterText(BRAND_EMAIL_INVITE,inviteBrandEmail.get("InvitedBrandEmail"));
     }
                                              
