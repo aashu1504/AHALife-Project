@@ -40,9 +40,9 @@ class StoreFront extends GenericClass{
         buttonClick(SAVE_UPLOAD_CHANGES);
     }
     
-    public void storeFrontUploadClick(HashMap<String, String> logoUpload)
+    public void storeFrontUploadClick(HashMap<String, String> logoUpload) throws InterruptedException
     {
-        pageToLoad();
+         Thread.sleep(4000L);
 		buttonClick(STOREFRONT_IMAGERY_UPLOAD);
         pageToLoad();
         driver.switchTo().frame("filepicker_dialog");
