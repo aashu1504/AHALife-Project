@@ -91,10 +91,11 @@ class BrandsLogin extends GenericClass {
     public void chooseFileToUpload(HashMap<String, String> chooseFile) throws InterruptedException, IOException
     {
         pageToLoad();
-		buttonClick(CHOOSE_UPLOAD_FILE);
-        Thread.sleep(4000L);    
-        String uploadPath = "D:\\FileUpload\\fileUploadNew.exe" + " " + "D:\\FileUpload\\Desert.jpeg";
-        System.out.println(uploadPath);
-        Runtime.getRuntime().exec(uploadPath); 
+        enterText(CHOOSE_UPLOAD_FILE,"D:\\FileUpload\\Desert.jpeg");
+		//buttonClick(CHOOSE_UPLOAD_FILE);
+        //Thread.sleep(4000L);    
+        //String uploadPath = "D:\\FileUpload\\fileUploadNew.exe" + " " + "D:\\FileUpload\\Desert.jpeg";
+        //System.out.println(uploadPath);
+       // Runtime.getRuntime().exec(uploadPath); 
     }
 }
