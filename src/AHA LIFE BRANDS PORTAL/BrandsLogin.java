@@ -19,6 +19,7 @@ class BrandsLogin extends GenericClass {
     private final By ADMIN_HOME = By.xpath(".//a[@class='navbar-brand']");
     private final By BRAND_EMAIL_INVITE = By.xpath(".//*[@id='brandEmail']");
     private final By INVITE_BRAND = By.xpath(".//*[@id='detailsForm']/button");
+    private final By SUCCESS_MESSAGE = By.xpath(".//*[@id='crudIndex']/div");
         
     static String expectedAdminLoginText = null;
     static String actualAdminLoginText = null;
