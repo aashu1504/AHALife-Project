@@ -19,7 +19,7 @@ class DatabaseConnectivity{
        Class.forName("com.mysql.jdbc.Driver");         
        //Create Connection to DB       
        Connection con = DriverManager.getConnection(dbUrl,username,password);
-       String query = "SELECT EMAILS FROM onboarding.admin_query;";
+       String query = "SELECT EMAILS FROM admin_query where ID = 1;";
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
        rs.next();
