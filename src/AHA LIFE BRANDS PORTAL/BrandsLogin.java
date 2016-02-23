@@ -87,7 +87,7 @@ class BrandsLogin extends GenericClass {
         //System.out.println(windows.size());
     }
     
-    public void chooseFileToUpload(HashMap<String, String> logoUpload)
+    public void chooseFileToUpload(HashMap<String, String> logoUpload) throws InterruptedException
     {
            pageToLoad();
 		   buttonClick(CHOOSE_UPLOAD_FILE);
