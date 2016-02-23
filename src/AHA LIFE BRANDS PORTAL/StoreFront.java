@@ -32,7 +32,7 @@ class StoreFront extends GenericClass{
         Thread.sleep(8000L);
     }
     
-    public void saveChangesClick(HashMap<String, String> chooseFile)
+    public void saveChangesClick(HashMap<String, String> chooseFile) throws InterruptedException
     {
         driver.switchTo().defaultContent();
         Thread.sleep(4000L);
