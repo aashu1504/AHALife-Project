@@ -71,13 +71,13 @@ class BrandsLogin extends GenericClass {
 		   buttonClick(BRAND_ADMIN_SIGNOUT_CLICK);
     }
     
-    public void storeFrontClick(HashMap<String, String> storeFrontClick)
+    public void storeFrontClick(HashMap<String, String> storeFront)
     {
 		   buttonClick(STOREFRONT_CLICK);
     }
     
-    public void adminSignout(HashMap<String, String> signoutAdminFromBrandPortal)
+    public void logoUploadClick(HashMap<String, String> logoUpload)
     {
-		   buttonClick(BRAND_ADMIN_SIGNOUT_CLICK);
+		   buttonClick(LOGO_UPLOAD);
     }
 }
