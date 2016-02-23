@@ -80,7 +80,7 @@ class BrandsLogin extends GenericClass {
     {
         pageToLoad();
 		buttonClick(LOGO_UPLOAD);
-        Thread.sleep(4000L);
+        pageToLoad
         Set<String> windows = driver.getWindowHandles();
         System.out.println(windows.size());
     }
