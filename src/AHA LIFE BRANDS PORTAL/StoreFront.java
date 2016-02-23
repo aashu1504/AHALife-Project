@@ -28,7 +28,7 @@ class StoreFront extends GenericClass{
     
     public void chooseFileToUpload(HashMap<String, String> chooseFile) throws InterruptedException
     {
-        enterText(CHOOSE_UPLOAD_FILE,userName.get("BrandUserName"));
+        enterText(CHOOSE_UPLOAD_FILE,userName.get("UploadImageFile"));
         Thread.sleep(6000L);
     }
     
