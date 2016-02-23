@@ -23,7 +23,7 @@ class DatabaseConnectivity{
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
        rs.next();
-       String actualName = rs.getString("CustomerName");  
+       String actualName = rs.getString("EMAILS");  
        System.out.println(actualName);   
        con.close();  
     }
