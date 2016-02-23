@@ -81,4 +81,9 @@ class BrandsLogin extends GenericClass {
     {
 		   buttonClick(BRAND_ADMIN_SIGNOUT_CLICK);
     }
+    
+    public void adminHomeClick(HashMap<String, String> adminHome)
+    {
+		   buttonClick(ADMIN_HOME);
+    }
 }
