@@ -2,7 +2,7 @@ package AHA LIFE BRANDS PORTAL;
 
 import java.util.*;
 
-class StoreFront{
+class StoreFront extends GenericClass{
     
     private final By STOREFRONT_CLICK = By.xpath(".//*[@id='storefrontHeader']/div[2]/a");
     private final By LOGO_UPLOAD = By.xpath(".//aha-filepicker[@id='model.logoUrl']/div/div[2]/div[1]/div");
