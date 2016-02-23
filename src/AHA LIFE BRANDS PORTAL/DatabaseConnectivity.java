@@ -1,6 +1,7 @@
 package AHALIFEBRANDSPORTAL;
 
 import java.util.*;
+import java.sql.Connection;
 
 class DatabaseConnectivity{
     
