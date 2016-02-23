@@ -12,7 +12,7 @@ class DatabaseConnectivity{
     public void storeFrontClick(HashMap<String, String> storeFront) throws SQLException, ClassNotFoundException
     {
        //Retrieving the data from database created.
-	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306/onboarding;databaseName=DummyDatabase;instance=SQLEXPRESS";                   
+	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306;databaseName=onboarding";                   
        String username = "onboarding";           
        String password = "cV3qz2W4a";             
        //Load My SQL Server jdbc driver        
