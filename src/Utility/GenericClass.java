@@ -15,7 +15,7 @@ public class GenericClass extends WebDriverProvider{
     
     public static List<WebElement> webElementCount = null;
         
-    public static void pageToLoad(WebDriver driver) {
+    public static void pageToLoad() {
 	    String  pageLoadStatus;
 	    JavascriptExecutor   js;
 	      do {
