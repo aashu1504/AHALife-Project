@@ -104,9 +104,9 @@ class BrandsLogin extends GenericClass {
     
     public void verifyInviteSuccessMessage(HashMap<String, String> successMessage)
     {
-        expectedAdminLoginText = adminLogin.get("SuccessMessage");
+        expectedSuccessMessage = successMessage.get("SuccessMessage");
         System.out.println("Expected is : " + expectedAdminLoginText);
-        actualAdminLoginText = getTextFromAnElement(ADMIN_LOGIN_TEXT);
+        actualSuccessMessage = getTextFromAnElement(ADMIN_LOGIN_TEXT);
         System.out.println("Actual is : " + actualAdminLoginText);
         Assert.assertTrue(expectedAdminLoginText.equalsIgnoreCase(actualAdminLoginText));
     }
