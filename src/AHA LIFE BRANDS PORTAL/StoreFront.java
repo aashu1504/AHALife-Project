@@ -24,6 +24,6 @@ class StoreFront{
     
     public void chooseFileToUpload(HashMap<String, String> chooseFile)
     {
-        enterText(CHOOSE_UPLOAD_FILE,"D:\\FileUpload\\Desert.jpg");
+        enterText(CHOOSE_UPLOAD_FILE, chooseFile.get("UploadImageFile"));
     }
 }
