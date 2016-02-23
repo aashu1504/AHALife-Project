@@ -26,7 +26,7 @@ class StoreFront extends GenericClass{
         driver.switchTo().frame("filepicker_dialog");
     }
     
-    public void chooseFileToUpload(HashMap<String, String> chooseFile)
+    public void chooseFileToUpload(HashMap<String, String> chooseFile) throws InterruptedException
     {
         enterText(CHOOSE_UPLOAD_FILE, chooseFile.get("UploadImageFile"));
         Thread.sleep(6000L);
