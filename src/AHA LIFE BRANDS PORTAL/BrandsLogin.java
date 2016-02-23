@@ -71,26 +71,4 @@ class BrandsLogin extends GenericClass {
     {
 		   buttonClick(BRAND_ADMIN_SIGNOUT_CLICK);
     }
-    
-    public void storeFrontClick(HashMap<String, String> storeFront)
-    {
-           pageToLoad();
-		   buttonClick(STOREFRONT_CLICK);
-    }
-    
-    public void logoUploadClick(HashMap<String, String> logoUpload)
-    {
-        pageToLoad();
-		buttonClick(LOGO_UPLOAD);
-        pageToLoad();
-        driver.switchTo().frame("filepicker_dialog");
-        //Set<String> windows = driver.getWindowHandles();
-        //System.out.println(windows.size());
-    }
-    
-    public void chooseFileToUpload(HashMap<String, String> chooseFile) throws InterruptedException, IOException
-    {
-        pageToLoad();
-        enterText(CHOOSE_UPLOAD_FILE,"D:\\FileUpload\\Desert.jpg");
-    }
 }
