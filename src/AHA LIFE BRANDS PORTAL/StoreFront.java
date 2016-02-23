@@ -34,6 +34,7 @@ class StoreFront extends GenericClass{
     
     public void saveChangesClick(HashMap<String, String> chooseFile)
     {
+        driver.switchTo().parentFrame();
         buttonClick(SAVE_UPLOAD_CHANGES);
     }
     
