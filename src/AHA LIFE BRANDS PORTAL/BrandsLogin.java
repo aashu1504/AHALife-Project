@@ -78,6 +78,7 @@ class BrandsLogin extends GenericClass {
     
     public void logoUploadClick(HashMap<String, String> logoUpload) throws InterruptedException
     {
+        pageToLoad();
 		buttonClick(LOGO_UPLOAD);
         Thread.sleep(4000L);
         Set<String> windows = driver.getWindowHandles();
