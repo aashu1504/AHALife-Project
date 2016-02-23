@@ -76,10 +76,12 @@ class BrandsLogin extends GenericClass {
 		   buttonClick(STOREFRONT_CLICK);
     }
     
-    public void logoUploadClick(HashMap<String, String> logoUpload)
+    public void logoUploadClick(HashMap<String, String> logoUpload) throws InterruptedException
     {
-		   buttonClick(LOGO_UPLOAD);
+		buttonClick(LOGO_UPLOAD);
         Thread.sleep(4000L);
+        Set<String> windows = driver.getWindowHandles();
+        System.out.println(windows.size());
     }
     
     public void chooseFileToUpload(HashMap<String, String> logoUpload)
