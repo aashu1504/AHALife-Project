@@ -7,7 +7,7 @@ class DatabaseConnectivity{
     public void storeFrontClick(HashMap<String, String> storeFront)
     {
        //Retrieving the data from database created.
-	   String dbUrl = "jdbc:mysql://localhost:1433;databaseName=DummyDatabase;instance=SQLEXPRESS";                   
+	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306/onboarding;databaseName=DummyDatabase;instance=SQLEXPRESS";                   
        String username = "sa";           
        String password = "may@2015";             
        //Load SQL Server jdbc driver        
