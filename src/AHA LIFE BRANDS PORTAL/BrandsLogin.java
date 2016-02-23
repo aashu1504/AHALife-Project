@@ -87,7 +87,7 @@ class BrandsLogin extends GenericClass {
         //System.out.println(windows.size());
     }
     
-    public void chooseFileToUpload(HashMap<String, String> storeFront)
+    public void chooseFileToUpload(HashMap<String, String> chooseFile)
     {
            pageToLoad();
 		   buttonClick(STOREFRONT_CLICK);
