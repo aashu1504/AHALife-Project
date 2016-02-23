@@ -10,7 +10,7 @@ class StoreFront extends GenericClass{
     private final By STOREFRONT_CLICK = By.xpath(".//*[@id='storefrontHeader']/div[2]/a");
     private final By LOGO_UPLOAD = By.xpath(".//aha-filepicker[@id='model.logoUrl']/div/div[2]/div[1]/div");
 	private final By CHOOSE_UPLOAD_FILE = By.xpath(".//*[@id='fileUploadInput']");
-    private final By SAVE_UPLOAD_CHANGES = By.xpath("html/body/div[5]/div/div/div[3]/div/div[2]/button");
+    private final By SAVE_UPLOAD_CHANGES = By.xpath(".//div[@class='modal-footer ng-scope']/div/div[2]/button");
     
     public void storeFrontClick(HashMap<String, String> storeFront)
     {
