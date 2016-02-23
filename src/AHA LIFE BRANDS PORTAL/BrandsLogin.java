@@ -92,10 +92,5 @@ class BrandsLogin extends GenericClass {
     {
         pageToLoad();
         enterText(CHOOSE_UPLOAD_FILE,"D:\\FileUpload\\Desert.jpg");
-		//buttonClick(CHOOSE_UPLOAD_FILE);
-        //Thread.sleep(4000L);    
-        //String uploadPath = "D:\\FileUpload\\fileUploadNew.exe" + " " + "D:\\FileUpload\\Desert.jpeg";
-        //System.out.println(uploadPath);
-       // Runtime.getRuntime().exec(uploadPath); 
     }
 }
