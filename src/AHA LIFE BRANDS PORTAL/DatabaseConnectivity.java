@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 class DatabaseConnectivity{
     
-    public void storeFrontClick(HashMap<String, String> storeFront)
+    public void storeFrontClick(HashMap<String, String> storeFront) throws SQLException, ClassNotFoundException
     {
        //Retrieving the data from database created.
 	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306/onboarding;databaseName=DummyDatabase;instance=SQLEXPRESS";                   
