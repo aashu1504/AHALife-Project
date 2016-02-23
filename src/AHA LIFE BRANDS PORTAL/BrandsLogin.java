@@ -109,6 +109,6 @@ class BrandsLogin extends GenericClass {
         System.out.println("Expected is : " + expectedSuccessMessage);
         actualSuccessMessage = getTextFromAnElement(SUCCESS_MESSAGE);
         System.out.println("Actual is : " + actualSuccessMessage);
-        Assert.assertTrue(expectedAdminLoginText.equalsIgnoreCase(actualAdminLoginText));
+        Assert.assertTrue(expectedSuccessMessage.equalsIgnoreCase(actualSuccessMessage));
     }
 }
