@@ -79,6 +79,7 @@ class BrandsLogin extends GenericClass {
     public void logoUploadClick(HashMap<String, String> logoUpload)
     {
 		   buttonClick(LOGO_UPLOAD);
+        Thread.sleep(4000L);
     }
     
     public void chooseFileToUpload(HashMap<String, String> logoUpload)
