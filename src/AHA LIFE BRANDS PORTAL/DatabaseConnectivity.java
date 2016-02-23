@@ -8,8 +8,8 @@ class DatabaseConnectivity{
     {
        //Retrieving the data from database created.
 	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306/onboarding;databaseName=DummyDatabase;instance=SQLEXPRESS";                   
-       String username = "sa";           
-       String password = "may@2015";             
+       String username = "onboarding";           
+       String password = "cV3qz2W4a";             
        //Load SQL Server jdbc driver        
        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");         
        //Create Connection to DB       
