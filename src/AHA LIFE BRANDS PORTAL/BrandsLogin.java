@@ -26,6 +26,8 @@ class BrandsLogin extends GenericClass {
     static String expectedUserLoginText = null;
     static String actualUserLoginText = null;
     static String invitedBrandEmailID = null;
+    static String expectedSuccessMessage = null;
+    static String actualSuccessMessage = null;
         
     public void verifyBrandPortalLaunch(HashMap<String, String> brandsLaunch)
     {   
