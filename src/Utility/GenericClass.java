@@ -14,6 +14,23 @@ public class GenericClass extends WebDriverProvider{
     
     public static List<WebElement> webElementCount = null;
         
+    public static void pageToLoad(WebDriver driver) {
+	    String  pageLoadStatus;
+	    JavascriptExecutor   js;
+	      do {
+	          js = (JavascriptExecutor) driver;
+	        pageLoadStatus = (String)js.executeScript("return document.readyState");
+	        try {
+	     Thread.sleep(6000L);
+	    } catch (InterruptedException e) {
+	     
+	     e.printStackTrace();
+	    }
+	        
+	      } while ( !pageLoadStatus.equals("complete") );
+	      
+	    }
+
     public void navigateToUrl(HashMap<String, String> navigateUrl) throws InterruptedException
     {
         String urlToNavigate = navigateUrl.get("URL");
