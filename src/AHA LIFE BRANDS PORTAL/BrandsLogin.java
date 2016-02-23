@@ -15,7 +15,7 @@ class BrandsLogin extends GenericClass {
     private final By BRAND_LOGOUT_CLICK = By.xpath(".//a[@href='/logout']");
     private final By BRAND_ADMIN_SIGNOUT_CLICK = By.xpath(".//ul[@class='nav navbar-nav navbar-right']/li[2]/a"); 
     private final By USER_PROFILE_ICON_CLICK = By.xpath(".//span[@class='glyphicon glyphicon-user']");
-    private final By BRAND_LOGIN_CLICK = By.xpath(".//*[@id='loginForm']/fieldset/div[3]/legend");
+    private final By BRAND_LOGIN = By.xpath(".//*[@id='loginForm']/fieldset/div[3]/legend");
     
     static String expectedAdminLoginText = null;
     static String actualAdminLoginText = null;
