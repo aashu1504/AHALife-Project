@@ -89,9 +89,9 @@ class BrandsLogin extends GenericClass {
 		   buttonClick(ADMIN_HOME);
     }
     
-    public void enterBrandEmailIDForInvite(HashMap<String, String> adminHome)
+    public void enterBrandEmailIDForInvite(HashMap<String, String> inviteBrandEmail)
     {
-		   buttonClick(BRAND_EMAIL_INVITE);
+		   enterText(BRAND_EMAIL_INVITE,inviteBrandEmail.get("InvitedBrandEmail"));
     }
                                              
     public void inviteBrandClick(HashMap<String, String> adminHome)
