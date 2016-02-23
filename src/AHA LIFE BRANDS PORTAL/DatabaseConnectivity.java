@@ -11,7 +11,7 @@ class DatabaseConnectivity{
        String username = "onboarding";           
        String password = "cV3qz2W4a";             
        //Load SQL Server jdbc driver        
-       Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");         
+       Class.forName("com.mysql.jdbc.Driver ");         
        //Create Connection to DB       
        Connection con = DriverManager.getConnection(dbUrl,username,password);
        String query = "select CustomerName from Customers where CustomerID = 1;";    
