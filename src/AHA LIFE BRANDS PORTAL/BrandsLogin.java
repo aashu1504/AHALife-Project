@@ -93,6 +93,7 @@ class BrandsLogin extends GenericClass {
     public void enterBrandEmailIDForInvite(HashMap<String, String> inviteBrandEmail)
     {
            invitedBrandEmailID = inviteBrandEmail.get("InvitedBrandEmail");
+           System.out.println(invitedBrandEmailID);
 		   enterText(BRAND_EMAIL_INVITE,inviteBrandEmail.get("InvitedBrandEmail"));
     }
                                              
