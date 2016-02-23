@@ -11,7 +11,7 @@ class StoreFront extends GenericClass{
     private final By LOGO_UPLOAD = By.xpath(".//aha-filepicker[@id='model.logoUrl']/div/div[2]/div[1]/div");
 	private final By CHOOSE_UPLOAD_FILE = By.xpath(".//*[@id='fileUploadInput']");
     private final By SAVE_UPLOAD_CHANGES = By.xpath(".//div[@class='modal-footer ng-scope']/div/div[2]/button");
-    private final By STOREFRONT_IMAGERY_UPLOAD = By.xpath(".//aha-filepicker[@id='model.logoUrl']/div/div[2]/div[1]/div");
+    private final By STOREFRONT_IMAGERY_UPLOAD = By.xpath(".//*[@id='model.imageUrls']/div/div[2]/div[1]/div");
     
     public void storeFrontClick(HashMap<String, String> storeFront)
     {
