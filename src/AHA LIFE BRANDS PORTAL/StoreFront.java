@@ -29,7 +29,7 @@ class StoreFront extends GenericClass{
     public void chooseFileToUpload(HashMap<String, String> chooseFile) throws InterruptedException
     {
         enterText(CHOOSE_UPLOAD_FILE,"D:\\FileUpload\\Desert.jpg");
-        Thread.sleep(6000L);
+        Thread.sleep(8000L);
     }
     
     public void saveChangesClick(HashMap<String, String> chooseFile)
