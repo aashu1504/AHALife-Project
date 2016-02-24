@@ -40,7 +40,7 @@ class AccountBrandSettings{
         
     }
     
-    // Enter BRAND ORIGIN OF PRODUCT (State and Country already populated for US) --> To send Payments To 
+    // Enter BRAND ORIGIN OF PRODUCT (State and Country already populated for United States) --> To send Payments To 
     public void enterAddress(HashMap<String, String> distributorName)
     {
         
