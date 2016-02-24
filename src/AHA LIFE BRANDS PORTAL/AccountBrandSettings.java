@@ -29,15 +29,11 @@ class AccountBrandSettings{
     }
     
     
-    
-    
     // Enter BRAND PRIMARY CONTACT (FirstName/LastName and Email ID already populated) --> For Communication 
     public void enterPhoneNumber(HashMap<String, String> phoneNumber)
     {
         enterText(PHONE_NUMBER,phoneNumber.get("PrimaryPhoneNumber"));
     }
-    
-    
     
     
     // Enter BRAND BUSINESS ADDRESS (Will Not give address 2 as not mandatory) --> To send Payments To 
@@ -59,16 +55,12 @@ class AccountBrandSettings{
     }
     
     
-    
-    
     // Enter BRAND ORIGIN OF PRODUCT (State and Country already populated for United States) 
     public void enterProductDesignedCity(HashMap<String, String> designedCity)  // --> Where Products were initially designed, not manufactured
     {
         enterText(PRODUCT_DESIGNED_CITY,designedCity.get("ProductDesignedCity"));
     }
-    
-    
-    
+     
     
     //Enter Fulfillment Preference (Dropship/Crossdock)
     public void selectFulfillmentPreferences(HashMap<String, String> preferences)
