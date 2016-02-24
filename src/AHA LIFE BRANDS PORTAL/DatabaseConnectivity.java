@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 class DatabaseConnectivity extends GenericClass{
     
-    public void DatabaseConfiguration(HashMap<String, String> storeFront) throws SQLException, ClassNotFoundException
+    public void DatabaseAndQueryConfiguration(HashMap<String, String> storeFront) throws SQLException, ClassNotFoundException
     {
 	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306/onboarding";                   
        String username = "onboarding";           
