@@ -5,11 +5,8 @@ import java.util.*;
 class BrandsUserRegistration{
     
     public void getInviteURLFromGmail(HashMap<String, String> gmailCredentials){
-        
-      String gmailuserName = gmailCredentials.get("GmailUser");
-      String gmailPassword = gmailCredentials.get("GmailPassword");
-      enterText(BRAND_USER_NAME,gmailCredentials.get("GmailUser"));
-      enterText(BRAND_USER_NAME,gmailCredentials.get("GmailPassword"));
+      enterText(GMAIL_USER_NAME,gmailCredentials.get("GmailUser"));
+      enterText(GMAIL_PASSWORD,gmailCredentials.get("GmailPassword"));
       
     }
 }
