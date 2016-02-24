@@ -25,15 +25,12 @@ class DatabaseConnectivity extends GenericClass{
     
     public void QueryExecution(String query,String columnName);
     {
-       
-        
        String query = query;
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
        rs.next();
        String actualName = rs.getString(columnName);  
-       System.out.println(actualName);   
-       
+       System.out.println(actualName);     
     }
     
     
