@@ -17,8 +17,8 @@ class BrandsUserRegistration extends GenericClass{
     private final By INVITE_URL = By.xpath(".//div[@class='gs']/div[7]/div/div[2]/div[2]/table/tbody/tr/td/div/a");
     private final By INVITE_EMAIL_ID = By.xpath(".//*[@id='username']");
     
-    static String expectedAdminLoginText = null;
-    static String actualAdminLoginText = null;
+    static String expectedInviteEmailID = null;
+    static String actualInviteEmailID = null;
     
     public String getInviteURLFromGmail(HashMap<String, String> gmailCredentials) throws InterruptedException
     {  
