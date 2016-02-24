@@ -10,6 +10,7 @@ class BrandsUserRegistration{
     private final By GMAIL_SIGN_IN = By.xpath(".//*[@id='signIn']");
     private final By ENTER_SEARCH_STRING = By.xpath(".//*[@id='gs_taif50']");
     private final By SEARCH = By.xpath(".//*[@id='gbqfb']");
+    private final By INVITE_EMAIL = By.xpath(".//*[@id=':2']/div/div[3]/div[6]/div/div/table/tbody/tr[1]");
     
     public void getInviteURLFromGmail(HashMap<String, String> gmailCredentials){
         
