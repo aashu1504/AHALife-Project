@@ -9,14 +9,17 @@ import java.sql.Statement;
 
 class DatabaseConnectivity extends GenericClass{
     
-    public void DatabaseAndQueryConfiguration(HashMap<String, String> storeFront) throws SQLException, ClassNotFoundException
+    public void DatabaseAndQueryConfiguration(HashMap<String, String> databaseQuery) throws SQLException, ClassNotFoundException
     {
 	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306/onboarding";                   
        String username = "onboarding";           
        String password = "cV3qz2W4a";             
        Class.forName("com.mysql.jdbc.Driver");
        Connection con = DriverManager.getConnection(dbUrl,username,password);
-       ExecuteQuery(dbUrl,userName,password);
+        
+       String query = databaseQuery.get("DatabaseQuery");
+       String columnName = databaseQuery.get("ColumnName");
+       
        con.close();
     }
     
