@@ -2,7 +2,7 @@ package AHALIFEBRANDSPORTAL;
 
 import java.util.*;
 
-class BrandSettings{
+class AccountBrandSettings{
     
     public void run(HashMap<String, Object> params)
     {
