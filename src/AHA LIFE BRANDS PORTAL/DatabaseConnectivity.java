@@ -15,14 +15,15 @@ class DatabaseConnectivity extends GenericClass{
        String username = "onboarding";           
        String password = "cV3qz2W4a";             
        Class.forName("com.mysql.jdbc.Driver");
-       EstablishConnectionAndExecuteQuery(dbUrl,userName,password);
-        con.close();
+       Connection con = DriverManager.getConnection(dbUrl,username,password);
+       ExecuteQuery(dbUrl,userName,password);
+       con.close();
     }
     
     
     public void EstablishConnection(String dbUrl,String userName,String password);
     {
-        Connection con = DriverManager.getConnection(dbUrl,username,password);
+       
         
        String query = "SELECT EMAILS FROM admin_query where ID = 1;";
        Statement stmt = con.createStatement();                    
