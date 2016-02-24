@@ -104,7 +104,7 @@ public class GenericClass extends WebDriverProvider{
        Connection con = DriverManager.getConnection(dbUrl,username,password);
        String query = GetExecutionQuery();
        Statement stmt = con.createStatement();
-       ExecuteQuery();
+       ExecuteQuery(stmt);
         
        con.close();
         
