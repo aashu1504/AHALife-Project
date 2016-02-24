@@ -18,7 +18,7 @@ class BrandsUserRegistration{
       enterText(GMAIL_PASSWORD,gmailCredentials.get("GmailPassword"));
       buttonClick(GMAIL_SIGN_IN);
       pageToLoad();
-        
+      enterText(GMAIL_PASSWORD,"brands@ahalife.com"); 
         
     }
 }
