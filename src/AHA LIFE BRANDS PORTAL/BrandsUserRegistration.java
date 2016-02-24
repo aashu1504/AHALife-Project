@@ -35,11 +35,11 @@ class BrandsUserRegistration extends GenericClass{
     
      public String verifyInvitedUserEmailIDWithInviteEmail(HashMap<String, String> verifyInvite)
      {
-        expectedEmailID = gmailCredentials.get("InviteEmailID");
-        System.out.println("Expected is : " + expectedSuccessMessage);
-        actualSuccessMessage = getTextFromAnElement(SUCCESS_MESSAGE);
+        expectedInviteEmailID = gmailCredentials.get("InviteEmailID");
+        System.out.println("Expected is : " + expectedInviteEmailID);
+        actualInviteEmailID = getTextFromAnElement(SUCCESS_MESSAGE);
         System.out.println("Actual is : " + actualSuccessMessage);
-        Assert.assertTrue(expectedSuccessMessage.equalsIgnoreCase(actualSuccessMessage));
+        Assert.assertTrue(expectedInviteEmailID.equalsIgnoreCase(actualSuccessMessage));
      }
     
     public void enterPassword(HashMap<String, String> userPassword)
