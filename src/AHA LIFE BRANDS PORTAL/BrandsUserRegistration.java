@@ -20,7 +20,7 @@ class BrandsUserRegistration extends GenericClass{
     private final By CONFIRM_PASSWORD = By.xpath(".//*[@id='passwordAgain']");
     private final By FIRST_NAME = By.xpath(".//*[@id='firstname']");
     private final By LAST_NAME = By.xpath(".//*[@id='lastname']");
-    private final By REGISTER = By.xpath(".//*[@id='username']");
+    private final By REGISTER = By.xpath(".//input[@value='Register']");
     
     static String expectedInviteEmailID = null;
     static String actualInviteEmailID = null;
