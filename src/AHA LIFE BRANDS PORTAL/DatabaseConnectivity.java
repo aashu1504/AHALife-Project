@@ -16,10 +16,9 @@ class DatabaseConnectivity extends GenericClass{
        String password = "cV3qz2W4a";             
        Class.forName("com.mysql.jdbc.Driver");
        Connection con = DriverManager.getConnection(dbUrl,username,password);
-        
        String query = databaseQuery.get("DatabaseQuery");
        String columnName = databaseQuery.get("ColumnName");
-       
+       QueryExecution(query,columnName);
        con.close();
     }
     
