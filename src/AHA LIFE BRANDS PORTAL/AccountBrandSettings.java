@@ -17,11 +17,15 @@ class AccountBrandSettings{
     }
     
     
+    
+    
     // Enter BRAND PRIMARY CONTACT (FirstName/LastName and Email ID already populated) --> For Communication 
     public void enterPhoneNumber(HashMap<String, String> distributorName)
     {
         
     }
+    
+    
     
     
     // Enter BRAND BUSINESS ADDRESS (Will Not give address 2 as not mandatory) --> To send Payments To 
@@ -42,11 +46,17 @@ class AccountBrandSettings{
         
     }
     
+    
+    
+    
     // Enter BRAND ORIGIN OF PRODUCT (State and Country already populated for United States) 
     public void enterProductDesignedCity(HashMap<String, String> distributorName)  // --> Where Products were initially designed, not manufactured
     {
         
     }
+    
+    
+    
     
     //Enter Fulfillment Preference (Dropship/Crossdock)
     public void selectFulfillmentPreferences(HashMap<String, String> distributorName)
@@ -63,6 +73,13 @@ class AccountBrandSettings{
     {
         
     }
+    
+    
+    public void saveAccountSettingInformation(HashMap<String, String> distributorName)  //We'll need an email address so we can reach out about payment info
+    {
+        
+    }
+    
     
     
 }
