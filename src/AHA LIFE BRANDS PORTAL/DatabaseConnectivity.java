@@ -9,6 +9,14 @@ import java.sql.Statement;
 
 class DatabaseConnectivity{
     
+    public void DatabaseConfiguration(HashMap<String, String> storeFront) throws SQLException, ClassNotFoundException
+    {
+        
+    }
+    
+    
+    
+    
     public void storeFrontClick(HashMap<String, String> storeFront) throws SQLException, ClassNotFoundException
     {
        //Retrieving the data from database created.
