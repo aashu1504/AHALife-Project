@@ -26,6 +26,7 @@ class BrandsUserRegistration extends GenericClass{
     private final By DIGITAL_SIGNATURE = By.xpath(".//*[@id='model.signature']");
     private final By TITLE = By.xpath(".//*[@id='model.title']");
     private final By GET_STARTED = By.xpath(".//*[@id='completeProfileForm']/div[3]/input");
+    private final By ACCOUNT_SETUP_MESSAGE = By.xpath(".//*[@id='newBrandNav']/ul/li[1]");
         
     static String expectedInviteEmailID = null;
     static String actualInviteEmailID = null;
