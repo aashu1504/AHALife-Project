@@ -37,7 +37,7 @@ class BrandsUserRegistration extends GenericClass{
       return inviteURL;
     }
     
-     public String verifyInvitedUserEmailIDWithInviteEmail(HashMap<String, String> verifyInvite)
+     public void verifyInvitedUserEmailIDWithInviteEmail(HashMap<String, String> verifyInvite)
      {
         expectedInviteEmailID = verifyInvite.get("InviteEmailID");
         System.out.println("Expected is : " + expectedInviteEmailID);
