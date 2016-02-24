@@ -22,7 +22,7 @@ class BrandsUserRegistration extends GenericClass{
     private final By LAST_NAME = By.xpath(".//*[@id='lastname']");
     private final By REGISTER = By.xpath(".//input[@value='Register']");
     private final By REGISTRATION_MESSAGE = By.xpath(".//*[@id='homePageHeader']/span");
-    private final By CHECK_CHECKBOX = By.xpath(".//*[@id='completeProfileForm']/div[1]/label");
+    private final By CHECK_CHECKBOX = By.xpath(".//*[@id='model.agreeTermsConditions']");
     private final By DIGITAL_SIGNATURE = By.xpath(".//*[@id='model.signature']");
     private final By TITLE = By.xpath(".//*[@id='model.title']");
     private final By GET_STARTED = By.xpath(".//*[@id='completeProfileForm']/div[3]/input");
