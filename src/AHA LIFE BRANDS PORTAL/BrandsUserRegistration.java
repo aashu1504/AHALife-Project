@@ -114,7 +114,7 @@ class BrandsUserRegistration extends GenericClass{
     
     public void verifyNavigationToAccountSetUp(HashMap<String, String> accountSetUp)
     {   
-        expectedRegistrationMessage = accountSetUp.get("ExpectedRegistrationMessage");
+        expectedRegistrationMessage = accountSetUp.get("ExpectedAccountSetUpMessage");
         System.out.println("Expected is : " + expectedRegistrationMessage);
         actualRegistrationMessage = getTextFromAnElement(REGISTRATION_MESSAGE);
         System.out.println("Actual is : " + actualRegistrationMessage);
