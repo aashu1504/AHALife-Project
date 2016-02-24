@@ -94,4 +94,13 @@ class BrandsUserRegistration extends GenericClass{
 	    buttonClick(CHECK_CHECKBOX);
     }
     
+    public void enterDigitalSignature(HashMap<String, String> digitalSignature)
+    {
+        enterText(CONFIRM_PASSWORD,userConfirmPassword.get("BrandUserConfirmPassword"));
+    }
+    
+    public void enterTitle(HashMap<String, String> title)
+    {
+	    enterText(FIRST_NAME,firstName.get("BrandUserFirstName"));
+    }
 }
