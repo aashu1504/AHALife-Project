@@ -102,8 +102,7 @@ public class GenericClass extends WebDriverProvider{
     public void EstablishConnection(String dbUrl, String username, String password) throws MalformedURLException, IOException
     {
        Connection con = DriverManager.getConnection(dbUrl,username,password);
-       GetExecutionQuery();
-       
+       String query = GetExecutionQuery();
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
        rs.next();
