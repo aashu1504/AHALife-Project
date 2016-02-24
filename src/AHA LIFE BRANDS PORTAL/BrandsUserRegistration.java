@@ -79,14 +79,11 @@ class BrandsUserRegistration extends GenericClass{
     
     public void verifyUserRegistrationSuccess(HashMap<String, String> userRegistrationSuccess)
     {   
-        if(!isElementExist(ADMIN_LOGIN_TEXT) && isElementExist(LOGIN_SITE_LOGO))
-        {
-            Assert.assertTrue(true);
-        }
-        else
-        {
-            Assert.assertTrue(false);
-        }
+        expectedRegistrationMessage = verifyInvite.get("ExpectedRegistrationMessage");
+        System.out.println("Expected is : " + expectedInviteEmailID);
+        actualInviteEmailID = getAttributeValue(INVITE_EMAIL_ID,"value");
+        System.out.println("Actual is : " + actualInviteEmailID);
+        Assert.assertTrue(expectedInviteEmailID.equalsIgnoreCase(actualInviteEmailID));
     }
     
 }
