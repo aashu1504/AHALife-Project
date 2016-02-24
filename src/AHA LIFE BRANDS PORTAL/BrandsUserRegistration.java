@@ -30,5 +30,6 @@ class BrandsUserRegistration extends GenericClass{
       buttonClick(INVITE_EMAIL);
       String inviteURL = getAttributeValue(INVITE_URL,"href");
       System.out.println(inviteURL);
+      return inviteURL;
     }
 }
