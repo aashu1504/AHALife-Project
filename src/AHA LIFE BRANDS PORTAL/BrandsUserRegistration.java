@@ -107,8 +107,18 @@ class BrandsUserRegistration extends GenericClass{
 	    enterText(TITLE,title.get("Title"));
     }
     
-     public void acceptTermsAndGetStrated(HashMap<String, String> getStarted)
+    public void acceptTermsAndGetStrated(HashMap<String, String> getStarted)
     {
 	    buttonClick(GET_STARTED);
     }
+    
+    public void verifyNavigationToAccountSetUp(HashMap<String, String> accountSetUp)
+    {   
+        expectedRegistrationMessage = userRegistrationSuccess.get("ExpectedRegistrationMessage");
+        System.out.println("Expected is : " + expectedRegistrationMessage);
+        actualRegistrationMessage = getTextFromAnElement(REGISTRATION_MESSAGE);
+        System.out.println("Actual is : " + actualRegistrationMessage);
+        Assert.assertTrue(expectedRegistrationMessage.equalsIgnoreCase(actualRegistrationMessage));
+    }
+    
 }
