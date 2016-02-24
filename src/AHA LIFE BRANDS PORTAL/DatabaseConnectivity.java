@@ -18,12 +18,12 @@ class DatabaseConnectivity{
        Connection con = DriverManager.getConnection(dbUrl,username,password);
        String query = databaseQuery.get("DatabaseQuery");
        String columnName = databaseQuery.get("ColumnName");
-       QueryExecution(query,columnName);
+       QueryExecution(query,columnName,con);
        con.close();
     }
     
     
-    public void QueryExecution(String query,String columnName)
+    public void QueryExecution(String query,String columnName,Connection con)
     {
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
