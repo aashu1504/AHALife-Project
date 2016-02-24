@@ -56,7 +56,7 @@ class BrandsUserRegistration extends GenericClass{
         enterText(PASSWORD,userPassword.get("BrandUserName"));
     }
     
-    public void enterConfirmBrandPassword(HashMap<String, String> userConfirmPassword)
+    public void enterConfirmPassword(HashMap<String, String> userConfirmPassword)
     {
         enterText(CONFIRM_PASSWORD,userConfirmPassword.get("BrandPassword"));
     }
