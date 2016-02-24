@@ -96,11 +96,11 @@ class BrandsUserRegistration extends GenericClass{
     
     public void enterDigitalSignature(HashMap<String, String> digitalSignature)
     {
-        enterText(CONFIRM_PASSWORD,userConfirmPassword.get("BrandUserConfirmPassword"));
+        enterText(DIGITAL_SIGNATURE,digitalSignature.get("DigitalSignature"));
     }
     
     public void enterTitle(HashMap<String, String> title)
     {
-	    enterText(FIRST_NAME,firstName.get("BrandUserFirstName"));
+	    enterText(FIRST_NAME,title.get("Title"));
     }
 }
