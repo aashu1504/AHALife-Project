@@ -82,7 +82,7 @@ class BrandsUserRegistration extends GenericClass{
     {   
         expectedRegistrationMessage = verifyInvite.get("ExpectedRegistrationMessage");
         System.out.println("Expected is : " + expectedRegistrationMessage);
-        actualInviteEmailID = getAttributeValue(INVITE_EMAIL_ID,"value");
+        actualRegistrationMessage = getAttributeValue(INVITE_EMAIL_ID,"value");
         System.out.println("Actual is : " + actualInviteEmailID);
         Assert.assertTrue(expectedRegistrationMessage.equalsIgnoreCase(actualInviteEmailID));
     }
