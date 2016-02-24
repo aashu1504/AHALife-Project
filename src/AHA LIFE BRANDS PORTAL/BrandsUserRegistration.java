@@ -32,6 +32,7 @@ class BrandsUserRegistration extends GenericClass{
     static String expectedRegistrationMessage = null;
     static String actualRegistrationMessage = null;
     static String expectedAccountSetUpMessage = null;
+    static String expectedAccountSetUpMessage = null;
     
     public String getInviteURLFromGmail(HashMap<String, String> gmailCredentials) throws InterruptedException
     {  
