@@ -116,7 +116,7 @@ public class GenericClass extends WebDriverProvider{
         return dbQuery;
     }
     
-    public String ExecuteQuery(Statement stmentExecute)
+    public String ExecuteQuery(Statement stmentExecute, String query)
     {
        ResultSet rs= stmentExecute.executeQuery(query);     
        rs.next();
