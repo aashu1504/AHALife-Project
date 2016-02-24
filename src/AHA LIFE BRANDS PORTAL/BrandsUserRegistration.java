@@ -4,7 +4,7 @@ import java.util.*;
 
 class BrandsUserRegistration{
     
-    private final By GMAIL_USER_NAME = By.xpath(".//input[@id='username']");
+    private final By GMAIL_USER_NAME = By.xpath(".//*[@id='Email']");
     private final By GMAIL_PASSWORD = By.xpath(".//input[@id='password']");
     
     public void getInviteURLFromGmail(HashMap<String, String> gmailCredentials){
