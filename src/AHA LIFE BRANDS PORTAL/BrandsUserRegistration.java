@@ -11,7 +11,7 @@ class BrandsUserRegistration extends GenericClass{
     private final By GMAIL_NEXT = By.xpath(".//*[@id='next']");
     private final By GMAIL_PASSWORD = By.xpath(".//*[@id='Passwd']");
     private final By GMAIL_SIGN_IN = By.xpath(".//*[@id='signIn']");
-    private final By ENTER_SEARCH_STRING = By.xpath(".//*[@id='gs_taif50']");
+    private final By ENTER_SEARCH_STRING = By.xpath(".//*[@id='gbqfq']");
     private final By SEARCH = By.xpath(".//*[@id='gbqfb']");
     private final By INVITE_EMAIL = By.xpath(".//*[@id=':2']/div/div[3]/div[6]/div/div/table/tbody/tr[1]");
     
