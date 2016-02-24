@@ -76,7 +76,7 @@ class BrandsUserRegistration extends GenericClass{
 	    buttonClick(REGISTER);
     }
     
-    public void verifyUserLoginToBrandPortal(HashMap<String, String> userLogin)
+    public void verifyUserRegistrationSuccess(HashMap<String, String> userRegistrationSuccess)
     {   
         if(!isElementExist(ADMIN_LOGIN_TEXT) && isElementExist(LOGIN_SITE_LOGO))
         {
