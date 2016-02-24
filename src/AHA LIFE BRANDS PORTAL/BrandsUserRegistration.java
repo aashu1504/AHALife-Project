@@ -119,7 +119,7 @@ class BrandsUserRegistration extends GenericClass{
     {   
         expectedAccountSetUpMessage = accountSetUp.get("ExpectedAccountSetUpMessage");
         System.out.println("Expected is : " + expectedAccountSetUpMessage);
-        actualAccountSetUpMessage = getTextFromAnElement(REGISTRATION_MESSAGE);
+        actualAccountSetUpMessage = getTextFromAnElement(ACCOUNT_SETUP_MESSAGE);
         System.out.println("Actual is : " + actualAccountSetUpMessage);
         Assert.assertTrue(expectedAccountSetUpMessage.equalsIgnoreCase(actualAccountSetUpMessage));
     }
