@@ -28,6 +28,6 @@ class BrandsUserRegistration extends GenericClass{
       Thread.sleep(4000L);
       buttonClick(INVITE_EMAIL);
       String inviteURL = getAttributeValue(INVITE_URL,"href");
-        System.out.println(inviteURL);
+      System.out.println(inviteURL);
     }
 }
