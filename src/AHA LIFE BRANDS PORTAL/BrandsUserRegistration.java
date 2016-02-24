@@ -106,4 +106,9 @@ class BrandsUserRegistration extends GenericClass{
     {
 	    enterText(TITLE,title.get("Title"));
     }
+    
+     public void acceptTermsAndGetStrated(HashMap<String, String> getStarted)
+    {
+	    buttonClick(GET_STARTED);
+    }
 }
