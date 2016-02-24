@@ -59,7 +59,7 @@ class AccountBrandSettings{
         
     }
     
-    public void enterOrSelectPaymentInfoEMail(HashMap<String, String> distributorName)  //This is to alert everyone on your team each time an order comes through.
+    public void enterOrSelectPaymentInfoEMail(HashMap<String, String> distributorName)  //We'll need an email address so we can reach out about payment info
     {
         
     }
