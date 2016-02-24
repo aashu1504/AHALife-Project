@@ -15,7 +15,7 @@ class BrandsUserRegistration extends GenericClass{
     private final By SEARCH = By.xpath(".//*[@id='gbqfb']");
     private final By INVITE_EMAIL = By.xpath(".//*[@id=':2']/div/div[3]/div[6]/div/div/table/tbody/tr[1]");
     
-    public void getInviteURLFromGmail(HashMap<String, String> gmailCredentials){
+    public void getInviteURLFromGmail(HashMap<String, String> gmailCredentials) throws InterruptedException{
         
       enterText(GMAIL_USER_NAME,gmailCredentials.get("InviteEmailID"));
       buttonClick(GMAIL_NEXT);
