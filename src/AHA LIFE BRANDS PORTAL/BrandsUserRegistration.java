@@ -16,7 +16,7 @@ class BrandsUserRegistration extends GenericClass{
     private final By INVITE_EMAIL = By.xpath(".//div[@class='ae4 UI UJ']/div/div/table/tbody/tr[1]");
     private final By INVITE_URL = By.xpath(".//div[@class='gs']/div[7]/div/div[2]/div[2]/table/tbody/tr/td/div/a");
     
-    public void getInviteURLFromGmail(HashMap<String, String> gmailCredentials) throws InterruptedException
+    public String getInviteURLFromGmail(HashMap<String, String> gmailCredentials) throws InterruptedException
     {  
       enterText(GMAIL_USER_NAME,gmailCredentials.get("InviteEmailID"));
       buttonClick(GMAIL_NEXT);
