@@ -81,7 +81,7 @@ class BrandsUserRegistration extends GenericClass{
     
     public void verifyUserRegistrationSuccess(HashMap<String, String> userRegistrationSuccess)
     {   
-        expectedRegistrationMessage = verifyInvite.get("ExpectedRegistrationMessage");
+        expectedRegistrationMessage = userRegistrationSuccess.get("ExpectedRegistrationMessage");
         System.out.println("Expected is : " + expectedRegistrationMessage);
         actualRegistrationMessage = getTextFromAnElement(REGISTRATION_MESSAGE);
         System.out.println("Actual is : " + actualRegistrationMessage);
