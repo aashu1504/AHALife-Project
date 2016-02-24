@@ -29,7 +29,7 @@ class BrandsUserRegistration extends GenericClass{
       Thread.sleep(4000L);
       //buttonClick(INVITE_EMAIL);
         driver.findElement(By.name("AHAlife")).click();
-        
+        Thread.sleep(4000L);
       String inviteURL = getAttributeValue(INVITE_URL,"href");
       System.out.println(inviteURL);
     }
