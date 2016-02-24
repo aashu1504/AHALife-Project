@@ -11,7 +11,7 @@ class AccountBrandSettings{
     private final By CITY = By.xpath(".//*[@id='model.addressCity']");
     private final By ZIP = By.xpath(".//*[@id='model.addressZip']");
     private final By PRODUCT_DESIGNED_CITY = By.xpath(".//*[@id='model.originCity']"); 
-    private final By FULFILLMENT_PREFERENCES = By.xpath(".//label[1][@for='model.fulfillmentMethod.DROP_SHIP']");
+    private final By DROPSHIP_FULFILLMENT_PREFERENCES = By.xpath(".//label[1][@for='model.fulfillmentMethod.DROP_SHIP']");
     private final By PURCHASE_ALERT_EMAIL = By.xpath(".//input[@id='purchaseOrderSameAsContactEmail']");
     private final By PAYMENT_INFO_EMAIL = By.xpath(".//*[@id='accountingSameAsContactEmail']");
     private final By SAVE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save']");
@@ -20,12 +20,12 @@ class AccountBrandSettings{
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
     {
-        
+        enterText(DISTRIBUTOR_NAME,userName.get("BrandUserName"));
     }
     
     public void enterCompanyWebsite(HashMap<String, String> companyWebsite)
     {
-        
+        enterText(COMPANY_WEBSITE,userName.get("BrandUserName"));
     }
     
     
@@ -34,7 +34,7 @@ class AccountBrandSettings{
     // Enter BRAND PRIMARY CONTACT (FirstName/LastName and Email ID already populated) --> For Communication 
     public void enterPhoneNumber(HashMap<String, String> phoneNumber)
     {
-        
+        enterText(PHONE_NUMBER,userName.get("BrandUserName"));
     }
     
     
@@ -45,17 +45,17 @@ class AccountBrandSettings{
     
     public void enterAddress(HashMap<String, String> shippingAddress)
     {
-           
+           enterText(BUSINESS_SHIPPING_ADDRESS,userName.get("BrandUserName"));
     }
     
     public void enterCity(HashMap<String, String> city)
     {
-        
+        enterText(CITY,userName.get("BrandUserName"));
     }
     
     public void enterZip(HashMap<String, String> Zip)
     {
-        
+        enterText(ZIP,userName.get("BrandUserName"));
     }
     
     
@@ -64,7 +64,7 @@ class AccountBrandSettings{
     // Enter BRAND ORIGIN OF PRODUCT (State and Country already populated for United States) 
     public void enterProductDesignedCity(HashMap<String, String> designedCity)  // --> Where Products were initially designed, not manufactured
     {
-        
+        enterText(PRODUCT_DESIGNED_CITY,userName.get("BrandUserName"));
     }
     
     
@@ -73,28 +73,28 @@ class AccountBrandSettings{
     //Enter Fulfillment Preference (Dropship/Crossdock)
     public void selectFulfillmentPreferences(HashMap<String, String> preferences)
     {
-        
+        buttonClick(DROPSHIP_FULFILLMENT_PREFERENCES);
     }
     
     public void enterOrSelectPurchaseOrderAlertEMail(HashMap<String, String> purchaseAlertMail)  //This is to alert everyone on your team each time an order comes through.
     {
-        
+        buttonClick(BRAND_LOGIN_CLICK);
     }
     
     public void enterOrSelectPaymentInfoEMail(HashMap<String, String> paymentInfoMail)  //We'll need an email address so we can reach out about payment info
     {
-        
+        buttonClick(BRAND_LOGIN_CLICK);
     }
     
     
     public void saveAccountSettingInformation(HashMap<String, String> saveSettings)  //We'll need an email address so we can reach out about payment info
     {
-        
+        buttonClick(BRAND_LOGIN_CLICK);
     }
     
     public void saveAndContinueAccountSettingInformation(HashMap<String, String> saveContinueSettings)  //We'll need an email address so we can reach out about payment info
     {
-        
+        buttonClick(BRAND_LOGIN_CLICK);
     }
     
     
