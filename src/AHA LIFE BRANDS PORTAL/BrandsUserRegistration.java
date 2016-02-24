@@ -88,4 +88,7 @@ class BrandsUserRegistration extends GenericClass{
         Assert.assertTrue(expectedRegistrationMessage.equalsIgnoreCase(actualRegistrationMessage));
     }
     
+    
+    
+    
 }
