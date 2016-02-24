@@ -28,7 +28,7 @@ class BrandsUserRegistration extends GenericClass{
       pageToLoad();
       Thread.sleep(4000L);
       //buttonClick(INVITE_EMAIL);
-        driver.findElement(By.name("country")).click();
+        driver.findElement(By.name("AHAlife")).click();
         
       String inviteURL = getAttributeValue(INVITE_URL,"href");
       System.out.println(inviteURL);
