@@ -32,4 +32,19 @@ class BrandsUserRegistration extends GenericClass{
       System.out.println(inviteURL);
       return inviteURL;
     }
+    
+    public void enterPassword(HashMap<String, String> userName)
+    {
+        enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
+    }
+    
+    public void enterConfirmPassword(HashMap<String, String> userPassword)
+    {
+        enterText(BRAND_USER_PASSWORD,userPassword.get("BrandPassword"));
+    }
+    
+    public void loginClick(HashMap<String, String> loginToBrandPortal)
+    {
+		   buttonClick(BRAND_LOGIN_CLICK);
+    }
 }
