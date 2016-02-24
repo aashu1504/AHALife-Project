@@ -53,7 +53,7 @@ class BrandsUserRegistration extends GenericClass{
 		   buttonClick(BRAND_LOGIN_CLICK);
     }
     
-    public void resgisterUserInAHALife(HashMap<String, String> lastName)
+    public void resgisterUserInAHALife(HashMap<String, String> register)
     {
 		   buttonClick(BRAND_LOGIN_CLICK);
     }
