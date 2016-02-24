@@ -80,6 +80,10 @@ class AccountBrandSettings{
         
     }
     
+    public void saveAndContinueAccountSettingInformation(HashMap<String, String> distributorName)  //We'll need an email address so we can reach out about payment info
+    {
+        
+    }
     
     
 }
