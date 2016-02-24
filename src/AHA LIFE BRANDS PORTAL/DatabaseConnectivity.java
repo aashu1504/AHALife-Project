@@ -15,7 +15,21 @@ class DatabaseConnectivity extends GenericClass{
        String username = "onboarding";           
        String password = "cV3qz2W4a";             
        Class.forName("com.mysql.jdbc.Driver");
-       EstablishConnection(dbUrl,userName,password);
+       EstablishConnectionAndExecuteQuery(dbUrl,userName,password);
+    }
+    
+    
+    public void EstablishConnection(String dbUrl,String userName,String password);
+    {
+        Connection con = DriverManager.getConnection(dbUrl,username,password);
+        
+       String query = "SELECT EMAILS FROM admin_query where ID = 1;";
+       Statement stmt = con.createStatement();                    
+       ResultSet rs= stmt.executeQuery(query);     
+       rs.next();
+       String actualName = rs.getString("EMAILS");  
+       System.out.println(actualName);   
+       con.close();
     }
     
     
@@ -31,6 +45,7 @@ class DatabaseConnectivity extends GenericClass{
        Class.forName("com.mysql.jdbc.Driver");         
        //Create Connection to DB       
        Connection con = DriverManager.getConnection(dbUrl,username,password);
+        
        String query = "SELECT EMAILS FROM admin_query where ID = 1;";
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
