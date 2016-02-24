@@ -5,7 +5,7 @@ import java.util.*;
 class AccountBrandSettings{
     
     private final By DISTRIBUTOR_NAME = By.xpath(".//*[@id='model.legalName']");
-    private final By COMPANY_WEBSITE = By.xpath(".//input[@id='password']");
+    private final By COMPANY_WEBSITE = By.xpath(".//*[@id='model.websiteUrl']");
     private final By PHONE_NUMBER = By.xpath(".//input[@type='submit']");
     private final By BUSINESS_SHIPPING_ADDRESS = By.xpath(".//a[@href='/admin']");
     private final By CITY = By.xpath(".//div[@class='site-logo']");
