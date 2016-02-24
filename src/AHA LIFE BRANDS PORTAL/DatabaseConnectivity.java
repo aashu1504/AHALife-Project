@@ -25,7 +25,6 @@ class DatabaseConnectivity{
     
     public void QueryExecution(String query,String columnName)
     {
-       String query = query;
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
        rs.next();
