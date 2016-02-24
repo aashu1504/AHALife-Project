@@ -4,6 +4,7 @@ import java.util.*;
 
 class AccountBrandSettings{
     
+    .//*[@id='model.legalName']
     
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
