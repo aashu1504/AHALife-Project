@@ -20,12 +20,12 @@ class AccountBrandSettings{
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
     {
-        enterText(DISTRIBUTOR_NAME,distributorName.get("BrandUserName"));
+        enterText(DISTRIBUTOR_NAME,distributorName.get("DistributorName"));
     }
     
     public void enterCompanyWebsite(HashMap<String, String> companyWebsite)
     {
-        enterText(COMPANY_WEBSITE,companyWebsite.get("BrandUserName"));
+        enterText(COMPANY_WEBSITE,companyWebsite.get("CompanyWebsite"));
     }
     
     
@@ -34,7 +34,7 @@ class AccountBrandSettings{
     // Enter BRAND PRIMARY CONTACT (FirstName/LastName and Email ID already populated) --> For Communication 
     public void enterPhoneNumber(HashMap<String, String> phoneNumber)
     {
-        enterText(PHONE_NUMBER,phoneNumber.get("BrandUserName"));
+        enterText(PHONE_NUMBER,phoneNumber.get("PrimaryPhoneNumber"));
     }
     
     
@@ -45,17 +45,17 @@ class AccountBrandSettings{
     
     public void enterAddress(HashMap<String, String> shippingAddress)
     {
-           enterText(BUSINESS_SHIPPING_ADDRESS,shippingAddress.get("BrandUserName"));
+           enterText(BUSINESS_SHIPPING_ADDRESS,shippingAddress.get("ShippingOrBusinessAddress"));
     }
     
     public void enterCity(HashMap<String, String> city)
     {
-        enterText(CITY,city.get("BrandUserName"));
+        enterText(CITY,city.get("ShippingOrBusinessCity"));
     }
     
     public void enterZip(HashMap<String, String> zip)
     {
-        enterText(ZIP,zip.get("BrandUserName"));
+        enterText(ZIP,zip.get("ShippingOrBusinessZip"));
     }
     
     
@@ -64,7 +64,7 @@ class AccountBrandSettings{
     // Enter BRAND ORIGIN OF PRODUCT (State and Country already populated for United States) 
     public void enterProductDesignedCity(HashMap<String, String> designedCity)  // --> Where Products were initially designed, not manufactured
     {
-        enterText(PRODUCT_DESIGNED_CITY,designedCity.get("BrandUserName"));
+        enterText(PRODUCT_DESIGNED_CITY,designedCity.get("ProductDesignedCity"));
     }
     
     
