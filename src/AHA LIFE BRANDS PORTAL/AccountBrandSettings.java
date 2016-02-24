@@ -18,7 +18,7 @@ class AccountBrandSettings{
     }
     
     
-    // Enter PRIMARY CONTACT (FirstName/LastName and Email ID already populated)
+    // Enter PRIMARY CONTACT (FirstName/LastName and Email ID already populated) --> For Communication
     
     
     public void enterPhoneNumber(HashMap<String, String> distributorName)
@@ -26,7 +26,7 @@ class AccountBrandSettings{
         
     }
     
-    // Enter BUSINESS ADDRESS (Will Not give address 2 as not mandatory)
+    // Enter BUSINESS ADDRESS (Will Not give address 2 as not mandatory) --> To send Payments To
     
     
     public void enterPhoneNumber(HashMap<String, String> distributorName)
