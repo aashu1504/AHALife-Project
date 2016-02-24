@@ -105,10 +105,7 @@ public class GenericClass extends WebDriverProvider{
        String query = GetExecutionQuery();
        Statement stmt = con.createStatement();
        ExecuteQuery();
-       ResultSet rs= stmt.executeQuery(query);     
-       rs.next();
-       String actualName = rs.getString("EMAILS");  
-       System.out.println(actualName);   
+        
        con.close();
         
     }
@@ -121,7 +118,9 @@ public class GenericClass extends WebDriverProvider{
     
     public String ExecuteQuery()
     {
-        String dbQuery = "SELECT EMAILS FROM admin_query where ID = 1;";
-        return dbQuery;
+       ResultSet rs= stmt.executeQuery(query);     
+       rs.next();
+       String actualName = rs.getString("EMAILS");  
+       System.out.println(actualName);  
     }
 }
