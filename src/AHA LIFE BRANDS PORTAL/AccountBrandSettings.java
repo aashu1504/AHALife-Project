@@ -4,7 +4,7 @@ import java.util.*;
 
 class AccountBrandSettings{
     
-    private final By BRAND_USER_NAME = By.xpath(".//*[@id='model.legalName']");
+    private final By DISTRIBUTOR_NAME = By.xpath(".//*[@id='model.legalName']");
     private final By BRAND_USER_PASSWORD = By.xpath(".//input[@id='password']");
     private final By BRAND_LOGIN_CLICK = By.xpath(".//input[@type='submit']");
     private final By ADMIN_LOGIN_TEXT = By.xpath(".//a[@href='/admin']");
