@@ -39,7 +39,7 @@ class BrandsUserRegistration extends GenericClass{
     
      public String verifyInvitedUserEmailIDWithInviteEmail(HashMap<String, String> verifyInvite)
      {
-        expectedInviteEmailID = gmailCredentials.get("InviteEmailID");
+        expectedInviteEmailID = verifyInvite.get("InviteEmailID");
         System.out.println("Expected is : " + expectedInviteEmailID);
         actualInviteEmailID = getTextFromAnElement(INVITE_EMAIL_ID);
         System.out.println("Actual is : " + actualInviteEmailID);
