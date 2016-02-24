@@ -15,5 +15,6 @@ class BrandsUserRegistration{
       buttonClick(GMAIL_NEXT);
       enterText(GMAIL_PASSWORD,gmailCredentials.get("GmailPassword"));
       buttonClick(GMAIL_SIGN_IN);
+      pageToLoad();
     }
 }
