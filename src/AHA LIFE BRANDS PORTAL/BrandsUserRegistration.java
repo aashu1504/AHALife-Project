@@ -48,7 +48,7 @@ class BrandsUserRegistration extends GenericClass{
 		   buttonClick(BRAND_LOGIN_CLICK);
     }
     
-    public void enterLastName(HashMap<String, String> firstName)
+    public void enterLastName(HashMap<String, String> lastName)
     {
 		   buttonClick(BRAND_LOGIN_CLICK);
     }
