@@ -116,9 +116,9 @@ public class GenericClass extends WebDriverProvider{
         return dbQuery;
     }
     
-    public String ExecuteQuery()
+    public String ExecuteQuery(Statement stmentExecute)
     {
-       ResultSet rs= stmt.executeQuery(query);     
+       ResultSet rs= stmentExecute.executeQuery(query);     
        rs.next();
        String actualName = rs.getString("EMAILS");  
        System.out.println(actualName);  
