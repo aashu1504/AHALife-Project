@@ -16,6 +16,11 @@ class BrandsUserRegistration extends GenericClass{
     private final By INVITE_EMAIL = By.xpath(".//div[@class='ae4 UI UJ']/div/div/table/tbody/tr[1]");
     private final By INVITE_URL = By.xpath(".//div[@class='gs']/div[7]/div/div[2]/div[2]/table/tbody/tr/td/div/a");
     private final By INVITE_EMAIL_ID = By.xpath(".//*[@id='username']");
+    private final By PASSWORD = By.xpath(".//*[@id='username']");
+    private final By CONFIRM_PASSWORD = By.xpath(".//*[@id='username']");
+    private final By FIRST_NAME = By.xpath(".//*[@id='username']");
+    private final By LAST_NAME = By.xpath(".//*[@id='username']");
+    private final By REGISTER = By.xpath(".//*[@id='username']");
     
     static String expectedInviteEmailID = null;
     static String actualInviteEmailID = null;
@@ -48,7 +53,7 @@ class BrandsUserRegistration extends GenericClass{
     
     public void enterPassword(HashMap<String, String> userPassword)
     {
-       // enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
+       enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
     }
     
     public void enterConfirmPassword(HashMap<String, String> userConfirmPassword)
