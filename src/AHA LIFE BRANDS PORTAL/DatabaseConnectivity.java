@@ -23,7 +23,7 @@ class DatabaseConnectivity{
     }
     
     
-    public void QueryExecution(String query,String columnName);
+    public void QueryExecution(String query,String columnName)
     {
        String query = query;
        Statement stmt = con.createStatement();                    
