@@ -114,8 +114,8 @@ public class GenericClass extends WebDriverProvider{
     
     public String GetExecutionQuery()
     {
-        String query = "SELECT EMAILS FROM admin_query where ID = 1;";
-        return query;
+        String dbQuery = "SELECT EMAILS FROM admin_query where ID = 1;";
+        return dbQuery;
     }
     
 }
