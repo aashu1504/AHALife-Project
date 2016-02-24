@@ -43,21 +43,23 @@ class AccountBrandSettings{
     }
     
     // Enter BRAND ORIGIN OF PRODUCT (State and Country already populated for United States) 
-    // --> Where Products were initially designed, not manufactured
-    public void enterProductDesignedCity(HashMap<String, String> distributorName)
+    public void enterProductDesignedCity(HashMap<String, String> distributorName)  // --> Where Products were initially designed, not manufactured
     {
         
     }
     
     //Enter Fulfillment Preference (Dropship/Crossdock)
-    public void enterCity(HashMap<String, String> distributorName)
+    public void selectFulfillmentPreferences(HashMap<String, String> distributorName)
     {
         
     }
     
-    public void enterZip(HashMap<String, String> distributorName)
+    public void enterOrSelectPurchaseOrderAlertEMail(HashMap<String, String> distributorName)  //This is to alert everyone on your team each time an order comes through.
     {
         
     }
+    
+    
+    
     
 }
