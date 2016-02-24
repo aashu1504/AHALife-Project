@@ -103,7 +103,8 @@ public class GenericClass extends WebDriverProvider{
     {
        Connection con = DriverManager.getConnection(dbUrl,username,password);
        String query = GetExecutionQuery();
-       Statement stmt = con.createStatement();                    
+       Statement stmt = con.createStatement();
+       ExecuteQuery();
        ResultSet rs= stmt.executeQuery(query);     
        rs.next();
        String actualName = rs.getString("EMAILS");  
@@ -118,4 +119,9 @@ public class GenericClass extends WebDriverProvider{
         return dbQuery;
     }
     
+    public String ExecuteQuery()
+    {
+        String dbQuery = "SELECT EMAILS FROM admin_query where ID = 1;";
+        return dbQuery;
+    }
 }
