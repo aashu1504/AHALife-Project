@@ -1,8 +1,11 @@
 package AHALIFEBRANDSPORTAL;
 
 import java.util.*;
+import Utility.GenericClass;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 
-class AccountBrandSettings{
+class AccountBrandSettings extends GenericClass{
     
     private final By DISTRIBUTOR_NAME = By.xpath(".//*[@id='model.legalName']");
     private final By COMPANY_WEBSITE = By.xpath(".//*[@id='model.websiteUrl']");
