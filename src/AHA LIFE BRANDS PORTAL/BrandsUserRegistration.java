@@ -51,17 +51,17 @@ class BrandsUserRegistration extends GenericClass{
         Assert.assertTrue(expectedInviteEmailID.equalsIgnoreCase(actualInviteEmailID));
      }
     
-    public void enterPassword(HashMap<String, String> userPassword)
+    public void enterBrandPassword(HashMap<String, String> userPassword)
     {
         enterText(PASSWORD,userPassword.get("BrandUserName"));
     }
     
-    public void enterConfirmPassword(HashMap<String, String> userConfirmPassword)
+    public void enterConfirmBrandPassword(HashMap<String, String> userConfirmPassword)
     {
         enterText(CONFIRM_PASSWORD,userConfirmPassword.get("BrandPassword"));
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterBrandUserFirstName(HashMap<String, String> firstName)
     {
 	    enterText(FIRST_NAME,firstName.get("BrandPassword"));
     }
@@ -71,7 +71,7 @@ class BrandsUserRegistration extends GenericClass{
 	    enterText(LAST_NAME,lastName.get("BrandPassword"));
     }
     
-    public void resgisterUserInAHALife(HashMap<String, String> register)
+    public void resgisterBrandInAHALife(HashMap<String, String> register)
     {
 	    buttonClick(REGISTER);
     }
