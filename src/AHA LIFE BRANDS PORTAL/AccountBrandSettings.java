@@ -5,9 +5,9 @@ import java.util.*;
 class AccountBrandSettings{
     
     private final By DISTRIBUTOR_NAME = By.xpath(".//*[@id='model.legalName']");
-    private final By BRAND_USER_PASSWORD = By.xpath(".//input[@id='password']");
-    private final By BRAND_LOGIN_CLICK = By.xpath(".//input[@type='submit']");
-    private final By ADMIN_LOGIN_TEXT = By.xpath(".//a[@href='/admin']");
+    private final By COMPANY_WEBSITE = By.xpath(".//input[@id='password']");
+    private final By PHONE_NUMBER = By.xpath(".//input[@type='submit']");
+    private final By BUSINESS_SHIPPING_ADDRESS = By.xpath(".//a[@href='/admin']");
     private final By LOGIN_SITE_LOGO = By.xpath(".//div[@class='site-logo']");
     private final By BRAND_LOGOUT_CLICK = By.xpath(".//a[@href='/logout']");
     private final By BRAND_ADMIN_SIGNOUT_CLICK = By.xpath(".//ul[@class='nav navbar-nav navbar-right']/li[2]/a"); 
