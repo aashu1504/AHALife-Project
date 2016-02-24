@@ -23,6 +23,6 @@ class BrandsUserRegistration{
       buttonClick(SEARCH);
       Thread.sleep(4000L);
       buttonClick(INVITE_EMAIL);
-        
+      
     }
 }
