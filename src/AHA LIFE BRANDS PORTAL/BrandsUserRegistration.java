@@ -101,6 +101,6 @@ class BrandsUserRegistration extends GenericClass{
     
     public void enterTitle(HashMap<String, String> title)
     {
-	    enterText(FIRST_NAME,title.get("Title"));
+	    enterText(TITLE,title.get("Title"));
     }
 }
