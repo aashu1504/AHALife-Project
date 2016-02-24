@@ -14,7 +14,7 @@ class AccountBrandSettings{
     private final By FULFILLMENT_PREFERENCES = By.xpath(".//label[1][@for='model.fulfillmentMethod.DROP_SHIP']");
     private final By PURCHASE_ALERT_EMAIL = By.xpath(".//input[@id='purchaseOrderSameAsContactEmail']");
     private final By PAYMENT_INFO_EMAIL = By.xpath(".//*[@id='accountingSameAsContactEmail']");
-    private final By SAVE_ACCOUNT_SETTING = By.xpath(".//*[@id='brandEmail']");
+    private final By SAVE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save']");
     private final By SAVE_CONTINUE_ACCOUNT_SETTING = By.xpath(".//*[@id='detailsForm']/button");    
     
     // Enter BRAND COMPANY INFORMATION  
