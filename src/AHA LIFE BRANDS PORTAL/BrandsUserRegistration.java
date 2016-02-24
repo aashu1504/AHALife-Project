@@ -89,7 +89,7 @@ class BrandsUserRegistration extends GenericClass{
         Assert.assertTrue(expectedRegistrationMessage.equalsIgnoreCase(actualRegistrationMessage));
     }
     
-    public void acceptTerms(HashMap<String, String> register)
+    public void clickOnCheckbox(HashMap<String, String> register)
     {
 	    buttonClick(CHECK_CHECKBOX);
     }
