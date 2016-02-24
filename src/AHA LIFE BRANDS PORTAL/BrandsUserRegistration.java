@@ -25,6 +25,7 @@ class BrandsUserRegistration extends GenericClass{
       pageToLoad();
       enterText(ENTER_SEARCH_STRING,"brands@ahalife.com");
       buttonClick(SEARCH);
+      pageToLoad();
       Thread.sleep(4000L);
       buttonClick(INVITE_EMAIL);
       String inviteURL = getAttributeValue(INVITE_URL,"href");
