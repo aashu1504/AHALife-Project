@@ -1,4 +1,4 @@
-package AHA LIFE BRANDS PORTAL;
+package AHALIFEBRANDSPORTAL;
 
 import java.util.*;
 import Utility.GenericClass;
