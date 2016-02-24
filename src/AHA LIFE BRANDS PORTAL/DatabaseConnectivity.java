@@ -11,9 +11,9 @@ class DatabaseConnectivity extends GenericClass{
     
     public void DatabaseAndQueryConfiguration(HashMap<String, String> databaseQuery) throws SQLException, ClassNotFoundException
     {
-	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306/onboarding";                   
-       String username = "onboarding";           
-       String password = "cV3qz2W4a";             
+	   String dbUrl = databaseQuery.get("DatabaseURL");            
+       String username = databaseQuery.get("UserName");     
+       String password = databaseQuery.get("Password");         
        Class.forName("com.mysql.jdbc.Driver");
        Connection con = DriverManager.getConnection(dbUrl,username,password);
        String query = databaseQuery.get("DatabaseQuery");
