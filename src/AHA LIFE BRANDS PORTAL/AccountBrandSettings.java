@@ -11,7 +11,7 @@ class AccountBrandSettings{
         
     }
     
-    public void enterCompanyWebsite(HashMap<String, String> distributorName)
+    public void enterCompanyWebsite(HashMap<String, String> companyWebsite)
     {
         
     }
@@ -20,7 +20,7 @@ class AccountBrandSettings{
     
     
     // Enter BRAND PRIMARY CONTACT (FirstName/LastName and Email ID already populated) --> For Communication 
-    public void enterPhoneNumber(HashMap<String, String> distributorName)
+    public void enterPhoneNumber(HashMap<String, String> phoneNumber)
     {
         
     }
@@ -29,9 +29,9 @@ class AccountBrandSettings{
     
     
     // Enter BRAND BUSINESS ADDRESS (Will Not give address 2 as not mandatory) --> To send Payments To 
-    // This BUSINESS ADDRESS is considered to be same as SHIPPING ADDRESS and its checkbox is default checked
+    // This BUSINESS ADDRESS is considered to be same as SHIPPING ADDRESS and its checkbox is default checked (We'll need to know from where your products are shipped.)
     
-    public void enterAddress(HashMap<String, String> distributorName)
+    public void enterAddress(HashMap<String, String> address)
     {
         
     }
