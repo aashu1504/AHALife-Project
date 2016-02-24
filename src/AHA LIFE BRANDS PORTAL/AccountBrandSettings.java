@@ -15,7 +15,7 @@ class AccountBrandSettings{
     private final By PURCHASE_ALERT_EMAIL = By.xpath(".//input[@id='purchaseOrderSameAsContactEmail']");
     private final By PAYMENT_INFO_EMAIL = By.xpath(".//*[@id='accountingSameAsContactEmail']");
     private final By SAVE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save']");
-    private final By SAVE_CONTINUE_ACCOUNT_SETTING = By.xpath(".//*[@id='detailsForm']/button");    
+    private final By SAVE_CONTINUE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save and Continue']");    
     
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
