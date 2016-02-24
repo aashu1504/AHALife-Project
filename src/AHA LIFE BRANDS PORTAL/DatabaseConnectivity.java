@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-class DatabaseConnectivity extends GenericClass{
+class DatabaseConnectivity{
     
     public void DatabaseAndQueryConfiguration(HashMap<String, String> databaseQuery) throws SQLException, ClassNotFoundException
     {
