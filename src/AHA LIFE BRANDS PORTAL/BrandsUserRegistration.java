@@ -22,6 +22,7 @@ class BrandsUserRegistration{
       enterText(ENTER_SEARCH_STRING,"brands@ahalife.com");
       buttonClick(SEARCH);
       Thread.sleep(4000L);
+      buttonClick(INVITE_EMAIL);
         
     }
 }
