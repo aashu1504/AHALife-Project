@@ -16,6 +16,7 @@ class DatabaseConnectivity extends GenericClass{
        String password = "cV3qz2W4a";             
        Class.forName("com.mysql.jdbc.Driver");
        EstablishConnectionAndExecuteQuery(dbUrl,userName,password);
+        con.close();
     }
     
     
@@ -29,7 +30,7 @@ class DatabaseConnectivity extends GenericClass{
        rs.next();
        String actualName = rs.getString("EMAILS");  
        System.out.println(actualName);   
-       con.close();
+       
     }
     
     
