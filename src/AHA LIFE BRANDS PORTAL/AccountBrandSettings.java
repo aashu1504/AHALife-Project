@@ -6,12 +6,12 @@ class AccountBrandSettings{
     
     private final By DISTRIBUTOR_NAME = By.xpath(".//*[@id='model.legalName']");
     private final By COMPANY_WEBSITE = By.xpath(".//*[@id='model.websiteUrl']");
-    private final By PHONE_NUMBER = By.xpath(".//input[@type='submit']");
-    private final By BUSINESS_SHIPPING_ADDRESS = By.xpath(".//a[@href='/admin']");
-    private final By CITY = By.xpath(".//div[@class='site-logo']");
-    private final By ZIP = By.xpath(".//a[@href='/logout']");
-    private final By PRODUCT_DESIGNED_CITY = By.xpath(".//ul[@class='nav navbar-nav navbar-right']/li[2]/a"); 
-    private final By FULFILLMENT_PREFERENCES = By.xpath(".//span[@class='glyphicon glyphicon-user']");
+    private final By PHONE_NUMBER = By.xpath(".//*[@id='model.contactPhone']");
+    private final By BUSINESS_SHIPPING_ADDRESS = By.xpath(".//*[@id='model.address']");
+    private final By CITY = By.xpath(".//*[@id='model.addressCity']");
+    private final By ZIP = By.xpath(".//*[@id='model.addressZip']");
+    private final By PRODUCT_DESIGNED_CITY = By.xpath(".//*[@id='model.originCity']"); 
+    private final By FULFILLMENT_PREFERENCES = By.xpath(".//label[1][@for='model.fulfillmentMethod.DROP_SHIP']");
     private final By PURCHASE_ALERT_EMAIL = By.xpath(".//*[@id='loginForm']/fieldset/div[3]/legend");
     private final By PAYMENT_INFO_EMAIL = By.xpath(".//a[@class='navbar-brand']");
     private final By SAVE_ACCOUNT_SETTING = By.xpath(".//*[@id='brandEmail']");
