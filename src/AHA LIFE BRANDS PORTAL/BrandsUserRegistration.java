@@ -33,12 +33,12 @@ class BrandsUserRegistration extends GenericClass{
       return inviteURL;
     }
     
-    public void enterPassword(HashMap<String, String> userName)
+    public void enterPassword(HashMap<String, String> userPassword)
     {
         enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
     }
     
-    public void enterConfirmPassword(HashMap<String, String> userPassword)
+    public void enterConfirmPassword(HashMap<String, String> userConfirmPassword)
     {
         enterText(BRAND_USER_PASSWORD,userPassword.get("BrandPassword"));
     }
