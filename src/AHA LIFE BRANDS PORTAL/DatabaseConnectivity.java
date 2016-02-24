@@ -15,7 +15,7 @@ class DatabaseConnectivity extends GenericClass{
        String username = "onboarding";           
        String password = "cV3qz2W4a";             
        Class.forName("com.mysql.jdbc.Driver");
-       ExectuteQuery();
+       EstablishConnection(dbUrl,userName,password);
     }
     
     
