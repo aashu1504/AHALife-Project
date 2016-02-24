@@ -31,6 +31,7 @@ class BrandsUserRegistration extends GenericClass{
     static String actualInviteEmailID = null;
     static String expectedRegistrationMessage = null;
     static String actualRegistrationMessage = null;
+    static String expectedAccountSetUpMessage = null;
     
     public String getInviteURLFromGmail(HashMap<String, String> gmailCredentials) throws InterruptedException
     {  
@@ -114,8 +115,8 @@ class BrandsUserRegistration extends GenericClass{
     
     public void verifyNavigationToAccountSetUp(HashMap<String, String> accountSetUp)
     {   
-        expectedRegistrationMessage = accountSetUp.get("ExpectedAccountSetUpMessage");
-        System.out.println("Expected is : " + expectedRegistrationMessage);
+        expectedAccountSetUpMessage = accountSetUp.get("ExpectedAccountSetUpMessage");
+        System.out.println("Expected is : " + expectedAccountSetUpMessage);
         actualRegistrationMessage = getTextFromAnElement(REGISTRATION_MESSAGE);
         System.out.println("Actual is : " + actualRegistrationMessage);
         Assert.assertTrue(expectedRegistrationMessage.equalsIgnoreCase(actualRegistrationMessage));
