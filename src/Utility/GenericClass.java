@@ -97,5 +97,26 @@ public class GenericClass extends WebDriverProvider{
         urlConnection.setRequestMethod("GET");  
         urlConnection.connect();  
         return urlConnection.getResponseCode();  
-  }
+    }
+    
+    public void EstablishConnection(String dbUrl, String username, String password) throws MalformedURLException, IOException
+    {
+       Connection con = DriverManager.getConnection(dbUrl,username,password);
+       GetExecutionQuery();
+       
+       Statement stmt = con.createStatement();                    
+       ResultSet rs= stmt.executeQuery(query);     
+       rs.next();
+       String actualName = rs.getString("EMAILS");  
+       System.out.println(actualName);   
+       con.close();
+        
+    }
+    
+    public String GetExecutionQuery()
+    {
+        String query = "SELECT EMAILS FROM admin_query where ID = 1;";
+        return query;
+    }
+    
 }
