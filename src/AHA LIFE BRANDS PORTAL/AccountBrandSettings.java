@@ -18,6 +18,11 @@ class AccountBrandSettings{
     }
     
     
-    // Enter PRIMARY CONTACT
+    // Enter PRIMARY CONTACT (FirstName/LastName and Email ID already populated)
     
+    
+    public void enterPhoneNumber(HashMap<String, String> distributorName)
+    {
+        
+    }
 }
