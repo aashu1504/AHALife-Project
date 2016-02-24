@@ -33,6 +33,11 @@ class BrandsUserRegistration extends GenericClass{
       return inviteURL;
     }
     
+     public String verifyInvitedUserEmailIDWithInviteEmail(HashMap<String, String> gmailCredentials) throws InterruptedException
+     {
+         
+     }
+    
     public void enterPassword(HashMap<String, String> userPassword)
     {
        // enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
