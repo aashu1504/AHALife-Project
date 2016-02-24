@@ -27,7 +27,8 @@ class BrandsUserRegistration extends GenericClass{
       buttonClick(SEARCH);
       pageToLoad();
       Thread.sleep(4000L);
-      buttonClick(INVITE_EMAIL);
+      //buttonClick(INVITE_EMAIL);
+        driver.findElement(By.name("country")).click();
         
       String inviteURL = getAttributeValue(INVITE_URL,"href");
       System.out.println(inviteURL);
