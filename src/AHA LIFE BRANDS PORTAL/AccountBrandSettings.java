@@ -25,6 +25,8 @@ class AccountBrandSettings{
     
     
     // Enter BRAND BUSINESS ADDRESS (Will Not give address 2 as not mandatory) --> To send Payments To 
+    // This BUSINESS ADDRESS is considered to be same as SHIPPING ADDRESS and its checkbox is default checked
+    
     public void enterAddress(HashMap<String, String> distributorName)
     {
         
@@ -47,6 +49,7 @@ class AccountBrandSettings{
         
     }
     
+    //Enter Fulfillment Preference (Dropship/Crossdock)
     public void enterCity(HashMap<String, String> distributorName)
     {
         
