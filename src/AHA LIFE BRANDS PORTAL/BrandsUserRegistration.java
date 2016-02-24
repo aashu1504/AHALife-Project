@@ -12,7 +12,8 @@ class BrandsUserRegistration{
     public void getInviteURLFromGmail(HashMap<String, String> gmailCredentials){
         
       enterText(GMAIL_USER_NAME,gmailCredentials.get("GmailUser"));
+      buttonClick(GMAIL_NEXT);
       enterText(GMAIL_PASSWORD,gmailCredentials.get("GmailPassword"));
-      
+      buttonClick(GMAIL_SIGN_IN);
     }
 }
