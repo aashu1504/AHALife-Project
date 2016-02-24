@@ -5,7 +5,7 @@ import Utility.GenericClass;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-class BrandsUserRegistration{
+class BrandsUserRegistration extends GenericClass{
     
     private final By GMAIL_USER_NAME = By.xpath(".//*[@id='Email']");
     private final By GMAIL_NEXT = By.xpath(".//*[@id='next']");
