@@ -23,15 +23,15 @@ class DatabaseConnectivity extends GenericClass{
     }
     
     
-    public void EstablishConnection(String dbUrl,String userName,String password);
+    public void QueryExecution(String query,String columnName);
     {
        
         
-       String query = "SELECT EMAILS FROM admin_query where ID = 1;";
+       String query = query;
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
        rs.next();
-       String actualName = rs.getString("EMAILS");  
+       String actualName = rs.getString(columnName);  
        System.out.println(actualName);   
        
     }
