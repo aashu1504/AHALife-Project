@@ -25,4 +25,13 @@ class AccountBrandSettings{
     {
         
     }
+    
+    // Enter BUSINESS ADDRESS (Will Not give address 2 as not mandatory)
+    
+    
+    public void enterPhoneNumber(HashMap<String, String> distributorName)
+    {
+        
+    }
+    
 }
