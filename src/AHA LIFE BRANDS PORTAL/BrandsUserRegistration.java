@@ -43,7 +43,7 @@ class BrandsUserRegistration extends GenericClass{
         enterText(BRAND_USER_PASSWORD,userPassword.get("BrandPassword"));
     }
     
-    public void loginClick(HashMap<String, String> firstName)
+    public void enterFirstName(HashMap<String, String> firstName)
     {
 		   buttonClick(BRAND_LOGIN_CLICK);
     }
