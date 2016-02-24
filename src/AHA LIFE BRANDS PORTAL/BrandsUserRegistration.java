@@ -40,7 +40,7 @@ class BrandsUserRegistration extends GenericClass{
         System.out.println("Expected is : " + expectedInviteEmailID);
         actualInviteEmailID = getTextFromAnElement(INVITE_EMAIL_ID);
         System.out.println("Actual is : " + actualInviteEmailID);
-        Assert.assertTrue(expectedInviteEmailID.equalsIgnoreCase(actualSuccessMessage));
+        Assert.assertTrue(expectedInviteEmailID.equalsIgnoreCase(actualInviteEmailID));
      }
     
     public void enterPassword(HashMap<String, String> userPassword)
