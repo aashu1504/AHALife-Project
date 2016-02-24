@@ -7,11 +7,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-class DatabaseConnectivity{
+class DatabaseConnectivity extends GenericClass{
     
     public void DatabaseConfiguration(HashMap<String, String> storeFront) throws SQLException, ClassNotFoundException
     {
-        
+	   String dbUrl = "jdbc:mysql://bp01.qa.ahalife.com:3306/onboarding";                   
+       String username = "onboarding";           
+       String password = "cV3qz2W4a";             
+       Class.forName("com.mysql.jdbc.Driver");
+       ExectuteQuery();
     }
     
     
