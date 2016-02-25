@@ -20,7 +20,7 @@ class AccountBrandSettings extends GenericClass{
     private final By SAVE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save']");
     private final By SAVE_CONTINUE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save and Continue']");    
     private final By TERMS_CONDITION = By.xpath(".//*[@href='/account/terms']");
-    private final By TERMS_CONDITION_ACTUAL = By.xpath(".//*[@id='pageLabel']");
+    private final By PAGE_LABEL_ACTUAL = By.xpath(".//*[@id='pageLabel']");
     
     static String expectedTermsConditionText = null;
     static String actualTermsConditionText = null;
@@ -116,7 +116,14 @@ class AccountBrandSettings extends GenericClass{
         Assert.assertTrue(expectedTermsConditionText.equalsIgnoreCase(actualTermsConditionText));
     }
     
-    
+    public void verifyTermsAndConditionNavigation(HashMap<String, String> termsNavigation)  
+    {
+        expectedTermsConditionText = termsNavigation.get("TermsConditionText");
+        System.out.println("Expected is : " + expectedTermsConditionText);
+        actualTermsConditionText = getTextFromAnElement(TERMS_CONDITION_ACTUAL);
+        System.out.println("Actual is : " + actualTermsConditionText);
+        Assert.assertTrue(expectedTermsConditionText.equalsIgnoreCase(actualTermsConditionText));
+    }
     
     
     
