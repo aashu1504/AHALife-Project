@@ -147,7 +147,7 @@ class AccountBrandSettings extends GenericClass{
     }
     
     
-    public void enterStoreFrontName(HashMap<String, String> storefrontName)
+    public void enterStoreFrontName(HashMap<String, String> storefrontName)              //----> Your Brand Name
     {
         enterText(STOREFRONT_NAME,storefrontName.get("StorefrontName"));
     }
