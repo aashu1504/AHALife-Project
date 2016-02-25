@@ -13,6 +13,43 @@ class StoreFrontFoundation extends GenericClass{
     private final By SAVE_UPLOAD_CHANGES = By.xpath(".//div[@class='modal-footer ng-scope']/div/div[2]/button");
     private final By STOREFRONT_IMAGERY_UPLOAD = By.xpath(".//aha-filepicker[@id='model.imageUrls']/div/div[2]/div[1]/div");
     
+    
+    //<!--------------------------------------------BRAND STOREFRONT FOUNDATION START-----------------------------------------------------------------!>
+    
+    public void verifyStoreFrontNavigation(HashMap<String, String> storeFrontNavigation)  
+    {
+        expectedStoreFrontText = storeFrontNavigation.get("StoreFrontText");
+        System.out.println("Expected is : " + expectedStoreFrontText);
+        actualStoreFrontText = getTextFromAnElement(PAGE_LABEL_ACTUAL);
+        System.out.println("Actual is : " + actualStoreFrontText);
+        Assert.assertTrue(expectedStoreFrontText.equalsIgnoreCase(actualStoreFrontText));
+    }
+    
+    
+    public void enterStoreFrontName(HashMap<String, String> storefrontName)              //----> Your Brand Name
+    {
+        enterText(STOREFRONT_NAME,storefrontName.get("StorefrontName"));
+    }
+    
+    public void enterStoreFrontURL(HashMap<String, String> storefrontURL)                 //----> Your StoreFront/Brand URL
+    {
+        enterText(STOREFRONT_URL,storefrontURL.get("StoreFrontURL"));
+    }
+    
+    public void enterBrandStory(HashMap<String, String> brandStory)                       //-----> Story about your brand, how it was made
+    { 
+        enterText(BRAND_STORY,brandStory.get("BrandStory"));              
+    }
+    
+    public void enterBrandTagLine(HashMap<String, String> brandTagLine)                       //-----> Story about your brand, how it was made
+    { 
+        enterText(BRAND_TAGLINE,brandTagLine.get("BrandTagLine"));              
+    }
+    
+    //<!--------------------------------------------BRAND STOREFRONT FOUNDATION END-----------------------------------------------------------------!>
+    
+    
+    
     public void storeFrontClick(HashMap<String, String> storeFront)
     {
         pageToLoad();
