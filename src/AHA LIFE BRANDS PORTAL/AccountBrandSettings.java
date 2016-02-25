@@ -120,7 +120,7 @@ class AccountBrandSettings extends GenericClass{
     
     public void verifyStoreFrontNavigation(HashMap<String, String> storeFrontNavigation)  
     {
-        expectedStoreFrontText = termsNavigation.get("StoreFrontText");
+        expectedStoreFrontText = storeFrontNavigation.get("StoreFrontText");
         System.out.println("Expected is : " + expectedStoreFrontText);
         actualStoreFrontText = getTextFromAnElement(PAGE_LABEL_ACTUAL);
         System.out.println("Actual is : " + actualStoreFrontText);
