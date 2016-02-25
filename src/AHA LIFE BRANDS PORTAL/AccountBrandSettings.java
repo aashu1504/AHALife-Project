@@ -30,9 +30,7 @@ class AccountBrandSettings extends GenericClass{
     
     
      //<!--------------------------------------------BRAND ACCOUNT SETTING START------------------------------------------------------------------------!>
-    
-    
-    
+      
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
     {
@@ -103,14 +101,17 @@ class AccountBrandSettings extends GenericClass{
     public void saveAndContinueAccountSettingInformation(HashMap<String, String> saveContinueSettings)  //We'll need an email address so we can reach out about payment info
     {
         buttonClick(SAVE_CONTINUE_ACCOUNT_SETTING);
-    }
-    
-    
+    }   
    
+    //<!--------------------------------------------BRAND ACCOUNT SETTING END------------------------------------------------------------------------!>
     
     
     
     
+    
+    
+    
+    //<!--------------------------------------------BRAND ACCOUNT SETTING TERMS AND CONDITION START--------------------------------------------------!>
     
     public void clickTermsAndCondition(HashMap<String, String> terms)  
     {
@@ -126,6 +127,15 @@ class AccountBrandSettings extends GenericClass{
         System.out.println("Actual is : " + actualTermsConditionText);
         Assert.assertTrue(expectedTermsConditionText.equalsIgnoreCase(actualTermsConditionText));
     }
+      
+    //<!--------------------------------------------BRAND ACCOUNT SETTING TERMS AND CONDITION END----------------------------------------------------!>
+    
+    
+    
+    
+    
+    
+    //<!--------------------------------------------BRAND STOREFRONT FOUNDATION START-----------------------------------------------------------------!>
     
     public void verifyStoreFrontNavigation(HashMap<String, String> storeFrontNavigation)  
     {
