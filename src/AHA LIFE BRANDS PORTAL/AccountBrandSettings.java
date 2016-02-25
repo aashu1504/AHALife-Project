@@ -149,7 +149,7 @@ class AccountBrandSettings extends GenericClass{
     
     
     
-    
+    //<!--------------------------------------------BRAND STOREFRONT FOUNDATION END-----------------------------------------------------------------!>
     
     
     
