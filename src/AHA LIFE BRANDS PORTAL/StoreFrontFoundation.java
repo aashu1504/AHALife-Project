@@ -14,6 +14,11 @@ class StoreFrontFoundation extends GenericClass{
     private final By STOREFRONT_IMAGERY_UPLOAD = By.xpath(".//aha-filepicker[@id='model.imageUrls']/div/div[2]/div[1]/div");
     private final By PAGE_LABEL_ACTUAL = By.xpath(".//*[@id='pageLabel']");
     
+    private final By STOREFRONT_NAME = By.xpath(".//*[@id='pageLabel']");
+    private final By STOREFRONT_URL = By.xpath(".//*[@id='pageLabel']");
+    private final By BRAND_STORY = By.xpath(".//*[@id='pageLabel']");
+    private final By BRAND_TAGLINE = By.xpath(".//*[@id='pageLabel']");
+    
     static String expectedStoreFrontText = null;
     static String actualStoreFrontText = null;
     
