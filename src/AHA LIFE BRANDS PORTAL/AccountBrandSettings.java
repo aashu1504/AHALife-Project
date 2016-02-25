@@ -107,7 +107,7 @@ class AccountBrandSettings extends GenericClass{
     {
         expectedTermsConditionText = termsNavigation.get("TermsConditionText");
         System.out.println("Expected is : " + expectedTermsConditionText);
-        actualTermsConditionText = getTextFromAnElement(ADMIN_LOGIN_TEXT);
+        actualTermsConditionText = getTextFromAnElement(TERMS_CONDITION_ACTUAL);
         System.out.println("Actual is : " + actualTermsConditionText);
         Assert.assertTrue(expectedTermsConditionText.equalsIgnoreCase(actualTermsConditionText));
     }
