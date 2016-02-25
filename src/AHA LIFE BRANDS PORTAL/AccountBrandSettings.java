@@ -94,13 +94,23 @@ class AccountBrandSettings extends GenericClass{
         buttonClick(SAVE_CONTINUE_ACCOUNT_SETTING);
     }
     
-    public void clickTermsAndCondition(HashMap<String, String> saveSettings)  //We'll need an email address so we can reach out about payment info
+    
+    
+    
+    public void clickTermsAndCondition(HashMap<String, String> terms)  
     {
-        buttonClick(SAVE_ACCOUNT_SETTING);
+        buttonClick(TERMS_CONDITION);
     }
     
     
-    
+    public void verifyTermsAndConditionNavigation(HashMap<String, String> termsNavigation)  
+    {
+        expectedTermsConditionText = termsNavigation.get("TermsConditionText");
+        System.out.println("Expected is : " + expectedAdminLoginText);
+        actualTermsConditionText = getTextFromAnElement(ADMIN_LOGIN_TEXT);
+        System.out.println("Actual is : " + actualTermsConditionText);
+        Assert.assertTrue(expectedAdminLoginText.equalsIgnoreCase(actualTermsConditionText));
+    }
     
     
     
