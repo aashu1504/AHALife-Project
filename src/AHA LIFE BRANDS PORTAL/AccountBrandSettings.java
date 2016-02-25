@@ -22,6 +22,8 @@ class AccountBrandSettings extends GenericClass{
     private final By TERMS_CONDITION = By.xpath(".//*[@href='/account/terms']");
     private final By TERMS_CONDITION_ACTUAL = By.xpath(".//*[@id='pageLabel']");
     
+    static String expectedTermsConditionText = null;
+    static String actualTermsConditionText = null;
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
     {
