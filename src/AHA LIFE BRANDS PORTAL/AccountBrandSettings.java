@@ -24,6 +24,8 @@ class AccountBrandSettings extends GenericClass{
     
     static String expectedTermsConditionText = null;
     static String actualTermsConditionText = null;
+    
+    
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
     {
