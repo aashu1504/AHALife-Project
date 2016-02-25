@@ -164,7 +164,7 @@ class AccountBrandSettings extends GenericClass{
     
     public void enterBrandTagLine(HashMap<String, String> brandTagLine)                       //-----> Story about your brand, how it was made
     { 
-        enterText(BRAND_TAGLINE,brandStory.get("BrandTagLine"));              
+        enterText(BRAND_TAGLINE,brandTagLine.get("BrandTagLine"));              
     }
     
     //<!--------------------------------------------BRAND STOREFRONT FOUNDATION END-----------------------------------------------------------------!>
