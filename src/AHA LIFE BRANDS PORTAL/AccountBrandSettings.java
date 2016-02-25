@@ -154,7 +154,7 @@ class AccountBrandSettings extends GenericClass{
     
     public void enterStoreFrontURL(HashMap<String, String> storefrontURL)
     {
-        enterText(COMPANY_WEBSITE,storefrontURL.get("StoreFrontURL"));
+        enterText(STOREFRONT_URL,storefrontURL.get("StoreFrontURL"));
     }
     
     
