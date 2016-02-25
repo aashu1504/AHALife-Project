@@ -118,7 +118,7 @@ class AccountBrandSettings extends GenericClass{
         Assert.assertTrue(expectedTermsConditionText.equalsIgnoreCase(actualTermsConditionText));
     }
     
-    public void verifyStoreFrontNavigation(HashMap<String, String> termsNavigation)  
+    public void verifyStoreFrontNavigation(HashMap<String, String> storeFrontNavigation)  
     {
         expectedStoreFrontText = termsNavigation.get("StoreFrontText");
         System.out.println("Expected is : " + expectedStoreFrontText);
