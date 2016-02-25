@@ -46,7 +46,7 @@ class StoreFrontFoundation extends GenericClass{
         enterText(BRAND_TAGLINE,brandTagLine.get("BrandTagLine"));              
     }
     
-    //<!--------------------------------------------BRAND STOREFRONT FOUNDATION END-----------------------------------------------------------------!>
+   
     
     
     
@@ -90,4 +90,6 @@ class StoreFrontFoundation extends GenericClass{
         enterText(CHOOSE_UPLOAD_FILE,"D:\\FileUpload\\Koala.jpg");
         Thread.sleep(8000L);
     }
+    
+     //<!--------------------------------------------BRAND STOREFRONT FOUNDATION END-----------------------------------------------------------------!>
 }
