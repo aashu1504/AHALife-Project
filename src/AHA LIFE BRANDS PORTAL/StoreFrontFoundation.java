@@ -13,6 +13,8 @@ class StoreFrontFoundation extends GenericClass{
     private final By SAVE_UPLOAD_CHANGES = By.xpath(".//div[@class='modal-footer ng-scope']/div/div[2]/button");
     private final By STOREFRONT_IMAGERY_UPLOAD = By.xpath(".//aha-filepicker[@id='model.imageUrls']/div/div[2]/div[1]/div");
     
+    static String expectedStoreFrontText = null;
+    static String actualStoreFrontText = null;
     
     //<!--------------------------------------------BRAND STOREFRONT FOUNDATION START-----------------------------------------------------------------!>
     
