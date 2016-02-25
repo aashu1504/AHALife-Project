@@ -20,6 +20,7 @@ class AccountBrandSettings extends GenericClass{
     private final By SAVE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save']");
     private final By SAVE_CONTINUE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save and Continue']");    
     private final By TERMS_CONDITION = By.xpath(".//*[@href='/account/terms']");
+    private final By TERMS_CONDITION_ACTUAL = By.xpath(".//*[@href='/account/terms']");
     
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
@@ -93,7 +94,10 @@ class AccountBrandSettings extends GenericClass{
         buttonClick(SAVE_CONTINUE_ACCOUNT_SETTING);
     }
     
-    
+    public void clickTermsAndCondition(HashMap<String, String> saveSettings)  //We'll need an email address so we can reach out about payment info
+    {
+        buttonClick(SAVE_ACCOUNT_SETTING);
+    }
     
     
     
