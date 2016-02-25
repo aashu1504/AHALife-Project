@@ -24,6 +24,7 @@ class AccountBrandSettings extends GenericClass{
     
     static String expectedTermsConditionText = null;
     static String actualTermsConditionText = null;
+    static String expectedStoreFrontText = null;
     
     
     // Enter BRAND COMPANY INFORMATION  
@@ -118,11 +119,11 @@ class AccountBrandSettings extends GenericClass{
     
     public void verifyStoreFrontNavigation(HashMap<String, String> termsNavigation)  
     {
-        expectedTermsConditionText = termsNavigation.get("TermsConditionText");
-        System.out.println("Expected is : " + expectedTermsConditionText);
+        expectedStoreFrontText = termsNavigation.get("TermsConditionText");
+        System.out.println("Expected is : " + expectedStoreFrontText);
         actualTermsConditionText = getTextFromAnElement(PAGE_LABEL_ACTUAL);
         System.out.println("Actual is : " + actualTermsConditionText);
-        Assert.assertTrue(expectedTermsConditionText.equalsIgnoreCase(actualTermsConditionText));
+        Assert.assertTrue(expectedStoreFrontText.equalsIgnoreCase(actualTermsConditionText));
     }
     
     
