@@ -28,6 +28,11 @@ class AccountBrandSettings extends GenericClass{
     static String actualStoreFrontText = null;
     
     
+    
+    <!--------------------------------------------BRAND ACCOUNT SETTING------------------------------------------------------------------------!>
+    
+    
+    
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
     {
@@ -99,6 +104,10 @@ class AccountBrandSettings extends GenericClass{
     {
         buttonClick(SAVE_CONTINUE_ACCOUNT_SETTING);
     }
+    
+    
+   
+    
     
     
     
