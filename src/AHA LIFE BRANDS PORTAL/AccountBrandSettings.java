@@ -25,6 +25,7 @@ class AccountBrandSettings extends GenericClass{
     static String expectedTermsConditionText = null;
     static String actualTermsConditionText = null;
     static String expectedStoreFrontText = null;
+    static String actualStoreFrontText = null;
     
     
     // Enter BRAND COMPANY INFORMATION  
