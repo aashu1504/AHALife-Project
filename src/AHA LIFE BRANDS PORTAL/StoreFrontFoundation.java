@@ -24,8 +24,7 @@ class StoreFrontFoundation extends GenericClass{
         System.out.println("Actual is : " + actualStoreFrontText);
         Assert.assertTrue(expectedStoreFrontText.equalsIgnoreCase(actualStoreFrontText));
     }
-    
-    
+       
     public void enterStoreFrontName(HashMap<String, String> storefrontName)              //----> Your Brand Name
     {
         enterText(STOREFRONT_NAME,storefrontName.get("StorefrontName"));
