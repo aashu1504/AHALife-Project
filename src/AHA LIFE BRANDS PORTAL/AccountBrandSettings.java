@@ -29,7 +29,7 @@ class AccountBrandSettings extends GenericClass{
     
     
     
-     //<!--------------------------------------------BRAND ACCOUNT SETTING START------------------------------------------------------------------------!>
+     //<!--------------------------------------------BRAND ACCOUNT SETTING START-----------------------------------------------------------------------!>
       
     // Enter BRAND COMPANY INFORMATION  
     public void enterDistributorName(HashMap<String, String> distributorName)
@@ -147,6 +147,22 @@ class AccountBrandSettings extends GenericClass{
     }
     
     
+    public void enterStoreFrontName(HashMap<String, String> storefrontName)
+    {
+        enterText(DISTRIBUTOR_NAME,distributorName.get("DistributorName"));
+    }
+    
+    public void enterCompanyWebsite(HashMap<String, String> companyWebsite)
+    {
+        enterText(COMPANY_WEBSITE,companyWebsite.get("CompanyWebsite"));
+    }
+    
+    
+    // Enter BRAND PRIMARY CONTACT (FirstName/LastName and Email ID already populated) --> For Communication 
+    public void enterPhoneNumber(HashMap<String, String> phoneNumber)
+    {
+        enterText(PHONE_NUMBER,phoneNumber.get("PrimaryPhoneNumber"));
+    }
     
     
     //<!--------------------------------------------BRAND STOREFRONT FOUNDATION END-----------------------------------------------------------------!>
