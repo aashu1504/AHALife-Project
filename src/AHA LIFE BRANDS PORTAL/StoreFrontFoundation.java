@@ -45,11 +45,7 @@ class StoreFrontFoundation extends GenericClass{
     { 
         enterText(BRAND_TAGLINE,brandTagLine.get("BrandTagLine"));              
     }
-    
-   
-    
-    
-    
+      
     public void storeFrontClick(HashMap<String, String> storeFront)
     {
         pageToLoad();
