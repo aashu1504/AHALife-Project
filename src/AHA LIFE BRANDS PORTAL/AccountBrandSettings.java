@@ -157,11 +157,9 @@ class AccountBrandSettings extends GenericClass{
         enterText(STOREFRONT_URL,storefrontURL.get("StoreFrontURL"));
     }
     
-    
-    // Enter BRAND PRIMARY CONTACT (FirstName/LastName and Email ID already populated) --> For Communication 
-    public void enterPhoneNumber(HashMap<String, String> phoneNumber)
-    {
-        enterText(PHONE_NUMBER,phoneNumber.get("PrimaryPhoneNumber"));
+    public void enterBrandStory(HashMap<String, String> brandStory)                       //-----> Story about your brand, how it was made
+    { 
+        enterText(BRAND_STORY,brandStory.get("BrandStory"));              
     }
     
     
