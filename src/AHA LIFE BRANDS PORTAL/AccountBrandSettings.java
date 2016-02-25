@@ -149,7 +149,7 @@ class AccountBrandSettings extends GenericClass{
     
     public void enterStoreFrontName(HashMap<String, String> storefrontName)
     {
-        enterText(DISTRIBUTOR_NAME,distributorName.get("DistributorName"));
+        enterText(STOREFRONT_NAME,distributorName.get("DistributorName"));
     }
     
     public void enterCompanyWebsite(HashMap<String, String> companyWebsite)
