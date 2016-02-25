@@ -23,10 +23,7 @@ class AccountBrandSettings extends GenericClass{
     private final By PAGE_LABEL_ACTUAL = By.xpath(".//*[@id='pageLabel']");
     
     static String expectedTermsConditionText = null;
-    static String actualTermsConditionText = null;
-    static String expectedStoreFrontText = null;
-    static String actualStoreFrontText = null;
-    
+    static String actualTermsConditionText = null;  
     
     
      //<!--------------------------------------------BRAND ACCOUNT SETTING START-----------------------------------------------------------------------!>
