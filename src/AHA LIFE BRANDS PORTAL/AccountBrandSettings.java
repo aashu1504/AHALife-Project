@@ -122,9 +122,9 @@ class AccountBrandSettings extends GenericClass{
     {
         expectedStoreFrontText = termsNavigation.get("TermsConditionText");
         System.out.println("Expected is : " + expectedStoreFrontText);
-        actualTermsConditionText = getTextFromAnElement(PAGE_LABEL_ACTUAL);
-        System.out.println("Actual is : " + actualTermsConditionText);
-        Assert.assertTrue(expectedStoreFrontText.equalsIgnoreCase(actualTermsConditionText));
+        actualStoreFrontText = getTextFromAnElement(PAGE_LABEL_ACTUAL);
+        System.out.println("Actual is : " + actualStoreFrontText);
+        Assert.assertTrue(expectedStoreFrontText.equalsIgnoreCase(actualStoreFrontText));
     }
     
     
