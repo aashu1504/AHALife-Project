@@ -20,12 +20,12 @@ class JoinAndLogin extends GenericClass{
     
     public void createUserName(HashMap<String, Object> joinUserName)
     {
-        enterText(JOIN_CREATE_USERNAME,userName.get("CreateAHALifeSiteUserName"));
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void createPassword(HashMap<String, Object> joinPassword)
     {
-        enterText(JOIN_CREATEPASSWORD,userName.get("CreateAHALifeSitePassword"));
+        enterText(JOIN_CREATEPASSWORD,joinPassword.get("CreateAHALifeSitePassword"));
     }
     
     public void clickRegister(HashMap<String, Object> joinRegister)
