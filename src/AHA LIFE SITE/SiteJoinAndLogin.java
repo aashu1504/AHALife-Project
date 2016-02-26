@@ -62,7 +62,7 @@ class JoinAndLogin extends GenericClass{
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
         WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='loginUsername']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='authModal']")));
     }
     
     public void enterEmailID(HashMap<String, String> signInEmailID)
