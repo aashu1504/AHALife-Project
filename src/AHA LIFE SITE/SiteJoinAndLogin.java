@@ -86,7 +86,7 @@ class JoinAndLogin extends GenericClass{
     
     public void hoverOnMyProfile(HashMap<String, String> hoverOnProfile) throws InterruptedException
     {
-        mouseHoverOn(MY_PROFILE);
+        mouseHoverOn(MY_PROFILE1);
     }
     
     public void clickSignOut(HashMap<String, String> signOut)
