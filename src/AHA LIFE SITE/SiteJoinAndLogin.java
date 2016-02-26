@@ -13,7 +13,7 @@ class JoinAndLogin{
     
     public void clickJoin(HashMap<String, Object> join)
     {
-        buttonClick(BRAND_LOGIN_CLICK);
+        buttonClick(JOIN_AHALIFE_SITE);
     }
     
     public void createUserName(HashMap<String, Object> joinUserName)
