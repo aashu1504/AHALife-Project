@@ -14,7 +14,10 @@ class JoinAndLogin extends GenericClass{
     private final By JOIN_FB_CONNECT = By.xpath(".//*[@id='fbConnectBtn']");
     private final By MY_PROFILE = By.xpath(".//*[@id='id-header-account-menu']/a/span");
     private final By SIGNOUT_AHALIFE_SITE = By.xpath(".//a[@href='/logout']");
-    
+    private final By EMAIL_ID = By.xpath(".//*[@id='loginUsername']");
+    private final By PASSWORD = By.xpath(".//*[@id='loginPassword']");
+    private final By SIGNOUT_AHALIFE_SITE = By.xpath(".//a[@href='/logout']");
+        
     static String expectedProfileText = null;
     static String actualProfileText = null;
     
