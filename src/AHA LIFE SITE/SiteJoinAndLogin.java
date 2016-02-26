@@ -90,10 +90,10 @@ class JoinAndLogin extends GenericClass{
     public void verifyLogoutFromAHASite(HashMap<String, String> logoutVerify)
     {
         pageToLoad();
-        expectedProfileText = loginVerify.get("MyProfileText");
-        System.out.println("Expected is : " + expectedProfileText);
-        actualProfileText = getTextFromAnElement(SIGNIN_AHALIFE_SITE);
-        System.out.println("Actual is : " + actualProfileText);
-        Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
+        expectedSignInText = loginVerify.get("MyProfileText");
+        System.out.println("Expected is : " + expectedSignInText);
+        actualSignInText = getTextFromAnElement(SIGNIN_AHALIFE_SITE);
+        System.out.println("Actual is : " + actualSignInText);
+        Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
     }
 }
