@@ -106,5 +106,6 @@ public class GenericClass extends WebDriverProvider{
     {
         Actions builder = new Actions(driver);
         Action mouseHover = builder.moveToElement(driver.findElement(elementUniqueID)).build();
+        mouseHover.perform();
     }
 }
