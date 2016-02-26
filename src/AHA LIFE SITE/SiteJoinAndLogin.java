@@ -62,7 +62,7 @@ class JoinAndLogin extends GenericClass{
     
     public void clickSignOut(HashMap<String, String> signOut)
     {
-        Action mouseOverAtMyProfile = builder.moveToElement(link_Home).build();
+        Action mouseOverAtMyProfile = builder.moveToElement(MY_PROFILE).build();
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
 }
