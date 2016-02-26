@@ -110,4 +110,10 @@ public class GenericClass extends WebDriverProvider{
         Thread.sleep(4000L);
         
     }
+    
+    public void waitTillElementVisible(By elementUniqueID)
+    {
+        return driver.findElements(xpath);
+    }
+    
 }
