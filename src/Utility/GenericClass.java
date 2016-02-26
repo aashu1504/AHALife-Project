@@ -98,4 +98,9 @@ public class GenericClass extends WebDriverProvider{
         urlConnection.connect();  
         return urlConnection.getResponseCode();  
     }
+    
+    public void mouseHover(By elementUniqueID)
+    {
+        driver.findElement(elementUniqueID).click();
+    }
 }
