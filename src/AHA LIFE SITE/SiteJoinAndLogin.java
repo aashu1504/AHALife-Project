@@ -88,7 +88,7 @@ class JoinAndLogin extends GenericClass{
     {
         mouseHoverOn(MY_PROFILE1);
         WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='authModal']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='id-header-account-menu']/ul/li[5]/a")));
     }
     
     public void clickSignOut(HashMap<String, String> signOut)
