@@ -16,7 +16,7 @@ class JoinAndLogin extends GenericClass{
     private final By SIGNOUT_AHALIFE_SITE = By.xpath(".//a[@href='/logout']");
     private final By EMAIL_ID = By.xpath(".//*[@id='loginUsername']");
     private final By PASSWORD = By.xpath(".//*[@id='loginPassword']");
-    private final By SIGNOUT_AHALIFE_SITE = By.xpath(".//a[@href='/logout']");
+    private final By SIGNOUT_AHALIFE_SITE = By.xpath(".//*[@id='loginSubmitWrapper']/div/input");
         
     static String expectedProfileText = null;
     static String actualProfileText = null;
