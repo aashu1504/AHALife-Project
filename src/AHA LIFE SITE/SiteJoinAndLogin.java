@@ -90,7 +90,7 @@ class JoinAndLogin extends GenericClass{
     public void verifyLogoutFromAHASite(HashMap<String, String> logoutVerify)
     {
         pageToLoad();
-        expectedSignInText = loginVerify.get("MyProfileText");
+        expectedSignInText = loginVerify.get("SignInText");
         System.out.println("Expected is : " + expectedSignInText);
         actualSignInText = getTextFromAnElement(SIGNIN_AHALIFE_SITE);
         System.out.println("Actual is : " + actualSignInText);
