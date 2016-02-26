@@ -17,7 +17,6 @@ import org.openqa.selenium.interactions.Actions;
 public class GenericClass extends WebDriverProvider{
     
     public static List<WebElement> webElementCount = null;
-    Actions action = null;
         
     public static void pageToLoad() {
 	    String  pageLoadStatus;
@@ -105,7 +104,7 @@ public class GenericClass extends WebDriverProvider{
     
     public void mouseHoverOn(By elementUniqueID) throws InterruptedException
     {
-        action = new Actions(driver);
+        Actions action = new Actions(driver);
         //action.moveToElement(driver.findElement(elementUniqueID)).moveToElement(driver.findElement(secondElementToMoveTo)).click(driver.findElement(secondElementToMoveTo));
 	    action.moveToElement(driver.findElement(elementUniqueID)).build().perform();
         Thread.Sleep(4000L);
