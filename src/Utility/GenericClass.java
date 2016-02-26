@@ -103,7 +103,7 @@ public class GenericClass extends WebDriverProvider{
         return urlConnection.getResponseCode();  
     }
     
-    public void mouseHoverOn(By elementUniqueID,By secondElementToMoveTo)
+    public void mouseHoverOn(By elementUniqueID)
     {
         action = new Actions(driver);
         //action.moveToElement(driver.findElement(elementUniqueID)).moveToElement(driver.findElement(secondElementToMoveTo)).click(driver.findElement(secondElementToMoveTo));
