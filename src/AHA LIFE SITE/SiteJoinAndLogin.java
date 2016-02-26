@@ -33,11 +33,11 @@ class JoinAndLogin{
     
     public void clickFBConnect(HashMap<String, Object> joinFBConnect)
     {
-        buttonClick(BRAND_LOGIN_CLICK);
+        buttonClick(JOIN_FB_CONNECT);
     }
     
     public void clickSignIn(HashMap<String, Object> signIn)
     {
-        buttonClick(BRAND_LOGIN_CLICK);
+        buttonClick(LOGIN_AHALIFE_SITE);
     }
 }
