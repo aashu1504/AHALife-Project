@@ -75,8 +75,7 @@ class JoinAndLogin extends GenericClass{
     }  
     
     public void verifyLoginToAHASite(HashMap<String, String> loginVerify)
-    {
-        
+    {    
         expectedProfileText = loginVerify.get("MyProfileText");
         System.out.println("Expected is : " + expectedProfileText);
         actualProfileText = getTextFromAnElement(MY_PROFILE);
@@ -86,7 +85,6 @@ class JoinAndLogin extends GenericClass{
     
     public void clickSignOut(HashMap<String, String> signOut)
     {
-        pageToLoad();
         mouseHoverOn(MY_PROFILE);
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
