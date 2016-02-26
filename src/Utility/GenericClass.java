@@ -102,9 +102,9 @@ public class GenericClass extends WebDriverProvider{
         return urlConnection.getResponseCode();  
     }
     
-    public void mouseHover(By elementUniqueID)
+    public void mouseHoverOn(By elementUniqueID)
     {
         Actions builder = new Actions(driver);
-        Action mouseOverAtMyProfile = builder.moveToElement(driver.findElement(elementUniqueID)).build();
+        Action mouseHover = builder.moveToElement(driver.findElement(elementUniqueID)).build();
     }
 }
