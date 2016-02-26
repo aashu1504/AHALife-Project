@@ -59,7 +59,7 @@ class JoinAndLogin extends GenericClass{
     public void clickSignIn(HashMap<String, String> signIn) throws InterruptedException
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
-        Thread.sleep(4000l);
+        Thread.sleep(4000L);
     }
     
     public void enterEmailID(HashMap<String, String> signInEmailID)
