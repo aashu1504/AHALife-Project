@@ -86,4 +86,14 @@ class JoinAndLogin extends GenericClass{
         mouseHoverOn(MY_PROFILE);
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
+    
+    public void verifyLogoutFromAHASite(HashMap<String, String> loginVerify)
+    {
+        pageToLoad();
+        expectedProfileText = loginVerify.get("MyProfileText");
+        System.out.println("Expected is : " + expectedProfileText);
+        actualProfileText = getTextFromAnElement(MY_PROFILE);
+        System.out.println("Actual is : " + actualProfileText);
+        Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
+    }
 }
