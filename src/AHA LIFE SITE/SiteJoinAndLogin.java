@@ -23,9 +23,7 @@ class JoinAndLogin extends GenericClass{
         
     static String expectedProfileText = null;
     static String actualProfileText = null;
-    
-    
-    
+  
     public void clickJoin(HashMap<String, String> join)
     {
         buttonClick(JOIN_AHALIFE_SITE);
@@ -44,21 +42,13 @@ class JoinAndLogin extends GenericClass{
     public void clickRegister(HashMap<String, String> joinRegister)
     {
         buttonClick(JOIN_NOW_REGISTER);
-    }
-    
-   
-    
-    
+    }   
     
     public void clickFBConnect(HashMap<String, String> joinFBConnect)
     {
         buttonClick(JOIN_FB_CONNECT);
     }
-    
-    
-    
-    
-    
+       
     public void clickSignIn(HashMap<String, String> signIn) throws InterruptedException
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
@@ -79,10 +69,7 @@ class JoinAndLogin extends GenericClass{
     public void clickSignInToPortal(HashMap<String, String> signInPortal)
     {
         buttonClick(SIGN_IN);
-    }
-    
-    
-    
+    }  
     
     public void verifyLoginToAHASite(HashMap<String, String> loginVerify)
     {
