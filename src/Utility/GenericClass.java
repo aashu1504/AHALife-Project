@@ -110,12 +110,5 @@ public class GenericClass extends WebDriverProvider{
 	    action.moveToElement(driver.findElement(elementUniqueID)).build().perform();
         Thread.sleep(4000L);
         
-    }
-    
-    public void waitTillElementVisible(By elementUniqueID)
-    {
-        WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(elementUniqueID));
-    }
-    
+    }    
 }
