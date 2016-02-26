@@ -4,8 +4,7 @@ import java.util.*;
 
 class JoinAndLogin{
     
-    private final By LOGIN_AHALIFE_SITE = By.xpath(".//li[@class='loginActions']/div/a[1]");
-    private final By JOIN_AHALIFE_SITE = By.xpath(".//li[@class='loginActions']/div/a[2]");
+    private final By SIGNIN_AHALIFE_SITE = By.xpath(".//li[@class='loginActions']/div/a[2]");
     private final By JOIN_CREATE_USERNAME = By.xpath(".//*[@id='j_username']");
     private final By JOIN_CREATEPASSWORD = By.xpath(".//*[@id='j_password']");
     private final By JOIN_NOW_REGISTER = By.xpath(".//input[@value='Join Now']");
@@ -38,6 +37,6 @@ class JoinAndLogin{
     
     public void clickSignIn(HashMap<String, Object> signIn)
     {
-        buttonClick(LOGIN_AHALIFE_SITE);
+        buttonClick(SIGNIN_AHALIFE_SITE);
     }
 }
