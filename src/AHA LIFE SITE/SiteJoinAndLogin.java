@@ -83,7 +83,7 @@ class JoinAndLogin extends GenericClass{
         Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
     }
     
-    public void hoverOnMyProfile(HashMap<String, String> signOut) throws InterruptedException
+    public void hoverOnMyProfile(HashMap<String, String> hover)
     {
         pageToLoad();
         mouseHoverOn(MY_PROFILE);
