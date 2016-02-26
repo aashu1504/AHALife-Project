@@ -9,7 +9,7 @@ class JoinAndLogin extends GenericClass{
     
     private final By SIGNIN_AHALIFE_SITE = By.xpath(".//li[@class='loginActions']/div/a[2]");
     private final By JOIN_CREATE_USERNAME = By.xpath(".//*[@id='j_username']");
-    private final By JOIN_CREATEPASSWORD = By.xpath(".//*[@id='j_password']");
+    private final By JOIN_CREATE_PASSWORD = By.xpath(".//*[@id='j_password']");
     private final By JOIN_NOW_REGISTER = By.xpath(".//input[@value='Join Now']");
     private final By JOIN_FB_CONNECT = By.xpath(".//*[@id='fbConnectBtn']");
     
@@ -25,7 +25,7 @@ class JoinAndLogin extends GenericClass{
     
     public void createPassword(HashMap<String, Object> joinPassword)
     {
-        enterText(JOIN_CREATEPASSWORD,joinPassword.get("CreateAHALifeSitePassword"));
+        enterText(JOIN_CREATE_PASSWORD,joinPassword.get("CreateAHALifeSitePassword"));
     }
     
     public void clickRegister(HashMap<String, Object> joinRegister)
