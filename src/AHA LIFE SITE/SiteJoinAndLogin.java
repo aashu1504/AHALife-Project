@@ -51,7 +51,7 @@ class JoinAndLogin extends GenericClass{
         buttonClick(JOIN_FB_CONNECT);
     }
        
-    public void clickSignIn(HashMap<String, String> signIn) throws InterruptedException
+    public void clickSignIn(HashMap<String, String> signIn)
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
         //WebDriverWait wait = new WebDriverWait(driver, 15);
