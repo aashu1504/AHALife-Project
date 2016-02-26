@@ -63,12 +63,12 @@ class JoinAndLogin extends GenericClass{
     
     public void enterEmailID(HashMap<String, String> signInEmailID)
     {
-        enterText(EMAIL_ID,joinUserName.get("EnterAHALifeSiteUserName"));
+        enterText(EMAIL_ID,signInEmailID.get("EnterAHALifeSiteUserName"));
     }
     
     public void enterPassword(HashMap<String, String> signInPassword)
     {
-        enterText(PASSWORD,joinPassword.get("EnterAHALifeSitePassword"));
+        enterText(PASSWORD,signInPassword.get("EnterAHALifeSitePassword"));
     }
     
     public void clickSignInToPortal(HashMap<String, String> signInPortal)
