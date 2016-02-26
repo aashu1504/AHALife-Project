@@ -87,6 +87,7 @@ class JoinAndLogin extends GenericClass{
     {
         pageToLoad();
         mouseHoverOn(MY_PROFILE);
+        Thread.Sleep(4000L);
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
     
