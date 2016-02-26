@@ -18,6 +18,8 @@ class JoinAndLogin extends GenericClass{
     static String expectedProfileText = null;
     static String actualProfileText = null;
     
+    Actions builder = new Actions(driver);
+    
     public void clickJoin(HashMap<String, String> join)
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
@@ -60,6 +62,7 @@ class JoinAndLogin extends GenericClass{
     
     public void clickSignOut(HashMap<String, String> signOut)
     {
+        Action mouseOverAtMyProfile = builder.moveToElement(link_Home).build();
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
 }
