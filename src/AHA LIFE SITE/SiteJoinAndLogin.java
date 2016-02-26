@@ -85,7 +85,7 @@ class JoinAndLogin extends GenericClass{
     
     public void hoverOnMyProfile(HashMap<String, String> hoverOnProfile)
     {
-        mouseHoverOn(MY_PROFILE,SIGNOUT_AHALIFE_SITE);
+        mouseHoverOn(MY_PROFILE);
     }
     
     public void clickSignOut(HashMap<String, String> signOut)
