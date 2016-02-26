@@ -18,7 +18,7 @@ class JoinAndLogin extends GenericClass{
     static String expectedProfileText = null;
     static String actualProfileText = null;
     
-    Actions builder = new Actions(driver);
+    static Actions builder = new Actions(driver);
     
     public void clickJoin(HashMap<String, String> join)
     {
