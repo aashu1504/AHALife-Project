@@ -18,12 +18,12 @@ class JoinAndLogin{
     
     public void createUserName(HashMap<String, Object> joinUserName)
     {
-        enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
+        enterText(BRAND_USER_NAME,userName.get("CreateAHALifeSiteUserName"));
     }
     
     public void createPassword(HashMap<String, Object> joinPassword)
     {
-        enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
+        enterText(BRAND_USER_NAME,userName.get("CreateAHALifeSitePassword"));
     }
     
     public void clickRegister(HashMap<String, Object> joinRegister)
