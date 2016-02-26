@@ -23,6 +23,8 @@ class JoinAndLogin extends GenericClass{
         
     static String expectedProfileText = null;
     static String actualProfileText = null;
+    static String expectedProfileText = null;
+    static String actualProfileText = null;
   
     public void clickJoin(HashMap<String, String> join)
     {
