@@ -11,7 +11,32 @@ class JoinAndLogin{
     private final By JOIN_NOW_REGISTER = By.xpath(".//input[@value='Join Now']");
     private final By JOIN_FB_CONNECT = By.xpath(".//*[@id='fbConnectBtn']");
     
-    public void run(HashMap<String, Object> params)
+    public void clickJoin(HashMap<String, Object> join)
+    {
+        
+    }
+    
+    public void createUserName(HashMap<String, Object> joinUserName)
+    {
+        
+    }
+    
+    public void createPassword(HashMap<String, Object> joinPassword)
+    {
+        
+    }
+    
+    public void clickRegister(HashMap<String, Object> joinRegister)
+    {
+        
+    }
+    
+    public void clickFBConnect(HashMap<String, Object> joinFBConnect)
+    {
+        
+    }
+    
+    public void clickSignIn(HashMap<String, Object> join)
     {
         
     }
