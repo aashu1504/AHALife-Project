@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 class JoinAndLogin extends GenericClass{
     
     private final By SIGNIN_AHALIFE_SITE = By.xpath(".//li[@class='loginActions']/div/a[1]");
+    private final By SIGNIN_AHALIFE_SITE = By.xpath(".//li[@class='loginActions']/div/a[1]");
     private final By JOIN_CREATE_USERNAME = By.xpath(".//*[@id='j_username']");
     private final By JOIN_CREATE_PASSWORD = By.xpath(".//*[@id='j_password']");
     private final By JOIN_NOW_REGISTER = By.xpath(".//input[@value='Join Now']");
@@ -27,7 +28,7 @@ class JoinAndLogin extends GenericClass{
     
     public void clickJoin(HashMap<String, String> join)
     {
-        buttonClick(SIGNIN_AHALIFE_SITE);
+        buttonClick(JOIN_AHALIFE_SITE);
     }
     
     public void createUserName(HashMap<String, String> joinUserName)
