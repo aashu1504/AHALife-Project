@@ -15,6 +15,9 @@ class JoinAndLogin extends GenericClass{
     private final By MY_PROFILE = By.xpath(".//*[@id='id-header-account-menu']/a/span");
     
     
+    static String expectedProfileText = null;
+    static String actualProfileText = null;
+    
     public void clickJoin(HashMap<String, String> join)
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
