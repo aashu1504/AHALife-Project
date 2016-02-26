@@ -21,6 +21,8 @@ class JoinAndLogin extends GenericClass{
     static String expectedProfileText = null;
     static String actualProfileText = null;
     
+    
+    
     public void clickJoin(HashMap<String, String> join)
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
@@ -41,10 +43,18 @@ class JoinAndLogin extends GenericClass{
         buttonClick(JOIN_NOW_REGISTER);
     }
     
+   
+    
+    
+    
     public void clickFBConnect(HashMap<String, String> joinFBConnect)
     {
         buttonClick(JOIN_FB_CONNECT);
     }
+    
+    
+    
+    
     
     public void clickSignIn(HashMap<String, String> signIn)
     {
@@ -65,6 +75,9 @@ class JoinAndLogin extends GenericClass{
     {
         buttonClick(SIGN_IN);
     }
+    
+    
+    
     
     public void verifyLoginToAHASite(HashMap<String, String> loginVerify)
     {
