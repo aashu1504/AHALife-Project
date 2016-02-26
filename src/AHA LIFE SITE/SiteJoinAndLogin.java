@@ -59,6 +59,7 @@ class JoinAndLogin extends GenericClass{
     public void clickSignIn(HashMap<String, String> signIn)
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
+        Thread.sleep(4000l);
     }
     
     public void enterEmailID(HashMap<String, String> signInEmailID)
