@@ -61,7 +61,7 @@ class JoinAndLogin extends GenericClass{
         enterText(JOIN_CREATE_PASSWORD,joinPassword.get("CreateAHALifeSitePassword"));
     }
     
-    public void clickRegister(HashMap<String, String> signIn)
+    public void clickSignInToPortal(HashMap<String, String> signInPortal)
     {
         buttonClick(JOIN_NOW_REGISTER);
     }
