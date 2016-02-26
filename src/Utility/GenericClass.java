@@ -103,7 +103,7 @@ public class GenericClass extends WebDriverProvider{
         return urlConnection.getResponseCode();  
     }
     
-    public void mouseHoverOn(By elementUniqueID)
+    public void mouseHoverOn(By elementUniqueID) throws InterruptedException
     {
         action = new Actions(driver);
         //action.moveToElement(driver.findElement(elementUniqueID)).moveToElement(driver.findElement(secondElementToMoveTo)).click(driver.findElement(secondElementToMoveTo));
