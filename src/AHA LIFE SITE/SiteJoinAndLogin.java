@@ -92,7 +92,7 @@ class JoinAndLogin extends GenericClass{
         pageToLoad();
         expectedProfileText = loginVerify.get("MyProfileText");
         System.out.println("Expected is : " + expectedProfileText);
-        actualProfileText = getTextFromAnElement(MY_PROFILE);
+        actualProfileText = getTextFromAnElement(SIGNIN_AHALIFE_SITE);
         System.out.println("Actual is : " + actualProfileText);
         Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
     }
