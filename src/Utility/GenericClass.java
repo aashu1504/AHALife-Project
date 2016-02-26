@@ -113,7 +113,8 @@ public class GenericClass extends WebDriverProvider{
     
     public void waitTillElementVisible(By elementUniqueID)
     {
-        return driver.findElements(xpath);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='id-header-account-menu']/ul/li[5]/a")));
     }
     
 }
