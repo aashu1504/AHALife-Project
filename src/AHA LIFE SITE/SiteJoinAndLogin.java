@@ -91,7 +91,7 @@ class JoinAndLogin extends GenericClass{
     
     public void clickSignOut(HashMap<String, String> signOut)
     {
-        //buttonClick(SIGNOUT_AHALIFE_SITE);
+        buttonClick(SIGNOUT_AHALIFE_SITE);
     }
     
     public void verifyLogoutFromAHASite(HashMap<String, String> logoutVerify)
