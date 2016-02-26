@@ -108,5 +108,6 @@ public class GenericClass extends WebDriverProvider{
         action = new Actions(driver);
         //action.moveToElement(driver.findElement(elementUniqueID)).moveToElement(driver.findElement(secondElementToMoveTo)).click(driver.findElement(secondElementToMoveTo));
 	    action.moveToElement(driver.findElement(elementUniqueID)).build().perform();
+        Thread.Sleep(4000L);
     }
 }
