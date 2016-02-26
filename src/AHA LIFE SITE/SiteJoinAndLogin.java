@@ -89,7 +89,7 @@ class JoinAndLogin extends GenericClass{
         mouseHoverOn(MY_PROFILE);
     }
     
-    public void clickSignOut(HashMap<String, String> signOut) throws InterruptedException
+    public void clickSignOut(HashMap<String, String> signOut)
     {
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
