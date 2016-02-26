@@ -45,6 +45,7 @@ class JoinAndLogin extends GenericClass{
     public void clickRegister(HashMap<String, String> joinRegister)
     {
         buttonClick(JOIN_NOW_REGISTER);
+        pageToLoad();
     }   
     
     public void clickFBConnect(HashMap<String, String> joinFBConnect)
