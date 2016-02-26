@@ -12,6 +12,8 @@ class JoinAndLogin extends GenericClass{
     private final By JOIN_CREATE_PASSWORD = By.xpath(".//*[@id='j_password']");
     private final By JOIN_NOW_REGISTER = By.xpath(".//input[@value='Join Now']");
     private final By JOIN_FB_CONNECT = By.xpath(".//*[@id='fbConnectBtn']");
+    private final By MY_PROFILE = By.xpath(".//*[@id='id-header-account-menu']/a/span");
+    
     
     public void clickJoin(HashMap<String, String> join)
     {
