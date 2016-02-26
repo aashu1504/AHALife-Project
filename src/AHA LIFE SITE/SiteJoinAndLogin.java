@@ -88,7 +88,7 @@ class JoinAndLogin extends GenericClass{
     {
         mouseHoverOn(MY_PROFILE);
         WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(SIGNOUT_AHALIFE_SITE);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(SIGNOUT_AHALIFE_SITE));
         //waitTillElementVisible(SIGNOUT_AHALIFE_SITE);
     }
     
