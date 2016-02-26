@@ -44,4 +44,13 @@ class JoinAndLogin extends GenericClass{
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
     }
+    
+     public void verifyLoginToAHASite(HashMap<String, String> adminLogin)
+    {
+        expectedAdminLoginText = adminLogin.get("AdminLoginText");
+        System.out.println("Expected is : " + expectedAdminLoginText);
+        actualAdminLoginText = getTextFromAnElement(ADMIN_LOGIN_TEXT);
+        System.out.println("Actual is : " + actualAdminLoginText);
+        Assert.assertTrue(expectedAdminLoginText.equalsIgnoreCase(actualAdminLoginText));
+    }
 }
