@@ -58,8 +58,8 @@ class JoinAndLogin extends GenericClass{
         Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
     }
     
-    public void clickSignOut(HashMap<String, String> signIn)
+    public void clickSignOut(HashMap<String, String> signOut)
     {
-        buttonClick(SIGNIN_AHALIFE_SITE);
+        buttonClick(SIGNOUT_AHALIFE_SITE);
     }
 }
