@@ -51,6 +51,21 @@ class JoinAndLogin extends GenericClass{
         buttonClick(SIGNIN_AHALIFE_SITE);
     }
     
+    public void enterEmailID(HashMap<String, String> signInEmailID)
+    {
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
+    }
+    
+    public void createPassword(HashMap<String, String> signInPassword)
+    {
+        enterText(JOIN_CREATE_PASSWORD,joinPassword.get("CreateAHALifeSitePassword"));
+    }
+    
+    public void clickRegister(HashMap<String, String> signIn)
+    {
+        buttonClick(JOIN_NOW_REGISTER);
+    }
+    
     public void verifyLoginToAHASite(HashMap<String, String> loginVerify)
     {
         pageToLoad();
