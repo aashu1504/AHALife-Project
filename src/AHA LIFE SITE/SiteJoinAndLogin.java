@@ -60,8 +60,7 @@ class JoinAndLogin extends GenericClass{
     
     public void clickSignOut(HashMap<String, String> signOut)
     {
-        
-        
+        mouseHoverOn(MY_PROFILE);
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
 }
