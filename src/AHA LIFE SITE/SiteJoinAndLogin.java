@@ -92,17 +92,6 @@ class JoinAndLogin extends GenericClass{
     public void clickSignOut(HashMap<String, String> signOut)
     {
         //buttonClick(SIGNOUT_AHALIFE_SITE);
-        
-        driver.findElement(By.xpath(".//*[@id='id-header-top-level-menu']/li[2]/div/a[1]")).click();
-		  Thread.sleep(4000);
-		  driver.findElement(By.xpath(".//*[@id='loginUsername']")).sendKeys("a@a4.com");; 
-		 driver.findElement(By.xpath(".//*[@id='loginPassword']")).sendKeys("1");
-		 driver.findElement(By.xpath(".//*[@id='loginSubmitWrapper']/div/input")).click();
-		 Thread.sleep(4000L);
-		 
-		 Actions builder = new Actions(driver);
-	     builder.moveToElement(driver.findElement(By.xpath(".//*[@id='id-header-account-menu']/a/span"))).build().perform();
-	     driver.findElement(By.xpath(".//a[@href='/logout']")).click();
     }
     
     public void verifyLogoutFromAHASite(HashMap<String, String> logoutVerify)
