@@ -56,7 +56,7 @@ class JoinAndLogin extends GenericClass{
         enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
-    public void createPassword(HashMap<String, String> signInPassword)
+    public void enterPassword(HashMap<String, String> signInPassword)
     {
         enterText(JOIN_CREATE_PASSWORD,joinPassword.get("CreateAHALifeSitePassword"));
     }
