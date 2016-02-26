@@ -83,6 +83,11 @@ class JoinAndLogin extends GenericClass{
         Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
     }
     
+    public void hoverOnMyProfile(HashMap<String, String> hoverOnProfile)
+    {
+        mouseHoverOn(MY_PROFILE);
+    }
+    
     public void clickSignOut(HashMap<String, String> signOut)
     {
         mouseHoverOn(MY_PROFILE);
