@@ -87,7 +87,7 @@ class JoinAndLogin extends GenericClass{
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
     
-    public void verifyLogoutFromAHASite(HashMap<String, String> loginVerify)
+    public void verifyLogoutFromAHASite(HashMap<String, String> logoutVerify)
     {
         pageToLoad();
         expectedProfileText = loginVerify.get("MyProfileText");
