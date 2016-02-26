@@ -87,15 +87,11 @@ class JoinAndLogin extends GenericClass{
     {
         pageToLoad();
         mouseHoverOn(MY_PROFILE);
-        Thread.sleep(4000L);
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
     
     public void clickSignOut(HashMap<String, String> signOut) throws InterruptedException
     {
-        pageToLoad();
-        mouseHoverOn(MY_PROFILE);
-        Thread.sleep(4000L);
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
     
