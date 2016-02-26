@@ -71,11 +71,12 @@ class JoinAndLogin extends GenericClass{
     public void clickSignInToPortal(HashMap<String, String> signInPortal)
     {
         buttonClick(SIGN_IN);
+        pageToLoad();
     }  
     
     public void verifyLoginToAHASite(HashMap<String, String> loginVerify)
     {
-        pageToLoad();
+        
         expectedProfileText = loginVerify.get("MyProfileText");
         System.out.println("Expected is : " + expectedProfileText);
         actualProfileText = getTextFromAnElement(MY_PROFILE);
