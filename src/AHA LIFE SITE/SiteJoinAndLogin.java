@@ -13,31 +13,31 @@ class JoinAndLogin{
     
     public void clickJoin(HashMap<String, Object> join)
     {
-        
+        buttonClick(BRAND_LOGIN_CLICK);
     }
     
     public void createUserName(HashMap<String, Object> joinUserName)
     {
-        
+        enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
     }
     
     public void createPassword(HashMap<String, Object> joinPassword)
     {
-        
+        enterText(BRAND_USER_NAME,userName.get("BrandUserName"));
     }
     
     public void clickRegister(HashMap<String, Object> joinRegister)
     {
-        
+        buttonClick(BRAND_LOGIN_CLICK);
     }
     
     public void clickFBConnect(HashMap<String, Object> joinFBConnect)
     {
-        
+        buttonClick(BRAND_LOGIN_CLICK);
     }
     
-    public void clickSignIn(HashMap<String, Object> join)
+    public void clickSignIn(HashMap<String, Object> signIn)
     {
-        
+        buttonClick(BRAND_LOGIN_CLICK);
     }
 }
