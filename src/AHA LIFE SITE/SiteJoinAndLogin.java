@@ -48,7 +48,7 @@ class JoinAndLogin extends GenericClass{
         buttonClick(SIGNIN_AHALIFE_SITE);
     }
     
-     public void verifyLoginToAHASite(HashMap<String, String> loginVerify)
+    public void verifyLoginToAHASite(HashMap<String, String> loginVerify)
     {
         pageToLoad();
         expectedProfileText = loginVerify.get("MyProfileText");
@@ -56,5 +56,10 @@ class JoinAndLogin extends GenericClass{
         actualProfileText = getTextFromAnElement(MY_PROFILE);
         System.out.println("Actual is : " + actualProfileText);
         Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
+    }
+    
+    public void clickSignOut(HashMap<String, String> signIn)
+    {
+        buttonClick(SIGNIN_AHALIFE_SITE);
     }
 }
