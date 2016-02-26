@@ -51,7 +51,7 @@ class JoinAndLogin extends GenericClass{
         buttonClick(JOIN_FB_CONNECT);
     }
        
-    public void clickSignIn(HashMap<String, String> signIn)
+    public void clickSignIn(HashMap<String, String> signIn) throws InterruptedException
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
         //WebDriverWait wait = new WebDriverWait(driver, 15);
@@ -83,14 +83,9 @@ class JoinAndLogin extends GenericClass{
         Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
     }
     
-    public void hoverOnMyProfile(HashMap<String, String> hover)
-    {
-        pageToLoad();
-        mouseHoverOn(MY_PROFILE);
-    }
-    
     public void clickSignOut(HashMap<String, String> signOut)
     {
+        mouseHoverOn(MY_PROFILE);
         buttonClick(SIGNOUT_AHALIFE_SITE);
     }
     
