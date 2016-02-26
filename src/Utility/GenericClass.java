@@ -17,7 +17,7 @@ import org.openqa.selenium.interactions.Actions;
 public class GenericClass extends WebDriverProvider{
     
     public static List<WebElement> webElementCount = null;
-    Actions builder = null;
+    Actions action = null;
         
     public static void pageToLoad() {
 	    String  pageLoadStatus;
