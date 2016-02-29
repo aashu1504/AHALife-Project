@@ -38,7 +38,7 @@ class ProductDisplayPage extends GenericClass{
         pageToLoad();
         productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
         System.out.println("Product Name at PDP Page " + productNameAtProductDisplayPage);
-        System.out.println("Product Name at Home page " + productName.get("ProductNameAtHomePage"));
+        System.out.println("Product Name at Cart " + productNameAtCart);
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
     }
 }
