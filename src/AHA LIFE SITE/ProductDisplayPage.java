@@ -43,7 +43,7 @@ class ProductDisplayPage extends GenericClass{
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productNameAtCart));
     }
     
-    public void verifyProductAddedToCartFromQuickView(HashMap<String, String> productAtCart)
+    public void verifyProductAddedToCartFromQuickView(HashMap<String, String> productAtCartFromQV)
     {
         pageToLoad();
         productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
