@@ -148,10 +148,6 @@ class JoinAndLogin extends GenericClass{
         {
               buttonClick(FB_DATA_ACCESS_CONFIRM);
         }
-        else
-        {
-              buttonClick(FB_LOGIN_OLD);
-        }
         Thread.sleep(6000L);
         driver.switchTo().window(firstWindow);
     }
