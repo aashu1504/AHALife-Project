@@ -9,7 +9,7 @@ class HomePage{
     
     public void clickProduct(HashMap<String, String> product)
     {
-        buttonClick(JOIN_AHALIFE_SITE);
+        buttonClick(PRODUCT_ID);
     }
     
     public void clickJoin(HashMap<String, String> join)
