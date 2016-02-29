@@ -141,6 +141,8 @@ class JoinAndLogin extends GenericClass{
     public void loginFBClick(HashMap<String, String> loginToFB)
     {
 		   buttonClick(FB_LOGIN);
+           driver.switchTo().window(firstWindow); 
+        
     }
     
     public void verifyUserLoginToBI(HashMap<String, String> userLoginToBI)
