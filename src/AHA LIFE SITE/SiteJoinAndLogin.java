@@ -144,9 +144,9 @@ class JoinAndLogin extends GenericClass{
     {
 		buttonClick(FB_LOGIN);
         Thread.sleep(4000L);
-        if(isElementExist(FB_LOGIN_NEW))
+        if(isElementExist(FB_DATA_ACCESS_CONFIRM))
         {
-              buttonClick(FB_LOGIN_NEW);
+              buttonClick(FB_DATA_ACCESS_CONFIRM);
         }
         else
         {
