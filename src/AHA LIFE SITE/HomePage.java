@@ -16,10 +16,11 @@ class HomePage extends GenericClass{
     static String productNameAtHomePage = null;
     static String productNameAtProductDisplayPage = null;
     
-    public void clickProduct(HashMap<String, String> product)
+    public String clickProduct(HashMap<String, String> product)
     {
         productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
         buttonClick(PRODUCT_ID);
+        return productNameAtHomePage;
     }
     
     public void verifyNavigationToProductDisplayPage(HashMap<String, String> product)
