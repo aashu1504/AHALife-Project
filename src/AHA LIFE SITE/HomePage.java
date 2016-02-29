@@ -18,7 +18,7 @@ class HomePage extends GenericClass{
         buttonClick(PRODUCT_ID);
     }
     
-    public void clickProduct(HashMap<String, String> product)
+    public void verifyNavigationToProductDisplayPage(HashMap<String, String> product)
     {
         buttonClick(PRODUCT_ID);
     }
