@@ -35,7 +35,7 @@ class HomePage extends GenericClass{
         buttonClick(ADD_TO_BAG_HOME);
     }
     
-     public void closeQuickView(HashMap<String, String> quickViewClose)
+    public void closeQuickView(HashMap<String, String> quickViewClose)
     {
         buttonClick(CLOSE_QUICK_VIEW);
     }
