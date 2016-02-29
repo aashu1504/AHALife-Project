@@ -13,9 +13,11 @@ class HomePage extends GenericClass{
     private final By QUICK_VIEW = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[1]/a/div[1]/div[3]");
     private final By ADD_TO_BAG = By.xpath(".//*[@id='buy-button']");
     
+    static String productNameAtHomePage = null;
+    
     public void clickProduct(HashMap<String, String> product)
     {
-        getTextFromAnElement(PRODUCT_ID);
+        productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
         buttonClick(PRODUCT_ID);
     }
     
