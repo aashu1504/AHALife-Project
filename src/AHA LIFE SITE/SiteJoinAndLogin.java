@@ -69,8 +69,6 @@ class JoinAndLogin extends GenericClass{
     public void clickSignIn(HashMap<String, String> signIn) throws InterruptedException
     {
         buttonClick(SIGNIN_AHALIFE_SITE);
-        //WebDriverWait wait = new WebDriverWait(driver, 15);
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='authModal']")));
     }
     
     public void enterEmailID(HashMap<String, String> signInEmailID)
