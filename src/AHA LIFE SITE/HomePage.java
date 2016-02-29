@@ -40,7 +40,7 @@ class HomePage extends GenericClass{
         buttonClick(CLOSE_QUICK_VIEW);
     }
     
-    public void verifySameProductQuickViewOpened(HashMap<String, String> productName)
+    public void verifySameProductQuickViewOpened(HashMap<String, String> productQuickView)
     {
         pageToLoad();
         productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
