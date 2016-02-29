@@ -33,7 +33,9 @@ class JoinAndLogin extends GenericClass{
     static String actualSignInText = null;
     static String firstWindow = null;
     static String secondWindow = null;
-  
+    static String expectedUserNameText = null;
+    static String actualUserNameText = null;
+    
     public void clickJoin(HashMap<String, String> join)
     {
         buttonClick(JOIN_AHALIFE_SITE);
