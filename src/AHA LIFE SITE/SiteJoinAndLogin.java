@@ -118,7 +118,7 @@ class JoinAndLogin extends GenericClass{
         buttonClick(SIGNIN_WITH_FB);
     }
     
-    public void switchToFacebookLoginWindow(HashMap<String, String>switchToWindow) throws InterruptedException
+    public void switchToFacebookLoginWindow(HashMap<String, String> switchToWindow) throws InterruptedException
     {
         Thread.sleep(4000L);
         Set<String> windows = driver.getWindowHandles();
