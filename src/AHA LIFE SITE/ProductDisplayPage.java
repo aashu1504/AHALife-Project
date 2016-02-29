@@ -10,7 +10,7 @@ class ProductDisplayPage extends GenericClass{
     private final By ADD_TO_BAG_PDP = By.xpath(".//*[@id='buy-button']");
     private final By PRODUCT_NAME = By.xpath(".//div[@class='product_mainContainer']/div/h1");
     private final By MY_BAG = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
-    private final By CART_PRODUCT = By.xpath(".//*[@id='cart_products']/li/div[2]/h3");
+    private final By CART_PRODUCT_NAME = By.xpath(".//*[@id='cart_products']/li/div[2]/h3");
     
     static String productNameAtProductDisplayPage = null;
      
@@ -36,7 +36,7 @@ class ProductDisplayPage extends GenericClass{
     public void verifyProductAddedToCart(HashMap<String, String> productName)
     {
         pageToLoad();
-        productNameAtCart = getTextFromAnElement(CART_PRODUCT);
+        productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
         System.out.println("Product Name at PDP Page " + productNameAtProductDisplayPage);
         System.out.println("Product Name at Home page " + productName.get("ProductNameAtHomePage"));
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
