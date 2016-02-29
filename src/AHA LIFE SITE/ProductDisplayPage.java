@@ -33,10 +33,10 @@ class ProductDisplayPage extends GenericClass{
         buttonClick(MY_BAG);
     }
     
-    public void verifyNavigationToProductDisplayPage(HashMap<String, String> productName)
+    public void verifyProductAddedToCart(HashMap<String, String> productName)
     {
         pageToLoad();
-        productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
+        productNameAtCart = getTextFromAnElement(CART_PRODUCT);
         System.out.println("Product Name at PDP Page " + productNameAtProductDisplayPage);
         System.out.println("Product Name at Home page " + productName.get("ProductNameAtHomePage"));
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
