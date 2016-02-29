@@ -18,6 +18,11 @@ class HomePage extends GenericClass{
         buttonClick(PRODUCT_ID);
     }
     
+    public void clickProduct(HashMap<String, String> product)
+    {
+        buttonClick(PRODUCT_ID);
+    }
+    
     public void clickQuickView(HashMap<String, String> quickView)
     {
         buttonClick(QUICK_VIEW);
