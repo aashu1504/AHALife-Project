@@ -146,7 +146,7 @@ class JoinAndLogin extends GenericClass{
         Thread.sleep(4000L);
         if(isElementExist(FB_DATA_ACCESS_CONFIRM))
         {
-              buttonClick(FB_DATA_ACCESS_CONFIRM);
+            buttonClick(FB_DATA_ACCESS_CONFIRM);
         }
         Thread.sleep(6000L);
         driver.switchTo().window(firstWindow);
