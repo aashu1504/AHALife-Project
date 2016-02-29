@@ -43,6 +43,11 @@ class JoinAndLogin extends GenericClass{
         buttonClick(JOIN_AHALIFE_SITE);
     }
     
+    public void clickMyBag(HashMap<String, String> join)
+    {
+        buttonClick(JOIN_AHALIFE_SITE);
+    }
+    
     public void createUserName(HashMap<String, String> joinUserName)
     {
         enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
