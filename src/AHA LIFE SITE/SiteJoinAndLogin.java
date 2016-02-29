@@ -145,7 +145,7 @@ class JoinAndLogin extends GenericClass{
     
     public void verifyFBUserLoginToAhaLife(HashMap<String, String> userFBLoginToAhaLife)
     {
-		expectedUserNameText = loginVerify.get("MyProfileText");
+		expectedUserNameText = loginVerify.get("ExpectedUserName");
         System.out.println("Expected is : " + expectedProfileText);
         actualProfileText = getTextFromAnElement(MY_PROFILE);
         System.out.println("Actual is : " + actualProfileText);
