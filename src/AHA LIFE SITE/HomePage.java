@@ -4,6 +4,8 @@ import java.util.*;
 import Utility.GenericClass;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 class HomePage extends GenericClass{
     
@@ -18,7 +20,11 @@ class HomePage extends GenericClass{
     public void clickQuickView(HashMap<String, String> quickView)
     {
         buttonClick(QUICK_VIEW);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(JOIN_FB_CONNECT));
+        buttonClick(JOIN_FB_CONNECT);
     }
+    
+    
     
     
 }
