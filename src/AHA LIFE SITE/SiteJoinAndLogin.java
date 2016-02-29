@@ -59,7 +59,7 @@ class JoinAndLogin extends GenericClass{
     {
         Thread.sleep(4000L);
         WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(SIGNOUT_AHALIFE_SITE));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(JOIN_FB_CONNECT));
         buttonClick(JOIN_FB_CONNECT);
     }
        
