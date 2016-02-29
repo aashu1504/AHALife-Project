@@ -13,6 +13,7 @@ class ProductDisplayPage extends GenericClass{
     private final By CART_PRODUCT_NAME = By.xpath(".//*[@id='cart_products']/li/div[2]/h3");
     
     static String productNameAtProductDisplayPage = null;
+    static String productNameAtCart = null;
      
     public void verifyNavigationToProductDisplayPage(HashMap<String, String> productName)
     {
