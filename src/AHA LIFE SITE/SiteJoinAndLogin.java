@@ -118,6 +118,16 @@ class JoinAndLogin extends GenericClass{
         buttonClick(SIGNIN_WITH_FB);
     }
     
+    public void switchToBIPreviewWindow(HashMap<String, String>switchToWindow) throws InterruptedException
+    {
+        Thread.sleep(4000L);
+        Set<String> windows = driver.getWindowHandles();
+		Iterator<String> window = windows.iterator();
+		firstWindow = window.next();
+		secondWindow = window.next();
+		driver.switchTo().window(secondWindow); 
+    }
+    
     public void enterFBUserName(HashMap<String, String> userFB)
     {
         enterText(FB_USER_NAME,userFB.get("FBUserName"));
