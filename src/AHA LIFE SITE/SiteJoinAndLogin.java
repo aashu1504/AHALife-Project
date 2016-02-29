@@ -137,7 +137,7 @@ class JoinAndLogin extends GenericClass{
         enterText(FB_USER_PASSWORD,userFBPassword.get("FBPassword"));
     }
     
-    public void loginFBClick(HashMap<String, String> loginToFB)
+    public void loginFBClick(HashMap<String, String> loginToFB) throws InterruptedException
     {
 		   buttonClick(FB_LOGIN);
            Thread.sleep(6000L);
