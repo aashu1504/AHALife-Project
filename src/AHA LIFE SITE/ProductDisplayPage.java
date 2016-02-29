@@ -42,4 +42,12 @@ class ProductDisplayPage extends GenericClass{
         System.out.println("Product Name at Cart : " + productNameAtCart);
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productNameAtCart));
     }
+    
+    public void verifyProductAddedToCartFromQuickView(HashMap<String, String> productAtCart)
+    {
+        pageToLoad();
+        productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
+        System.out.println("Product Name at Cart : " + productNameAtCart);
+        Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productNameAtCart));
+    }
 }
