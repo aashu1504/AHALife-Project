@@ -39,4 +39,13 @@ class HomePage extends GenericClass{
     {
         buttonClick(CLOSE_QUICK_VIEW);
     }
+    
+    public void verifySameProductQuickViewOpened(HashMap<String, String> productName)
+    {
+        pageToLoad();
+        productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
+        System.out.println("Product Name at Home page : " + productName.get("ProductNameAtHomePage"));
+        System.out.println("Product Name at PDP Page : " + productNameAtProductDisplayPage);
+        Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
+    }
 }
