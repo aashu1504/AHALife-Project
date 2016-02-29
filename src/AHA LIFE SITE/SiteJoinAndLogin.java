@@ -150,12 +150,5 @@ class JoinAndLogin extends GenericClass{
         actualUserNameText = getTextFromAnElement(MY_PROFILE);
         System.out.println("Actual is : " + actualUserNameText);
         Assert.assertTrue(expectedUserNameText.equalsIgnoreCase(actualUserNameText));
-    }
-    
-    
-    
-    
-    
-    
-    
+    }    
 }
