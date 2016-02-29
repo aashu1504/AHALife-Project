@@ -42,7 +42,7 @@ class HomePage extends GenericClass{
         buttonClick(CLOSE_QUICK_VIEW);
     }
     
-    public String verifyProductNameAtQuickView(HashMap<String, String> productQuickView)
+    public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView)
     {
 		WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_QUICK_VIEW));
