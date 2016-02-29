@@ -16,6 +16,7 @@ class HomePage extends GenericClass{
     private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     
     static String productNameAtHomePage = null;
+    static String productNameAtQuickView = null;
     
     public String clickProduct(HashMap<String, String> product)
     {
