@@ -11,4 +11,10 @@ class ProductDisplayPage{
         wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_TO_BAG_PDP));
         buttonClick(ADD_TO_BAG);
     }
+    
+    public void verifyNavigationToProductDisplayPage(HashMap<String, String> productName)
+    {
+        productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_ID);
+        buttonClick(PRODUCT_ID);
+    }
 }
