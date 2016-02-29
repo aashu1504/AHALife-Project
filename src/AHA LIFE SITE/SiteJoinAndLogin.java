@@ -130,14 +130,7 @@ class JoinAndLogin extends GenericClass{
     
     public void loginFBClick(HashMap<String, String> loginToFB)
     {
-        if(isElementExist(FB_LOGIN_NEW))
-		{
-		   buttonClick(FB_LOGIN_NEW);
-		}
-		else
-		{
-		   buttonClick(FB_LOGIN_OLD);
-		}
+		   buttonClick(FB_LOGIN);
     }
     
     public void verifyUserLoginToBI(HashMap<String, String> userLoginToBI)
