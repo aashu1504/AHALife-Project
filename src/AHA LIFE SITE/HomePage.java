@@ -15,6 +15,7 @@ class HomePage extends GenericClass{
     
     public void clickProduct(HashMap<String, String> product)
     {
+        getTextFromAnElement(PRODUCT_ID);
         buttonClick(PRODUCT_ID);
     }
     
