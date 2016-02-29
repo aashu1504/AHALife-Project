@@ -143,7 +143,7 @@ class JoinAndLogin extends GenericClass{
     public void loginFBClick(HashMap<String, String> loginToFB) throws InterruptedException
     {
 		buttonClick(FB_LOGIN);
-        Thread.sleep(4000L);
+        //Thread.sleep(4000L);
         if(isElementExist(FB_DATA_ACCESS_CONFIRM))
         {
             buttonClick(FB_DATA_ACCESS_CONFIRM);
