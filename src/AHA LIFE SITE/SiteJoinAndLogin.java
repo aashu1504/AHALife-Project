@@ -148,8 +148,8 @@ class JoinAndLogin extends GenericClass{
 		expectedUserNameText = loginVerify.get("ExpectedUserName");
         System.out.println("Expected is : " + expectedUserNameText);
         actualUserNameText = getTextFromAnElement(MY_PROFILE);
-        System.out.println("Actual is : " + actualProfileText);
-        Assert.assertTrue(expectedUserNameText.equalsIgnoreCase(actualProfileText));
+        System.out.println("Actual is : " + actualUserNameText);
+        Assert.assertTrue(expectedUserNameText.equalsIgnoreCase(actualUserNameText));
     }
     
     
