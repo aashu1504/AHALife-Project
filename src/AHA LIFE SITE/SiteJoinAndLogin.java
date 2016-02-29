@@ -57,6 +57,9 @@ class JoinAndLogin extends GenericClass{
     
     public void clickFBConnect(HashMap<String, String> joinFBConnect)
     {
+        Thread.sleep(4000L);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(SIGNOUT_AHALIFE_SITE));
         buttonClick(JOIN_FB_CONNECT);
     }
        
