@@ -12,7 +12,7 @@ class HomePage{
         buttonClick(PRODUCT_ID);
     }
     
-    public void clickQuickView(HashMap<String, String> join)
+    public void clickQuickView(HashMap<String, String> quickView)
     {
         buttonClick(JOIN_AHALIFE_SITE);
     }
