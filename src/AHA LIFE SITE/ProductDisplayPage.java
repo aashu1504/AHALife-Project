@@ -6,7 +6,7 @@ class ProductDisplayPage{
     
     private final By ADD_TO_BAG_PDP = By.xpath(".//*[@id='buy-button']");
     
-        static String productNameAtProductDisplayPage = null;
+    static String productNameAtProductDisplayPage = null;
     
     public void clickAddToBagPDP(HashMap<String, String> addPDP)
     {
