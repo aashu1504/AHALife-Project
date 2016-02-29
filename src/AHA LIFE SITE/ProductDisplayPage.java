@@ -1,6 +1,8 @@
 package AHALIFESITE;
 
 import java.util.*;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 
 class ProductDisplayPage{
     
