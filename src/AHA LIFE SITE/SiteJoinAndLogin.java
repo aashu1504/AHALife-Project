@@ -11,7 +11,6 @@ class JoinAndLogin extends GenericClass{
     
     private final By SIGNIN_AHALIFE_SITE = By.xpath(".//li[@class='loginActions']/div/a[1]");
     private final By JOIN_AHALIFE_SITE = By.xpath(".//li[@class='loginActions']/div/a[2]");
-    private final By MY_BAG = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
     private final By JOIN_CREATE_USERNAME = By.xpath(".//*[@id='j_username']");
     private final By JOIN_CREATE_PASSWORD = By.xpath(".//*[@id='j_password']");
     private final By JOIN_NOW_REGISTER = By.xpath(".//input[@value='Join Now']");
