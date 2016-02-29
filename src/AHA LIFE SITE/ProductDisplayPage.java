@@ -48,6 +48,6 @@ class ProductDisplayPage extends GenericClass{
         pageToLoad();
         productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
         System.out.println("Product Name at Cart : " + productNameAtCart);
-        Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productNameAtCart));
+        Assert.assertTrue(productNameAtCart.equalsIgnoreCase(productAtCartFromQV));
     }
 }
