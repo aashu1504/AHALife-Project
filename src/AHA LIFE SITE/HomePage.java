@@ -23,12 +23,6 @@ class HomePage extends GenericClass{
         return productNameAtHomePage;
     }
     
-    public void verifyNavigationToProductDisplayPage(HashMap<String, String> product)
-    {
-        productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_ID);
-        buttonClick(PRODUCT_ID);
-    }
-    
     public void clickQuickView(HashMap<String, String> quickView)
     {
         buttonClick(QUICK_VIEW);
