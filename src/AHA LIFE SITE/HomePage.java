@@ -14,6 +14,7 @@ class HomePage extends GenericClass{
     private final By ADD_TO_BAG = By.xpath(".//*[@id='buy-button']");
     
     static String productNameAtHomePage = null;
+    static String productNameAtProductDisplayPage = null;
     
     public void clickProduct(HashMap<String, String> product)
     {
@@ -23,6 +24,7 @@ class HomePage extends GenericClass{
     
     public void verifyNavigationToProductDisplayPage(HashMap<String, String> product)
     {
+        productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_ID);
         buttonClick(PRODUCT_ID);
     }
     
