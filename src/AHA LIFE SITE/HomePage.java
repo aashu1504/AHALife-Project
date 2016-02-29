@@ -34,7 +34,7 @@ class HomePage extends GenericClass{
         buttonClick(ADD_TO_BAG_HOME);
     }
     
-     public void clickAddToBagHome(HashMap<String, String> quickViewAdd)
+     public void closeQuickView(HashMap<String, String> quickViewClose)
     {
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_TO_BAG_HOME));
