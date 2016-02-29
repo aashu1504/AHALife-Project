@@ -21,7 +21,6 @@ class ProductDisplayPage{
     
     public void clickAddToBagPDP(HashMap<String, String> addPDP)
     {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_TO_BAG_PDP));
         buttonClick(ADD_TO_BAG);
     }
 }
