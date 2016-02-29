@@ -143,7 +143,7 @@ class JoinAndLogin extends GenericClass{
            driver.switchTo().window(firstWindow);
     }
     
-    public void verifyUserLoginToBI(HashMap<String, String> userLoginToBI)
+    public void verifyFBUserLoginToAhaLife(HashMap<String, String> userFBLoginToAhaLife)
     {
         //expectedSignOutText = userLoginToBI.get("SignOutLinkText");
        // actualSignOutText = getTextFromAnElement(SIGN_OUT);
