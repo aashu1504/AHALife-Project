@@ -31,6 +31,7 @@ class ProductDisplayPage extends GenericClass{
     
     public void clickMyBag(HashMap<String, String> myBag)
     {
+        pageToLoad();
         buttonClick(MY_BAG);
     }
     
