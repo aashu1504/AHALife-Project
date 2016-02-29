@@ -27,7 +27,7 @@ class ProductDisplayPage extends GenericClass{
         buttonClick(ADD_TO_BAG_PDP);
     }
     
-     public void clickMyBag(HashMap<String, String> myBag)
+    public void clickMyBag(HashMap<String, String> myBag)
     {
         buttonClick(MY_BAG);
     }
