@@ -21,6 +21,12 @@ class JoinAndLogin extends GenericClass{
     private final By EMAIL_ID = By.xpath(".//*[@id='loginUsername']");
     private final By PASSWORD = By.xpath(".//*[@id='loginPassword']");
     private final By SIGN_IN = By.xpath(".//*[@id='loginSubmitWrapper']/div/input");
+    
+    private final By SIGNIN_WITH_FB = By.xpath(".//*[@id='fbConnectBtn']");
+    private final By FB_USER_NAME = By.xpath(".//input[@id='email']");
+    private final By FB_USER_PASSWORD = By.xpath(".//input[@id='pass']");
+    private final By FB_LOGIN_NEW = By.xpath(".//button[@type='submit']");
+    private final By FB_LOGIN_OLD = By.xpath(".//*[@id='u_0_2']");
         
     static String expectedProfileText = null;
     static String actualProfileText = null;
@@ -106,4 +112,46 @@ class JoinAndLogin extends GenericClass{
         System.out.println("Actual is : " + actualSignInText);
         Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
     }
+    
+    
+    public void signInWithFacebookClick(HashMap<String, String> signIn)
+    {
+        buttonClick(SIGNIN_WITH_FB);
+    }
+    
+    public void enterFBUserName(HashMap<String, String> userFB)
+    {
+        enterText(FB_USER_NAME,userFB.get("FBUserName"));
+    }
+    
+    public void enterFBPassword(HashMap<String, String> userFBPassword)
+    {
+        enterText(FB_USER_PASSWORD,userFBPassword.get("FBPassword"));
+    }
+    
+    public void loginFBClick(HashMap<String, String> loginToFB)
+    {
+        if(isElementExist(FB_LOGIN_NEW))
+		{
+		   buttonClick(FB_LOGIN_NEW);
+		}
+		else
+		{
+		   buttonClick(FB_LOGIN_OLD);
+		}
+    }
+    
+    public void verifyUserLoginToBI(HashMap<String, String> userLoginToBI)
+    {
+        expectedSignOutText = userLoginToBI.get("SignOutLinkText");
+        actualSignOutText = getTextFromAnElement(SIGN_OUT);
+        Assert.assertTrue(expectedSignOutText.equalsIgnoreCase(actualSignOutText));
+    }
+    
+    
+    
+    
+    
+    
+    
 }
