@@ -15,8 +15,8 @@ class ProductDisplayPage extends GenericClass{
     public void verifyNavigationToProductDisplayPage(HashMap<String, String> productName)
     {
         productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
-        System.out.println("At Home Page" + productNameAtProductDisplayPage);
-        System.out.println("At PDP page" + productName.get("ProductNameAtHomePage"));
+        System.out.println("At PDP Page" + productNameAtProductDisplayPage);
+        System.out.println("At Home page" + productName.get("ProductNameAtHomePage"));
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
     }
     
