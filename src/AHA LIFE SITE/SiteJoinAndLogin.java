@@ -55,7 +55,7 @@ class JoinAndLogin extends GenericClass{
         pageToLoad();
     }   
     
-    public void clickFBConnect(HashMap<String, String> joinFBConnect)
+    public void clickFBConnect(HashMap<String, String> joinFBConnect) throws InterruptedException
     {
         Thread.sleep(4000L);
         WebDriverWait wait = new WebDriverWait(driver, 15);
