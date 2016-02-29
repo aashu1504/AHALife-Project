@@ -35,7 +35,7 @@ class ProductDisplayPage extends GenericClass{
         buttonClick(MY_BAG);
     }
     
-    public void verifyProductAddedToCart(HashMap<String, String> productAtCart)
+    public void verifyProductAddedToCartFromPDP(HashMap<String, String> productAtCart)
     {
         pageToLoad();
         productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
