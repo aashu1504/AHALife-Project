@@ -12,6 +12,7 @@ class HomePage extends GenericClass{
     private final By PRODUCT_ID = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[1]/a/div[2]/h4");
     private final By QUICK_VIEW = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[1]/a/div[1]/div[3]");
     private final By ADD_TO_BAG_HOME = By.xpath(".//*[@id='buy-button']");
+    private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     
     static String productNameAtHomePage = null;
     
@@ -36,8 +37,6 @@ class HomePage extends GenericClass{
     
      public void closeQuickView(HashMap<String, String> quickViewClose)
     {
-        WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_TO_BAG_HOME));
         buttonClick(ADD_TO_BAG_HOME);
     }
 }
