@@ -25,7 +25,7 @@ class HomePage extends GenericClass{
         return productNameAtHomePage;
     }
     
-    public void clickQuickView(HashMap<String, String> quickView)
+    public String clickQuickView(HashMap<String, String> quickView)
     {
         productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
         buttonClick(QUICK_VIEW);
