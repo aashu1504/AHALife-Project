@@ -18,6 +18,6 @@ class ProductDisplayPage{
     public void verifyNavigationToProductDisplayPage(HashMap<String, String> productName)
     {
         productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
-        productName.get("ProductNameAtHomePage");
+        Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
     }
 }
