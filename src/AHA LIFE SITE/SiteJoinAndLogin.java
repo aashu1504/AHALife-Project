@@ -25,8 +25,8 @@ class JoinAndLogin extends GenericClass{
     private final By SIGNIN_WITH_FB = By.xpath(".//*[@id='fbConnectBtn']");
     private final By FB_USER_NAME = By.xpath(".//input[@id='email']");
     private final By FB_USER_PASSWORD = By.xpath(".//input[@id='pass']");
-    private final By FB_LOGIN = By.xpath(".//*[@id='loginbutton']");.//button[@name='__CONFIRM__']
-    private final By FB_DATA_ACCESS_CONFIRM = By.xpath(".//*[@id='loginbutton']");
+    private final By FB_LOGIN = By.xpath(".//*[@id='loginbutton']");
+    private final By FB_DATA_ACCESS_CONFIRM = By.xpath(".//button[@name='__CONFIRM__']");
     
     static String expectedProfileText = null;
     static String actualProfileText = null;
