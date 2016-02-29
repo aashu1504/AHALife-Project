@@ -48,6 +48,6 @@ class HomePage extends GenericClass{
         productNameAtQuickView = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
         System.out.println("Product Name at Home page : " + productNameAtHomePage);
         System.out.println("Product Name at PDP Page : " + productNameAtQuickView);
-        Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage);
+        Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
     }
 }
