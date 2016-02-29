@@ -19,6 +19,6 @@ class ProductDisplayPage{
     
     public void clickAddToBagPDP(HashMap<String, String> addPDP)
     {
-        buttonClick(ADD_TO_BAG);
+        buttonClick(ADD_TO_BAG_PDP);
     }
 }
