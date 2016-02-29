@@ -9,6 +9,7 @@ class ProductDisplayPage extends GenericClass{
     
     private final By ADD_TO_BAG_PDP = By.xpath(".//*[@id='buy-button']");
     private final By PRODUCT_NAME = By.xpath(".//div[@class='product_mainContainer']/div/h1");
+    private final By MY_BAG = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
     
     static String productNameAtProductDisplayPage = null;
      
