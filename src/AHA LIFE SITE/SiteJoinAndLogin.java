@@ -43,7 +43,7 @@ class JoinAndLogin extends GenericClass{
         buttonClick(JOIN_AHALIFE_SITE);
     }
     
-    public void clickMyBag(HashMap<String, String> join)
+    public void clickMyBag(HashMap<String, String> myBag)
     {
         buttonClick(JOIN_AHALIFE_SITE);
     }
