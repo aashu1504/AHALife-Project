@@ -115,7 +115,7 @@ class JoinAndLogin extends GenericClass{
     }
     
     
-    public void signInWithFacebookClick(HashMap<String, String> signIn)
+    public void connectWithFacebookClick(HashMap<String, String> signIn)
     {
         buttonClick(SIGNIN_WITH_FB);
     }
