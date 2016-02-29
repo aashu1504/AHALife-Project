@@ -14,7 +14,7 @@ class HomePage{
     
     public void clickQuickView(HashMap<String, String> quickView)
     {
-        buttonClick(JOIN_AHALIFE_SITE);
+        buttonClick(QUICK_VIEW);
     }
     
     
