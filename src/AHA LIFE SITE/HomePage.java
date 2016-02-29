@@ -25,7 +25,12 @@ class HomePage extends GenericClass{
         buttonClick(ADD_TO_BAG);
     }
     
-    
+    public void clickAddToBagQuickView(HashMap<String, String> quickViewAdd)
+    {
+        buttonClick(QUICK_VIEW);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_TO_BAG));
+        buttonClick(ADD_TO_BAG);
+    }
     
     
 }
