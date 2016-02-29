@@ -50,7 +50,7 @@ class HomePage extends GenericClass{
         wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_QUICK_VIEW));
         productNameAtQuickView = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
         System.out.println("Product Name at Home page : " + productNameAtHomePage);
-        System.out.println("Product Name at PDP Page : " + productNameAtQuickView);
+        System.out.println("Product Name at Quick View : " + productNameAtQuickView);
         Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
     }
 }
