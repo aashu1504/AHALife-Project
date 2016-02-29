@@ -17,7 +17,7 @@ class ProductDisplayPage{
     
     public void verifyNavigationToProductDisplayPage(HashMap<String, String> productName)
     {
-        productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_ID);
+        productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
         buttonClick(PRODUCT_ID);
     }
 }
