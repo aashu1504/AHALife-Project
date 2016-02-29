@@ -34,7 +34,7 @@ class HomePage extends GenericClass{
         buttonClick(QUICK_VIEW);
     }
     
-    public void clickAddToBagQuickOrPDP(HashMap<String, String> quickViewAdd)
+    public void clickAddToBagPDP(HashMap<String, String> quickViewAdd)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_TO_BAG));
         buttonClick(ADD_TO_BAG);
