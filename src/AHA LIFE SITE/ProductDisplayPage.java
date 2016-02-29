@@ -33,7 +33,7 @@ class ProductDisplayPage extends GenericClass{
         buttonClick(MY_BAG);
     }
     
-    public void verifyProductAddedToCart(HashMap<String, String> productName)
+    public void verifyProductAddedToCart(HashMap<String, String> productNameAtCart)
     {
         pageToLoad();
         productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
