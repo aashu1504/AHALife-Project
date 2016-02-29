@@ -114,12 +114,6 @@ class JoinAndLogin extends GenericClass{
         Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
     }
     
-    
-    public void connectWithFacebook(HashMap<String, String> signIn)
-    {
-        buttonClick(SIGNIN_WITH_FB);
-    }
-    
     public void switchToFacebookLoginWindow(HashMap<String, String> switchToWindow) throws InterruptedException
     {
         Thread.sleep(4000L);
