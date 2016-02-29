@@ -44,7 +44,8 @@ class HomePage extends GenericClass{
     
     public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView)
     {
-        pageToLoad();
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_TO_BAG_HOME));
         productNameAtQuickView = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
         System.out.println("Product Name at Home page : " + productNameAtHomePage);
         System.out.println("Product Name at PDP Page : " + productNameAtQuickView);
