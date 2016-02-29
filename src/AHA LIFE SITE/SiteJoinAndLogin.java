@@ -140,6 +140,7 @@ class JoinAndLogin extends GenericClass{
     public void loginFBClick(HashMap<String, String> loginToFB)
     {
 		   buttonClick(FB_LOGIN);
+           Thread.sleep(6000L);
            driver.switchTo().window(firstWindow);
     }
     
