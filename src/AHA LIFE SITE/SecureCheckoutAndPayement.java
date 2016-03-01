@@ -9,7 +9,7 @@ class SecureCheckoutAndPayement extends GenericClass{
     
     private final By FIRST_NAME = By.xpath(".//*[@id='firstName']");
     private final By LAST_NAME = By.xpath(".//*[@id='lastName']");
-    private final By ADDRESS_LINE_1 = By.xpath(".//*[@id='buy-button']");
+    private final By ADDRESS_LINE_1 = By.xpath(".//*[@id='addressLine1']");
     private final By CITY = By.xpath(".//*[@id='id-close-quick-view']");
     private final By ZIP = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     private final By PHONE = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[1]/a/div[2]/h4");
