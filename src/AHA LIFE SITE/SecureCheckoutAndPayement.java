@@ -19,8 +19,65 @@ class SecureCheckoutAndPayement extends GenericClass{
     private final By PROVINCE = By.xpath(".//*[@id='address.county']");
     private final By CONTINUE = By.xpath(".//*[@id='select_shipping']");
     
-    public void run(HashMap<String, Object> params)
+    public void enterFirstName(HashMap<String, String> firstName)
     {
         
     }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    public void enterFirstName(HashMap<String, String> firstName)
+    {
+        
+    }
+    
+    
 }
