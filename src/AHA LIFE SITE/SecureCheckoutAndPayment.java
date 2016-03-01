@@ -1,4 +1,4 @@
-package AHA LIFE SITE;
+package AHALIFESITE;
 
 import java.util.*;
 import Utility.GenericClass;
