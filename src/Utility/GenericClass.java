@@ -110,7 +110,7 @@ public class GenericClass extends WebDriverProvider{
         Thread.sleep(4000L);
     }    
     
-    public void selectValueFromDropdown(By elementUniqueID) throws InterruptedException
+    public void selectValueFromDropdown(By elementUniqueID)
     {
         Select country = new Select(driver.findElement(By.name("country")));
         country.selectByVisibleText("ANTARCTICA");
