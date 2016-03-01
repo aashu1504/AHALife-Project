@@ -113,6 +113,6 @@ public class GenericClass extends WebDriverProvider{
     public void selectValueFromDropdown(By elementUniqueID,String countryToSelect)
     {
         Select country = new Select(driver.findElement(elementUniqueID));
-        country.selectByVisibleText("ANTARCTICA");
+        country.selectByVisibleText(countryToSelect);
     }
 }
