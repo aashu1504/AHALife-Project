@@ -55,6 +55,6 @@ class ProductDisplayPageAndCart extends GenericClass{
     public void beginCheckout(HashMap<String, String> checkoutClick)
     {
         pageToLoad();
-        buttonClick(MY_BAG);
+        buttonClick(BEGIN_CHECKOUT);
     }
 }
