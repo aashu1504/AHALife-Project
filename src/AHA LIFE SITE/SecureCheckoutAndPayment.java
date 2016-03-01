@@ -56,8 +56,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void selectState(HashMap<String, String> state)
     {
-        Select country = new Select(driver.findElement(By.name("country")));
-		country.selectByVisibleText("ANTARCTICA");
+        selectValueFromDropdown();
     }
     
     public void selectCountry(HashMap<String, String> country)
