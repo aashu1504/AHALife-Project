@@ -14,7 +14,7 @@ class SecureCheckoutAndPayement extends GenericClass{
     private final By ZIP = By.xpath(".//*[@id='address.postalCode']");
     private final By PHONE = By.xpath(".//*[@id='phone']");
     private final By EMAIL_ID = By.xpath(".//*[@id='emailAddress']");
-    private final By STATE = By.xpath(".//*[@id='buy-button']");
+    private final By STATE = By.xpath(".//*[@id='shipping_state']");
     private final By COUNTRY = By.xpath(".//*[@id='id-close-quick-view']");
     private final By PROVINCE = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     private final By CONTINUE = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
