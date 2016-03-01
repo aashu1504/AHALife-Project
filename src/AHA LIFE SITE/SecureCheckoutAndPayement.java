@@ -21,37 +21,37 @@ class SecureCheckoutAndPayement extends GenericClass{
     
     public void enterFirstName(HashMap<String, String> firstName)
     {
-        enterText(FIRST_NAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(FIRST_NAME,firstName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterLastName(HashMap<String, String> lastName)
     {
-        enterText(LAST_NAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(LAST_NAME,lastName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterAddressLine1(HashMap<String, String> addLine1)
     {
-        enterText(ADDRESS_LINE_1,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(ADDRESS_LINE_1,addLine1.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterCity(HashMap<String, String> city)
     {
-        enterText(CITY,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(CITY,city.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterZip(HashMap<String, String> zip)
     {
-        enterText(ZIP,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(ZIP,zip.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterPhone(HashMap<String, String> phone)
     {
-        enterText(PHONE,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(PHONE,phone.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterEmailID(HashMap<String, String> emailID)
     {
-        enterText(EMAIL_ID,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(EMAIL_ID,emailID.get("CreateAHALifeSiteUserName"));
     }
     
     public void selectStateHashMap<String, String> state)
@@ -66,7 +66,7 @@ class SecureCheckoutAndPayement extends GenericClass{
     
     public void enterProvince(HashMap<String, String> province)
     {
-        enterText(PROVINCE,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(PROVINCE,province.get("CreateAHALifeSiteUserName"));
     }
     
     public void clickContinue(HashMap<String, String> continueClick)
