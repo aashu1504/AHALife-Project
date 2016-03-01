@@ -21,37 +21,37 @@ class SecureCheckoutAndPayement extends GenericClass{
     
     public void enterFirstName(HashMap<String, String> firstName)
     {
-        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(FIRST_NAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterLastName(HashMap<String, String> lastName)
     {
-        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(LAST_NAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterAddressLine1(HashMap<String, String> addLine1)
     {
-        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(ADDRESS_LINE_1,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterCity(HashMap<String, String> city)
     {
-        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(CITY,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterZip(HashMap<String, String> zip)
     {
-        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(ZIP,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterPhone(HashMap<String, String> phone)
     {
-        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(PHONE,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterEmailID(HashMap<String, String> emailID)
     {
-        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(EMAIL_ID,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void selectStateHashMap<String, String> state)
@@ -66,7 +66,7 @@ class SecureCheckoutAndPayement extends GenericClass{
     
     public void enterProvince(HashMap<String, String> province)
     {
-        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
+        enterText(PROVINCE,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void clickContinue(HashMap<String, String> continueClick)
