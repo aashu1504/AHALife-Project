@@ -21,52 +21,52 @@ class SecureCheckoutAndPayement extends GenericClass{
     
     public void enterFirstName(HashMap<String, String> firstName)
     {
-        
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterLastName(HashMap<String, String> lastName)
     {
-        
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterAddressLine1(HashMap<String, String> addLine1)
     {
-        
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterCity(HashMap<String, String> city)
     {
-        
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterZip(HashMap<String, String> zip)
     {
-        
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterPhone(HashMap<String, String> phone)
     {
-        
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void enterEmailID(HashMap<String, String> emailID)
     {
-        
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
-    public void enterState(HashMap<String, String> state)
+    public void selectStateHashMap<String, String> state)
     {
         
     }
     
-    public void enterCountry(HashMap<String, String> country)
+    public void selectCountry(HashMap<String, String> country)
     {
         
     }
     
     public void enterProvince(HashMap<String, String> province)
     {
-        
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHALifeSiteUserName"));
     }
     
     public void clickContinue(HashMap<String, String> continueClick)
