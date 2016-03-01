@@ -24,52 +24,52 @@ class SecureCheckoutAndPayement extends GenericClass{
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterLastName(HashMap<String, String> lastName)
     {
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterAddressLine1(HashMap<String, String> addLine1)
     {
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterCity(HashMap<String, String> city)
     {
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterZip(HashMap<String, String> zip)
     {
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterPhone(HashMap<String, String> phone)
     {
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterEmailID(HashMap<String, String> emailID)
     {
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterState(HashMap<String, String> state)
     {
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterCountry(HashMap<String, String> country)
     {
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void enterProvince(HashMap<String, String> province)
     {
         
     }
     
-    public void enterFirstName(HashMap<String, String> firstName)
+    public void clickContinue(HashMap<String, String> continueClick)
     {
         
     }
