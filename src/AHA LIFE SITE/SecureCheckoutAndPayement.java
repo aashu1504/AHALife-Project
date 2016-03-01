@@ -72,12 +72,5 @@ class SecureCheckoutAndPayement extends GenericClass{
     public void clickContinue(HashMap<String, String> continueClick)
     {
         
-    }
-    
-    public void enterFirstName(HashMap<String, String> firstName)
-    {
-        
-    }
-    
-    
+    }    
 }
