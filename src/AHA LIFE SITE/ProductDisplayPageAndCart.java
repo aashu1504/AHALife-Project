@@ -73,6 +73,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         pageToLoad();
         buttonClick(CONTINUE_AS_GUEST);
+        pageToLoad();
     }
     
     public void continueAsRegisteredUser(HashMap<String, String> registeredUserContinue)
