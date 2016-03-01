@@ -41,7 +41,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void enterZip(HashMap<String, String> zip)
     {
-        enterText(ZIP,zip.get("ShippingDetails_Address"));
+        enterText(ZIP,zip.get("ShippingDetails_Zip"));
     }
     
     public void enterPhone(HashMap<String, String> phone)
