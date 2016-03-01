@@ -21,37 +21,37 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void enterFirstName(HashMap<String, String> firstName)
     {
-        enterText(FIRST_NAME,firstName.get("CreateAHALifeSiteUserName"));
+        enterText(FIRST_NAME,firstName.get("ShippingDetails_FirstName"));
     }
     
     public void enterLastName(HashMap<String, String> lastName)
     {
-        enterText(LAST_NAME,lastName.get("CreateAHALifeSiteUserName"));
+        enterText(LAST_NAME,lastName.get("ShippingDetails_LastName"));
     }
     
     public void enterAddressLine1(HashMap<String, String> addLine1)
     {
-        enterText(ADDRESS_LINE_1,addLine1.get("CreateAHALifeSiteUserName"));
+        enterText(ADDRESS_LINE_1,addLine1.get("ShippingDetails_Address"));
     }
     
     public void enterCity(HashMap<String, String> city)
     {
-        enterText(CITY,city.get("CreateAHALifeSiteUserName"));
+        enterText(CITY,city.get("ShippingDetails_City"));
     }
     
     public void enterZip(HashMap<String, String> zip)
     {
-        enterText(ZIP,zip.get("CreateAHALifeSiteUserName"));
+        enterText(ZIP,zip.get("ShippingDetails_Address"));
     }
     
     public void enterPhone(HashMap<String, String> phone)
     {
-        enterText(PHONE,phone.get("CreateAHALifeSiteUserName"));
+        enterText(PHONE,phone.get("ShippingDetails_Address"));
     }
     
     public void enterEmailID(HashMap<String, String> emailID)
     {
-        enterText(EMAIL_ID,emailID.get("CreateAHALifeSiteUserName"));
+        enterText(EMAIL_ID,emailID.get("ShippingDetails_Address"));
     }
     
     public void selectStateHashMap<String, String> state)
@@ -66,7 +66,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void enterProvince(HashMap<String, String> province)
     {
-        enterText(PROVINCE,province.get("CreateAHALifeSiteUserName"));
+        enterText(PROVINCE,province.get("ShippingDetails_Address"));
     }
     
     public void clickContinue(HashMap<String, String> continueClick)
