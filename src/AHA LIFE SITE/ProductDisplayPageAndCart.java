@@ -54,10 +54,10 @@ class ProductDisplayPageAndCart extends GenericClass{
         Assert.assertTrue(productNameAtCart.equalsIgnoreCase(productAtCartFromQV.get("ProductNameHomePage")));
     }
     
-    public void beginCheckout(HashMap<String, String> checkoutClick)
+    public void navigateToProductPage(HashMap<String, String> productURL)
     {
         pageToLoad();
-        buttonClick(BEGIN_CHECKOUT);
+        
     }
     
     public void beginCheckout(HashMap<String, String> checkoutClick)
