@@ -56,7 +56,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void selectState(HashMap<String, String> state)
     {
-        selectValueFromDropdown();
+        selectValueFromDropdown(COUNTRY);
     }
     
     public void selectCountry(HashMap<String, String> country)
