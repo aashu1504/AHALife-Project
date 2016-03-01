@@ -64,6 +64,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         String countryName = country.get("ShippingDetails_CountryName");
         selectValueFromDropdown(COUNTRY,countryName);
+        Thread.sleep(4000L);
     }
     
     public void enterProvince(HashMap<String, String> province)
