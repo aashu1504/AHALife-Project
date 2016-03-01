@@ -56,7 +56,8 @@ class ProductDisplayPageAndCart extends GenericClass{
     
     public void navigateToProductPage(HashMap<String, String> productURL)
     {
-        String urlToNavigate = productURL.get("WebsiteURL" + "ProductURL");
+        String websiteURL = productURL.get("WebsiteURL");
+        String productURL = productURL.get("ProductURL");
         driver.get(urlToNavigate);
         pageToLoad();
     }
