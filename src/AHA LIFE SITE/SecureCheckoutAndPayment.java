@@ -21,7 +21,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     private final By NAME_ON_CARD = By.xpath(".//*[@id='cardholderName']");
     private final By NUMBER_ON_CARD = By.xpath(".//*[@id='cardNumber']");
-    private final By CARD_SECURITY_CODE = By.xpath(".//*[@id='address.county']");
+    private final By CARD_SECURITY_CODE = By.xpath(".//*[@id='csc']");
     private final By CONFIRM_PAYMENT_CONTINUE = By.xpath(".//*[@id='select_shipping']");
     
     public void enterFirstName(HashMap<String, String> firstName)
