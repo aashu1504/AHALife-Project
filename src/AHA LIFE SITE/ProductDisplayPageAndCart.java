@@ -11,6 +11,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     private final By PRODUCT_NAME = By.xpath(".//div[@class='product_mainContainer']/div/h1");
     private final By MY_BAG = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
     private final By CART_PRODUCT_NAME = By.xpath(".//*[@id='cart_products']/li/div[2]/h3");
+    private final By CART_PRODUCT_NAME = By.xpath(".//*[@id='begin-checkout-button']/div/input");
     
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
