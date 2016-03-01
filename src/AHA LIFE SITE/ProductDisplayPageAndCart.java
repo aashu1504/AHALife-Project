@@ -58,7 +58,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         String websiteURL = productURL.get("WebsiteURL");
         String sellingProductURL = productURL.get("ProductURL");
-        System.out.println(websiteURL + productURL);
+        System.out.println(websiteURL + sellingProductURL);
         driver.get(websiteURL + sellingProductURL);
         pageToLoad();
     }
