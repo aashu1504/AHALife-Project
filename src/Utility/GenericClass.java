@@ -110,9 +110,9 @@ public class GenericClass extends WebDriverProvider{
         Thread.sleep(4000L);
     }    
     
-    public void selectValueFromDropdown(By elementUniqueID,String countryToSelect)
+    public void selectValueFromDropdown(By elementUniqueID,String optionToSelect)
     {
         Select country = new Select(driver.findElement(elementUniqueID));
-        country.selectByVisibleText(countryToSelect);
+        country.selectByVisibleText(optionToSelect);
     }
 }
