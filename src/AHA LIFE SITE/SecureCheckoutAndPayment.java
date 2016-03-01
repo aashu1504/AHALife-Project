@@ -54,7 +54,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         enterText(EMAIL_ID,emailID.get("ShippingDetails_EmailID"));
     }
     
-    public void selectState (HashMap<String, String> state)
+    public void selectState(HashMap<String, String> state)
     {
         
     }
