@@ -85,17 +85,17 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void enterNameOnCard(HashMap<String, String> nameOnCard)
     {
-        enterText(NAME_ON_CARD,province.get("ShippingDetails_Province"));
+        enterText(NAME_ON_CARD,province.get("PaymentDetails_Province"));
     }
     
     public void enterCardNumber(HashMap<String, String> cardNumber)
     {
-        enterText(NUMBER_ON_CARD,province.get("ShippingDetails_Province"));
+        enterText(NUMBER_ON_CARD,province.get("PaymentDetails_Province"));
     }
     
     public void enterSecurityCode(HashMap<String, String> securityCode)
     {
-        enterText(CARD_SECURITY_CODE,province.get("ShippingDetails_Province"));
+        enterText(CARD_SECURITY_CODE,province.get("PaymentDetails_Province"));
     }
     
     public void clickContinueToConfirmPaymentDetails(HashMap<String, String> confirmPaymentDetails)
