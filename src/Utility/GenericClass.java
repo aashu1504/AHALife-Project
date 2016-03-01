@@ -108,6 +108,11 @@ public class GenericClass extends WebDriverProvider{
         Actions action = new Actions(driver);
 	    action.moveToElement(driver.findElement(elementUniqueID)).build().perform();
         Thread.sleep(4000L);
-        
     }    
+    
+    public void selectValueFromDropdown(By elementUniqueID) throws InterruptedException
+    {
+        Select country = new Select(driver.findElement(By.name("country")));
+        country.selectByVisibleText("ANTARCTICA");
+    }
 }
