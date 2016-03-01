@@ -40,7 +40,7 @@ public class GenericClass extends WebDriverProvider{
     {
         String urlToNavigate = navigateUrl.get("URL");
         driver.get(urlToNavigate);
-        Thread.sleep(4000L);
+        pageToLoad();
     }
     
     public String getTextFromAnElement(By elementUniqueID)
