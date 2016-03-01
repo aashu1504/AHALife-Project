@@ -66,7 +66,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void enterProvince(HashMap<String, String> province)
     {
-        enterText(PROVINCE,province.get("ShippingDetails_Address"));
+        enterText(PROVINCE,province.get("ShippingDetails_Province"));
     }
     
     public void clickContinue(HashMap<String, String> continueClick)
