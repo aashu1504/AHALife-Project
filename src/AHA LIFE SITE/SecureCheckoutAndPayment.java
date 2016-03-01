@@ -46,12 +46,12 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void enterPhone(HashMap<String, String> phone)
     {
-        enterText(PHONE,phone.get("ShippingDetails_Address"));
+        enterText(PHONE,phone.get("ShippingDetails_Phone"));
     }
     
     public void enterEmailID(HashMap<String, String> emailID)
     {
-        enterText(EMAIL_ID,emailID.get("ShippingDetails_Address"));
+        enterText(EMAIL_ID,emailID.get("ShippingDetails_EmailID"));
     }
     
     public void selectStateHashMap<String, String> state)
