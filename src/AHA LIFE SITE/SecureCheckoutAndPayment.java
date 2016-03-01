@@ -60,7 +60,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         selectValueFromDropdown(STATE,stateName);
     }
     
-    public void selectCountry(HashMap<String, String> country)
+    public void selectCountry(HashMap<String, String> country) throws InterruptedException
     {
         String countryName = country.get("ShippingDetails_CountryName");
         selectValueFromDropdown(COUNTRY,countryName);
