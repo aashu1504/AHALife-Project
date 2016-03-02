@@ -127,6 +127,10 @@ class SecureCheckoutAndPayment extends GenericClass{
         {
             Assert.assertTrue(true);
         }
+        else
+        {
+            Assert.assertTrue(false);
+        }
     } 
     
     public void clickPlaceOrder(HashMap<String, String> placeOrder)
