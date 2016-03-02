@@ -113,10 +113,10 @@ class SecureCheckoutAndPayment extends GenericClass{
         enterText(INSERT_PROMO_CODE,insertPromoCode.get("PromoCode"));
     }
     
-    public void clickContinue(HashMap<String, String> continueClick)
+    public void applyPromoCode(HashMap<String, String> applyPromoCode)
     {
-        buttonClick(CONTINUE);
-        pageToLoad();
+        buttonClick(APPLY_PROMO_CODE);
+        Thread.sleep(4000L);
     } 
     
     public void clickPlaceOrder(HashMap<String, String> placeOrder)
