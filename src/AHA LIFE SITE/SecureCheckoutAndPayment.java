@@ -121,7 +121,11 @@ class SecureCheckoutAndPayment extends GenericClass{
       
     public void verifyPromoApplied(HashMap<String, String> applyPromoCode) throws InterruptedException
     {
-        getTextFromAnElement(PROMO_DISCOUNT_VALUE);
+        int promoCodeValue = Integer.parseInt(getTextFromAnElement(PROMO_DISCOUNT_VALUE));
+        if(promoCodeValue > 0)
+        {
+            Assert.
+        }
     } 
     
     public void clickPlaceOrder(HashMap<String, String> placeOrder)
