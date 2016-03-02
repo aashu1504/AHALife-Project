@@ -125,7 +125,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         System.out.println(promoCodeValue);
         if(promoCodeValue > 0)
         {
-            Assert.
+            Assert.assertTrue(true);
         }
     } 
     
