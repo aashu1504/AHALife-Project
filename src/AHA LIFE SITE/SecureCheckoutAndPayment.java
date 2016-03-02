@@ -25,8 +25,8 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By CONFIRM_PAYMENT_CONTINUE = By.xpath(".//*[@id='checkout-submit-order']");
     private final By PLACE_ORDER = By.xpath(".//*[@id='checkout-submit-order-summary']/input");
     private final By INSERT_PROMO_CODE = By.xpath(".//*[@id='promoCode']");
-    private final By APPLY_PROMO_CODE = By.xpath(".//*[@id='addPromo']");
-    
+    private final By APPLY_PROMO_CODE = By.xpath(".//*[@id='addPromo']");.//*[@id='cart-summary-promo-amount']
+    private final By PROMO_DISCOUNT_VALUE = By.xpath(".//*[@id='addPromo']");
     
     public void enterFirstName(HashMap<String, String> firstName)
     {
@@ -117,6 +117,11 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         buttonClick(APPLY_PROMO_CODE);
         Thread.sleep(4000L);
+    } 
+      
+    public void verifyPromoApplied(HashMap<String, String> applyPromoCode) throws InterruptedException
+    {
+        
     } 
     
     public void clickPlaceOrder(HashMap<String, String> placeOrder)
