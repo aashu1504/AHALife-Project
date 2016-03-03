@@ -21,6 +21,7 @@ class DatabaseConnectivity{
        String columnName = databaseQuery.get("ColumnName");
        String dataFromQuery = QueryExecution(query,columnName,con);
        con.close();
+       return dataFromQuery;
     }
     
     
