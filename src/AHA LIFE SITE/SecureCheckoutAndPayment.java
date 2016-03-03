@@ -162,4 +162,11 @@ class SecureCheckoutAndPayment extends GenericClass{
         System.out.println("Order ID of the product " + placedProductName + " is " + orderNumber);     
     }
     
+    public void verifyOrderedStatusFromDatabase(HashMap<String, String> verifyOrderStatus) throws InterruptedException
+    {
+        placedProductName = getTextFromAnElement(PLACED_PRODUCT_NAME);
+        System.out.println("Product Name At Display Page : " + verifyOrder.get("ProductNameAtDisplayPage"));
+        System.out.println("Placed Product Name : " + getTextFromAnElement(PLACED_PRODUCT_NAME));
+        Assert.assertTrue(placedProductName.equalsIgnoreCase(verifyOrder.get("ProductNameAtDisplayPage")));
+    }
 }
