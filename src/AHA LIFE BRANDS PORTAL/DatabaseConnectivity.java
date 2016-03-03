@@ -24,7 +24,7 @@ class DatabaseConnectivity{
     }
     
     
-    public String QueryExecution(String query,String columnName,Connection con) throws SQLException, ClassNotFoundException
+    public void QueryExecution(String query,String columnName,Connection con) throws SQLException, ClassNotFoundException
     {
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
