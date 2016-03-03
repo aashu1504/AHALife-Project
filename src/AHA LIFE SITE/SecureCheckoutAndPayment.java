@@ -28,8 +28,6 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By APPLY_PROMO_CODE = By.xpath(".//*[@id='addPromo']");
     private final By PROMO_DISCOUNT_VALUE = By.xpath(".//*[@id='cart-summary-promo-amount']");
     
-    int promoCodeValue;
-    
     public void enterFirstName(HashMap<String, String> firstName)
     {
         enterText(FIRST_NAME,firstName.get("ShippingDetails_FirstName"));
@@ -123,11 +121,11 @@ class SecureCheckoutAndPayment extends GenericClass{
       
     public void verifyPromoApplied(HashMap<String, String> applyPromoCode)
     {
-        String promoCode = getTextFromAnElement(PROMO_DISCOUNT_VALUE).substring(1, 4);
-        System.out.println(promoCode);
-        //promoCodeValue = Integer.parseInt(getTextFromAnElement(PROMO_DISCOUNT_VALUE).trim().substring(1, 4));
-        //System.out.println(promoCodeValue);
-        if(promoCode > 0)
+        String promoCodeValue = getTextFromAnElement(PROMO_DISCOUNT_VALUE).substring(1, 4);
+        System.out.println(promoCodeValue);
+        int promoCodeValue = Integer.parseInt(promoCodeValue.split(".")[1]);
+        System.out.println(promoCodeValue);
+        if(promoCodeValue > 0)
         {
             Assert.assertTrue(true);
         }
