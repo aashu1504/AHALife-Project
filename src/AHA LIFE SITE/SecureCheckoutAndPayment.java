@@ -148,6 +148,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     public void verifyOrderedProduct(HashMap<String, String> insertPromoCode) throws InterruptedException
     {
         
+        Assert.assertTrue(getTextFromAnElement(PLACED_PRODUCT_NAME).equalsIgnoreCase(insertPromoCode.get("ProductNameAtDisplayPage")));
     }
     
     
