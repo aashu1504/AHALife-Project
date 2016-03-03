@@ -28,7 +28,8 @@ class DatabaseConnectivity{
        Statement stmt = con.createStatement();                    
        ResultSet rs= stmt.executeQuery(query);     
        rs.next();
-       String actualName = rs.getString(columnName);  
-       System.out.println(actualName);     
+       String data = rs.getString(columnName);  
+       System.out.println(actualName);   
+       return data;
     }
 }
