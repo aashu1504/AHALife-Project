@@ -17,6 +17,7 @@ class DatabaseConnectivity{
        Class.forName("com.mysql.jdbc.Driver");
        Connection con = DriverManager.getConnection(dbUrl,username,password);
        String query = databaseQuery.get("DatabaseQuery");
+		System.out.println(query);
        String columnName = databaseQuery.get("ColumnName");
        QueryExecution(query,columnName,con);
        con.close();
