@@ -114,6 +114,18 @@ class SecureCheckoutAndPayment extends GenericClass{
         pageToLoad();
         enterText(INSERT_PROMO_CODE,insertPromoCode.get("PromoCode"));
         buttonClick(APPLY_PROMO_CODE);
+        Thread.sleep(4000L);
+        String promoCode = getTextFromAnElement(PROMO_DISCOUNT_VALUE);
+        int promoCodeValue = Integer.parseInt(promoCode.trim().substring(1, promoCode.indexOf(".")));
+        System.out.println(promoCodeValue);
+        if(promoCodeValue > 0)
+        {
+            Assert.assertTrue(true);
+        }
+        else
+        {
+            Assert.assertTrue(false);
+        }
     }
     
     public void applyPromoCodeAndVerify(HashMap<String, String> applyPromoCode) throws InterruptedException
