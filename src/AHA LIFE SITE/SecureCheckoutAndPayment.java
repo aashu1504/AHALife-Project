@@ -123,7 +123,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         String promoCode = getTextFromAnElement(PROMO_DISCOUNT_VALUE).substring(1, 4);
         System.out.println(promoCode);
-        int promoCodeValue = Integer.parseInt(promoCode);
+        int promoCodeValue = Integer.parseInt(getTextFromAnElement(PROMO_DISCOUNT_VALUE).substring(1, 4));
         System.out.println(promoCodeValue);
         if(promoCodeValue > 0)
         {
