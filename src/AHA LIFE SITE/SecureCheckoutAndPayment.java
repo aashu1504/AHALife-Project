@@ -30,6 +30,8 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By PLACED_PRODUCT_NAME = By.xpath(".//div[@class='product-name']/a");
     private final By PLACED_PRODUCT_ORDER_NUMBER = By.xpath(".//*[@id='orderSummary']/div[2]/div[3]/div[1]/div[2]");
     
+    String placedProductName = null;
+    
     public void enterFirstName(HashMap<String, String> firstName)
     {
         enterText(FIRST_NAME,firstName.get("ShippingDetails_FirstName"));
