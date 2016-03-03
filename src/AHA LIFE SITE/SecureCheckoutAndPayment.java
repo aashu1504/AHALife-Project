@@ -112,20 +112,28 @@ class SecureCheckoutAndPayment extends GenericClass{
     public void enterPromoCodeAndVerify(HashMap<String, String> insertPromoCode)
     {
         pageToLoad();
-        enterText(INSERT_PROMO_CODE,insertPromoCode.get("PromoCode"));
-        buttonClick(APPLY_PROMO_CODE);
-        Thread.sleep(4000L);
-        String promoCode = getTextFromAnElement(PROMO_DISCOUNT_VALUE);
-        int promoCodeValue = Integer.parseInt(promoCode.trim().substring(1, promoCode.indexOf(".")));
-        System.out.println(promoCodeValue);
-        if(promoCodeValue > 0)
+        if(insertPromoCode.get("PromoCode") == "true")
         {
-            Assert.assertTrue(true);
-        }
+            enterText(INSERT_PROMO_CODE,insertPromoCode.get("PromoCode"));
+            buttonClick(APPLY_PROMO_CODE);
+            Thread.sleep(4000L);
+            String promoCode = getTextFromAnElement(PROMO_DISCOUNT_VALUE);
+            int promoCodeValue = Integer.parseInt(promoCode.trim().substring(1, promoCode.indexOf(".")));
+            System.out.println(promoCodeValue);
+            if(promoCodeValue > 0)
+                {
+                    Assert.assertTrue(true);
+                }
+                else
+                {
+                    Assert.assertTrue(false);
+                }                       
+                }
         else
         {
-            Assert.assertTrue(false);
+            System.out.println("Promo Code is not applied and Flag is false")
         }
+        
     }
     
     public void clickPlaceOrder(HashMap<String, String> placeOrder)
