@@ -119,7 +119,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         Thread.sleep(4000L);
     } 
       
-    public void verifyPromoApplied(HashMap<String, String> applyPromoCode) throws InterruptedException
+    public void verifyPromoApplied(HashMap<String, String> applyPromoCode)
     {
         String[] promoArray = getTextFromAnElement(PROMO_DISCOUNT_VALUE).split("$");
         System.out.println(promoArray[0]);
