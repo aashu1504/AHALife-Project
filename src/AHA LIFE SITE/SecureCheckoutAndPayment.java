@@ -155,11 +155,12 @@ class SecureCheckoutAndPayment extends GenericClass{
         Assert.assertTrue(placedProductName.equalsIgnoreCase(verifyOrder.get("ProductNameAtDisplayPage")));
     }
     
-    public void getOrderID(HashMap<String, String> order)
+    public String getOrderID(HashMap<String, String> order)
     {
         String orderID = getTextFromAnElement(PLACED_PRODUCT_ORDER_NUMBER);
         long orderNumber = Long.parseLong(orderID.trim());
         System.out.println("Order ID of the product " + placedProductName + " is " + orderNumber);     
+        return orderNumber;
     }
     
     public void verifyOrderStatusFromDatabase(HashMap<String, String> verifyOrderStatus) throws InterruptedException
