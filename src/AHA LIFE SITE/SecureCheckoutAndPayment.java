@@ -156,7 +156,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     public void getOrderID(HashMap<String, String> orderID)
     {
         int orderNumber = Integer.parseInt(getTextFromAnElement(PLACED_PRODUCT_ORDER_NUMBER));
-        System.out.println("Order ID of the product " +  + " " + placedProductName);
+        System.out.println("Order ID of the product " + placedProductName + " " + orderNumber);
     }
     
 }
