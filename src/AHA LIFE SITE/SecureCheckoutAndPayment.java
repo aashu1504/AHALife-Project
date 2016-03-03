@@ -121,7 +121,7 @@ class SecureCheckoutAndPayment extends GenericClass{
       
     public void verifyPromoApplied(HashMap<String, String> applyPromoCode)
     {
-        String[] promoArray = getTextFromAnElement(PROMO_DISCOUNT_VALUE).split("$");
+        String[] promoArray = getTextFromAnElement(PROMO_DISCOUNT_VALUE).remove("$");
         System.out.println(promoArray[0]);
         System.out.println(promoArray[1]);
         int promoCodeValue = Integer.parseInt((getTextFromAnElement(PROMO_DISCOUNT_VALUE)).split("$")[1]);
