@@ -144,7 +144,6 @@ class SecureCheckoutAndPayment extends GenericClass{
         pageToLoad();
     }  
     
-    
     public void verifyOrderedProduct(HashMap<String, String> verifyOrder) throws InterruptedException
     {
         System.out.println("Product Name At Display Page : " + verifyOrder.get("ProductNameAtDisplayPage"));
@@ -152,5 +151,10 @@ class SecureCheckoutAndPayment extends GenericClass{
         Assert.assertTrue(getTextFromAnElement(PLACED_PRODUCT_NAME).equalsIgnoreCase(verifyOrder.get("ProductNameAtDisplayPage")));
     }
     
+    public void getOrderID(HashMap<String, String> orderID)
+    {
+        buttonClick(PLACE_ORDER);
+        pageToLoad();
+    }
     
 }
