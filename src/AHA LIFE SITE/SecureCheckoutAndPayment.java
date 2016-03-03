@@ -28,6 +28,8 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By APPLY_PROMO_CODE = By.xpath(".//*[@id='addPromo']");
     private final By PROMO_DISCOUNT_VALUE = By.xpath(".//*[@id='cart-summary-promo-amount']");
     
+    int promoCodeValue = null;
+    
     public void enterFirstName(HashMap<String, String> firstName)
     {
         enterText(FIRST_NAME,firstName.get("ShippingDetails_FirstName"));
