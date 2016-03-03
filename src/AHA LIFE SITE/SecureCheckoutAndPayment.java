@@ -166,6 +166,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         try
         {
+            System.out.println(verifyOrderStatus.get("OrderStatus"));
         if(verifyOrderStatus.get("OrderStatus").equals("SUBMITTED"))
         {
             Assert.assertTrue(true);
