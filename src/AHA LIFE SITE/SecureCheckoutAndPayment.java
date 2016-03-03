@@ -102,7 +102,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         enterText(CARD_SECURITY_CODE,securityCode.get("PaymentDetails_SecurityCode"));
     }
     
-    public void clickContinueToConfirmPaymentDetails(HashMap<String, String> confirmPaymentDetails)
+    public void clickContinueToConfirmPaymentDetails(HashMap<String, String> confirmPaymentDetails) throws InterruptedException
     {
         buttonClick(CONFIRM_PAYMENT_CONTINUE);
         Thread.sleep(4000L);
