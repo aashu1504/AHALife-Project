@@ -109,13 +109,13 @@ class SecureCheckoutAndPayment extends GenericClass{
         Thread.sleep(4000L);
     }  
     
-    public void enterPromoCode(HashMap<String, String> insertPromoCode)
+    public void enterPromoCodeAndVerify(HashMap<String, String> insertPromoCode)
     {
         pageToLoad();
         enterText(INSERT_PROMO_CODE,insertPromoCode.get("PromoCode"));
     }
     
-    public void applyPromoCode(HashMap<String, String> applyPromoCode) throws InterruptedException
+    public void applyPromoCodeAndVerify(HashMap<String, String> applyPromoCode) throws InterruptedException
     {
         buttonClick(APPLY_PROMO_CODE);
         Thread.sleep(4000L);
