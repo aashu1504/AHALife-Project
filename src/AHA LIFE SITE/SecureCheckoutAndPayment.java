@@ -177,7 +177,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         }
         catch(Exception ex)
         {
-            System.out.println("Order might not be in database")
+            System.out.println("Order might not be in database");
         }
     }
 }
