@@ -19,7 +19,7 @@ class DatabaseConnectivity{
        String query = databaseQuery.get("DatabaseQuery");
 	   System.out.println(query);
        String columnName = databaseQuery.get("ColumnName");
-       QueryExecution(query,columnName,con);
+       String dataFromQuery = QueryExecution(query,columnName,con);
        con.close();
     }
     
