@@ -113,7 +113,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         pageToLoad();
         System.out.println(insertPromoCode.get("ApplyPromoCode"));
-        if(insertPromoCode.get("ApplyPromoCode") == "TRUE")
+        if(insertPromoCode.get("ApplyPromoCode") == "YES")
         {
             enterText(INSERT_PROMO_CODE,insertPromoCode.get("PromoCode"));
             buttonClick(APPLY_PROMO_CODE);
