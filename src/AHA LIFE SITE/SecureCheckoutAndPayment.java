@@ -131,7 +131,7 @@ class SecureCheckoutAndPayment extends GenericClass{
                 }
         else
         {
-            System.out.println("Promo Code is not applied and Flag is false")
+            System.out.println("Promo Code is not applied and Flag is false");
         }
         
     }
