@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 class DatabaseConnectivity{
     
-    public void DatabaseAndQueryConfiguration(HashMap<String, String> databaseQuery) throws SQLException, ClassNotFoundException
+    public String DatabaseAndQueryConfiguration(HashMap<String, String> databaseQuery) throws SQLException, ClassNotFoundException
     {
 	   String dbUrl = databaseQuery.get("DatabaseURL");            
        String username = databaseQuery.get("UserName");     
