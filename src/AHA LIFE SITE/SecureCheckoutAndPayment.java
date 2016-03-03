@@ -155,7 +155,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         Assert.assertTrue(placedProductName.equalsIgnoreCase(verifyOrder.get("ProductNameAtDisplayPage")));
     }
     
-    public void getOrderIDAndVerifyInDatabase(HashMap<String, String> orderID)
+    public void getOrderIDAndVerifyInDatabase(HashMap<String, String> order)
     {
         String orderID = getTextFromAnElement(PLACED_PRODUCT_ORDER_NUMBER);
         System.out.println(orderID);
