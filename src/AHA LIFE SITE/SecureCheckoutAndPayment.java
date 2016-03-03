@@ -129,7 +129,7 @@ class SecureCheckoutAndPayment extends GenericClass{
                 {
                     Assert.assertTrue(false);
                 }                       
-                }
+         }
         else
         {
             System.out.println("Promo Code is not applied and Flag is false");
