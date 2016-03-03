@@ -111,6 +111,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void enterPromoCode(HashMap<String, String> insertPromoCode)
     {
+        pageToLoad();
         enterText(INSERT_PROMO_CODE,insertPromoCode.get("PromoCode"));
     }
     
