@@ -29,7 +29,7 @@ class DatabaseConnectivity{
        ResultSet rs= stmt.executeQuery(query);     
        rs.next();
        String data = rs.getString(columnName);  
-       System.out.println(actualName);   
+       System.out.println(data);   
        return data;
     }
 }
