@@ -160,7 +160,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         String orderID = getTextFromAnElement(PLACED_PRODUCT_ORDER_NUMBER);
         long orderNumber = Long.parseLong(orderID.trim());
         System.out.println("Order ID of the product " + placedProductName + " is " + orderNumber);     
-        return orderNumber;
+        return orderID;
     }
     
     public void verifyOrderStatusFromDatabase(HashMap<String, String> verifyOrderStatus) throws InterruptedException
