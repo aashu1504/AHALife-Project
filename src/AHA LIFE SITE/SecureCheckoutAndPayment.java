@@ -153,7 +153,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void getOrderID(HashMap<String, String> orderID)
     {
-        buttonClick(PLACE_ORDER);
+        getTextFromAnElement(PLACE_ORDER);
         pageToLoad();
     }
     
