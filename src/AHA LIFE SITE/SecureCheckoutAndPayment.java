@@ -104,6 +104,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void clickContinueToConfirmPaymentDetails(HashMap<String, String> confirmPaymentDetails) throws InterruptedException
     {
+        pageToLoad();
         buttonClick(CONFIRM_PAYMENT_CONTINUE);
         Thread.sleep(4000L);
     }  
