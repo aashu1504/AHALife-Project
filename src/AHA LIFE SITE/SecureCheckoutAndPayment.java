@@ -128,27 +128,6 @@ class SecureCheckoutAndPayment extends GenericClass{
         }
     }
     
-    public void applyPromoCodeAndVerify(HashMap<String, String> applyPromoCode) throws InterruptedException
-    {
-        buttonClick(APPLY_PROMO_CODE);
-        Thread.sleep(4000L);
-    } 
-      
-    public void verifyPromoApplied(HashMap<String, String> applyPromoCode)
-    {
-        String promoCode = getTextFromAnElement(PROMO_DISCOUNT_VALUE);
-        int promoCodeValue = Integer.parseInt(promoCode.trim().substring(1, promoCode.indexOf(".")));
-        System.out.println(promoCodeValue);
-        if(promoCodeValue > 0)
-        {
-            Assert.assertTrue(true);
-        }
-        else
-        {
-            Assert.assertTrue(false);
-        }
-    } 
-    
     public void clickPlaceOrder(HashMap<String, String> placeOrder)
     {
         buttonClick(PLACE_ORDER);
