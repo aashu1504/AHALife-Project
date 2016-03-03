@@ -105,7 +105,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     public void clickContinueToConfirmPaymentDetails(HashMap<String, String> confirmPaymentDetails)
     {
         buttonClick(CONFIRM_PAYMENT_CONTINUE);
-        pageToLoad();
+        Thread.sleep(4000L);
     }  
     
     public void enterPromoCode(HashMap<String, String> insertPromoCode)
