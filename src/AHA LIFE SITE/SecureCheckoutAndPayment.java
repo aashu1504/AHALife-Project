@@ -70,7 +70,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     public void verifyRegisteredUserEmailID(HashMap<String, String> registeredEmailID)
     {
         String getRegisteredEmailID = registeredEmailID.get("GetRegisteredEmailID");
-        
+        getTextFromAnElement(PLACED_PRODUCT_ORDER_NUMBER);
         Assert.assertTrue(getRegisteredEmailID.equalsIgnoreCase());
     }
     
