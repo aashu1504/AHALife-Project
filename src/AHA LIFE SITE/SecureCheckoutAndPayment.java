@@ -67,7 +67,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         enterText(EMAIL_ID,emailID.get("ShippingDetails_EmailID"));
     }
     
-    public void verifyRegisteredUserEmailID(HashMap<String, String> emailID)
+    public void verifyRegisteredUserEmailID(HashMap<String, String> registeredEmailID)
     {
         enterText(EMAIL_ID,emailID.get("ShippingDetails_EmailID"));
     }
