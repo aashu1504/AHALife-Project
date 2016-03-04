@@ -32,6 +32,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     static String placedProductName = null;
     
+    
     public void enterFirstName(HashMap<String, String> firstName)
     {
         enterText(FIRST_NAME,firstName.get("ShippingDetails_FirstName"));
