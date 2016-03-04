@@ -32,7 +32,6 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     static String placedProductName = null;
     
-    
     public void enterFirstName(HashMap<String, String> firstName)
     {
         enterText(FIRST_NAME,firstName.get("ShippingDetails_FirstName"));
@@ -64,6 +63,11 @@ class SecureCheckoutAndPayment extends GenericClass{
     }
     
     public void enterEmailID(HashMap<String, String> emailID)
+    {
+        enterText(EMAIL_ID,emailID.get("ShippingDetails_EmailID"));
+    }
+    
+    public void verifyRegisteredUserEmailID(HashMap<String, String> emailID)
     {
         enterText(EMAIL_ID,emailID.get("ShippingDetails_EmailID"));
     }
