@@ -204,7 +204,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         enterText(CHECKOUT_REGISTRATION_CONFIRM_PASSWORD,confirmPassword.get("CheckoutConfirmPassword"));
     }
     
-    public void clickSubmitForAccountRegistrationAtCheckout(HashMap<String, String> placeOrder)
+    public void clickSubmitForAccountRegistrationAtCheckout(HashMap<String, String> submitRegistration)
     {
         buttonClick(PLACE_ORDER);
         pageToLoad();
