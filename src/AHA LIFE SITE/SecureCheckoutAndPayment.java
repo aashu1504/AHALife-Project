@@ -206,7 +206,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void clickSubmitForAccountRegistrationAtCheckout(HashMap<String, String> submitRegistration)
     {
-        buttonClick(PLACE_ORDER);
+        buttonClick(CHECKOUT_REGISTRATION_SUBMIT);
         pageToLoad();
     } 
 }
