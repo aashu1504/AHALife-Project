@@ -216,8 +216,8 @@ class SecureCheckoutAndPayment extends GenericClass{
     public void verifyIfOrderedProductIsInUserOrderHistory(HashMap<String, String> verifyOrderHistory)
     {
         productOrderIdAtOrdersHistory = getTextFromAnElement(ORDER_ID_FROM_ORDER_HISTORY);
-        System.out.println("Order ID At Checkout Page : " + productOrderIdAtOrdersHistory);
-        System.out.println("Order ID At Order History : " + orderID);
+        System.out.println("Order ID At Checkout Page : " + orderID);
+        System.out.println("Order ID At Order History : " + productOrderIdAtOrdersHistory);
         Assert.assertTrue(productOrderIdAtOrdersHistory.equalsIgnoreCase(orderID));
     }
 }
