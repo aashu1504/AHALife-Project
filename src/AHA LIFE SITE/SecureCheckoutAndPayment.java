@@ -37,6 +37,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     static String placedProductName = null;
     static String orderID = null;
+    static String productOrderIdAtOrdersHistory =null;
     
     public void enterFirstName(HashMap<String, String> firstName)
     {
@@ -215,6 +216,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     public void verifyIfOrderedProductIsInUserOrderHistory(HashMap<String, String> verifyOrderHistory)
     {
         productOrderIdAtOrdersHistory = getTextFromAnElement(ORDER_ID_FROM_ORDER_HISTORY);
+        
         Assert.assertTrue(productOrderIdAtOrdersHistory.equalsIgnoreCase(orderID));
     }
 }
