@@ -211,7 +211,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         pageToLoad();
     } 
     
-    public void verifyIfOrderedProductIsInUserOrderHistory(HashMap<String, String> verifyOrderHistory) throws InterruptedException
+    public void verifyIfOrderedProductIsInUserOrderHistory(HashMap<String, String> verifyOrderHistory)
     {
         placedProductName = getTextFromAnElement(PLACED_PRODUCT_NAME);
         System.out.println("Product Name At Display Page : " + verifyOrder.get("ProductNameAtDisplayPage"));
