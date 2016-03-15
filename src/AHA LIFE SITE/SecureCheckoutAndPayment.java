@@ -33,6 +33,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By CHECKOUT_REGISTRATION_PASSWORD = By.xpath(".//*[@id='cardholderName']");
     private final By CHECKOUT_REGISTRATION_CONFIRM_PASSWORD = By.xpath(".//*[@id='cardholderName']");
     private final By CHECKOUT_REGISTRATION_SUBMIT = By.xpath(".//*[@id='cardholderName']");    
+    
     static String placedProductName = null;
     
     public void enterFirstName(HashMap<String, String> firstName)
