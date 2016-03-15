@@ -30,7 +30,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By PLACED_PRODUCT_NAME = By.xpath(".//div[@class='product-name']/a");
     private final By PLACED_PRODUCT_ORDER_NUMBER = By.xpath(".//*[@id='orderSummary']/div[2]/div[3]/div[1]/div[2]");
     private final By CHECKOUT_REGISTERED_EMAIL_ID = By.xpath(".//div[@class='container checkout']/div[3]");
-    private final By CHECKOUT_REGISTRATION_PASSWORD = By.xpath(".//*[@id='cardholderName']");
+    private final By CHECKOUT_REGISTRATION_PASSWORD = By.xpath(".//*[@id='password']");
     private final By CHECKOUT_REGISTRATION_CONFIRM_PASSWORD = By.xpath(".//*[@id='cardholderName']");
     private final By CHECKOUT_REGISTRATION_SUBMIT = By.xpath(".//*[@id='cardholderName']");    
     
