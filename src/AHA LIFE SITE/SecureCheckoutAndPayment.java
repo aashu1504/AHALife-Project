@@ -36,6 +36,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By ORDER_ID_FROM_ORDER_HISTORY = By.xpath(".//*[@id='id-orders-history-content']/div[1]/div[1]/div[3]/span");
     
     static String placedProductName = null;
+    long orderNumber;
     
     public void enterFirstName(HashMap<String, String> firstName)
     {
