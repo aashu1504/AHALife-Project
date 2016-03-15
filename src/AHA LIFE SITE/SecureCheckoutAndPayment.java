@@ -199,8 +199,8 @@ class SecureCheckoutAndPayment extends GenericClass{
         enterText(CHECKOUT_REGISTRATION_PASSWORD,password.get("PaymentDetails_SecurityCode"));
     }
     
-    public void enterCardNumber(HashMap<String, String> cardNumber)
+    public void enterCardNumber(HashMap<String, String> confirmPassword)
     {
-        enterText(NUMBER_ON_CARD,cardNumber.get("PaymentDetails_CardNumber"));
+        enterText(CHECKOUT_REGISTRATION_CONFIRM_PASSWORD,confirmPassword.get("PaymentDetails_CardNumber"));
     }
 }
