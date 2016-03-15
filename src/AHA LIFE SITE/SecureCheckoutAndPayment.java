@@ -37,7 +37,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     static String placedProductName = null;
     static String orderID = null;
-    static String productOrderIdAtOrdersHistory =null;
+    static String productOrderIdAtOrdersHistory = null;
     
     public void enterFirstName(HashMap<String, String> firstName)
     {
