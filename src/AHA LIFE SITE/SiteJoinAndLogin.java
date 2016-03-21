@@ -153,4 +153,6 @@ class JoinAndLogin extends GenericClass{
         System.out.println("Actual is : " + actualUserNameText);
         Assert.assertTrue(expectedUserNameText.equalsIgnoreCase(actualUserNameText));
     }    
+    
+    
 }
