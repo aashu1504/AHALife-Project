@@ -101,6 +101,7 @@ class ProductDisplayPageAndCart extends GenericClass{
         pageToLoad();
         actualEmptyCartText = getTextFromAnElement(ACTUAL_EMPTY_CART_TEXT);
         System.out.println("Actual Remove Cart Text : " + actualEmptyCartText);
+        System.out.println("Expected Remove Cart Text : " + productRemove.get("ExpectedEmptyCartText"));
         Assert.assertTrue((productRemove.get("ExpectedEmptyCartText")).equalsIgnoreCase(actualEmptyCartText));
     }
 }
