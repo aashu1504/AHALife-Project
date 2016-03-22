@@ -48,10 +48,10 @@ class ProductDisplayPageAndCart extends GenericClass{
         buttonClick(MY_BAG);
     }
     
-    public void clickMyBag(HashMap<String, String> myBag)
+    public void clickMyBag(HashMap<String, String> myBagSignedIn)
     {
         pageToLoad();
-        buttonClick(MY_BAG);
+        buttonClick(MY_BAG_LOGGED_IN);
     }
     
     public void verifyProductAddedToCartFromPDP(HashMap<String, String> productAtCart)
