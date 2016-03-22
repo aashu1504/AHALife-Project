@@ -89,5 +89,8 @@ class ProductDisplayPageAndCart extends GenericClass{
         buttonClick(CONTINUE_AS_REGISTERED_USER);
     }
     
-    
+    public void removeItemFromCart(HashMap<String, String> removeItem)
+    {
+        buttonClick(REMOVE_ITEM_FROM_CART);
+    }
 }
