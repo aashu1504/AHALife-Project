@@ -48,7 +48,7 @@ class ProductDisplayPageAndCart extends GenericClass{
         buttonClick(MY_BAG);
     }
     
-    public void clickMyBag(HashMap<String, String> myBagSignedIn)
+    public void clickMyBagWhenSignedIn(HashMap<String, String> myBagSignedIn)
     {
         pageToLoad();
         buttonClick(MY_BAG_LOGGED_IN);
