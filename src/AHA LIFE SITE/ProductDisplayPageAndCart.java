@@ -99,7 +99,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     public void verifyIfProductIsRemoved(HashMap<String, String> productRemove)
     {
         pageToLoad();
-         = getTextFromAnElement(CART_PRODUCT_NAME);
+         = getTextFromAnElement(ACTUAL_EMPTY_CART_TEXT);
         System.out.println("Product Name at Cart : " + productNameAtCart);
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productNameAtCart));
     }
