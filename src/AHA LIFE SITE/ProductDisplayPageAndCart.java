@@ -19,6 +19,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
+    static String actualEmptyCartText = null;
      
     public String getProductNameFromProductDisplayPage(HashMap<String, String> productDisplayName)
     {
