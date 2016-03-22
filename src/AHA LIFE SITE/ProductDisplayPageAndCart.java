@@ -91,6 +91,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     
     public void removeItemFromCart(HashMap<String, String> removeItem)
     {
+        pageToLoad();
         buttonClick(REMOVE_ITEM_FROM_CART);
     }
 }
