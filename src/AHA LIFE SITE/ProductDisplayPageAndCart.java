@@ -99,9 +99,8 @@ class ProductDisplayPageAndCart extends GenericClass{
     public void verifyIfProductIsRemoved(HashMap<String, String> productRemove)
     {
         pageToLoad();
-        productRemove.get("ExpectedEmptyCartText");
         actualEmptyCartText = getTextFromAnElement(ACTUAL_EMPTY_CART_TEXT);
         System.out.println("Actual Remove Cart Text : " + actualEmptyCartText);
-        Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(actualEmptyCartText));
+        Assert.assertTrue((productRemove.get("ExpectedEmptyCartText")).equalsIgnoreCase(actualEmptyCartText));
     }
 }
