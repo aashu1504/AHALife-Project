@@ -20,7 +20,7 @@ class ReadFromExcel{
     Utility.pageToLoad(driver);
     driver.findElement(By.xpath(".//a[@class='navbar-brand']")).click();
     Utility.pageToLoad(driver);
-    tempTest objExcelFile = new tempTest();
+    ReadFromExcel objExcelFile = new ReadFromExcel();
     String filePath = System.getProperty("user.dir")+"\\src\\test\\java";
     
     String fileName = "GmailLogin.xlsx";
