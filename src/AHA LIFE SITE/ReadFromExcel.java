@@ -18,7 +18,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-class ReadFromExcel{
+class ReadFromExcel extends GenericClass{
     
     static Cell GetUserName;
 	 Cell GetPassword;
@@ -35,7 +35,7 @@ class ReadFromExcel{
     driver.findElement(By.xpath(".//input[@type='submit']")).click();
     Utility.pageToLoad(driver);
     driver.findElement(By.xpath(".//a[@class='navbar-brand']")).click();
-    Utility.pageToLoad(driver);
+    pageToLoad();
     ReadFromExcel objExcelFile = new ReadFromExcel();
     String filePath = System.getProperty("user.dir")+"\\src\\test\\java";
     
