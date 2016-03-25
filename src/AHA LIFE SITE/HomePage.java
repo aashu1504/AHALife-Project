@@ -76,7 +76,7 @@ class HomePage extends GenericClass{
 	                statusCode= getResponseCode(urlListElements.get(i).getAttribute("href").trim());
                     if(statusCode == 403)
                     {
-                        System.out.println("HTTP 403 Forbidden # " + i + " " + links.get(i).getAttribute("href"));
+                        System.out.println("HTTP 403 Forbidden# " + i + " " + urlListElements.get(i).getAttribute("href"));
                     }
                     else
 	                if (statusCode == 404 || statusCode == 500) 
