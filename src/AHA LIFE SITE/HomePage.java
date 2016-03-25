@@ -19,7 +19,9 @@ class HomePage extends GenericClass{
     static String productNameAtHomePage = null;
     static String productNameAtQuickView = null;
     static List<WebElement> urlListElements = null;
-    
+    static int statusCode;
+    static List<Integer> statusCodeList = new ArrayList<Integer>();
+
     public String clickProduct(HashMap<String, String> product)
     {
         productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
