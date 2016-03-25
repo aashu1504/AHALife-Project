@@ -113,7 +113,7 @@ class HomePage extends GenericClass{
     
     public void createStopwatch(HashMap<String, String> pageLoadTime)
     {
-        Stopwatch pageLoad = Stopwatch.createStarted();
+        pageLoad = Stopwatch.createStarted();
     }
     
     public void getPageLoadTime(HashMap<String, String> pageLoadTime)
