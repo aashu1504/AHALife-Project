@@ -61,7 +61,7 @@ class HomePage extends GenericClass{
         Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
     }
     
-    public void verifyBrokenLinksAtHomePage(HashMap<String, String> homePageBrokenLinks) throws MalformedURLException, IOException
+    public void verifyBrokenLinksAtAHAHomePage(HashMap<String, String> homePageBrokenLinks) throws MalformedURLException, IOException
     { 
        if(isElementExist(ANCHOR_TAG))
        {  
