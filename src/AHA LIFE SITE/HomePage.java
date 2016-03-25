@@ -14,6 +14,7 @@ class HomePage extends GenericClass{
     private final By ADD_TO_BAG_HOME = By.xpath(".//*[@id='buy-button']");
     private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
+    private final By ANCHOR_TAG = By.tagName("a");
     
     static String productNameAtHomePage = null;
     static String productNameAtQuickView = null;
@@ -52,5 +53,46 @@ class HomePage extends GenericClass{
         System.out.println("Product Name at Home page : " + productNameAtHomePage);
         System.out.println("Product Name at Quick View : " + productNameAtQuickView);
         Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
+    }
+    
+    public void verifyBrokenLinksAtHomePage(HashMap<String, String> homePageBrokenLinks) throws MalformedURLException, IOException
+    { 
+       if(isElementExist(ANCHOR_TAG))
+       {  
+          urlListElements = listOfWebElements(ANCHOR_TAG);
+          System.out.println("Total URL Count is : " + urlListElements.size());
+          for (int i = 0; i < urlListElements.size(); i++)
+          { 
+	         if (!(urlListElements.get(i).getAttribute("href") == null) && !(urlListElements.get(i).getAttribute("href").equals("")) && !(urlListElements.get(i).getAttribute("href").equals("javascript:void(0);")))
+             {
+	            if (urlListElements.get(i).getAttribute("href").contains("http")) 
+                { 
+	                statusCode= getResponseCode(urlListElements.get(i).getAttribute("href").trim());  
+	                if (statusCode== 404 || statusCode == 500) 
+                    {  
+	                    System.out.println("LINK# "+i+" "+urlListElements.get(i).getAttribute("href") + " is BROKEN");  
+	                }
+                    else
+                    {
+                        System.out.println("LINK# "+i+" "+urlListElements.get(i).getAttribute("href") + " is NOT BROKEN");  
+                    }
+                    statusCodeList.add(statusCode);
+	             }  
+	         }
+          }
+         if(statusCodeList.contains(404) || statusCodeList.contains(500))
+		 	{
+				Assert.assertTrue(false);
+			}
+			else
+			{
+				Assert.assertTrue(true);
+			}  
+       }
+       else
+       {
+           System.out.println("There are no anchor tags in the BI Home Page"); 
+           Assert.assertTrue(true);
+       }
     }
 }
