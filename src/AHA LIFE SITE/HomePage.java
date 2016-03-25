@@ -26,7 +26,7 @@ class HomePage extends GenericClass{
     static List<WebElement> urlListElements = null;
     static int statusCode;
     static List<Integer> statusCodeList = new ArrayList<Integer>();
-    Stopwatch pageLoad = null;
+    static Stopwatch pageLoad = null;
 
     public String clickProduct(HashMap<String, String> product)
     {
