@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebElement;
 import java.io.IOException;
 import java.net.MalformedURLException;
+
 class HomePage extends GenericClass{
     
     private final By PRODUCT_ID = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[2]/a/div[2]/h4");
