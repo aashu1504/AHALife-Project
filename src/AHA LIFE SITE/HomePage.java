@@ -106,4 +106,9 @@ class HomePage extends GenericClass{
            Assert.assertTrue(true);
        }
     }
+    
+    public void getPageLoadTime(HashMap<String, String> homePageBrokenLinks) throws MalformedURLException, IOException
+    {
+        
+    }
 }
