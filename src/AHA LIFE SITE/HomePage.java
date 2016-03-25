@@ -91,7 +91,7 @@ class HomePage extends GenericClass{
 	             }  
 	         }
           }
-         if(statusCodeList.contains(404) || statusCodeList.contains(500))
+         if(statusCodeList.contains(404) || statusCodeList.contains(500) || statusCodeList.contains(500))
 		 	{
 				Assert.assertTrue(false);
 			}
