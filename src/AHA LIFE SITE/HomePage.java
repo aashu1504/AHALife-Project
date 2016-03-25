@@ -18,6 +18,7 @@ class HomePage extends GenericClass{
     
     static String productNameAtHomePage = null;
     static String productNameAtQuickView = null;
+    static List<WebElement> urlListElements = null;
     
     public String clickProduct(HashMap<String, String> product)
     {
