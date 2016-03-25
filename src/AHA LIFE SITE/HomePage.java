@@ -26,7 +26,7 @@ class HomePage extends GenericClass{
     static List<WebElement> urlListElements = null;
     static int statusCode;
     static List<Integer> statusCodeList = new ArrayList<Integer>();
-    static Stopwatch pageLoad = null;
+    static StopWatch pageLoad = null;
 
     public String clickProduct(HashMap<String, String> product)
     {
@@ -113,7 +113,7 @@ class HomePage extends GenericClass{
     
     public void createStopwatch(HashMap<String, String> pageLoadTime)
     {
-        pageLoad = Stopwatch.createStarted();
+        pageLoad = new StopWatch();
     }
     
     public void getPageLoadTime(HashMap<String, String> pageLoadTime)
