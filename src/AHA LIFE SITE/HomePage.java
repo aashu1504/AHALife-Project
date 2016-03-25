@@ -121,8 +121,8 @@ class HomePage extends GenericClass{
     {
 		pageLoad.stop();
 	    long pageLoadTime_ms = pageLoad.getTime();
-	        long pageLoadTime_Seconds = pageLoadTime_ms / 1000;
-	        System.out.println("Total Page Load Time: " + pageLoadTime_ms + " milliseconds");
-	        System.out.println("Total Page Load Time: " + pageLoadTime_Seconds + " seconds");
+	    long pageLoadTime_Seconds = pageLoadTime_ms / 1000;
+	    System.out.println("Total Page Load Time: " + pageLoadTime_ms + " milliseconds");
+	    System.out.println("Total Page Load Time: " + pageLoadTime_Seconds + " seconds");
     }
 }
