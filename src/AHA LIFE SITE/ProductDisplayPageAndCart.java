@@ -112,45 +112,4 @@ class ProductDisplayPageAndCart extends GenericClass{
         System.out.println("Expected Remove Cart Text : " + productRemove.get("ExpectedEmptyCartText"));
         Assert.assertTrue((productRemove.get("ExpectedEmptyCartText")).equalsIgnoreCase(actualEmptyCartText));
     }
-    
-    public void verifyBrokenLinksAtAHAProductPage(HashMap<String, String> productPageBrokenLinks) throws MalformedURLException, IOException
-    { 
-       if(isElementExist(ANCHOR_TAG))
-       {  
-          urlListElements = listOfWebElements(ANCHOR_TAG);
-          System.out.println("Total URL Count is : " + urlListElements.size());
-          for (int i = 0; i < urlListElements.size(); i++)
-          { 
-	         if (!(urlListElements.get(i).getAttribute("href") == null) && !(urlListElements.get(i).getAttribute("href").equals("")) && !(urlListElements.get(i).getAttribute("href").equals("javascript:void(0);")))
-             {
-	            if (urlListElements.get(i).getAttribute("href").contains("http")) 
-                { 
-	                statusCode= getResponseCode(urlListElements.get(i).getAttribute("href").trim());  
-	                if (statusCode== 404 || statusCode == 500) 
-                    {  
-	                    System.out.println("LINK# "+i+" "+urlListElements.get(i).getAttribute("href") + " is BROKEN");  
-	                }
-                    else
-                    {
-                        System.out.println("LINK# "+i+" "+urlListElements.get(i).getAttribute("href") + " is NOT BROKEN");  
-                    }
-                    statusCodeList.add(statusCode);
-	             }  
-	         }
-          }
-         if(statusCodeList.contains(404) || statusCodeList.contains(500))
-		 	{
-				Assert.assertTrue(false);
-			}
-			else
-			{
-				Assert.assertTrue(true);
-			}  
-       }
-       else
-       {
-           System.out.println("There are no anchor tags in the AHA Life Home Page"); 
-           Assert.assertTrue(true);
-       }
-    }
 }
