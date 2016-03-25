@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebElement;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import org.apache.commons.lang3.time.StopWatch;
+import com.google.common.base.Stopwatch;
 import java.util.concurrent.TimeUnit;
 
 class HomePage extends GenericClass{
@@ -26,7 +26,7 @@ class HomePage extends GenericClass{
     static List<WebElement> urlListElements = null;
     static int statusCode;
     static List<Integer> statusCodeList = new ArrayList<Integer>();
-    static StopWatch pageLoad = null;
+    static Stopwatch pageLoad = null;
 
     public String clickProduct(HashMap<String, String> product)
     {
@@ -114,15 +114,12 @@ class HomePage extends GenericClass{
     public void createStopwatch(HashMap<String, String> pageLoadTime)
     {
         pageLoad = new StopWatch();
-        pageLoad.start();
     }
     
     public void getPageLoadTime(HashMap<String, String> pageLoadTime)
     {
 		pageLoad.stop();
-	    long pageLoadTime_ms = pageLoad.getTime();
-	    long pageLoadTime_Seconds = pageLoadTime_ms / 1000;
-	    System.out.println("Total Page Load Time: " + pageLoadTime_ms + " milliseconds");
-	    System.out.println("Total Page Load Time: " + pageLoadTime_Seconds + " seconds");
+	    long pageLoadTime_seconds = pageLoad.elapsed(TimeUnit.SECONDS);
+	    System.out.println("Total Page Load Time: " + pageLoadTime_seconds + " Seconds");
     }
 }
