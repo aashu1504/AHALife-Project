@@ -117,7 +117,7 @@ class HomePage extends GenericClass{
         pageLoad.start();
     }
     
-    public void getPageLoadTime(HashMap<String, String> pageLoadTime)
+    public void getPageLoadTime(HashMap<String, String> pageLoad)
     {
 		pageLoad.stop();
 	    long pageLoadTime_ms = pageLoad.getTime();
