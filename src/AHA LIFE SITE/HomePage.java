@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebElement;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import com.google.common.base.Stopwatch;
+import org.apache.commons.lang3.time.StopWatch;
 import java.util.concurrent.TimeUnit;
 
 class HomePage extends GenericClass{
