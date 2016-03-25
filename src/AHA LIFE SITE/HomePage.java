@@ -107,7 +107,7 @@ class HomePage extends GenericClass{
        }
     }
     
-    public void getPageLoadTime(HashMap<String, String> homePageBrokenLinks) throws MalformedURLException, IOException
+    public void getPageLoadTime(HashMap<String, String> pageLoadTime)
     {
         
     }
