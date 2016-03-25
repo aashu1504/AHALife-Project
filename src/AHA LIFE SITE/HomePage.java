@@ -97,7 +97,7 @@ class HomePage extends GenericClass{
        }
        else
        {
-           System.out.println("There are no anchor tags in the BI Home Page"); 
+           System.out.println("There are no anchor tags in the AHA Life Home Page"); 
            Assert.assertTrue(true);
        }
     }
