@@ -113,7 +113,7 @@ class ProductDisplayPageAndCart extends GenericClass{
         Assert.assertTrue((productRemove.get("ExpectedEmptyCartText")).equalsIgnoreCase(actualEmptyCartText));
     }
     
-    public void verifyBrokenLinksAtAHAHomePage(HashMap<String, String> homePageBrokenLinks) throws MalformedURLException, IOException
+    public void verifyBrokenLinksAtAHAProductPage(HashMap<String, String> homePageBrokenLinks) throws MalformedURLException, IOException
     { 
        if(isElementExist(ANCHOR_TAG))
        {  
