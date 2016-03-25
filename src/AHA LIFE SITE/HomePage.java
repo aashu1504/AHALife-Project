@@ -120,6 +120,6 @@ class HomePage extends GenericClass{
     {
 		pageLoad.stop();
 	    long pageLoadTime_seconds = pageLoad.elapsed(TimeUnit.SECONDS);
-	    System.out.println("Total Page Load Time: " + pageLoadTime_ms + " Seconds");
+	    System.out.println("Total Page Load Time: " + pageLoadTime_seconds + " Seconds");
     }
 }
