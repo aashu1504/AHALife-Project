@@ -143,6 +143,7 @@ class JoinAndLogin extends GenericClass{
 		buttonClick(FB_LOGIN);
         Thread.sleep(6000L);
         driver.switchTo().window(firstWindow);
+        pageToLoad();
     }
     
     public void verifyFBUserLoginToAhaLife(HashMap<String, String> userFBLoginToAhaLife)
