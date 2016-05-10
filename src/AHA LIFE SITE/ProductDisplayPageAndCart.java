@@ -24,7 +24,7 @@ class ProductDisplayPageAndCart extends GenericClass{
      
     public String getProductNameFromProductDisplayPage(HashMap<String, String> productDisplayName)
     {
-        String productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
+        String product = getTextFromAnElement(PRODUCT_NAME);
         return product;
     }
     
