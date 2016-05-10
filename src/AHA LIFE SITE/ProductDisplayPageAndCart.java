@@ -57,7 +57,8 @@ class ProductDisplayPageAndCart extends GenericClass{
     public void verifyProductAddedToCartFromPDP(HashMap<String, String> productAtCart)
     {
         pageToLoad();
-        productNameAtProductDisplayPage = productAtCart.get("PDPProductName")
+        productNameAtProductDisplayPage = productAtCart.get("PDPProductName");
+        System.out.println("Product Name at PDP : " + productNameAtCart);
         productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
         System.out.println("Product Name at Cart : " + productNameAtCart);
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productNameAtCart));
