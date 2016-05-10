@@ -22,7 +22,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     static String productNameAtCart = null;
     static String actualEmptyCartText = null;
      
-    public void getProductNameFromProductDisplayPage(HashMap<String, String> productDisplayName)
+    public String getProductNameFromProductDisplayPage(HashMap<String, String> productDisplayName)
     {
         String productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
         return product;
