@@ -28,13 +28,13 @@ class ProductDisplayPageAndCart extends GenericClass{
         return product;
     }
     
-    public void getProductNameAtProductDisplayPage(HashMap<String, String> productName)
+    public void verifyNavigationToProductDisplayPage(HashMap<String, String> productName)
     {
         pageToLoad();
         productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
-        //System.out.println("Product Name at Home page : " + productName.get("ProductNameAtHomePage"));
-        //System.out.println("Product Name at PDP Page : " + productNameAtProductDisplayPage);
-        //Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
+        System.out.println("Product Name at Home page : " + productName.get("ProductNameAtHomePage"));
+        System.out.println("Product Name at PDP Page : " + productNameAtProductDisplayPage);
+        Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
     }
     
     public void clickAddToBagPDP(HashMap<String, String> addPDP)
