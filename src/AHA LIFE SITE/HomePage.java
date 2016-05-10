@@ -21,7 +21,7 @@ class HomePage extends GenericClass{
     private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     private final By ANCHOR_TAG = By.tagName("a");
     
-    static String productNameAtHomePage = null;
+    //static String productNameAtHomePage = null;
     static String productNameAtQuickView = null;
     static List<WebElement> urlListElements = null;
     static int statusCode;
@@ -35,12 +35,12 @@ class HomePage extends GenericClass{
         return productNameAtHomePage;
     }
     
-    public String clickQuickView(HashMap<String, String> quickView)
-    {
-        productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
-        buttonClick(QUICK_VIEW);
-        return productNameAtHomePage;
-    }
+   // public String clickQuickView(HashMap<String, String> quickView)
+    //{
+        //productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
+        //buttonClick(QUICK_VIEW);
+       // return productNameAtHomePage;
+   // }
     
     public void clickAddToBagHome(HashMap<String, String> quickViewAdd)
     {
