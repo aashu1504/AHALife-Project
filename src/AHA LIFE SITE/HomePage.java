@@ -14,14 +14,14 @@ import java.util.concurrent.TimeUnit;
 
 class HomePage extends GenericClass{
     
-    //private final By PRODUCT_ID = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[3]/a/div[2]/h4");
+    private final By PRODUCT_ID = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[3]/a/div[2]/h4");
     private final By QUICK_VIEW = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[3]/a/div[1]/div[3]");
     private final By ADD_TO_BAG_HOME = By.xpath(".//*[@id='buy-button']");
     private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     private final By ANCHOR_TAG = By.tagName("a");
     
-    //static String productNameAtHomePage = null;
+    static String productNameAtHomePage = null;
     static String productNameAtQuickView = null;
     static List<WebElement> urlListElements = null;
     static int statusCode;
@@ -35,12 +35,12 @@ class HomePage extends GenericClass{
         return productNameAtHomePage;
     }
     
-   // public String clickQuickView(HashMap<String, String> quickView)
-    //{
-        //productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
-        //buttonClick(QUICK_VIEW);
-       // return productNameAtHomePage;
-   // }
+    public String clickQuickView(HashMap<String, String> quickView)
+    {
+        productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
+        buttonClick(QUICK_VIEW);
+        return productNameAtHomePage;
+    }
     
     public void clickAddToBagHome(HashMap<String, String> quickViewAdd)
     {
