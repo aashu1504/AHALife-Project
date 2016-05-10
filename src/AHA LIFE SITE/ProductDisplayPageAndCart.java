@@ -21,7 +21,8 @@ class ProductDisplayPageAndCart extends GenericClass{
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
     static String actualEmptyCartText = null;
-     
+    static String productNameAtPDPQuickView = null;
+    
     public String getProductNameFromProductDisplayPage(HashMap<String, String> productDisplayName)
     {
         String product = getTextFromAnElement(PRODUCT_NAME);
@@ -36,6 +37,13 @@ class ProductDisplayPageAndCart extends GenericClass{
         //System.out.println("Product Name at PDP Page : " + productNameAtProductDisplayPage);
         //Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
     //}
+    
+    public String clickQuickView(HashMap<String, String> quickView)
+    {
+        productNameAtPDPQuickView = getTextFromAnElement(PRODUCT_ID);
+        buttonClick(QUICK_VIEW);
+        return productNameAtHomePage;
+    }
     
     public void clickAddToBagPDP(HashMap<String, String> addPDP)
     {
