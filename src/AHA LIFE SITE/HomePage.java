@@ -88,7 +88,7 @@ class HomePage extends GenericClass{
 	                }
                     else
                     {
-                        System.out.println("LINK# "+i+" "+urlListElements.get(i).getAttribute("href") + " is NOT BROKEN");  
+                        //System.out.println("LINK# "+i+" "+urlListElements.get(i).getAttribute("href") + " is NOT BROKEN");  
                     }
                     statusCodeList.add(statusCode);
 	             }  
