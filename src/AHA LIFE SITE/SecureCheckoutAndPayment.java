@@ -227,7 +227,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         pageToLoad();
         String expectedEnoughStoreCreditMessage = storeCredit.get("GetEnoughStoreCreditMessage");
-        String actualEnoughStoreCreditMessage = getTextFromAnElement(CHECKOUT_REGISTERED_EMAIL_ID);
+        String actualEnoughStoreCreditMessage = getTextFromAnElement(STORE_CREDIT_SUCCESS_MESSAGE);
         Assert.assertTrue(expectedEnoughStoreCreditMessage.equalsIgnoreCase(actualRegisteredEmailID));
     }
     
