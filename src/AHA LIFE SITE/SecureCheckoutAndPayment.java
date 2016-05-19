@@ -166,6 +166,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void verifyOrderedProduct(HashMap<String, String> verifyOrder) throws InterruptedException
     {
+        pageToLoad();
         placedProductName = getTextFromAnElement(PLACED_PRODUCT_NAME);
         System.out.println("Product Name At Display Page : " + verifyOrder.get("ProductNameAtDisplayPage"));
         System.out.println("Placed Product Name : " + getTextFromAnElement(PLACED_PRODUCT_NAME));
