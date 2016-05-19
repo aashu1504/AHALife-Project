@@ -177,6 +177,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         pageToLoad();
         orderID = getTextFromAnElement(PLACED_PRODUCT_ORDER_NUMBER);
+        System.out.println("Order ID of the product " + placedProductName + " is " + orderID);
         long orderNumber = Long.parseLong(orderID.trim());
         System.out.println("Order ID of the product " + placedProductName + " is " + orderNumber);     
         return orderID;
