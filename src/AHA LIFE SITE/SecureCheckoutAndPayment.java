@@ -238,18 +238,17 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void verifyStoreCreditAppliedForPurchase(HashMap<String, String> getStoreCredit) throws InterruptedException
     {
-        	pageToLoad();
-            String storeCredit = getTextFromAnElement(STORE_CREDIT_AMOUNT);
-            int storeCreditValue = Integer.parseInt(storeCredit.trim().substring(1, storeCredit.indexOf(".")));
-            System.out.println(storeCreditValue);
-            if(storeCreditValue > 0)
-                {
-                    Assert.assertTrue(true);
-                }
-                else
-                {
-                    Assert.assertTrue(false);
-                }                               
+       pageToLoad();
+       String storeCredit = getTextFromAnElement(STORE_CREDIT_AMOUNT);
+       int storeCreditValue = Integer.parseInt(storeCredit.trim().substring(1, storeCredit.indexOf(".")));
+       if(storeCreditValue > 0)
+       {
+          Assert.assertTrue(true);
+       }
+       else
+       {
+         Assert.assertTrue(false);
+       }                               
     }
     
 }
