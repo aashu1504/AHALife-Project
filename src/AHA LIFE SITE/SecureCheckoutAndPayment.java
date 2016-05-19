@@ -35,6 +35,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By CHECKOUT_REGISTRATION_SUBMIT = By.xpath(".//input[@value='Submit']");   
     private final By ORDER_ID_FROM_ORDER_HISTORY = By.xpath(".//*[@id='id-orders-history-content']/div[1]/div[1]/div[3]/span");
     private final By STORE_CREDIT_SUCCESS_MESSAGE = By.xpath(".//*[@id='paymentDetails']/div");
+    private final By STORE_CREDIT_AMOUNT = By.xpath(".//*[@id='cart-summary-credit-amount']");
     
     static String placedProductName = null;
     static String orderID = null;
@@ -229,6 +230,22 @@ class SecureCheckoutAndPayment extends GenericClass{
         String expectedEnoughStoreCreditMessage = storeCredit.get("GetEnoughStoreCreditMessage");
         String actualEnoughStoreCreditMessage = getTextFromAnElement(STORE_CREDIT_SUCCESS_MESSAGE);
         Assert.assertTrue(expectedEnoughStoreCreditMessage.equalsIgnoreCase(actualEnoughStoreCreditMessage));
+    }
+    
+    public int getStoreCreditApplied(HashMap<String, String> getStoreCredit) throws InterruptedException
+    {
+        	pageToLoad();
+            String storeCredit = getTextFromAnElement(PROMO_DISCOUNT_VALUE);
+            int promoCodeValue = Integer.parseInt(promoCode.trim().substring(1, promoCode.indexOf(".")));
+            System.out.println(promoCodeValue);
+            if(promoCodeValue > 0)
+                {
+                    Assert.assertTrue(true);
+                }
+                else
+                {
+                    Assert.assertTrue(false);
+                }                               
     }
     
 }
