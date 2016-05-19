@@ -236,9 +236,9 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         	pageToLoad();
             String storeCredit = getTextFromAnElement(STORE_CREDIT_AMOUNT);
-            int promoCodeValue = Integer.parseInt(promoCode.trim().substring(1, promoCode.indexOf(".")));
-            System.out.println(promoCodeValue);
-            if(promoCodeValue > 0)
+            int storeCreditValue = Integer.parseInt(storeCredit.trim().substring(1, promoCode.indexOf(".")));
+            System.out.println(storeCreditValue);
+            if(storeCreditValue > 0)
                 {
                     Assert.assertTrue(true);
                 }
