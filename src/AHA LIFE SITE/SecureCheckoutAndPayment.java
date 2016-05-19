@@ -140,6 +140,7 @@ class SecureCheckoutAndPayment extends GenericClass{
             buttonClick(APPLY_PROMO_CODE);
             Thread.sleep(4000L);
             String promoCode = getTextFromAnElement(PROMO_DISCOUNT_VALUE);
+            System.out.println(promoCode);
             int promoCodeValue = Integer.parseInt(promoCode.trim().substring(1, promoCode.indexOf(".")));
             System.out.println(promoCodeValue);
             if(promoCodeValue > 0)
