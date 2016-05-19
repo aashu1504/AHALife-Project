@@ -34,6 +34,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By CHECKOUT_REGISTRATION_CONFIRM_PASSWORD = By.xpath(".//*[@id='confirmPassword']");
     private final By CHECKOUT_REGISTRATION_SUBMIT = By.xpath(".//input[@value='Submit']");   
     private final By ORDER_ID_FROM_ORDER_HISTORY = By.xpath(".//*[@id='id-orders-history-content']/div[1]/div[1]/div[3]/span");
+    private final By STORE_CREDIT_SUCCESS_MESSAGE = By.xpath(".//*[@id='paymentDetails']/div");
     
     static String placedProductName = null;
     static String orderID = null;
@@ -221,4 +222,13 @@ class SecureCheckoutAndPayment extends GenericClass{
         System.out.println("Order ID At Order History : " + productOrderIdAtOrdersHistory);
         Assert.assertTrue(productOrderIdAtOrdersHistory.equalsIgnoreCase(orderID));
     }
+    
+    public void verifyEnoughStoreCreditMessageAtPayment(HashMap<String, String> storeCredit)
+    {
+        pageToLoad();
+        String expectedEnoughStoreCreditMessage = registeredEmailID.get("GetEnoughStoreCreditMessage");
+        String actualEnoughStoreCreditMessage = getTextFromAnElement(CHECKOUT_REGISTERED_EMAIL_ID);
+        Assert.assertTrue(expectedEnoughStoreCreditMessage.equalsIgnoreCase(actualRegisteredEmailID));
+    }
+    
 }
