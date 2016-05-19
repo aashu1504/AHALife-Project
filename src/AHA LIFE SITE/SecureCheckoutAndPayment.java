@@ -235,7 +235,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     public int getStoreCreditApplied(HashMap<String, String> getStoreCredit) throws InterruptedException
     {
         	pageToLoad();
-            String storeCredit = getTextFromAnElement(PROMO_DISCOUNT_VALUE);
+            String storeCredit = getTextFromAnElement(STORE_CREDIT_AMOUNT);
             int promoCodeValue = Integer.parseInt(promoCode.trim().substring(1, promoCode.indexOf(".")));
             System.out.println(promoCodeValue);
             if(promoCodeValue > 0)
