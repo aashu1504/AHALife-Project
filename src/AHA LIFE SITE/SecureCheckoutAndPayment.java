@@ -232,7 +232,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         Assert.assertTrue(expectedEnoughStoreCreditMessage.equalsIgnoreCase(actualEnoughStoreCreditMessage));
     }
     
-    public int verifyStoreCreditAppliedForPurchase(HashMap<String, String> getStoreCredit) throws InterruptedException
+    public void verifyStoreCreditAppliedForPurchase(HashMap<String, String> getStoreCredit) throws InterruptedException
     {
         	pageToLoad();
             String storeCredit = getTextFromAnElement(STORE_CREDIT_AMOUNT);
