@@ -100,11 +100,13 @@ class AccountBrandSettings extends GenericClass{
     public void saveAccountSettingInformation(HashMap<String, String> saveSettings)  //We'll need an email address so we can reach out about payment info
     {
         buttonClick(SAVE_ACCOUNT_SETTING);
+        pageToLoad();
     }
     
     public void saveAndContinueAccountSettingInformation(HashMap<String, String> saveContinueSettings)  //We'll need an email address so we can reach out about payment info
     {
         buttonClick(SAVE_CONTINUE_ACCOUNT_SETTING);
+        pageToLoad();
     }   
    
     //<!--------------------------------------------BRAND ACCOUNT SETTING END------------------------------------------------------------------------!>
