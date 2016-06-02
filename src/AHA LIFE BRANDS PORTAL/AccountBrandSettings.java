@@ -15,6 +15,7 @@ class AccountBrandSettings extends GenericClass{
     private final By ZIP = By.xpath(".//*[@id='model.addressZip']");
     private final By PRODUCT_DESIGNED_CITY = By.xpath(".//*[@id='model.originCity']"); 
     private final By DROPSHIP_FULFILLMENT_PREFERENCES = By.xpath(".//label[1][@for='model.fulfillmentMethod.DROP_SHIP']");
+    private final By PAYMENT_TYPE = By.xpath(".//*[@id='model.paymentType']");
     private final By PURCHASE_ALERT_EMAIL = By.xpath(".//input[@id='purchaseOrderSameAsContactEmail']");
     private final By PAYMENT_INFO_EMAIL = By.xpath(".//*[@id='accountingSameAsContactEmail']");
     private final By SAVE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save']");
