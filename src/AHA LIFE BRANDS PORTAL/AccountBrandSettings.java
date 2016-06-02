@@ -80,6 +80,11 @@ class AccountBrandSettings extends GenericClass{
         buttonClick(DROPSHIP_FULFILLMENT_PREFERENCES);
     }
     
+    public void selectPaymentType(HashMap<String, String> paymentType)
+    {
+        buttonClick(PAYMENT_TYPE);
+    }
+    
     public void enterOrSelectPurchaseOrderAlertEMail(HashMap<String, String> purchaseAlertMail)  //This is to alert everyone on your team each time an order comes through.
     {
         buttonClick(PURCHASE_ALERT_EMAIL);
