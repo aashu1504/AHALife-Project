@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 class AccountBrandSettings extends GenericClass{
     
-    private final By DISTRIBUTOR_NAME = By.xpath(".//*[@id='model.legalName']");
+    private final By DISTRIBUTOR_NAME = By.xpath(".//*[@id='legal']");
     private final By COMPANY_WEBSITE = By.xpath(".//*[@id='model.websiteUrl']");
     private final By PHONE_NUMBER = By.xpath(".//*[@id='model.contactPhone']");
     private final By BUSINESS_SHIPPING_ADDRESS = By.xpath(".//*[@id='model.address']");
