@@ -15,7 +15,7 @@ class BrandsLogin extends GenericClass {
     private final By BRAND_LOGOUT_CLICK = By.xpath(".//a[@href='/logout']");
     private final By BRAND_ADMIN_SIGNOUT_CLICK = By.xpath(".//ul[@class='nav navbar-nav navbar-right']/li[2]/a"); 
     private final By USER_PROFILE_ICON_CLICK = By.xpath(".//span[@class='glyphicon glyphicon-user']");
-    private final By BRAND_LOGIN_TEXT = By.xpath(".//*[@id='loginForm']/fieldset/div[3]/legend");
+    private final By BRAND_LOGIN_TEXT = By.xpath(".//*[@id='loginForm']/fieldset/div[1]/legend");
     private final By ADMIN_HOME = By.xpath(".//a[@class='navbar-brand']");
     private final By BRAND_EMAIL_INVITE = By.xpath(".//*[@id='brandEmail']");
     private final By INVITE_BRAND = By.xpath(".//*[@id='detailsForm']/button");
