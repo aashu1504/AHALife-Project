@@ -105,7 +105,8 @@ class BrandsLogin extends GenericClass {
     public void inviteBrandClick(HashMap<String, String> inviteBrand) throws InterruptedException
     {
 		   buttonClick(INVITE_BRAND);
-           Thread.sleep(4000L);
+           pageToLoad();
+           //Thread.sleep(4000L);
     }
     
     public void verifyInviteSuccessMessage(HashMap<String, String> successMessage)
