@@ -48,12 +48,12 @@ class SecureCheckoutAndPayment extends GenericClass{
     //------------------------This section has code for Production Only/ Not for QA----------------------------------------------
     
     
-    public void selectShippingDetails(HashMap<String, String> shippingDetailSelection)
+    public void selectProdShippingDetails(HashMap<String, String> shippingDetailSelection)
     {
         buttonClick(PROD_SHIPPING_ADDRESS);
     }
     
-    public void selectPaymentAccount(HashMap<String, String> selectPayment)
+    public void selectProdPaymentAccount(HashMap<String, String> selectPayment)
     {
         buttonClick(PROD_SHIPPING_ADDRESS);
     }
