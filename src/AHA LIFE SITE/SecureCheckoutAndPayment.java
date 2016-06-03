@@ -45,6 +45,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     static String orderID = null;
     static String productOrderIdAtOrdersHistory = null;
     
+    
     //------------------------This section has code for Production Only/ Not for QA----------------------------------------------
     
     
@@ -52,12 +53,6 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         buttonClick(PROD_SHIPPING_ADDRESS);
     }
-    
-    public void selectProdPaymentAccount(HashMap<String, String> selectPayment)
-    {
-        buttonClick(PROD_SHIPPING_ADDRESS);
-    }
-    
     
     //-----------------------------------------------Production Code End---------------------------------------------------------
     
