@@ -37,9 +37,31 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By STORE_CREDIT_SUCCESS_MESSAGE = By.xpath(".//*[@id='paymentDetails']/div");
     private final By STORE_CREDIT_AMOUNT = By.xpath(".//*[@id='cart-summary-credit-amount']");
     
+    
+    private final By PROD_SHIPPING_ADDRESS = By.xpath(".//*[@id='saved-addresses']/li[6]");
+    private final By PROD_PAYMENT_ACCOUNT = By.xpath(".//*[@id='saved_payments_form']/ul/li[1]/label/input");
+    
     static String placedProductName = null;
     static String orderID = null;
     static String productOrderIdAtOrdersHistory = null;
+    
+    //------------------------This section has code for Production Only/ Not for QA----------------------------------------------
+    
+    
+    public void selectShippingDetails(HashMap<String, String> shippingDetailSelection)
+    {
+        buttonClick(PROD_SHIPPING_ADDRESS);
+    }
+    
+    public void selectPaymentAccount(HashMap<String, String> selectPayment)
+    {
+        buttonClick(PROD_SHIPPING_ADDRESS);
+    }
+    
+    
+    //-----------------------------------------------Production Code End---------------------------------------------------------
+    
+    
     
     public void enterFirstName(HashMap<String, String> firstName)
     {
