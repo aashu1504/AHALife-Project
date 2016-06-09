@@ -16,7 +16,7 @@ class NoirJoinAndLogin extends GenericClass{
     
     public void clickProfile(HashMap<String, String> profile)
     {
-        buttonClick(JOIN_AHALIFE_SITE);
+        buttonClick(JOIN_AHANOIR_SITE);
     }
     
     public void createUserName(HashMap<String, String> joinUserName)
