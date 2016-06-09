@@ -12,6 +12,7 @@ class NoirJoinAndLogin extends GenericClass{
     private final By SUBSCRIBE_USER_NAME = By.xpath(".//*[@id='registerBtnWrapper']/input");
     private final By JOIN_CREATE_PASSWORD = By.xpath(".//*[@id='pwdForm']/div[1]/input");
     private final By JOIN_NOW_REGISTER = By.xpath(".//*[@id='registerBtnWrapperPswrd']/input");
+    private final By MY_PROFILE = By.xpath(".//*[@id='id-header-account-menu']/a/span");
     
     
     public void clickProfile(HashMap<String, String> profile)
@@ -38,6 +39,13 @@ class NoirJoinAndLogin extends GenericClass{
     {
         buttonClick(JOIN_NOW_REGISTER);
         pageToLoad();
-    }   
+    } 
+    
+    public void hoverOnMyProfile(HashMap<String, String> hoverOnProfile) throws InterruptedException
+    {
+        mouseHoverOn(MY_PROFILE);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(SIGNOUT_AHALIFE_SITE));
+    }
     
 }
