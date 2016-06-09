@@ -1,4 +1,4 @@
-package AHA NOIR;
+package AHANOIR;
 
 import java.util.*;
 
