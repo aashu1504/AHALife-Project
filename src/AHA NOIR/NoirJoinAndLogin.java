@@ -9,7 +9,7 @@ class NoirJoinAndLogin extends GenericClass{
     
     private final By JOIN_AHANOIR_SITE = By.xpath(".//li[@class='loginActions']/div/a[2]");
     private final By JOIN_CREATE_USERNAME = By.xpath(".//*[@id='resetInputid']");
-    private final By JOIN_CREATE_PASSWORD = By.xpath(".//*[@id='j_password']");
+    private final By JOIN_CREATE_PASSWORD = By.xpath(".//*[@id='pwdForm']/div[1]/input");
     
     
     public void clickProfile(HashMap<String, String> profile)
