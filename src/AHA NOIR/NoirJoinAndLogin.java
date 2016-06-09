@@ -19,6 +19,26 @@ class NoirJoinAndLogin extends GenericClass{
         buttonClick(JOIN_AHALIFE_SITE);
     }
     
+    public void createUserName(HashMap<String, String> joinUserName)
+    {
+        enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHANoirSiteUserName"));
+    }
     
+    public void createPassword(HashMap<String, String> joinPassword)
+    {
+        enterText(JOIN_CREATE_PASSWORD,joinPassword.get("CreateAHANoirSitePassword"));
+    }
+    
+    public void clickSubscribe(HashMap<String, String> subscribe)
+    {
+        buttonClick(SUBSCRIBE_USER_NAME);
+        pageToLoad();
+    }  
+    
+    public void clickEnter(HashMap<String, String> enter)
+    {
+        buttonClick(JOIN_NOW_REGISTER);
+        pageToLoad();
+    }   
     
 }
