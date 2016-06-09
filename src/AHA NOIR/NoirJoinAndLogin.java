@@ -32,7 +32,6 @@ class NoirJoinAndLogin extends GenericClass{
     public void clickSubscribe(HashMap<String, String> subscribe)
     {
         buttonClick(SUBSCRIBE_USER_NAME);
-        pageToLoad();
     }  
     
     public void clickEnter(HashMap<String, String> enter)
