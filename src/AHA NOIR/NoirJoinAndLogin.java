@@ -54,4 +54,13 @@ class NoirJoinAndLogin extends GenericClass{
         buttonClick(ACCOUNT_SETTING);
     }
     
+    public void verifyUserRegistrationToAHANoir(HashMap<String, String> joinVerify)
+    {
+        pageToLoad();
+        expectedSignInText = ;
+        actualSignInText = getTextFromAnElement(ACCOUNT_EMAIL_ID);
+        System.out.println("Actual is : " + actualSignInText);
+        Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
+    }
+    
 }
