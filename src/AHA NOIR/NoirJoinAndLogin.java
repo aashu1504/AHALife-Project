@@ -53,7 +53,7 @@ class NoirJoinAndLogin extends GenericClass{
     {
         mouseHoverOn(MY_PROFILE);
         WebDriverWait wait = new WebDriverWait(driver, 15);
-       wait.until(ExpectedConditions.visibilityOfElementLocated(ACCOUNT_SETTING));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ACCOUNT_SETTING));
     }
     
     public void clickAccountSetting(HashMap<String, String> accountSetting)
