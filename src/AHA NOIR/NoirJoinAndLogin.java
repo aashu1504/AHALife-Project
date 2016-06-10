@@ -74,7 +74,7 @@ class NoirJoinAndLogin extends GenericClass{
     
     public void enterEmailID(HashMap<String, String> signInEmailID)
     {
-        enterText(EMAIL_ID,signInEmailID.get("EnterAHANoirSiteUserName"));
+        enterText(EMAIL_ID,signInEmailID.get("EnterAHANoirSiteEmailID"));
     }
     
     public void enterPassword(HashMap<String, String> signInPassword)
