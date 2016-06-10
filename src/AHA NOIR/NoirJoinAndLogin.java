@@ -80,7 +80,7 @@ class NoirJoinAndLogin extends GenericClass{
         pageToLoad();
         expectedSignInText = logoutVerify.get("ProfileText");
         System.out.println("Expected is : " + expectedSignInText);
-        actualSignInText = getTextFromAnElement(SIGNIN_AHALIFE_SITE);
+        actualSignInText = getTextFromAnElement(JOIN_AHANOIR_SITE);
         System.out.println("Actual is : " + actualSignInText);
         Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
     }
