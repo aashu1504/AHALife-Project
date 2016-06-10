@@ -65,9 +65,7 @@ class NoirJoinAndLogin extends GenericClass{
     {
         pageToLoad();
         expectedEmailID = newUserEmailID;
-        System.out.println("Expected is : " + expectedEmailID);
         actualEmailID = getTextFromAnElement(ACCOUNT_EMAIL_ID);
-        System.out.println("Actual is : " + actualEmailID);
         Assert.assertTrue(expectedEmailID.equalsIgnoreCase(actualEmailID));
     }
     
