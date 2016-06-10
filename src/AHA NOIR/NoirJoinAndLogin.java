@@ -69,4 +69,18 @@ class NoirJoinAndLogin extends GenericClass{
         Assert.assertTrue(expectedEmailID.equalsIgnoreCase(actualEmailID));
     }
     
+    public void clickSignOut(HashMap<String, String> signOut)
+    {
+        buttonClick(SIGNOUT_AHANOIR_SITE);
+    }
+    
+    public void verifyLogoutFromAHASite(HashMap<String, String> logoutVerify)
+    {
+        pageToLoad();
+        expectedSignInText = logoutVerify.get("SignInText");
+        System.out.println("Expected is : " + expectedSignInText);
+        actualSignInText = getTextFromAnElement(SIGNIN_AHALIFE_SITE);
+        System.out.println("Actual is : " + actualSignInText);
+        Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
+    }
 }
