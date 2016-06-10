@@ -78,7 +78,7 @@ class NoirJoinAndLogin extends GenericClass{
     public void verifyLogoutFromAHASite(HashMap<String, String> logoutVerify)
     {
         pageToLoad();
-        expectedSignInText = logoutVerify.get("SignInText");
+        expectedSignInText = logoutVerify.get("ProfileText");
         System.out.println("Expected is : " + expectedSignInText);
         actualSignInText = getTextFromAnElement(SIGNIN_AHALIFE_SITE);
         System.out.println("Actual is : " + actualSignInText);
