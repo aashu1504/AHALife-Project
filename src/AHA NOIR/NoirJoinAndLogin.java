@@ -73,6 +73,12 @@ class NoirJoinAndLogin extends GenericClass{
         Assert.assertTrue(expectedEmailID.equalsIgnoreCase(actualEmailID));
     }
     
+    public void clickSignInHere(HashMap<String, String> signInHere)
+    {
+        buttonClick(ALREADY_SIGN_IN);
+        pageToLoad();
+    }  
+    
     public void enterEmailID(HashMap<String, String> signInEmailID)
     {
         enterText(EMAIL_ID,signInEmailID.get("EnterAHANoirSiteEmailID"));
