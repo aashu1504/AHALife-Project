@@ -13,7 +13,7 @@ class NoirJoinAndLogin extends GenericClass{
     private final By JOIN_CREATE_PASSWORD = By.xpath(".//*[@id='pwdForm']/div[1]/input");
     private final By JOIN_NOW_REGISTER = By.xpath(".//*[@id='registerBtnWrapperPswrd']/input");
     private final By MY_PROFILE = By.xpath(".//*[@class='nav mobileFl hidden-phone']/div[1]/div/span[2]/a");
-    
+    private final By ACCOUNT_SETTING = By.xpath(".//*[@class='nav mobileFl hidden-desktop']/div/div/span[2]/div/ul/li[1]/a");
     
     public void clickProfile(HashMap<String, String> profile)
     {
