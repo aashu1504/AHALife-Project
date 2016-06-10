@@ -17,6 +17,9 @@ class NoirJoinAndLogin extends GenericClass{
     private final By ACCOUNT_SETTING = By.xpath(".//*[@id='responsive']/div[1]/header/div/div/div[3]/div/div[1]/span[2]/div/ul/li[1]/a");
     private final By ACCOUNT_EMAIL_ID = By.xpath(".//*[@id='account-update']/div/div[2]/a/ul/li[2]/span");
     private final By SIGNOUT_AHANOIR_SITE = By.xpath(".//*[@id='responsive']/div[1]/header/div/div/div[3]/div/div[1]/span[2]/div/ul/li[3]/a");
+    private final By EMAIL_ID = By.xpath(".//*[@id='loginUsername']");
+    private final By PASSWORD = By.xpath(".//*[@id='loginPassword']");
+    private final By SIGN_IN = By.xpath(".//*[@id='loginSubmitWrapper']/div/input");
     
     static String newUserEmailID;
     static String actualEmailID = null;
@@ -68,6 +71,22 @@ class NoirJoinAndLogin extends GenericClass{
         actualEmailID = getTextFromAnElement(ACCOUNT_EMAIL_ID);
         Assert.assertTrue(expectedEmailID.equalsIgnoreCase(actualEmailID));
     }
+    
+    public void enterEmailID(HashMap<String, String> signInEmailID)
+    {
+        enterText(EMAIL_ID,signInEmailID.get("EnterAHANoirSiteUserName"));
+    }
+    
+    public void enterPassword(HashMap<String, String> signInPassword)
+    {
+        enterText(PASSWORD,signInPassword.get("EnterAHANoirSitePassword"));
+    }
+    
+    public void clickSignInToPortal(HashMap<String, String> signInPortal)
+    {
+        buttonClick(SIGN_IN);
+        pageToLoad();
+    }  
     
     public void clickSignOut(HashMap<String, String> signOut)
     {
