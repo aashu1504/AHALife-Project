@@ -74,7 +74,7 @@ class NoirJoinAndLogin extends GenericClass{
         buttonClick(SIGNOUT_AHANOIR_SITE);
     }
     
-    public void verifyLogoutFromAHASite(HashMap<String, String> logoutVerify)
+    public void verifyLogoutFromAHANOIRSite(HashMap<String, String> logoutVerify)
     {
         pageToLoad();
         expectedProfileText = logoutVerify.get("ProfileText");
