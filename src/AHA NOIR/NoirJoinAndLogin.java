@@ -25,7 +25,7 @@ class NoirJoinAndLogin extends GenericClass{
     
     public void createUserName(HashMap<String, String> joinUserName)
     {
-        newUserEmailID = joinUserName.get("CreateAHANoirSiteUserName")
+        newUserEmailID = joinUserName.get("CreateAHANoirSiteUserName");
         enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHANoirSiteUserName"));
     }
     
