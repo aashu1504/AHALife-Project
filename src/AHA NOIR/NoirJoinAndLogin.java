@@ -76,7 +76,6 @@ class NoirJoinAndLogin extends GenericClass{
     public void clickSignInHere(HashMap<String, String> signInHere)
     {
         buttonClick(ALREADY_SIGN_IN);
-        pageToLoad();
     }  
     
     public void enterEmailID(HashMap<String, String> signInEmailID)
