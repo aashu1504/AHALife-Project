@@ -48,4 +48,9 @@ class NoirJoinAndLogin extends GenericClass{
        // wait.until(ExpectedConditions.visibilityOfElementLocated(SIGNOUT_AHALIFE_SITE));
     }
     
+    public void clickAccountSetting(HashMap<String, String> accountSetting)
+    {
+        buttonClick(ACCOUNT_SETTING);
+    }
+    
 }
