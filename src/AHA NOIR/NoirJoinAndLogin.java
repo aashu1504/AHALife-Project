@@ -81,6 +81,6 @@ class NoirJoinAndLogin extends GenericClass{
         System.out.println("Expected is : " + expectedProfileText);
         actualProfileText = getTextFromAnElement(MY_PROFILE);
         System.out.println("Actual is : " + actualProfileText);
-        Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
+        Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
     }
 }
