@@ -16,6 +16,8 @@ class NoirJoinAndLogin extends GenericClass{
     private final By ACCOUNT_SETTING = By.xpath(".//*[@class='nav mobileFl hidden-desktop']/div/div/span[2]/div/ul/li[1]/a");
     private final By ACCOUNT_EMAIL_ID = By.xpath(".//*[@id='account-update']/div/div[2]/a/ul/li[2]/span");
     
+    static String newUserEmailID;
+    
     public void clickProfile(HashMap<String, String> profile)
     {
         buttonClick(JOIN_AHANOIR_SITE);
@@ -23,6 +25,7 @@ class NoirJoinAndLogin extends GenericClass{
     
     public void createUserName(HashMap<String, String> joinUserName)
     {
+        newUserEmailID = joinUserName.get("CreateAHANoirSiteUserName")
         enterText(JOIN_CREATE_USERNAME,joinUserName.get("CreateAHANoirSiteUserName"));
     }
     
@@ -57,7 +60,7 @@ class NoirJoinAndLogin extends GenericClass{
     public void verifyUserRegistrationToAHANoir(HashMap<String, String> joinVerify)
     {
         pageToLoad();
-        expectedSignInText = joinUserName.get("CreateAHANoirSiteUserName");
+        expectedSignInText = newUserEmailID;
         actualSignInText = getTextFromAnElement(ACCOUNT_EMAIL_ID);
         Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
     }
