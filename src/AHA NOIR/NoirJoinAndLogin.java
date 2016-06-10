@@ -17,6 +17,8 @@ class NoirJoinAndLogin extends GenericClass{
     private final By ACCOUNT_EMAIL_ID = By.xpath(".//*[@id='account-update']/div/div[2]/a/ul/li[2]/span");
     
     static String newUserEmailID;
+    static String actualEmailID = null;
+    static String expectedEmailID = null;
     
     public void clickProfile(HashMap<String, String> profile)
     {
