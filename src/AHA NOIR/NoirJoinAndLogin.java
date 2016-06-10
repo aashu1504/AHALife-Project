@@ -60,9 +60,9 @@ class NoirJoinAndLogin extends GenericClass{
     public void verifyUserRegistrationToAHANoir(HashMap<String, String> joinVerify)
     {
         pageToLoad();
-        expectedSignInText = newUserEmailID;
-        actualSignInText = getTextFromAnElement(ACCOUNT_EMAIL_ID);
-        Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
+        expectedEmailID = newUserEmailID;
+        actualEmailID = getTextFromAnElement(ACCOUNT_EMAIL_ID);
+        Assert.assertTrue(expectedEmailID.equalsIgnoreCase(actualEmailID));
     }
     
 }
