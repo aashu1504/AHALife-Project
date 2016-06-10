@@ -19,8 +19,8 @@ class NoirJoinAndLogin extends GenericClass{
     private final By SIGNOUT_AHANOIR_SITE = By.xpath(".//*[@id='responsive']/div[1]/header/div/div/div[3]/div/div[1]/span[2]/div/ul/li[3]/a");
     private final By EMAIL_ID = By.xpath(".//*[@id='loginUsername']");
     private final By PASSWORD = By.xpath(".//*[@id='loginPassword']");
-    private final By SIGN_IN = By.xpath(".//*[@id='loginSubmitWrapper']/input");.//*[@id='signInLink']
-    private final By ALREADY_SIGN_IN = By.xpath(".//*[@id='loginSubmitWrapper']/input");
+    private final By SIGN_IN = By.xpath(".//*[@id='loginSubmitWrapper']/input");
+    private final By ALREADY_SIGN_IN = By.xpath(".//*[@id='signInLink']");
     
     static String newUserEmailID;
     static String actualEmailID = null;
