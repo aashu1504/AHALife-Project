@@ -274,6 +274,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         driver.switchTo().frame("talkable-popup-trigger");
         buttonClick(CLOSE_OFFER_POPUP_CONFIRMATION_PAGE);
+        driver.switchTo().defaultContent();
     }
     
 }
