@@ -272,6 +272,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void closeReferFriendPopup(HashMap<String, String> friendPopup)
     {
+        driver.switchTo().frame("talkable-popup-trigger");
         buttonClick(CLOSE_OFFER_POPUP_CONFIRMATION_PAGE);
     }
     
