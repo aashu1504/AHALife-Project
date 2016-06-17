@@ -98,6 +98,7 @@ class JoinAndLogin extends GenericClass{
     
     public void hoverOnMyProfile(HashMap<String, String> hoverOnProfile) throws InterruptedException
     {
+        pageToLoad();
         mouseHoverOn(MY_PROFILE);
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(SIGNOUT_AHALIFE_SITE));
