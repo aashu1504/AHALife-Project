@@ -40,6 +40,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     private final By PROD_SHIPPING_ADDRESS = By.xpath(".//*[@id='saved-addresses']/li[6]");
     private final By PROD_PAYMENT_ACCOUNT = By.xpath(".//*[@id='saved_payments_form']/ul/li[1]/label/input");
+    private final By CLOSE_OFFER_POPUP = By.xpath(".//div[@class='popup-close is-solid js-offer-close ac-offer-close']");
     
     static String placedProductName = null;
     static String orderID = null;
