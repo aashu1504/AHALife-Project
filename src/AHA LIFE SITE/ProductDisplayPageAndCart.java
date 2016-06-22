@@ -46,7 +46,15 @@ class ProductDisplayPageAndCart extends GenericClass{
     public void clickMyBag(HashMap<String, String> myBag)
     {
         pageToLoad();
-        buttonClick(MY_BAG_SITE);
+        if(isElementExist(MY_BAG_SITE))
+        {
+           buttonClick(MY_BAG_SITE);    
+        }
+        else
+        {
+            buttonClick(MY_BAG_NOIR);    
+        }
+        
     }
     
     public void clickMyBagWhenSignedIn(HashMap<String, String> myBagSignedIn)
