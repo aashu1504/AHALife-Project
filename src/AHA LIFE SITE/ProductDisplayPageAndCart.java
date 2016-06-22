@@ -9,7 +9,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     
     private final By ADD_TO_BAG_PDP = By.xpath(".//*[@id='buy-button']");
     private final By PRODUCT_NAME = By.xpath(".//div[@class='product_mainContainer']/div/h1");
-    private final By MY_BAG = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
+    private final By MY_BAG_SITE = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
     private final By MY_BAG_NOIR = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
     private final By MY_BAG_LOGGED_IN = By.xpath(".//*[@id='id-header-top-level-menu']/li[3]/a");
     private final By CART_PRODUCT_NAME = By.xpath(".//*[@id='cart_products']/li/div[2]/h3");
@@ -46,7 +46,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     public void clickMyBag(HashMap<String, String> myBag)
     {
         pageToLoad();
-        buttonClick(MY_BAG);
+        buttonClick(MY_BAG_SITE);
     }
     
     public void clickMyBagWhenSignedIn(HashMap<String, String> myBagSignedIn)
