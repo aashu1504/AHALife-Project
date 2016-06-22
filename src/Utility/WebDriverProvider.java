@@ -56,7 +56,7 @@ public class WebDriverProvider {
     
     public void closeBrowser(HashMap<String, String> closeBrowser)
     {
-		 driver.quit();
+		 driver.close();
 	}
     
 }
