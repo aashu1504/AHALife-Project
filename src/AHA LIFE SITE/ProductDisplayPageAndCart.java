@@ -54,7 +54,7 @@ class ProductDisplayPageAndCart extends GenericClass{
 		WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW));
         productNameAtQuickView = getTextFromAnElement(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW);
-        System.out.println("Product Name at Home page : " + productNameAtHomePage);
+        System.out.println("Product Name at Home page : " + quickViewProductName);
         System.out.println("Product Name at Quick View : " + productNameAtQuickView);
         Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
     }
