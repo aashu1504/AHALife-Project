@@ -10,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import com.google.common.base.Stopwatch;
-import org.openqa.selenium.Keys;
 import java.util.concurrent.TimeUnit;
 
 class HomePage extends GenericClass{
@@ -44,7 +43,7 @@ class HomePage extends GenericClass{
     
     public void pressEnter(HashMap<String, String> enter)
     {
-        pressKey(SEARCH_TEXT,Keys.Enter);
+        pressKey(SEARCH_TEXT,Enter);
     }
     
     
