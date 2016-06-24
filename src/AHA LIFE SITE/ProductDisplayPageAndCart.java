@@ -4,6 +4,8 @@ import java.util.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import Utility.GenericClass;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 class ProductDisplayPageAndCart extends GenericClass{
     
