@@ -20,10 +20,10 @@ class HomePage extends GenericClass{
     //private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     //private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     private final By SEARCH_TEXT = By.xpath(".//div[@class='search-wrap']/a/form/input");
-    private final By SEARCHED_PRODUCT_NAME = By.xpath(".//ul[@id='products']/li/a/div[2]/h4");
+    private final By ACTUAL_SEARCHED_PRODUCT_NAME = By.xpath(".//ul[@id='products']/li/a/div[2]/h4");
     private final By ANCHOR_TAG = By.tagName("a");
     
-    static String productNameAtSearch = null;
+    static String actualSearchedProductName = null;
     static String expectedSearchedProductName = null;
     static List<WebElement> urlListElements = null;
     static int statusCode;
@@ -41,8 +41,8 @@ class HomePage extends GenericClass{
     
     public void verifySearchedProduct(HashMap<String, String> searchProduct) 
     {
-        productNameAtSearch = getTextFromAnElement(SEARCHED_PRODUCT_NAME);
-        Assert.assertTrue(productNameAtSearch.equalsIgnoreCase(searchProduct.));
+        actualSearchedProductName = getTextFromAnElement(ACTUAL_SEARCHED_PRODUCT_NAME);
+        Assert.assertTrue(actualSearchedProductName.equalsIgnoreCase(expectedSearchedProductName));
     }
     
     //public String clickProduct(HashMap<String, String> product)
