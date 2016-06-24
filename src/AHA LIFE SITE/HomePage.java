@@ -19,7 +19,7 @@ class HomePage extends GenericClass{
     //private final By ADD_TO_BAG_HOME = By.xpath(".//*[@id='buy-button']");
     //private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     //private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
-    private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//div[@class='search-wrap']/a/form/input");
+    private final By SEARCH_TEXT = By.xpath(".//div[@class='search-wrap']/a/form/input");
     private final By ANCHOR_TAG = By.tagName("a");
     
     static String productNameAtHomePage = null;
@@ -30,9 +30,9 @@ class HomePage extends GenericClass{
     static Stopwatch pageLoad = null;
 
     
-    public void enterSearchItem()
+    public void enterSearchItem(HashMap<String, String> searchItem)
     {
-        
+        enterText(SEARCH_TEXT,searchItem.get("SearchItem"));
     }
     
     
