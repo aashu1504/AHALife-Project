@@ -39,12 +39,12 @@ class HomePage extends GenericClass{
     {
         expectedSearchedItem = searchItem.get("SearchItem");
         enterText(SEARCH_TEXT,expectedSearchedItem);
-        pageToLoad();
     }
     
     public void pressEnter(HashMap<String, String> enter)
     {
         pressKey(SEARCH_TEXT,Keys.ENTER);
+        pageToLoad();
     }
     
     
