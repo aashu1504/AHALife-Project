@@ -42,7 +42,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     
     public String clickQuickView(HashMap<String, String> quickView)
     {
-        quickViewProductName = getTextFromAnElement(PRODUCT_ID);
+        quickViewProductName = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
         buttonClick(QUICK_VIEW);
         return productNameAtHomePage;
     }
