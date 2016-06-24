@@ -54,15 +54,15 @@ class HomePage extends GenericClass{
         buttonClick(CLOSE_QUICK_VIEW);
     }
     
-    public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
-    {
-		WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_QUICK_VIEW));
-        productNameAtQuickView = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
-        System.out.println("Product Name at Home page : " + productNameAtHomePage);
-        System.out.println("Product Name at Quick View : " + productNameAtQuickView);
-        Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
-    }
+    //public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
+    //{
+		//WebDriverWait wait = new WebDriverWait(driver, 15);
+       // wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_QUICK_VIEW));
+       // productNameAtQuickView = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
+       // System.out.println("Product Name at Home page : " + productNameAtHomePage);
+       // System.out.println("Product Name at Quick View : " + productNameAtQuickView);
+       // Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
+   // }
     
     public void verifyIfBrokenLinksPresent(HashMap<String, String> homePageBrokenLinks) throws MalformedURLException, IOException
     { 
