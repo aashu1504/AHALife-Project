@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import com.google.common.base.Stopwatch;
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.Keys;
 
 class HomePage extends GenericClass{
     
