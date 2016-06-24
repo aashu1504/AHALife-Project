@@ -43,7 +43,7 @@ class HomePage extends GenericClass{
     
     public void pressEnter(HashMap<String, String> enter)
     {
-        pressKey(SEARCH_TEXT,Keys.Enter);
+        pressKey(SEARCH_TEXT,Enter);
     }
     
     
