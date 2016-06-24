@@ -23,7 +23,6 @@ class HomePage extends GenericClass{
     private final By SEARCHED_PRODUCT_NAME = By.xpath(".//ul[@id='products']/li/a/div[2]/h4");
     private final By ANCHOR_TAG = By.tagName("a");
     
-    static String productNameAtHomePage = null;
     static String productNameAtQuickView = null;
     static List<WebElement> urlListElements = null;
     static int statusCode;
@@ -38,11 +37,9 @@ class HomePage extends GenericClass{
     }
     
     
-    public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
+    public void verifySearchedProduct(HashMap<String, String> searchProduct) 
     {
         productNameAtSearch = getTextFromAnElement(SEARCHED_PRODUCT_NAME);
-        System.out.println("Product Name at Product page Quick View : " + quickViewProductName);
-        System.out.println("Product Name at Quick View : " + productNameAtQuickViewWindow);
         Assert.assertTrue(quickViewProductName.equalsIgnoreCase(productNameAtQuickViewWindow));
     }
     
