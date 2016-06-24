@@ -49,7 +49,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         quickViewProductName = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
         buttonClick(QUICK_VIEW);
-        //return quickViewProductName;
+        return quickViewProductName;
     }
     
     public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
