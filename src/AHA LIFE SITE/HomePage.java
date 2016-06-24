@@ -23,7 +23,8 @@ class HomePage extends GenericClass{
     private final By SEARCHED_PRODUCT_NAME = By.xpath(".//ul[@id='products']/li/a/div[2]/h4");
     private final By ANCHOR_TAG = By.tagName("a");
     
-    static String productNameAtQuickView = null;
+    static String productNameAtSearch = null;
+    static String expectedSearchedProductName = null;
     static List<WebElement> urlListElements = null;
     static int statusCode;
     static List<Integer> statusCodeList = new ArrayList<Integer>();
@@ -32,6 +33,7 @@ class HomePage extends GenericClass{
     
     public void enterSearchItem(HashMap<String, String> searchItem)
     {
+        expectedSearchedProductName = searchItem.get("SearchItem");
         enterText(SEARCH_TEXT,searchItem.get("SearchItem"));
         pageToLoad();
     }
@@ -40,7 +42,7 @@ class HomePage extends GenericClass{
     public void verifySearchedProduct(HashMap<String, String> searchProduct) 
     {
         productNameAtSearch = getTextFromAnElement(SEARCHED_PRODUCT_NAME);
-        Assert.assertTrue(quickViewProductName.equalsIgnoreCase(productNameAtQuickViewWindow));
+        Assert.assertTrue(productNameAtSearch.equalsIgnoreCase(searchProduct.));
     }
     
     //public String clickProduct(HashMap<String, String> product)
