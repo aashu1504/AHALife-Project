@@ -20,6 +20,7 @@ class HomePage extends GenericClass{
     //private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     //private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     private final By SEARCH_TEXT = By.xpath(".//div[@class='search-wrap']/a/form/input");
+    private final By SEARCHED_PRODUCT_NAME = By.xpath(".//ul[@id='products']/li/a/div[2]/h4");
     private final By ANCHOR_TAG = By.tagName("a");
     
     static String productNameAtHomePage = null;
@@ -39,9 +40,7 @@ class HomePage extends GenericClass{
     
     public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
     {
-		WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW));
-        productNameAtQuickViewWindow = getTextFromAnElement(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW);
+        productNameAtSearch = getTextFromAnElement(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW);
         System.out.println("Product Name at Product page Quick View : " + quickViewProductName);
         System.out.println("Product Name at Quick View : " + productNameAtQuickViewWindow);
         Assert.assertTrue(quickViewProductName.equalsIgnoreCase(productNameAtQuickViewWindow));
