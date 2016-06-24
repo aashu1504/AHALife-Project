@@ -114,7 +114,7 @@ class ProductDisplayPageAndCart extends GenericClass{
         pageToLoad();
         productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
         System.out.println("Product Name at Cart : " + productNameAtCart);
-        Assert.assertTrue(productNameAtCart.equalsIgnoreCase(productAtCartFromQV.get("ProductNameHomePage")));
+        Assert.assertTrue(productNameAtCart.equalsIgnoreCase(productAtCartFromQV.get("ProductNameQuickView")));
     }
     
     public void navigateToProductPage(HashMap<String, String> productURL)
