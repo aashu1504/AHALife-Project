@@ -19,6 +19,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     private final By REMOVE_ITEM_FROM_CART = By.xpath(".//*[@id='productRow1']/div[3]/div/div[2]/a");
     private final By ACTUAL_EMPTY_CART_TEXT = By.xpath(".//div[@class='emptyBagText']");
     private final By QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[1]/div[3]");
+    private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[2]/h4");
     
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
@@ -38,6 +39,13 @@ class ProductDisplayPageAndCart extends GenericClass{
         //System.out.println("Product Name at PDP Page : " + productNameAtProductDisplayPage);
         //Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
     //}
+    
+    public String clickQuickView(HashMap<String, String> quickView)
+    {
+        quickViewProductName = getTextFromAnElement(PRODUCT_ID);
+        buttonClick(QUICK_VIEW);
+        return productNameAtHomePage;
+    }
     
     public void clickAddToBagPDP(HashMap<String, String> addPDP)
     {
