@@ -21,6 +21,8 @@ class ProductDisplayPageAndCart extends GenericClass{
     private final By QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[1]/div[3]");
     private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[2]/h4");
     private final By PRODUCT_NAME_AT_QUICK_VIEW_WINDOW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
+    private final By ADD_TO_BAG_QUICK_VIEW = By.xpath(".//form[@id='add-to-cart-form']/div[2]/input");
+    private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
@@ -47,7 +49,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         quickViewProductName = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
         buttonClick(QUICK_VIEW);
-        return quickViewProductName;
+        //return quickViewProductName;
     }
     
     public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
@@ -58,6 +60,18 @@ class ProductDisplayPageAndCart extends GenericClass{
         System.out.println("Product Name at Home page : " + quickViewProductName);
         System.out.println("Product Name at Quick View : " + productNameAtQuickViewWindow);
         Assert.assertTrue(quickViewProductName.equalsIgnoreCase(productNameAtQuickViewWindow));
+    }
+    
+    public void clickAddToBagAtQVWindow(HashMap<String, String> quickViewAdd)
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_TO_BAG_QUICK_VIEW));
+        buttonClick(ADD_TO_BAG_QUICK_VIEW);
+    }
+    
+    public void closeQuickView(HashMap<String, String> quickViewClose)
+    {
+        buttonClick(CLOSE_QUICK_VIEW);
     }
     
     public void clickAddToBagPDP(HashMap<String, String> addPDP)
