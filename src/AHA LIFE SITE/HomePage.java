@@ -41,6 +41,12 @@ class HomePage extends GenericClass{
         pageToLoad();
     }
     
+    public void pressEnter(HashMap<String, String> enter)
+    {
+        pressKey(SEARCH_TEXT,"Enter");
+    }
+    
+    
     public void clickBrandTab(HashMap<String, String> brandTab)
     {
         buttonClick(BRAND_TAB_SWITCH);
