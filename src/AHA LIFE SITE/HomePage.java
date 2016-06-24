@@ -25,6 +25,8 @@ class HomePage extends GenericClass{
     
     static String actualSearchedProductName = null;
     static String expectedSearchedProductName = null;
+    static String actualSearchedBrand = null;
+    static String expectedSearchedBrand = null;
     static List<WebElement> urlListElements = null;
     static int statusCode;
     static List<Integer> statusCodeList = new ArrayList<Integer>();
@@ -45,9 +47,9 @@ class HomePage extends GenericClass{
         Assert.assertTrue(actualSearchedProductName.equalsIgnoreCase(expectedSearchedProductName));
     }
     
-    public void verifySearchedBrand(HashMap<String, String> searchProduct) 
+    public void verifySearchedBrand(HashMap<String, String> searchBrand) 
     {
-        actualSearchedProductName = getTextFromAnElement(ACTUAL_SEARCHED_PRODUCT_NAME);
+        actualSearchedBrand = getTextFromAnElement(ACTUAL_SEARCHED_PRODUCT_NAME);
         Assert.assertTrue(actualSearchedProductName.equalsIgnoreCase(expectedSearchedProductName));
     }
     
