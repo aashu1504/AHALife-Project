@@ -20,10 +20,12 @@ class ProductDisplayPageAndCart extends GenericClass{
     private final By ACTUAL_EMPTY_CART_TEXT = By.xpath(".//div[@class='emptyBagText']");
     private final By QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[1]/div[3]");
     private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[2]/h4");
+    private final By PRODUCT_NAME_AT_QUICK_VIEW_WINDOW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
     static String actualEmptyCartText = null;
+    static String productNameAtHomePage = null;
      
     public String getProductNameFromProductDisplayPage(HashMap<String, String> productDisplayName)
     {
@@ -45,6 +47,16 @@ class ProductDisplayPageAndCart extends GenericClass{
         quickViewProductName = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
         buttonClick(QUICK_VIEW);
         return productNameAtHomePage;
+    }
+    
+    public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
+    {
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW));
+        productNameAtQuickView = getTextFromAnElement(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW);
+        System.out.println("Product Name at Home page : " + productNameAtHomePage);
+        System.out.println("Product Name at Quick View : " + productNameAtQuickView);
+        Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
     }
     
     public void clickAddToBagPDP(HashMap<String, String> addPDP)
