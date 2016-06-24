@@ -25,7 +25,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
     static String actualEmptyCartText = null;
-    static String productNameAtHomePage = null;
+    static String quickViewProductName = null;
      
     public String getProductNameFromProductDisplayPage(HashMap<String, String> productDisplayName)
     {
@@ -37,7 +37,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     //{
       //  pageToLoad();
         //productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
-        //System.out.println("Product Name at Home page : " + productName.get("ProductNameAtHomePage"));
+        //System.out.println("Product Name at Home page : " + productName.get("ProductNameAtHomePageproductNameAtHomePage"));
         //System.out.println("Product Name at PDP Page : " + productNameAtProductDisplayPage);
         //Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
     //}
@@ -46,7 +46,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         quickViewProductName = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
         buttonClick(QUICK_VIEW);
-        return productNameAtHomePage;
+        return quickViewProductName;
     }
     
     public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
