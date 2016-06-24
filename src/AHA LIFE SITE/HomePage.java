@@ -21,6 +21,7 @@ class HomePage extends GenericClass{
     //private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     private final By SEARCH_TEXT = By.xpath(".//div[@class='search-wrap']/a/form/input");
     private final By ACTUAL_SEARCHED_PRODUCT_NAME = By.xpath(".//ul[@id='products']/li/a/div[2]/h4");
+    private final By ACTUAL_SEARCHED_BRAND_NAME = By.xpath(".//ul[@id='products']/li/a/div[2]/h4");
     private final By BRAND_TAB_SWITCH = By.xpath(".//*[@id='tab2']");
     private final By ANCHOR_TAG = By.tagName("a");
     
