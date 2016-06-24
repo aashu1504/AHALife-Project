@@ -37,6 +37,16 @@ class HomePage extends GenericClass{
     }
     
     
+    public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
+    {
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW));
+        productNameAtQuickViewWindow = getTextFromAnElement(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW);
+        System.out.println("Product Name at Product page Quick View : " + quickViewProductName);
+        System.out.println("Product Name at Quick View : " + productNameAtQuickViewWindow);
+        Assert.assertTrue(quickViewProductName.equalsIgnoreCase(productNameAtQuickViewWindow));
+    }
+    
     //public String clickProduct(HashMap<String, String> product)
     //{
       //  productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
