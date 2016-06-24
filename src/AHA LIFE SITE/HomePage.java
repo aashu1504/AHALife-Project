@@ -24,9 +24,8 @@ class HomePage extends GenericClass{
     private final By ANCHOR_TAG = By.tagName("a");
     
     static String actualSearchedProductName = null;
-    static String expectedSearchedProductName = null;
+    static String expectedSearchedItem = null;
     static String actualSearchedBrand = null;
-    static String expectedSearchedBrand = null;
     static List<WebElement> urlListElements = null;
     static int statusCode;
     static List<Integer> statusCodeList = new ArrayList<Integer>();
@@ -35,7 +34,7 @@ class HomePage extends GenericClass{
     
     public void enterSearchItem(HashMap<String, String> searchItem)
     {
-        expectedSearchedProductName = searchItem.get("SearchItem");
+        expectedSearchedItem = searchItem.get("SearchItem");
         enterText(SEARCH_TEXT,expectedSearchedProductName);
         pageToLoad();
     }
