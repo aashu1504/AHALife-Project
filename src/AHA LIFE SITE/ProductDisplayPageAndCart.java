@@ -18,6 +18,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     private final By CONTINUE_AS_REGISTERED_USER = By.xpath(".//*[@id='id-checkout-auth-login']/div[2]/input");
     private final By REMOVE_ITEM_FROM_CART = By.xpath(".//*[@id='productRow1']/div[3]/div/div[2]/a");
     private final By ACTUAL_EMPTY_CART_TEXT = By.xpath(".//div[@class='emptyBagText']");
+    private final By QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[1]/div[3]");
     
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
