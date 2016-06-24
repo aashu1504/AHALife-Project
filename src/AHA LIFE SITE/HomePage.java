@@ -50,7 +50,7 @@ class HomePage extends GenericClass{
     public void verifySearchedBrand(HashMap<String, String> searchBrand) 
     {
         actualSearchedBrand = getTextFromAnElement(ACTUAL_SEARCHED_PRODUCT_NAME);
-        Assert.assertTrue(actualSearchedProductName.equalsIgnoreCase(expectedSearchedProductName));
+        Assert.assertTrue(actualSearchedBrand.equalsIgnoreCase(expectedSearchedProductName));
     }
     
     //public String clickProduct(HashMap<String, String> product)
