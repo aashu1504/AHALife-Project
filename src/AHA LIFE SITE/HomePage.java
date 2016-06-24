@@ -34,7 +34,7 @@ class HomePage extends GenericClass{
     public void enterSearchItem(HashMap<String, String> searchItem)
     {
         expectedSearchedProductName = searchItem.get("SearchItem");
-        enterText(SEARCH_TEXT,searchItem.get("SearchItem"));
+        enterText(SEARCH_TEXT,expectedSearchedProductName);
         pageToLoad();
     }
     
