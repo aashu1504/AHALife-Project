@@ -64,8 +64,8 @@ class HomePage extends GenericClass{
     public void verifySearchedBrand(HashMap<String, String> searchBrand) 
     {
         actualSearchedBrand = getTextFromAnElement(ACTUAL_SEARCHED_BRAND_NAME);
-        System.out.println("Product Name at Product page Quick View : " + quickViewProductName);
-        System.out.println("Product Name at Quick View : " + productNameAtQuickViewWindow);
+        System.out.println("Product Name at Product page Quick View : " + actualSearchedBrand);
+        System.out.println("Product Name at Quick View : " + expectedSearchedItem);
         Assert.assertTrue(actualSearchedBrand.equalsIgnoreCase(expectedSearchedItem));
     }
     
