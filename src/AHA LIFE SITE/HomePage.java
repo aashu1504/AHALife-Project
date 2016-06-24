@@ -40,7 +40,7 @@ class HomePage extends GenericClass{
     
     public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
     {
-        productNameAtSearch = getTextFromAnElement(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW);
+        productNameAtSearch = getTextFromAnElement(SEARCHED_PRODUCT_NAME);
         System.out.println("Product Name at Product page Quick View : " + quickViewProductName);
         System.out.println("Product Name at Quick View : " + productNameAtQuickViewWindow);
         Assert.assertTrue(quickViewProductName.equalsIgnoreCase(productNameAtQuickViewWindow));
