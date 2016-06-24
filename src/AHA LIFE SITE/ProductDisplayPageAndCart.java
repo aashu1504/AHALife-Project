@@ -57,7 +57,7 @@ class ProductDisplayPageAndCart extends GenericClass{
         productNameAtQuickViewWindow = getTextFromAnElement(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW);
         System.out.println("Product Name at Home page : " + quickViewProductName);
         System.out.println("Product Name at Quick View : " + productNameAtQuickViewWindow);
-        Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
+        Assert.assertTrue(quickViewProductName.equalsIgnoreCase(productNameAtQuickViewWindow));
     }
     
     public void clickAddToBagPDP(HashMap<String, String> addPDP)
