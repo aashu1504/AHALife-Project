@@ -35,12 +35,12 @@ class HomePage extends GenericClass{
         return productNameAtHomePage;
     }
     
-    public String clickQuickView(HashMap<String, String> quickView)
-    {
-        productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
-        buttonClick(QUICK_VIEW);
-        return productNameAtHomePage;
-    }
+    //public String clickQuickView(HashMap<String, String> quickView)
+    //{
+      //  productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
+        //buttonClick(QUICK_VIEW);
+        //return productNameAtHomePage;
+    //}
     
     public void clickAddToBagHome(HashMap<String, String> quickViewAdd)
     {
