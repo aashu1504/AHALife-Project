@@ -36,6 +36,7 @@ class SecureCheckoutAndPayment extends GenericClass{
     private final By ORDER_ID_FROM_ORDER_HISTORY = By.xpath(".//*[@id='id-orders-history-content']/div[1]/div[1]/div[3]/span");
     private final By STORE_CREDIT_SUCCESS_MESSAGE = By.xpath(".//*[@id='paymentDetails']/div");
     private final By STORE_CREDIT_AMOUNT = By.xpath(".//*[@id='cart-summary-credit-amount']");
+    private final By TALKABLE_FRAME = By.id("talkable-post-purchase");
     
     
     private final By PROD_SHIPPING_ADDRESS = By.xpath(".//*[@id='saved-addresses']/li[6]");
@@ -272,9 +273,16 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     public void closeReferFriendPopup(HashMap<String, String> friendPopup)
     {
+        if(isElementExist(TALKABLE_FRAME))
+        {
         driver.switchTo().frame("talkable-post-purchase");
         buttonClick(CLOSE_OFFER_POPUP_CONFIRMATION_PAGE);
         driver.switchTo().defaultContent();
+        }
+        else
+        {
+          System.out.println("NO FRAME AVAILABLE");  
+        }
     }
     
 }
