@@ -12,19 +12,20 @@ import java.net.MalformedURLException;
 import com.google.common.base.Stopwatch;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 
 class HomePage extends GenericClass{
-    
-    //private final By PRODUCT_ID = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[3]/a/div[2]/h4");
-    //private final By QUICK_VIEW = By.xpath(".//div[@class='container homepage ng-scope']/div[5]/div/div/div/div/ul/li[3]/a/div[1]/div[3]");
-    //private final By ADD_TO_BAG_HOME = By.xpath(".//*[@id='buy-button']");
-    //private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
-    //private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
+
     private final By SEARCH_TEXT = By.xpath(".//div[@class='search-wrap']/a/form/input");
     private final By ACTUAL_SEARCHED_PRODUCT_NAME = By.xpath(".//ul[@id='products']/li/a/div[2]/h4");
-    private final By ACTUAL_SEARCHED_BRAND_NAME = By.xpath(".//ul[@id='brands-list']/li/a/div[2]/div/div[1]");
+    private final By ACTUAL_SEARCHED_BRAND_NAME = By.xpath(".//ul[@id='brands-list']/li[1]/a/div[2]/div/div[1]");
     private final By BRAND_TAB_SWITCH = By.xpath(".//*[@id='tab2']");
     private final By ANCHOR_TAG = By.tagName("a");
+    private final By FOOTER_BUTTON = By.xpath(".//*[@id='show-footer-btn']");
+    private final By FOOTER_EMAIL_SUBSCRIPTION_EMAIL_ID = By.xpath(".//*[@id='footerSubscriptionEmailAddress']");
+    private final By FOOTER_SUBSCRIBE_CLICK = By.xpath(".//li[@id='footerEmailSubscription']/form/input[2]");
+    private final By SUBSCRIPTION_CONFIRMATION_MESSAGE = By.xpath(".//*[@id='thankYouHeader']");
+    private final By SUBSCRIPTION_CONFIRMATION_WINDOW = By.xpath(".//*[@id='simpleRegModalConfirmationContents']");
     
     static String actualSearchedProductName = null;
     static String expectedSearchedItem = null;
@@ -33,6 +34,8 @@ class HomePage extends GenericClass{
     static int statusCode;
     static List<Integer> statusCodeList = new ArrayList<Integer>();
     static Stopwatch pageLoad = null;
+    static String actualSubscriptionMessage = null;
+    static String expectedSubscriptionMessage = null;
 
     
     public void enterSearchItem(HashMap<String, String> searchItem)
@@ -62,44 +65,40 @@ class HomePage extends GenericClass{
     public void verifySearchedBrand(HashMap<String, String> searchBrand) 
     {
         actualSearchedBrand = getTextFromAnElement(ACTUAL_SEARCHED_BRAND_NAME);
+        System.out.println("From SITE IS" + actualSearchedBrand);
+        System.out.println("From data written is" + expectedSearchedItem);
         Assert.assertTrue(actualSearchedBrand.equalsIgnoreCase(expectedSearchedItem));
     }
     
-    //public String clickProduct(HashMap<String, String> product)
-    //{
-      //  productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
-        //buttonClick(PRODUCT_ID);
-        //return productNameAtHomePage;
-    //}
+    public void clickFooterButton(HashMap<String, String> footerButton) throws InterruptedException
+    {
+        buttonClick(FOOTER_BUTTON);
+        Thread.sleep(2000L);
+    }
     
-    //public String clickQuickView(HashMap<String, String> quickView)
-    //{
-      //  productNameAtHomePage = getTextFromAnElement(PRODUCT_ID);
-        //buttonClick(QUICK_VIEW);
-        //return productNameAtHomePage;
-    //}
+    public void enterSubscriptionEmailID(HashMap<String, String> footerSubscribeEmailId)
+    {
+        pageToLoad();
+        enterText(FOOTER_EMAIL_SUBSCRIPTION_EMAIL_ID,footerSubscribeEmailId.get("SubscriptionEmailID"));
+    }
     
-   // public void clickAddToBagHome(HashMap<String, String> quickViewAdd)
-    //{
-      //  WebDriverWait wait = new WebDriverWait(driver, 15);
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_TO_BAG_HOME));
-        //buttonClick(ADD_TO_BAG_HOME);
-    //}
+    public void clickSubscribe(HashMap<String, String> subscribeClick) throws InterruptedException
+    {
+        //Actions actions = new Actions(driver);
+        //actions.moveToElement(driver.findElement(FOOTER_SUBSCRIBE_CLICK)).click().perform();
+        buttonClick(FOOTER_SUBSCRIBE_CLICK);
+    }
     
-    //public void closeQuickView(HashMap<String, String> quickViewClose)
-    //{
-      //  buttonClick(CLOSE_QUICK_VIEW);
-    //}
-    
-    //public void verifyProductNameAtQuickView(HashMap<String, String> productQuickView) 
-    //{
-		//WebDriverWait wait = new WebDriverWait(driver, 15);
-       // wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_QUICK_VIEW));
-       // productNameAtQuickView = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
-       // System.out.println("Product Name at Home page : " + productNameAtHomePage);
-       // System.out.println("Product Name at Quick View : " + productNameAtQuickView);
-       // Assert.assertTrue(productNameAtQuickView.equalsIgnoreCase(productNameAtHomePage));
-   // }
+    public void verifySubscriptionSuccessMessage(HashMap<String, String> successfulSubscriptionMessage) 
+    {
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(SUBSCRIPTION_CONFIRMATION_WINDOW));
+        actualSubscriptionMessage = getTextFromAnElement(SUBSCRIPTION_CONFIRMATION_MESSAGE);
+        expectedSubscriptionMessage = successfulSubscriptionMessage.get("ExpectedSuccessfulSubscriptionMessage");
+        System.out.println(actualSubscriptionMessage);
+        System.out.println(expectedSubscriptionMessage);
+        Assert.assertTrue(actualSubscriptionMessage.equalsIgnoreCase(expectedSubscriptionMessage));
+    }
     
     public void verifyIfBrokenLinksPresent(HashMap<String, String> homePageBrokenLinks) throws MalformedURLException, IOException
     { 

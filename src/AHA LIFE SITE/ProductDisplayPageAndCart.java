@@ -87,11 +87,13 @@ class ProductDisplayPageAndCart extends GenericClass{
         pageToLoad();
         if(isElementExist(MY_BAG_SITE))
         {
-           buttonClick(MY_BAG_SITE);    
+           buttonClick(MY_BAG_SITE);   
+           pageToLoad();
         }
         else
         {
             buttonClick(MY_BAG_NOIR);    
+            pageToLoad();
         }
         
     }
@@ -133,6 +135,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         pageToLoad();
         buttonClick(BEGIN_CHECKOUT);
+        pageToLoad();
     }
     
     public void continueAsGuest(HashMap<String, String> guestContinue)
