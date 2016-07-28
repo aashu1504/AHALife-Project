@@ -26,6 +26,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     private final By ADD_TO_BAG_QUICK_VIEW = By.xpath(".//form[@id='add-to-cart-form']/div[2]/input");
     private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     
+    
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
     static String actualEmptyCartText = null;
