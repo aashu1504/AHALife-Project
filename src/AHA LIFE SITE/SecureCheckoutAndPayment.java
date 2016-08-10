@@ -214,13 +214,19 @@ class SecureCheckoutAndPayment extends GenericClass{
             Assert.assertTrue(true);
         }
         else
-        {
-           Assert.assertTrue(false);
-        }
+            if(verifyOrderStatus.get("OrderStatus").equals("FRAUD_HOLD"))
+            {
+               Assert.assertTrue(true);
+            }
+            else
+            {
+                Assert.assertTrue(false);
+            }
         }
         catch(Exception ex)
         {
             System.out.println("Order might not be in database");
+            Assert.assertTrue(false);
         }
     }
     

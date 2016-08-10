@@ -26,6 +26,8 @@ class HomePage extends GenericClass{
     private final By FOOTER_SUBSCRIBE_CLICK = By.xpath(".//li[@id='footerEmailSubscription']/form/input[2]");
     private final By SUBSCRIPTION_CONFIRMATION_MESSAGE = By.xpath(".//*[@id='thankYouHeader']");
     private final By SUBSCRIPTION_CONFIRMATION_WINDOW = By.xpath(".//*[@id='simpleRegModalConfirmationContents']");
+    private final By GIFT_POPUP = By.xpath(".//*[@id='simpleRegModal']");
+    private final By CLOSE_GIFT_POPUP = By.xpath(".//a[@id='id-close-auth-modal']/img");
     
     static String actualSearchedProductName = null;
     static String expectedSearchedItem = null;
@@ -158,4 +160,31 @@ class HomePage extends GenericClass{
 	    long pageLoadTime_seconds = pageLoad.elapsed(TimeUnit.SECONDS);
 	    System.out.println("Total Page Load Time: " + pageLoadTime_seconds + " Seconds");
     }
+    
+    
+    public void closeGiftPopup(HashMap<String, String> giftPopup) throws InterruptedException
+    {
+        pageToLoad();
+        if(isElementExist(GIFT_POPUP))
+        {
+        if(isElementDisplayed(GIFT_POPUP))
+        {
+        buttonClick(CLOSE_GIFT_POPUP);
+        Thread.sleep(4000L);
+        }
+        else
+        {
+          System.out.println("GIFT POPUP NOT DISPLAYED");        
+        }
+        }
+        else
+        {
+          System.out.println("NO SUCH ELEMENT EXIST");  
+        }
+    }
+    
+    
+    
+    
+    
 }

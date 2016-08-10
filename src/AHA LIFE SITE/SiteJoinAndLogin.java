@@ -37,9 +37,10 @@ class JoinAndLogin extends GenericClass{
     static String expectedUserNameText = null;
     static String actualUserNameText = null;
     
-    public void clickJoin(HashMap<String, String> join)
+    public void clickJoin(HashMap<String, String> join) throws InterruptedException
     {
         buttonClick(JOIN_AHALIFE_SITE);
+        Thread.sleep(4000L);
     }
     
     public void createUserName(HashMap<String, String> joinUserName)
@@ -68,6 +69,7 @@ class JoinAndLogin extends GenericClass{
        
     public void clickSignIn(HashMap<String, String> signIn) throws InterruptedException
     {
+       //Thread.sleep(4000L);
         buttonClick(SIGNIN_AHALIFE_SITE);
     }
     

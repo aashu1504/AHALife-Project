@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.Select;
 public class GenericClass extends WebDriverProvider{
     
     public static List<WebElement> webElementCount = null;
+    public static boolean webElementDisplay;
         
     public static void pageToLoad() {
 	    String  pageLoadStatus;
@@ -78,6 +79,16 @@ public class GenericClass extends WebDriverProvider{
     {
         webElementCount = driver.findElements(xpath);
 		if(webElementCount.size()>0){
+			return true;
+		}else{
+			return false;
+		}
+    } 
+    
+    public boolean isElementDisplayed(By xpath)
+    {
+        webElementDisplay = driver.findElement(xpath).isDisplayed();;
+		if(webElementDisplay){
 			return true;
 		}else{
 			return false;
