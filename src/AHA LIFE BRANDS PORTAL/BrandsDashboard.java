@@ -31,12 +31,12 @@ class BrandsDashboard extends GenericClass{
     
     public void enterProductName(HashMap<String, String> productName)
     {
-        enterText(ENTER_PRODUCTS_TO_SEARCH,productName.get("BrandName"));
+        enterText(ENTER_PRODUCTS_TO_SEARCH,productName.get("ProductName"));
     }
     
     public void enterProductID(HashMap<String, String> productID)
     {
-        enterText(ENTER_PRODUCTS_TO_SEARCH,productID.get("BrandID"));
+        enterText(ENTER_PRODUCTS_TO_SEARCH,productID.get("ProductID"));
     }
     
     public void clickProductSearch(HashMap<String, String> productSearch)  

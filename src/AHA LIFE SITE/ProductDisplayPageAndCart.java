@@ -11,8 +11,8 @@ class ProductDisplayPageAndCart extends GenericClass{
     
     private final By ADD_TO_BAG_PDP = By.xpath(".//*[@id='buy-button']");
     private final By PRODUCT_NAME = By.xpath(".//div[@class='product_mainContainer']/div/h1");
-    private final By MY_BAG_SITE = By.xpath(".//*[@id='id-header-top-level-menu']/li[5]/a");
-    private final By MY_BAG_NOIR = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
+    private final By MY_BAG_SITE = By.xpath(".//*[@id='id-header-top-level-menu']/li[6]/a");
+    private final By MY_BAG_NOIR = By.xpath(".//*[@id='id-header-top-level-menu']/li[5]/a");
     private final By MY_BAG_LOGGED_IN = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
     private final By CART_PRODUCT_NAME = By.xpath(".//*[@id='cart_products']/li/div[2]/h3");
     private final By BEGIN_CHECKOUT = By.xpath(".//*[@id='begin-checkout-button']/div/input");
