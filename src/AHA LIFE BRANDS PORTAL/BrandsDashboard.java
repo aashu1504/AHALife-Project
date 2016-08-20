@@ -26,6 +26,9 @@ class BrandsDashboard extends GenericClass{
     private final By MANAGE_PRODUCT_PAGE_HEADER_TWO = By.xpath(".//*[@id='crudListTable']/table/thead/tr/th[2]/a");
     private final By MANAGE_PAGE_SEARCH_INPUT = By.xpath(".//*[@id='crudList']/form/div/div[1]/div/div[1]/input");
     private final By MANAGE_PAGE_SEARCH_BUTTON = By.xpath(".//*[@id='crudList']/form/div/div[1]/div/div[2]/button");
+    private final By VIEW_PRODUCT_CHANGE_LOG = By.xpath(".//*[@id='id-model-view']/div[1]/div[3]/a");
+    private final By VIEW_BRAND_CHANGE_LOG = By.xpath(".//*[@id='id-model-view']/div[3]/div[5]/a");
+    private final By CHANGE_LOG_MESSAGE = By.xpath(".//*[@id='crudContent']/div/h2");
     
     
     static String expectedBrandName = null;
@@ -41,6 +44,12 @@ class BrandsDashboard extends GenericClass{
     static String actualBrandNameManagePage = null;
     static String actualProductNameManagePage = null;
     static String expectedBrandOrProductName = null;
+    static String firstWindow = null;
+    static String secondWindow = null;
+    static String expectedBrandChangeLogMessage = null;
+    static String actualBrandChangeLogText = null;
+    static String expectedProductChangeLogMessage = null;
+    static String actualProductChangeLogText = null;
         
     
     public void enterBrandName(HashMap<String, String> brandName)
@@ -106,11 +115,13 @@ class BrandsDashboard extends GenericClass{
     public void clickBrandName(HashMap<String, String> brandName)
     {
         buttonClick(ACTUAL_SEARCHED_BRAND_NAME);
+        pageToLoad();
     }
     
     public void clickProductName(HashMap<String, String> productName)
     {
         buttonClick(ACTUAL_SEARCHED_PRODUCT_NAME);
+        pageToLoad();
     }
     
     public void verifyNavigationToBrandPage(HashMap<String, String> brandPageNavigation) 
@@ -128,11 +139,13 @@ class BrandsDashboard extends GenericClass{
     public void clickManageBrands(HashMap<String, String> manageBrands)
     {
         buttonClick(MANANGE_BRANDS);
+        pageToLoad();
     }
     
      public void clickManageProducts(HashMap<String, String> manageProducts)
     {
         buttonClick(MANANGE_PRODUCTS);
+         pageToLoad();
     }
     
     public void verifyNavigationToManageBrands(HashMap<String, String> manageBrandsNavigation)   //verify if list of brands are visible
@@ -206,5 +219,39 @@ class BrandsDashboard extends GenericClass{
     {
         actualProductNameAtProductPage = getAttributeValue(PRODUCT_NAME_PRODUCT_PAGE,"value");
         Assert.assertTrue(actualProductNameAtProductPage.equalsIgnoreCase(expectedBrandOrProductName));
+    }
+    
+    public void clickViewProductChangeLog(HashMap<String, String> productChangeLog)
+    {
+        buttonClick(VIEW_PRODUCT_CHANGE_LOG);
+    }
+    
+    public void clickViewBrandChangeLog(HashMap<String, String> brandChangeLog)
+    {
+        buttonClick(VIEW_BRAND_CHANGE_LOG);
+    }
+    
+    public void switchToChangeLogWindow(HashMap<String, String> switchToWindow) throws InterruptedException
+    {
+        Thread.sleep(4000L);
+        Set<String> windows = driver.getWindowHandles();
+		Iterator<String> window = windows.iterator();
+		firstWindow = window.next();
+		secondWindow = window.next();
+		driver.switchTo().window(secondWindow); 
+    }
+    
+   public void verifyBrandChangeLog(HashMap<String, String> brandChangeLog)
+    {
+        expectedBrandChangeLogMessage = "Brands " + expectedBrandID + " change log";
+        actualBrandChangeLogText = getTextFromAnElement(CHANGE_LOG_MESSAGE);
+        Assert.assertTrue(expectedBrandChangeLogMessage.equalsIgnoreCase(actualBrandChangeLogText));
+    }
+    
+     public void verifyProductChangeLog(HashMap<String, String> productChangeLog)
+    {
+        expectedProductChangeLogMessage = "Products " + expectedProductID + " change log";
+        actualProductChangeLogText = getTextFromAnElement(CHANGE_LOG_MESSAGE);
+        Assert.assertTrue(expectedProductChangeLogMessage.equalsIgnoreCase(actualProductChangeLogText));
     }
 }
