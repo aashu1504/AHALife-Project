@@ -24,6 +24,8 @@ class BrandsDashboard extends GenericClass{
     private final By BRAND_OR_PRODUCT_DATA_LIST = By.xpath(".//*[@id='crudListTable']/table/tbody/tr");
     private final By MANAGE_BRAND_PAGE_HEADER_ONE = By.xpath(".//*[@id='crudListTable']/table/thead/tr/th[1]/a");
     private final By MANAGE_PRODUCT_PAGE_HEADER_TWO = By.xpath(".//*[@id='crudListTable']/table/thead/tr/th[2]/a");
+    private final By MANAGE_PAGE_SEARCH_INPUT = By.xpath(".//*[@id='crudList']/form/div/div[1]/div/div[1]/input");
+    private final By MANAGE_PAGE_SEARCH_BUTTON = By.xpath(".//*[@id='crudList']/form/div/div[1]/div/div[2]/button");
     
     
     static String expectedBrandName = null;
@@ -36,7 +38,9 @@ class BrandsDashboard extends GenericClass{
     static String actualProductID = null;
     static String actualProductNameAtProductPage = null;
     static String actualBrandNameAtBrandPage = null;
-    
+    static String actualBrandNameManagePage = null;
+    static String actualProductNameManagePage = null;
+    static String expectedBrandOrProductName = null;
         
     
     public void enterBrandName(HashMap<String, String> brandName)
@@ -104,7 +108,7 @@ class BrandsDashboard extends GenericClass{
         buttonClick(ACTUAL_SEARCHED_BRAND_NAME);
     }
     
-     public void clickProductName(HashMap<String, String> productName)
+    public void clickProductName(HashMap<String, String> productName)
     {
         buttonClick(ACTUAL_SEARCHED_PRODUCT_NAME);
     }
@@ -167,5 +171,40 @@ class BrandsDashboard extends GenericClass{
         {
             Assert.assertTrue(false);
         }
+    }
+    
+    public void enterBrandOrProductNameAtManagePage(HashMap<String, String> brandOrProductName)
+    {
+        expectedBrandOrProductName = brandOrProductName.get("BrandOrProductName");
+        enterText(MANAGE_PAGE_SEARCH_INPUT,expectedBrandOrProductName);
+    }
+    
+    public void clickSearchAtManagePage(HashMap<String, String> searchClick)
+    {
+        buttonClick(MANAGE_PAGE_SEARCH_BUTTON);
+    }
+    
+    public void verifySearchedBrandAtManagePage(HashMap<String, String> searchBrandManagePage) 
+    {
+        actualBrandNameManagePage = getTextFromAnElement(ACTUAL_SEARCHED_BRAND_NAME);
+        Assert.assertTrue(actualBrandNameManagePage.equalsIgnoreCase(expectedBrandOrProductName));
+    }
+    
+    public void verifySearchedProductAtManagePage(HashMap<String, String> searchProductManagePage) 
+    {
+        actualProductNameManagePage = getTextFromAnElement(ACTUAL_SEARCHED_PRODUCT_NAME);
+        Assert.assertTrue(actualProductNameManagePage.equalsIgnoreCase(expectedBrandOrProductName));
+    }
+    
+    public void verifyNavigationToBrandPageFromManageBrands(HashMap<String, String> brandsPageNavigation) 
+    {
+        actualBrandNameAtBrandPage = getAttributeValue(BRAND_NAME_BRAND_PAGE,"value");
+        Assert.assertTrue(actualBrandNameAtBrandPage.equalsIgnoreCase(expectedBrandOrProductName));
+    }
+    
+    public void verifyNavigationToProductPageFromManageProducts(HashMap<String, String> productsPageNavigation) 
+    {
+        actualProductNameAtProductPage = getAttributeValue(PRODUCT_NAME_PRODUCT_PAGE,"value");
+        Assert.assertTrue(actualProductNameAtProductPage.equalsIgnoreCase(expectedBrandOrProductName));
     }
 }
