@@ -39,19 +39,9 @@ class ProductDisplayPageAndCart extends GenericClass{
         return product;
     }
     
-    //public void verifyNavigationToProductDisplayPage(HashMap<String, String> productName)
-    //{
-      //  pageToLoad();
-        //productNameAtProductDisplayPage = getTextFromAnElement(PRODUCT_NAME);
-        //System.out.println("Product Name at Home page : " + productName.get("ProductNameAtHomePageproductNameAtHomePage"));
-        //System.out.println("Product Name at PDP Page : " + productNameAtProductDisplayPage);
-        //Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productName.get("ProductNameAtHomePage")));
-    //}
-    
     public String clickQuickView(HashMap<String, String> quickView)
     {
         quickViewProductName = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
-        System.out.println("Product Name Quick View : " + quickViewProductName);
         buttonClick(QUICK_VIEW);
         return quickViewProductName;
     }
@@ -61,8 +51,6 @@ class ProductDisplayPageAndCart extends GenericClass{
 		WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW));
         productNameAtQuickViewWindow = getTextFromAnElement(PRODUCT_NAME_AT_QUICK_VIEW_WINDOW);
-        System.out.println("Product Name at Product page Quick View : " + quickViewProductName);
-        System.out.println("Product Name at Quick View : " + productNameAtQuickViewWindow);
         Assert.assertTrue(quickViewProductName.equalsIgnoreCase(productNameAtQuickViewWindow));
     }
     
@@ -109,9 +97,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         pageToLoad();
         productNameAtProductDisplayPage = productAtCart.get("PDPProductName");
-        System.out.println("Product Name at PDP : " + productNameAtProductDisplayPage);
         productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
-        System.out.println("Product Name at Cart : " + productNameAtCart);
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(productNameAtCart));
     }
     
@@ -119,7 +105,6 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         pageToLoad();
         productNameAtCart = getTextFromAnElement(CART_PRODUCT_NAME);
-        System.out.println("Product Name at Cart : " + productNameAtCart);
         Assert.assertTrue(productNameAtCart.equalsIgnoreCase(productAtCartFromQV.get("ProductNameQuickView")));
     }
     
@@ -127,7 +112,6 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         String websiteURL = productURL.get("WebsiteURL");
         String sellingProductURL = productURL.get("ProductURL");
-        System.out.println(websiteURL + sellingProductURL);
         driver.get(websiteURL + sellingProductURL);
         pageToLoad();
     }
@@ -162,8 +146,6 @@ class ProductDisplayPageAndCart extends GenericClass{
     {
         pageToLoad();
         actualEmptyCartText = getTextFromAnElement(ACTUAL_EMPTY_CART_TEXT);
-        System.out.println("Actual Remove Cart Text : " + actualEmptyCartText);
-        System.out.println("Expected Remove Cart Text : " + productRemove.get("ExpectedEmptyCartText"));
         Assert.assertTrue((productRemove.get("ExpectedEmptyCartText")).equalsIgnoreCase(actualEmptyCartText));
     }
 }

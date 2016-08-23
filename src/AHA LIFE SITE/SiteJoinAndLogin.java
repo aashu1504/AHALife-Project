@@ -92,9 +92,7 @@ class JoinAndLogin extends GenericClass{
     public void verifyLoginToAHASite(HashMap<String, String> loginVerify)
     {    
         expectedProfileText = loginVerify.get("MyProfileText");
-        System.out.println("Expected is : " + expectedProfileText);
         actualProfileText = getTextFromAnElement(MY_PROFILE);
-        System.out.println("Actual is : " + actualProfileText);
         Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));
     }
     
@@ -115,9 +113,7 @@ class JoinAndLogin extends GenericClass{
     {
         pageToLoad();
         expectedSignInText = logoutVerify.get("SignInText");
-        System.out.println("Expected is : " + expectedSignInText);
         actualSignInText = getTextFromAnElement(SIGNIN_AHALIFE_SITE);
-        System.out.println("Actual is : " + actualSignInText);
         Assert.assertTrue(expectedSignInText.equalsIgnoreCase(actualSignInText));
     }
     
@@ -153,9 +149,7 @@ class JoinAndLogin extends GenericClass{
     {
         pageToLoad();
 		expectedUserNameText = userFBLoginToAhaLife.get("ExpectedUserName");
-        System.out.println("Expected is : " + expectedUserNameText);
         actualUserNameText = getTextFromAnElement(MY_PROFILE);
-        System.out.println("Actual is : " + actualUserNameText);
         Assert.assertTrue(expectedUserNameText.equalsIgnoreCase(actualUserNameText));
     }    
     

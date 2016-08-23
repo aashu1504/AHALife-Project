@@ -67,8 +67,6 @@ class HomePage extends GenericClass{
     public void verifySearchedBrand(HashMap<String, String> searchBrand) 
     {
         actualSearchedBrand = getTextFromAnElement(ACTUAL_SEARCHED_BRAND_NAME);
-        System.out.println("From SITE IS" + actualSearchedBrand);
-        System.out.println("From data written is" + expectedSearchedItem);
         Assert.assertTrue(actualSearchedBrand.equalsIgnoreCase(expectedSearchedItem));
     }
     
@@ -97,8 +95,6 @@ class HomePage extends GenericClass{
         wait.until(ExpectedConditions.visibilityOfElementLocated(SUBSCRIPTION_CONFIRMATION_WINDOW));
         actualSubscriptionMessage = getTextFromAnElement(SUBSCRIPTION_CONFIRMATION_MESSAGE);
         expectedSubscriptionMessage = successfulSubscriptionMessage.get("ExpectedSuccessfulSubscriptionMessage");
-        System.out.println(actualSubscriptionMessage);
-        System.out.println(expectedSubscriptionMessage);
         Assert.assertTrue(actualSubscriptionMessage.equalsIgnoreCase(expectedSubscriptionMessage));
     }
     
