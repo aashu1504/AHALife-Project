@@ -153,16 +153,13 @@ class SecureCheckoutAndPayment extends GenericClass{
     public void enterPromoCodeAndVerify(HashMap<String, String> insertPromoCode) throws InterruptedException
     {
         pageToLoad();
-        System.out.println(insertPromoCode.get("ApplyPromoCode"));
         if(insertPromoCode.get("ApplyPromoCode").equals("YES"))
         {
             enterText(INSERT_PROMO_CODE,insertPromoCode.get("PromoCode"));
             buttonClick(APPLY_PROMO_CODE);
             Thread.sleep(4000L);
             String promoCode = getTextFromAnElement(PROMO_DISCOUNT_VALUE);
-            System.out.println(promoCode);
             int promoCodeValue = Integer.parseInt(promoCode.trim().substring(1, promoCode.indexOf(".")));
-            System.out.println(promoCodeValue);
             if(promoCodeValue > 0)
                 {
                     Assert.assertTrue(true);
@@ -189,8 +186,6 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         pageToLoad();
         placedProductName = getTextFromAnElement(PLACED_PRODUCT_NAME);
-        System.out.println("Product Name At Display Page : " + verifyOrder.get("ProductNameAtDisplayPage"));
-        System.out.println("Placed Product Name : " + getTextFromAnElement(PLACED_PRODUCT_NAME));
         Assert.assertTrue(placedProductName.equalsIgnoreCase(verifyOrder.get("ProductNameAtDisplayPage")));
     }
     
@@ -198,23 +193,36 @@ class SecureCheckoutAndPayment extends GenericClass{
     {
         pageToLoad();
         orderID = getTextFromAnElement(PLACED_PRODUCT_ORDER_NUMBER);
-        System.out.println("Order ID of the product " + placedProductName + " is " + orderID);
         long orderNumber = Long.parseLong(orderID.trim());
         System.out.println("Order ID of the product " + placedProductName + " is " + orderNumber);     
         return orderID;
-    }
+    }            
     
     public void verifyOrderStatusFromDatabase(HashMap<String, String> verifyOrderStatus) throws InterruptedException
     {
         try
         {
-        System.out.println(verifyOrderStatus.get("OrderStatus"));
         if(verifyOrderStatus.get("OrderStatus").equals("SUBMITTED"))
         {
             Assert.assertTrue(true);
         }
-        else
-            if(verifyOrderStatus.get("OrderStatus").equals("FRAUD_HOLD"))
+            else
+            {
+                Assert.assertTrue(false);
+            }
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Order might not be in database");
+            Assert.assertTrue(false);
+        }
+    }
+    
+    public void verifyOrderStatusFromDatabaseForFraudCustomer(HashMap<String, String> verifyFraudOrderStatus) throws InterruptedException
+    {
+        try
+        {
+        if(verifyFraudOrderStatus.get("FraudOrderStatus").equals("FRAUD_HOLD"))
             {
                Assert.assertTrue(true);
             }
@@ -225,7 +233,7 @@ class SecureCheckoutAndPayment extends GenericClass{
         }
         catch(Exception ex)
         {
-            System.out.println("Order might not be in database");
+            System.out.println("Order might not be in database or of a differrent status");
             Assert.assertTrue(false);
         }
     }
@@ -249,8 +257,6 @@ class SecureCheckoutAndPayment extends GenericClass{
     public void verifyIfOrderedProductIsInUserOrderHistory(HashMap<String, String> verifyOrderHistory)
     {
         productOrderIdAtOrdersHistory = getTextFromAnElement(ORDER_ID_FROM_ORDER_HISTORY);
-        System.out.println("Order ID At Checkout Page : " + orderID);
-        System.out.println("Order ID At Order History : " + productOrderIdAtOrdersHistory);
         Assert.assertTrue(productOrderIdAtOrdersHistory.equalsIgnoreCase(orderID));
     }
     

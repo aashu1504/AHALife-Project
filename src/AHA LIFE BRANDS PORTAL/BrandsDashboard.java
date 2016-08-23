@@ -29,6 +29,8 @@ class BrandsDashboard extends GenericClass{
     private final By VIEW_PRODUCT_CHANGE_LOG = By.xpath(".//*[@id='id-model-view']/div[1]/div[3]/a");
     private final By VIEW_BRAND_CHANGE_LOG = By.xpath(".//*[@id='id-model-view']/div[3]/div[5]/a");
     private final By CHANGE_LOG_MESSAGE = By.xpath(".//*[@id='crudContent']/div/h2");
+    private final By VIEW_STOREFRONT = By.xpath(".//*[@id='id-model-view']/div[3]/div[3]/a");
+    private final By VIEW_PRODUCT_PAGE = By.xpath(".//*[@id='id-model-view']/div[1]/div[2]/a");
     
     
     static String expectedBrandName = null;
@@ -49,8 +51,9 @@ class BrandsDashboard extends GenericClass{
     static String expectedBrandChangeLogMessage = null;
     static String actualBrandChangeLogText = null;
     static String expectedProductChangeLogMessage = null;
-    static String actualProductChangeLogText = null;
-        
+    static String actualProductChangeLogText = null;        
+    static String productNameAtProductDisplayPage = null;
+    static String brandNameAtSiteBrandPage = null;
     
     public void enterBrandName(HashMap<String, String> brandName)
     {
@@ -231,7 +234,7 @@ class BrandsDashboard extends GenericClass{
         buttonClick(VIEW_BRAND_CHANGE_LOG);
     }
     
-    public void switchToChangeLogWindow(HashMap<String, String> switchToWindow) throws InterruptedException
+    public void switchToSecondWindow(HashMap<String, String> switchToWindow) throws InterruptedException
     {
         Thread.sleep(4000L);
         Set<String> windows = driver.getWindowHandles();
@@ -253,5 +256,33 @@ class BrandsDashboard extends GenericClass{
         expectedProductChangeLogMessage = "Products " + expectedProductID + " change log";
         actualProductChangeLogText = getTextFromAnElement(CHANGE_LOG_MESSAGE);
         Assert.assertTrue(expectedProductChangeLogMessage.equalsIgnoreCase(actualProductChangeLogText));
+    }
+    
+    public void clickViewStorefront(HashMap<String, String> viewBrand)
+    {
+        buttonClick(VIEW_STOREFRONT);
+        pageToLoad();
+    }
+    
+    public void clickViewProductPage(HashMap<String, String> viewProductPage)
+    {
+        buttonClick(VIEW_PRODUCT_PAGE);
+        pageToLoad();
+    }
+    
+    public void verifyNavigationToPDPFromAdminProductPage(HashMap<String, String> pdpNavigation)
+    {
+        productNameAtProductDisplayPage = pdpNavigation.get("PDPProductName");
+        System.out.println("Product Name at PDP : " + productNameAtProductDisplayPage);
+        System.out.println("Product Name at admin : " + expectedBrandOrProductName);
+        Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(expectedBrandOrProductName));
+    }
+    
+    public void verifyNavigationToSiteBrandFromAdminBrandPage(HashMap<String, String> siteBrandNavigation)
+    {
+        brandNameAtSiteBrandPage = siteBrandNavigation.get("StorefrontName");
+        System.out.println("Brand Name at storefront : " + brandNameAtSiteBrandPage);
+        System.out.println("Brand Name at admin : " + expectedBrandOrProductName);
+        Assert.assertTrue(brandNameAtSiteBrandPage.equalsIgnoreCase(expectedBrandOrProductName));
     }
 }
