@@ -6,7 +6,16 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 class BrandsDashboard extends GenericClass{
-   
+    
+    private final By CREATE_AHALIFE_HOMEPAGE_FEED = By.xpath("//a[@href='/admin/homepage#?siteCategory=ahalife']");
+    private final By MANAGE_AHALIFE_HOMEPAGE_FEED = By.xpath("//a[@href='/admin/manage-published-feeds#?siteCategory=ahalife']");
+    private final By CREATE_AHA_READ_PAGE = By.xpath("//a[@href='/admin/storypage#?type=Read']");
+    private final By MANAGE_STORY_PAGES = By.xpath("//a[@href='/admin/manage-published-stories']");
+    private final By AHA_TOPIC_SELECT = By.xpath("//a[@href='/admin/topics']");
+    private final By MANAGE_DYNAMIC_MODULES = By.xpath("//a[@href='/admin/dynamic-modules']");
+    private final By CREATE_AHANOIR_HOMEPAGE_FEED = By.xpath("//a[@href='/admin/homepage#?siteCategory=ahanoir']");
+    private final By MANAGE_AHANOIR_HOMEPAGE_FEED = By.xpath("//a[@href='/admin/manage-published-feeds#?siteCategory=ahanoir']");
+    
     private final By ENTER_BRAND_TO_SEARCH = By.xpath(".//input[@placeholder='Brands']");
     private final By ENTER_PRODUCTS_TO_SEARCH = By.xpath(".//input[@placeholder='Products']");
     private final By ENTER_SKU_TO_SEARCH = By.xpath(".//input[@placeholder='SKUs']");
@@ -251,7 +260,7 @@ class BrandsDashboard extends GenericClass{
         Assert.assertTrue(expectedBrandChangeLogMessage.equalsIgnoreCase(actualBrandChangeLogText));
     }
     
-     public void verifyProductChangeLog(HashMap<String, String> productChangeLog)
+    public void verifyProductChangeLog(HashMap<String, String> productChangeLog)
     {
         expectedProductChangeLogMessage = "Products " + expectedProductID + " change log";
         actualProductChangeLogText = getTextFromAnElement(CHANGE_LOG_MESSAGE);
@@ -284,5 +293,11 @@ class BrandsDashboard extends GenericClass{
         System.out.println("Brand Name at storefront : " + brandNameAtSiteBrandPage);
         System.out.println("Brand Name at admin : " + expectedBrandOrProductName);
         Assert.assertTrue(brandNameAtSiteBrandPage.equalsIgnoreCase(expectedBrandOrProductName));
+    }
+    
+    public void clickManageDynamics(HashMap<String, String> manageDynamics)
+    {
+        buttonClick(MANAGE_DYNAMIC_MODULES);
+        pageToLoad();
     }
 }
