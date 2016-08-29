@@ -34,7 +34,7 @@ class BrandsDashboard extends GenericClass{
     private final By MANAGE_BRAND_PAGE_HEADER_ONE = By.xpath(".//*[@id='crudListTable']/table/thead/tr/th[1]/a");
     private final By MANAGE_PRODUCT_PAGE_HEADER_TWO = By.xpath(".//*[@id='crudListTable']/table/thead/tr/th[2]/a");
     private final By MANAGE_PAGE_SEARCH_INPUT = By.xpath(".//*[@id='crudList']/form/div/div[1]/div/div[1]/input");
-    private final By MANAGE_PAGE_SEARCH_BUTTON = By.xpath(".//*[@id='crudList']/form/div/div[1]/div/div[2]/button");
+    private final By COMMON_SEARCH_BUTTON = By.xpath(".//*[@id='crudList']/form/div/div[1]/div/div[2]/button");
     private final By VIEW_PRODUCT_CHANGE_LOG = By.xpath(".//*[@id='id-model-view']/div[1]/div[3]/a");
     private final By VIEW_BRAND_CHANGE_LOG = By.xpath(".//*[@id='id-model-view']/div[3]/div[5]/a");
     private final By CHANGE_LOG_MESSAGE = By.xpath(".//*[@id='crudContent']/div/h2");
@@ -204,9 +204,9 @@ class BrandsDashboard extends GenericClass{
         enterText(MANAGE_PAGE_SEARCH_INPUT,expectedBrandOrProductName);
     }
     
-    public void clickSearchAtManagePage(HashMap<String, String> searchClick)
+    public void clickCommonSearchButton(HashMap<String, String> searchClick)
     {
-        buttonClick(MANAGE_PAGE_SEARCH_BUTTON);
+        buttonClick(COMMON_SEARCH_BUTTON);
     }
     
     public void verifySearchedBrandAtManagePage(HashMap<String, String> searchBrandManagePage) 
@@ -282,22 +282,24 @@ class BrandsDashboard extends GenericClass{
     public void verifyNavigationToPDPFromAdminProductPage(HashMap<String, String> pdpNavigation)
     {
         productNameAtProductDisplayPage = pdpNavigation.get("PDPProductName");
-        System.out.println("Product Name at PDP : " + productNameAtProductDisplayPage);
-        System.out.println("Product Name at admin : " + expectedBrandOrProductName);
         Assert.assertTrue(productNameAtProductDisplayPage.equalsIgnoreCase(expectedBrandOrProductName));
     }
     
     public void verifyNavigationToSiteBrandFromAdminBrandPage(HashMap<String, String> siteBrandNavigation)
     {
         brandNameAtSiteBrandPage = siteBrandNavigation.get("StorefrontName");
-        System.out.println("Brand Name at storefront : " + brandNameAtSiteBrandPage);
-        System.out.println("Brand Name at admin : " + expectedBrandOrProductName);
         Assert.assertTrue(brandNameAtSiteBrandPage.equalsIgnoreCase(expectedBrandOrProductName));
     }
     
     public void clickManageDynamics(HashMap<String, String> manageDynamics)
     {
         buttonClick(MANAGE_DYNAMIC_MODULES);
+        pageToLoad();
+    }
+    
+     public void clickAHASelect(HashMap<String, String> ahaSelect)
+    {
+        buttonClick(AHA_TOPIC_SELECT);
         pageToLoad();
     }
 }
