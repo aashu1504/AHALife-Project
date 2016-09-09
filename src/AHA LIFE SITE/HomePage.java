@@ -42,6 +42,7 @@ class HomePage extends GenericClass{
     
     public void enterSearchItem(HashMap<String, String> searchItem)
     {
+        pageToLoad();
         expectedSearchedItem = searchItem.get("SearchItem");
         enterText(SEARCH_TEXT,expectedSearchedItem);
     }
@@ -55,6 +56,7 @@ class HomePage extends GenericClass{
     
     public void clickBrandTab(HashMap<String, String> brandTab)
     {
+        pageToLoad();
         buttonClick(BRAND_TAB_SWITCH);
     }
     

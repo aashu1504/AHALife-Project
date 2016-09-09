@@ -149,7 +149,9 @@ class JoinAndLogin extends GenericClass{
     {
         pageToLoad();
 		expectedUserNameText = userFBLoginToAhaLife.get("ExpectedUserName");
+        System.out.println(expectedUserNameText);
         actualUserNameText = getTextFromAnElement(MY_PROFILE);
+        System.out.println(actualUserNameText);
         Assert.assertTrue(expectedUserNameText.equalsIgnoreCase(actualUserNameText));
     }    
     

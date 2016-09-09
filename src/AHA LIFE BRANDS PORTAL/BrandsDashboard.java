@@ -7,11 +7,12 @@ import org.testng.Assert;
 
 class BrandsDashboard extends GenericClass{
     
+    
     private final By CREATE_AHALIFE_HOMEPAGE_FEED = By.xpath("//a[@href='/admin/homepage#?siteCategory=ahalife']");
     private final By MANAGE_AHALIFE_HOMEPAGE_FEED = By.xpath("//a[@href='/admin/manage-published-feeds#?siteCategory=ahalife']");
     private final By CREATE_AHA_READ_PAGE = By.xpath("//a[@href='/admin/storypage#?type=Read']");
     private final By MANAGE_STORY_PAGES = By.xpath("//a[@href='/admin/manage-published-stories']");
-    private final By AHA_TOPIC_SELECT = By.xpath("//a[@href='/admin/topics']");
+    private final By AHA_TOPIC_SELECT =  By.xpath("//a[@href='/admin/topics']");
     private final By MANAGE_DYNAMIC_MODULES = By.xpath("//a[@href='/admin/dynamic-modules']");
     private final By CREATE_AHANOIR_HOMEPAGE_FEED = By.xpath("//a[@href='/admin/homepage#?siteCategory=ahanoir']");
     private final By MANAGE_AHANOIR_HOMEPAGE_FEED = By.xpath("//a[@href='/admin/manage-published-feeds#?siteCategory=ahanoir']");
@@ -28,8 +29,8 @@ class BrandsDashboard extends GenericClass{
     private final By ACTUAL_SEARCHED_PRODUCT_ID = By.xpath(".//*[@id='crudListTable']/table/tbody/tr/td[2]/a");
     private final By BRAND_NAME_BRAND_PAGE = By.xpath(".//*[@id='object_STOREFRONT_NAME']");
     private final By PRODUCT_NAME_PRODUCT_PAGE = By.xpath(".//*[@id='object_NAME']");
-    private final By MANANGE_PRODUCTS = By.xpath(".//*[@id='crudIndex']/div/div[2]/div/div/ul/li[1]/a");
-    private final By MANANGE_BRANDS = By.xpath(".//*[@id='crudIndex']/div/div[1]/div/div/ul/li[1]/a");
+    private final By MANANGE_PRODUCTS = By.xpath("//a[@href='/admin/products']");
+    private final By MANANGE_BRANDS = By.xpath("//a[@href='/admin/brands']");
     private final By BRAND_OR_PRODUCT_DATA_LIST = By.xpath(".//*[@id='crudListTable']/table/tbody/tr");
     private final By MANAGE_BRAND_PAGE_HEADER_ONE = By.xpath(".//*[@id='crudListTable']/table/thead/tr/th[1]/a");
     private final By MANAGE_PRODUCT_PAGE_HEADER_TWO = By.xpath(".//*[@id='crudListTable']/table/thead/tr/th[2]/a");
@@ -297,9 +298,45 @@ class BrandsDashboard extends GenericClass{
         pageToLoad();
     }
     
-     public void clickAHASelect(HashMap<String, String> ahaSelect)
+    public void clickAHASelect(HashMap<String, String> ahaSelect)
     {
         buttonClick(AHA_TOPIC_SELECT);
+        pageToLoad();
+    }
+    
+    public void clickCreateAHALifeHomePageFeed(HashMap<String, String> ahalifeHomeFeedCreation)
+    {
+        buttonClick(CREATE_AHALIFE_HOMEPAGE_FEED);
+        pageToLoad();
+    }
+    
+    public void clickManageAHALifeHomePageFeed(HashMap<String, String> ahalifeHomePageFeedManage)
+    {
+        buttonClick(MANAGE_AHALIFE_HOMEPAGE_FEED);
+        pageToLoad();
+    }
+    
+    public void clickCreateAHAReadPage(HashMap<String, String> ahaReadPage)
+    {
+        buttonClick(CREATE_AHA_READ_PAGE);
+        pageToLoad();
+    }
+    
+    public void clickManageStoryPages(HashMap<String, String> manageStoryPage)
+    {
+        buttonClick(MANAGE_STORY_PAGES);
+        pageToLoad();
+    }
+    
+     public void clickCreateAHANoirHomePageFeed(HashMap<String, String> ahanoirHomeFeedCreation)
+    {
+        buttonClick(CREATE_AHANOIR_HOMEPAGE_FEED);
+        pageToLoad();
+    }
+    
+    public void clickManageAHANoirHomePageFeed(HashMap<String, String> ahanoirHomePageFeedManage)
+    {
+        buttonClick(MANAGE_AHANOIR_HOMEPAGE_FEED);
         pageToLoad();
     }
 }

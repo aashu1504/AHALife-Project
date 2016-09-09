@@ -1,9 +1,10 @@
 package AHALIFEBRANDSPORTAL;
 
 import java.util.*;
+import Utility.GenericClass;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 
-class AHAlifeHomePageFeed{
-    public void run(HashMap<String, Object> params){
-        
-    }
+class AHAlifeHomePageFeed extends GenericClass{
+    
 }
