@@ -54,14 +54,10 @@ class Brand_ProductPage extends GenericClass{
     private final By CATALOG_STATUS_OF_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[3]");
     private final By CATALOG_PRODUCT_NAME_DRAFT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[4]/div/a");
     private final By CATALOG_PRODUCT_NAME_SUBMITTED = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[4]/div/span");
-    //private final By CATALOG_SKU = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[5]/div/a");
-    //private final By CATALOG_VARIANTS = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[6]/div/a");
-    //private final By CATALOG_TOTAL_STOCK = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[7]/div/a");
-    //private final By CATALOG_INVENTORY = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[3]");
-    //private final By CATALOG_WHOLESALE_COST = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[3]");
-    //private final By CATALOG_MSRP = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[3]");
-    private final By CATALOG_EDIT_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[11]/a[1]");
-    
+    private final By CATALOG_EDIT_DRAFT_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[11]/a[1]");
+    private final By CATALOG_COPY_SUBMITTED_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[11]/a[1]");
+    private final By COPY_OR_DELETE_PRODUCT = By.xpath(".//div[@class='help-box-footer']/div/div[1]/button");
+    private final By CATALOG_DELETE_DRAFT_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[11]/a[2]");
     
     static String productName = null;
     static String imageFileToUpload = "C:\\Users\\ashishu\\Desktop\\Testing_Images\\Flower.png";
@@ -73,6 +69,9 @@ class Brand_ProductPage extends GenericClass{
     static String productNameAtCatalogPage = null;
     static String actualSubmitForReviewSuccessMessage = null;
     static String editedProductNameAtCatalogPage = null;
+    static String newCopyOfProductName = null;
+    static String copyFromProductName = null;
+    
     
     public void clickProductTab(HashMap<String, String> productTabClick)
     {
@@ -284,7 +283,7 @@ class Brand_ProductPage extends GenericClass{
             productNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_DRAFT);
             if((getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("DRAFT")) && (productNameAtCatalogPage.equalsIgnoreCase(productName)))
             {
-                    buttonClick(CATALOG_EDIT_PRODUCT);
+                    buttonClick(CATALOG_EDIT_DRAFT_PRODUCT);
                 	pageToLoad();                
                     if(getTextFromAnElement(PAGE_LABEL_EDIT_PRODUCT).equalsIgnoreCase("Edit a Product"))
                     {
@@ -300,7 +299,40 @@ class Brand_ProductPage extends GenericClass{
                          editedProductNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED);                            
                         if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("SUBMITTED") && editedProductNameAtCatalogPage.equalsIgnoreCase(newEditedProductNameWithoutSKU))
                         {
-                            Assert.assertTrue(true);
+                            buttonClick(CATALOG_COPY_SUBMITTED_PRODUCT);
+                            Thread.sleep(3000L);
+                            buttonClick(COPY_OR_DELETE_PRODUCT);
+                            pageToLoad();
+                            newCopyOfProductName = getTextFromAnElement(CATALOG_PRODUCT_NAME_DRAFT);
+                            copyFromProductName = editedProductNameAtCatalogPage + " -copy";
+                            if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("DRAFT") && copyFromProductName.equalsIgnoreCase(newCopyOfProductName))
+                            {
+                               buttonClick(CATALOG_DELETE_DRAFT_PRODUCT);
+                               Thread.sleep(3000L);
+                               buttonClick(COPY_OR_DELETE_PRODUCT);
+                               pageToLoad();
+                                if(getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE).equalsIgnoreCase(saveProdWithoutSku.get("ProductWithoutSkuDeleteSuccessMessage")))
+                                {
+                                    if(!getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED).equalsIgnoreCase(newCopyOfProductName))
+                                    {
+                                        System.out.println(getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED));
+                                        System.out.println(newCopyOfProductName);
+                                      Assert.assertTrue(true);    
+                                    }
+                                    else
+                                    {
+                                      Assert.assertTrue(false);   
+                                    }
+                                }
+                                else
+                                {
+                                    Assert.assertTrue(false);
+                                }
+                            }
+                            else
+                            {
+                                Assert.assertTrue(false);
+                            }
                         }
                         else
                         {
