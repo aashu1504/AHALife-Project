@@ -299,7 +299,7 @@ class Brand_ProductPage extends GenericClass{
                          editedProductNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED);                            
                         if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("SUBMITTED") && editedProductNameAtCatalogPage.equalsIgnoreCase(newEditedProductNameWithoutSKU))
                         {
-                            System.out.println("Product is SUCCESSFULLY SUBMITTED For REVIEW and Product Name has been EDITED");
+                            System.out.println("Product Name has been EDITED and is SUCCESSFULLY SUBMITTED For REVIEW.");
                             buttonClick(CATALOG_COPY_SUBMITTED_PRODUCT);
                             Thread.sleep(3000L);
                             buttonClick(COPY_OR_DELETE_PRODUCT);
@@ -308,7 +308,7 @@ class Brand_ProductPage extends GenericClass{
                             copyFromProductName = editedProductNameAtCatalogPage + " -copy";
                             if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("DRAFT") && copyFromProductName.equalsIgnoreCase(newCopyOfProductName))
                             {
-                               System.out.println("Product is SUCCESSFULLY COPIED");
+                               System.out.println("Product is SUCCESSFULLY COPIED.");
                                buttonClick(CATALOG_DELETE_DRAFT_PRODUCT);
                                Thread.sleep(3000L);
                                buttonClick(COPY_OR_DELETE_PRODUCT);
@@ -317,7 +317,7 @@ class Brand_ProductPage extends GenericClass{
                                 {
                                     if(!getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED).equalsIgnoreCase(newCopyOfProductName))
                                     {
-                                      System.out.println("Product is SUCCESSFULLY DELETED");
+                                      System.out.println("Product is SUCCESSFULLY DELETED.");
                                       Assert.assertTrue(true);    
                                     }
                                     else
