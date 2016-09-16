@@ -52,7 +52,8 @@ class Brand_ProductPage extends GenericClass{
     
     private final By PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE = By.xpath(".//div[@class='alert alert-success']");
     private final By CATALOG_STATUS_OF_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[3]");
-    private final By CATALOG_PRODUCT_NAME = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[4]/div/a");
+    private final By CATALOG_PRODUCT_NAME_DRAFT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[4]/div/a");
+    private final By CATALOG_PRODUCT_NAME_SUBMITTED = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[4]/div/span");
     //private final By CATALOG_SKU = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[5]/div/a");
     //private final By CATALOG_VARIANTS = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[6]/div/a");
     //private final By CATALOG_TOTAL_STOCK = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[7]/div/a");
@@ -276,14 +277,11 @@ class Brand_ProductPage extends GenericClass{
         expectedSaveSuccessMessage = saveProdWithoutSku.get("ProductWithoutSkuSaveSuccessMessage");
         expectedSubmitForReviewSuccessMessage = saveProdWithoutSku.get("ProductWithoutSkuSubmitForReviewSuccessMessage");
         actualSaveSuccessMessage = getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE);       
-
-        System.out.println("New Product Name" + newEditedProductNameWithoutSKU);
-        System.out.println("Review Expected Message Save" + expectedSubmitForReviewSuccessMessage);
         
         if(expectedSaveSuccessMessage.equalsIgnoreCase(actualSaveSuccessMessage))
         {
             clickProductTab(null);
-            productNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME);
+            productNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_DRAFT);
             if((getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("DRAFT")) && (productNameAtCatalogPage.equalsIgnoreCase(productName)))
             {
                     buttonClick(CATALOG_EDIT_PRODUCT);
@@ -294,12 +292,12 @@ class Brand_ProductPage extends GenericClass{
                         enterText(PRODUCT_NAME,newEditedProductNameWithoutSKU);
                         buttonClick(PRODUCT_SUBMITTED_FOR_REVIEW);
                         //pressKeyDirectly(Keys.ENTER);
-                        Thread.sleep(4000L);
+                        Thread.sleep(3000L);
                         acceptAlert();
                         actualSubmitForReviewSuccessMessage = getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE);
                         if(expectedSubmitForReviewSuccessMessage.equalsIgnoreCase(actualSubmitForReviewSuccessMessage))
                         {
-                         editedProductNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME);
+                         editedProductNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED);                            
                         if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("SUBMITTED") && editedProductNameAtCatalogPage.equalsIgnoreCase(newEditedProductNameWithoutSKU))
                         {
                             Assert.assertTrue(true);
