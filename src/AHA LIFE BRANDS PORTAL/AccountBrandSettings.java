@@ -22,10 +22,24 @@ class AccountBrandSettings extends GenericClass{
     private final By SAVE_CONTINUE_ACCOUNT_SETTING = By.xpath(".//input[@value='Save and Continue']");    
     private final By TERMS_CONDITION = By.xpath(".//*[@href='/account/terms']");
     private final By PAGE_LABEL_ACTUAL = By.xpath(".//*[@id='pageLabel']");
+    private final By ACCOUNT_TAB = By.xpath(".//*[@id='storefrontHeader']/div[1]/a");
+    private final By BRAND_NAME = By.xpath(".//*[@id='legal']");
     
     static String expectedTermsConditionText = null;
     static String actualTermsConditionText = null;  
+    static String brandNameAccountsTab = null;
     
+    public void clickAccountTab(HashMap<String, String> accountTab)
+    {
+        buttonClick(ACCOUNT_TAB);
+        pageToLoad();
+    } 
+    
+    public String getBrandNameFromAccountsTab(HashMap<String, String> brandNameAccountTab)
+    {
+        brandNameAccountsTab = getAttributeValue(BRAND_NAME,"value");
+        return brandNameAccountsTab;
+    }
     
      //<!--------------------------------------------BRAND ACCOUNT SETTING START-----------------------------------------------------------------------!>
       

@@ -15,8 +15,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.Alert;
 
 public class GenericClass extends WebDriverProvider{
+    
+    private final By CHOOSE_UPLOAD_FILE = By.xpath(".//*[@id='fileUploadInput']");
     
     public static List<WebElement> webElementCount = null;
     public static boolean webElementDisplay;
@@ -63,6 +66,12 @@ public class GenericClass extends WebDriverProvider{
     public void pressKey(By elementUniqueID,Keys key)
     {
         driver.findElement(elementUniqueID).sendKeys(key);
+    }
+    
+    public void pressKeyDirectly(Keys key)
+    {
+        Actions action = new Actions(driver);
+	    action.sendKeys(Keys.ENTER).perform();
     }
     
     public void buttonClick(By elementUniqueID)
@@ -126,5 +135,31 @@ public class GenericClass extends WebDriverProvider{
     {
         Select dropdown = new Select(driver.findElement(elementUniqueID));
         dropdown.selectByVisibleText(optionToSelect);
+    }
+    
+    public void clickUploadImage(By elementUniqueProvidedID)
+    {
+        buttonClick(elementUniqueProvidedID);
+        pageToLoad();
+        driver.switchTo().frame("filepicker_dialog");
+    }
+    
+   public void directProductImageUpload(String imageFile) throws InterruptedException
+    {
+        enterText(CHOOSE_UPLOAD_FILE,imageFile);
+        Thread.sleep(8000L);
+        driver.switchTo().defaultContent();
+    }
+    
+    public void clearData(By elementUniqueID)
+    {
+        driver.findElement(elementUniqueID).clear();
+    }
+    
+    public void acceptAlert()
+    {
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+        pageToLoad();
     }
 }

@@ -106,8 +106,11 @@ class HomePage extends GenericClass{
        {  
           urlListElements = listOfWebElements(ANCHOR_TAG);
           System.out.println("Total URL Count is : " + urlListElements.size());
+           
           for (int i = 0; i < urlListElements.size(); i++)
           { 
+           try
+           {
 	         if (!(urlListElements.get(i).getAttribute("href") == null) && !(urlListElements.get(i).getAttribute("href").equals("")) && !(urlListElements.get(i).getAttribute("href").equals("javascript:void(0);")))
              {
 	            if (urlListElements.get(i).getAttribute("href").contains("http")) 
@@ -124,12 +127,21 @@ class HomePage extends GenericClass{
 	                }
                     else
                     {
-                        //System.out.println("LINK# "+i+" "+urlListElements.get(i).getAttribute("href") + " is NOT BROKEN");  
+                        System.out.println("LINK# "+i+" "+urlListElements.get(i).getAttribute("href") + " is NOT BROKEN");  
                     }
                     statusCodeList.add(statusCode);
 	             }  
 	         }
           }
+        catch(org.openqa.selenium.StaleElementReferenceException ex)
+        {
+             System.out.println("Stale Element Found!!");  
+             System.out.println("Stale Element Found at" + i + " " + urlListElements.get(i));  
+             System.out.println(urlListElements.get(i).getAttribute("outerHTML"));
+            System.out.println(urlListElements.get(i).getAttribute("innerHTML"));  
+        }
+       }
+        
          if(statusCodeList.contains(404) || statusCodeList.contains(500) || statusCodeList.contains(403))
 		 	{
 				Assert.assertTrue(false);
