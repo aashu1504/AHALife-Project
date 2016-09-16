@@ -283,6 +283,7 @@ class Brand_ProductPage extends GenericClass{
             productNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_DRAFT);
             if((getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("DRAFT")) && (productNameAtCatalogPage.equalsIgnoreCase(productName)))
             {
+                   System.out.println("Product is SUCCESSFULLY SAVED.");
                     buttonClick(CATALOG_EDIT_DRAFT_PRODUCT);
                 	pageToLoad();                
                     if(getTextFromAnElement(PAGE_LABEL_EDIT_PRODUCT).equalsIgnoreCase("Edit a Product"))
@@ -290,7 +291,6 @@ class Brand_ProductPage extends GenericClass{
                         clearData(PRODUCT_NAME);
                         enterText(PRODUCT_NAME,newEditedProductNameWithoutSKU);
                         buttonClick(PRODUCT_SUBMITTED_FOR_REVIEW);
-                        //pressKeyDirectly(Keys.ENTER);
                         Thread.sleep(3000L);
                         acceptAlert();
                         actualSubmitForReviewSuccessMessage = getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE);
@@ -299,6 +299,7 @@ class Brand_ProductPage extends GenericClass{
                          editedProductNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED);                            
                         if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("SUBMITTED") && editedProductNameAtCatalogPage.equalsIgnoreCase(newEditedProductNameWithoutSKU))
                         {
+                            System.out.println("Product is SUCCESSFULLY SUBMITTED For REVIEW and Product Name has been EDITED");
                             buttonClick(CATALOG_COPY_SUBMITTED_PRODUCT);
                             Thread.sleep(3000L);
                             buttonClick(COPY_OR_DELETE_PRODUCT);
@@ -307,6 +308,7 @@ class Brand_ProductPage extends GenericClass{
                             copyFromProductName = editedProductNameAtCatalogPage + " -copy";
                             if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("DRAFT") && copyFromProductName.equalsIgnoreCase(newCopyOfProductName))
                             {
+                               System.out.println("Product is SUCCESSFULLY COPIED");
                                buttonClick(CATALOG_DELETE_DRAFT_PRODUCT);
                                Thread.sleep(3000L);
                                buttonClick(COPY_OR_DELETE_PRODUCT);
@@ -315,47 +317,54 @@ class Brand_ProductPage extends GenericClass{
                                 {
                                     if(!getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED).equalsIgnoreCase(newCopyOfProductName))
                                     {
-                                        System.out.println(getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED));
-                                        System.out.println(newCopyOfProductName);
+                                      System.out.println("Product is SUCCESSFULLY DELETED");
                                       Assert.assertTrue(true);    
                                     }
                                     else
                                     {
+                                      System.out.println("Either Product is not deleted or some problem with the Name of product-from/to where it was copied");  
                                       Assert.assertTrue(false);   
                                     }
                                 }
                                 else
                                 {
+                                    System.out.println("Successfully Delete Message not shown to User.");
                                     Assert.assertTrue(false);
                                 }
                             }
                             else
                             {
+                                System.out.println("The copied product did not have a status as DRAFT or there is a problem with copied product name.");
                                 Assert.assertTrue(false);
                             }
                         }
                         else
                         {
+                           System.out.println("Product was not seen with Submitted status in Product Catalog with status as SUBMITTED.There might be a possibilty that edit did not work for Product Name.");
                            Assert.assertTrue(false); 
                         }
                         }
                         else
                         {
+                            System.out.println("Product was not Submitted For Review successfully and Success message did not came.");
                             Assert.assertTrue(false); 
                         }
                     }
                 else
                 {
+                    System.out.println("User was not able to navigate to Edit Page. Some problem with EDIT PRODUCT");
                     Assert.assertTrue(false);
                 }
             }
             else
             {
+                System.out.println("Product was not created in Product Catalog with status as DRAFT while Save");
                 Assert.assertTrue(false);
             }
         }
         else
         {
+            System.out.println("Product was not save successfully and save success message did not came.");
             Assert.assertTrue(false);
         }
     }
