@@ -5,6 +5,7 @@ import Utility.GenericClass;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 class Brand_ProductPage extends GenericClass{
     
@@ -46,8 +47,23 @@ class Brand_ProductPage extends GenericClass{
     private final By PRODUCT_HAS_SKUS_NO = By.xpath(".//label[@for='productHasVariants.no']");
     
     private final By PRODUCT_OPTION_SELECT = By.xpath(".//select[@data-ng-model='chosen.newVariantType']");
-    private final By PRODUCT_HAS_OPTION_TYPE = By.xpath(".//*[@id='optionValueAdder']");
-    private final By PRODUCT_VARIENT_ADD_OPTION = By.xpath(".//a[@data-ng-click='addOptionValueAll(chosen.newVariantType, $event)']");
+    private final By PRODUCT_ENTER_SKU_OPTION = By.xpath(".//*[@id='optionValueAdder']");
+    private final By PRODUCT_SKU_ADD_OPTION = By.xpath(".//a[@class='aha-btn text-left inline-block']");
+    private final By SKU_TABLE_ROWS = By.xpath(".//tr[@ng-repeat='product in cartesian']");
+    private final By SKU_IMAGES_UPLOAD = By.xpath(".//div[@class='upload-image-btn-sm']");
+    private final By MERCHANT_SKUS = By.xpath(".//input[@ng-model='product.merchantSku']");
+    private final By GTIN_SKUS = By.xpath(".//input[@ng-model='product.asnUpc']");
+    
+    private final By SKUS_MASTER_ROW_WHOLESALE_PRICE = By.xpath(".//tr[@class='info']/td[4]/input");
+    private final By SKUS_MASTER_ROW_MSRP = By.xpath(".//tr[@class='info']/td[5]/input");
+    private final By SKUS_MASTER_ROW_INVENTORY = By.xpath(".//tr[@class='info']/td[7]/input");
+    private final By SKUS_MASTER_ROW_HEIGHT = By.xpath(".//tr[@class='info']/td[8]/div/div/input");
+    private final By SKUS_MASTER_ROW_WIDTH = By.xpath(".//tr[@class='info']/td[9]/div/div/input");
+    private final By SKUS_MASTER_ROW_LENGTH = By.xpath(".//tr[@class='info']/td[10]/div/div/input");
+    private final By SKUS_MASTER_ROW_DIMENSION = By.xpath(".//tr[@class='info']/td[11]/select");
+    private final By SKUS_MASTER_ROW_WEIGHT = By.xpath(".//tr[@class='info']/td[12]/input");
+    private final By SKUS_MASTER_ROW_WEIGHT_MEASURE = By.xpath(".//tr[@class='info']/td[13]/select");
+    private final By SKUS_MASTER_ROW_SHIPPING_TIME = By.xpath(".//tr[@class='info']/td[14]/select");
     
     
     private final By PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE = By.xpath(".//div[@class='alert alert-success']");
@@ -58,6 +74,7 @@ class Brand_ProductPage extends GenericClass{
     private final By CATALOG_COPY_SUBMITTED_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[11]/a[1]");
     private final By COPY_OR_DELETE_PRODUCT = By.xpath(".//div[@class='help-box-footer']/div/div[1]/button");
     private final By CATALOG_DELETE_DRAFT_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[11]/a[2]");
+    
     
     static String productName = null;
     static String imageFileToUpload = "C:\\Users\\ashishu\\Desktop\\Testing_Images\\Flower.png";
@@ -71,6 +88,7 @@ class Brand_ProductPage extends GenericClass{
     static String editedProductNameAtCatalogPage = null;
     static String newCopyOfProductName = null;
     static String copyFromProductName = null;
+    static Integer skuRowCount = 0;
     
     
     public void clickProductTab(HashMap<String, String> productTabClick)
@@ -153,11 +171,7 @@ class Brand_ProductPage extends GenericClass{
     public void enterSpecifications(HashMap<String, String> specifications)
     {
         enterText(PRODUCT_TECH_SPECS,specifications.get("Specifications"));
-    }
-    
-    
-    
-    
+    }   
     
     public void clickUploadMainProductImage(HashMap<String, String> mainProductImage)
     {
@@ -184,11 +198,164 @@ class Brand_ProductPage extends GenericClass{
 		buttonClick(PRODUCT_HAS_SKUS_NO);
     }
     
+     public void selectShippingTime(HashMap<String, String> shipTime)
+    {
+        String shippingTime = shipTime.get("ShipTime");
+        selectValueFromDropdown(PRODUCT_SHIP_TIME,shippingTime);
+    }
+    
+    public void selectReturnPolicy(HashMap<String, String> returnP)
+    {
+        String returnPolicy = returnP.get("ReturnPolicy");
+        selectValueFromDropdown(PRODUCT_RETURN_POLICY,returnPolicy);
+    }
+    
+    public void clickSave(HashMap<String, String> save)
+    {
+        buttonClick(PRODUCT_SAVE_DRAFT);
+        pageToLoad();
+    } 
+    
+    public void clickSubmitForReview(HashMap<String, String> submit)
+    {
+        buttonClick(PRODUCT_SUBMITTED_FOR_REVIEW);
+        pageToLoad();
+    } 
+    
+    //--------------------------------------- PRODUCTS WITH VARIANTS START----------------------------------------------------------------------------
+    
+    
     public void clickYesToHaveProductWithVariants(HashMap<String, String> yesForVariants)
     {
 		buttonClick(PRODUCT_HAS_SKUS_YES);
     }
+       
+    public void selectOptionNameForProductWithVariants(HashMap<String, String> selectOption)
+    {
+        String skuOptionName = selectOption.get("skuOptionName");
+        selectValueFromDropdown(PRODUCT_OPTION_SELECT,skuOptionName);
+    }
     
+    public void enterSkuColorOptionForProductWithVariants(HashMap<String, String> skuColorOption)
+    {
+        enterText(PRODUCT_ENTER_SKU_OPTION,skuColorOption.get("ColourOption"));
+    }
+    
+    public void addSkusForProductWithVariants(HashMap<String, String> addSku)
+    {
+		buttonClick(PRODUCT_SKU_ADD_OPTION);
+    }
+    
+    
+    public void verifyifSkuTableCreationAndUploadSkuImages(HashMap<String, String> skuTable) throws InterruptedException
+    {
+        if(isElementExist(SKU_TABLE_ROWS))
+        {
+            skuRowCount = Integer.parseInt(skuTable.get("RowCount"));
+            if(countOfElements(SKU_TABLE_ROWS) == skuRowCount)
+            {                
+				//upload Option Image for all skus
+               List<WebElement> uploadList = listOfWebElements(SKU_IMAGES_UPLOAD);
+                for (WebElement uploadImagelist : uploadList)
+                {
+                     buttonClick(SKU_IMAGES_UPLOAD);
+                     driver.switchTo().frame("filepicker_dialog");
+                     directProductImageUpload(imageFileToUpload);
+                }
+            }
+            else
+            {
+				Assert.assertTrue(false);
+            }
+        }
+        else
+        {
+            Assert.assertTrue(false);
+        }
+    }
+    
+    public void enterMerchantSkusForProductWithVariants(HashMap<String, String> skuOptions) throws InterruptedException
+    {
+        //Enter Merchant Sku-Options
+        List<WebElement> skuList = listOfWebElements(MERCHANT_SKUS);
+        for (int i = 0;i<skuList.size();i++)
+             {
+                skuList.get(i).sendKeys(skuOptions.get("MerchantSkus"));
+        		//enterText(MERCHANT_SKUS,skuOptions.get("MerchantSkus"));         
+             }
+    }
+    
+    public void enterGtinForSkusForProductWithVariants(HashMap<String, String> gtinSkus) throws InterruptedException
+    {
+        //Enter GTIN for Skus
+        List<WebElement> gtinList = listOfWebElements(GTIN_SKUS);
+        for (int i = 0;i<gtinList.size();i++)
+             {
+            	gtinList.get(i).sendKeys(gtinSkus.get("GTINForSKUS"));
+        		//enterText(GTIN_SKUS,gtinSkus.get("GTINForSKUS"));         
+             }
+    }
+    
+    public void enterMasterWholeSaleCostForProductWithVariants(HashMap<String, String> wholeSaleCostMaster)
+    {
+        enterText(SKUS_MASTER_ROW_WHOLESALE_PRICE,wholeSaleCostMaster.get("WholeSaleCost"));
+    }
+    
+    public void enterMasterMSRPForProductWithVariants(HashMap<String, String> msrpMaster)
+    {
+        enterText(SKUS_MASTER_ROW_MSRP,msrpMaster.get("MSRP"));
+    }
+    
+     public void enterMasterInventoryForProductWithVariants(HashMap<String, String> inventoryMaster)
+    {
+        enterText(SKUS_MASTER_ROW_INVENTORY,inventoryMaster.get("Inventory"));
+    }
+    
+    public void enterMasterHeightForProductWithVariants(HashMap<String, String> heightMaster)
+    {
+        enterText(SKUS_MASTER_ROW_HEIGHT,heightMaster.get("Height"));
+    }
+    
+    public void enterMasterLengthForProductWithVariants(HashMap<String, String> lengthMaster)
+    {
+        enterText(SKUS_MASTER_ROW_LENGTH,lengthMaster.get("Length"));
+    }
+    
+    public void enterMasterWidthForProductWithVariants(HashMap<String, String> widthMaster)
+    {
+        enterText(SKUS_MASTER_ROW_WIDTH,widthMaster.get("Width"));
+    }
+    
+    public void enterMasterWeightForProductWithVariants(HashMap<String, String> weightMaster)
+    {
+        enterText(SKUS_MASTER_ROW_WEIGHT,weightMaster.get("Weight"));
+    }
+   
+    public void selectMasterDimensionsForProductWithVariants(HashMap<String, String> dimensionsMaster)
+    {
+        String dimensions = dimensionsMaster.get("Dimensions");
+        selectValueFromDropdown(SKUS_MASTER_ROW_DIMENSION,dimensions);
+    }
+    
+    public void enterMasterWeightMeasureForProductWithVariants(HashMap<String, String> weightMeasureMaster)
+    {
+        String weightMeasure = weightMeasureMaster.get("WeightMeasure");
+        selectValueFromDropdown(SKUS_MASTER_ROW_WEIGHT_MEASURE,weightMeasure);
+    }
+    
+    public void enterMasterShipTimeForProductWithVariants(HashMap<String, String> time)
+    {
+        String shipTime = time.get("ShippingTime");
+        selectValueFromDropdown(SKUS_MASTER_ROW_SHIPPING_TIME,shipTime);
+    }
+    
+    
+       //--------------------------------------- PRODUCTS WITH VARIANTS END---------------------------------------------------------------------------- 
+    
+    
+    
+    
+        //--------------------------------------- PRODUCTS WITHOUT VARIANTS----------------------------------------------------------------------------
     
     
     public void enterWholeSaleCostForProductWithoutVariants(HashMap<String, String> wholeSaleCost)
@@ -235,39 +402,6 @@ class Brand_ProductPage extends GenericClass{
     {
         enterText(PRODUCT_WEIGHT,weight.get("Weight"));
     }
-    
-    
-    
-    
-    
-    public void selectShippingTime(HashMap<String, String> shipTime)
-    {
-        String shippingTime = shipTime.get("ShipTime");
-        selectValueFromDropdown(PRODUCT_SHIP_TIME,shippingTime);
-    }
-    
-    public void selectReturnPolicy(HashMap<String, String> returnP)
-    {
-        String returnPolicy = returnP.get("ReturnPolicy");
-        selectValueFromDropdown(PRODUCT_RETURN_POLICY,returnPolicy);
-    }
-    
-    
-    
-    
-    public void clickSave(HashMap<String, String> save)
-    {
-        buttonClick(PRODUCT_SAVE_DRAFT);
-        pageToLoad();
-    } 
-    
-    public void clickSubmitForReview(HashMap<String, String> submit)
-    {
-        buttonClick(PRODUCT_SUBMITTED_FOR_REVIEW);
-        pageToLoad();
-    } 
-    
-    
     
     public void verifyProductWithoutSkuIsSaved(HashMap<String, String> saveProdWithoutSku)  throws InterruptedException
     { 
@@ -368,16 +502,4 @@ class Brand_ProductPage extends GenericClass{
             Assert.assertTrue(false);
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
