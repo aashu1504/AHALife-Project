@@ -16,6 +16,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 
 public class GenericClass extends WebDriverProvider{
     
@@ -162,4 +164,34 @@ public class GenericClass extends WebDriverProvider{
         alert.accept();
         pageToLoad();
     }
+    
+    public static void dragAndDrop(By source, By destination) 
+    {    
+         WebElement sourceElement = driver.findElement(source);
+         WebElement destinationElement = driver.findElement(destination);
+		try 
+        {
+			if (sourceElement.isDisplayed() && destinationElement.isDisplayed()) 
+            {
+				Actions action = new Actions(driver);
+				action.dragAndDrop(sourceElement, destinationElement).build().perform();
+			}
+            else
+            {
+				System.out.println("Element was not displayed to drag");
+			}
+		}
+		catch (StaleElementReferenceException e) 
+		{
+			System.out.println("Element with " + sourceElement + "or" + destinationElement + "is not attached to the page document " + e.getStackTrace());
+		}
+		catch (NoSuchElementException e) 
+		{
+			System.out.println("Element " + sourceElement + "or" + destinationElement + " was not found in DOM " + e.getStackTrace());
+		}
+		catch (Exception e) 
+		{
+			System.out.println("Error occurred while performing drag and drop operation " + e.getStackTrace());
+		}
+	}    
 }

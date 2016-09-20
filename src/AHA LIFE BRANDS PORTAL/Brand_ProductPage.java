@@ -81,7 +81,7 @@ class Brand_ProductPage extends GenericClass{
     static String expectedSaveSuccessMessage = null;
     static String actualSaveSuccessMessage = null;
     
-    static String newEditedProductNameWithoutSKU = null;
+    static String newEditedProductName = null;
     static String expectedSubmitForReviewSuccessMessage = null;
     static String productNameAtCatalogPage = null;
     static String actualSubmitForReviewSuccessMessage = null;
@@ -281,7 +281,6 @@ class Brand_ProductPage extends GenericClass{
         for (int i = 0;i<skuList.size();i++)
              {
                 skuList.get(i).sendKeys(skuOptions.get("MerchantSkus"));
-        		//enterText(MERCHANT_SKUS,skuOptions.get("MerchantSkus"));         
              }
     }
     
@@ -291,8 +290,7 @@ class Brand_ProductPage extends GenericClass{
         List<WebElement> gtinList = listOfWebElements(GTIN_SKUS);
         for (int i = 0;i<gtinList.size();i++)
              {
-            	gtinList.get(i).sendKeys(gtinSkus.get("GTINForSKUS"));
-        		//enterText(GTIN_SKUS,gtinSkus.get("GTINForSKUS"));         
+            	gtinList.get(i).sendKeys(gtinSkus.get("GTINForSKUS"));    
              }
     }
     
@@ -348,7 +346,7 @@ class Brand_ProductPage extends GenericClass{
         String shipTime = time.get("ShippingTime");
         selectValueFromDropdown(SKUS_MASTER_ROW_SHIPPING_TIME,shipTime);
     }
-    
+ 
     
        //--------------------------------------- PRODUCTS WITH VARIANTS END---------------------------------------------------------------------------- 
     
@@ -403,12 +401,13 @@ class Brand_ProductPage extends GenericClass{
         enterText(PRODUCT_WEIGHT,weight.get("Weight"));
     }
     
-    public void verifyProductWithoutSkuIsSaved(HashMap<String, String> saveProdWithoutSku)  throws InterruptedException
+    public void verifyProductWithOrWithoutSkuIsSaved(HashMap<String, String> saveProd)  throws InterruptedException
     { 
         Thread.sleep(4000L);
-        newEditedProductNameWithoutSKU = saveProdWithoutSku.get("NewProductNameWithoutSKU");
-        expectedSaveSuccessMessage = saveProdWithoutSku.get("ProductWithoutSkuSaveSuccessMessage");
-        expectedSubmitForReviewSuccessMessage = saveProdWithoutSku.get("ProductWithoutSkuSubmitForReviewSuccessMessage");
+        newEditedProductName = saveProd.get("NewProductNameWithoutSKU");
+        expectedSaveSuccessMessage = saveProd.get("ProductSaveSuccessMessage");
+        expectedSubmitForReviewSuccessMessage = saveProd.get("ProductSubmitForReviewSuccessMessage");
+        
         actualSaveSuccessMessage = getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE);       
         
         if(expectedSaveSuccessMessage.equalsIgnoreCase(actualSaveSuccessMessage))
@@ -423,7 +422,7 @@ class Brand_ProductPage extends GenericClass{
                     if(getTextFromAnElement(PAGE_LABEL_EDIT_PRODUCT).equalsIgnoreCase("Edit a Product"))
                     {
                         clearData(PRODUCT_NAME);
-                        enterText(PRODUCT_NAME,newEditedProductNameWithoutSKU);
+                        enterText(PRODUCT_NAME,newEditedProductName);
                         buttonClick(PRODUCT_SUBMITTED_FOR_REVIEW);
                         Thread.sleep(3000L);
                         acceptAlert();
@@ -431,7 +430,7 @@ class Brand_ProductPage extends GenericClass{
                         if(expectedSubmitForReviewSuccessMessage.equalsIgnoreCase(actualSubmitForReviewSuccessMessage))
                         {
                          editedProductNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED);                            
-                        if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("SUBMITTED") && editedProductNameAtCatalogPage.equalsIgnoreCase(newEditedProductNameWithoutSKU))
+                        if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("SUBMITTED") && editedProductNameAtCatalogPage.equalsIgnoreCase(newEditedProductName))
                         {
                             System.out.println("Product Name has been EDITED and is SUCCESSFULLY SUBMITTED For REVIEW.");
                             buttonClick(CATALOG_COPY_SUBMITTED_PRODUCT);
@@ -447,7 +446,7 @@ class Brand_ProductPage extends GenericClass{
                                Thread.sleep(3000L);
                                buttonClick(COPY_OR_DELETE_PRODUCT);
                                pageToLoad();
-                                if(getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE).equalsIgnoreCase(saveProdWithoutSku.get("ProductWithoutSkuDeleteSuccessMessage")))
+                                if(getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE).equalsIgnoreCase(saveProd.get("ProductDeleteSuccessMessage")))
                                 {
                                     if(!getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED).equalsIgnoreCase(newCopyOfProductName))
                                     {
