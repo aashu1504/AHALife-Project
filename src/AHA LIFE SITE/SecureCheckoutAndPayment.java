@@ -44,9 +44,18 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     private final By CLOSE_OFFER_POPUP_CONFIRMATION_PAGE = By.xpath(".//div[@class='popup-close is-solid js-offer-close ac-offer-close']");
     
+    private final By PAYPAL_SELECTOR = By.xpath(".//*[@id='paypalSelector']");
+    private final By PAYPAL_CHECKOUT_BUTTON = By.xpath(".//*[@id='paypalCheckoutBtnWrapper']/div");
+    private final By PAYPAL_EMAIL = By.xpath(".//input[@id='email']");
+    private final By PAYPAL_PASSWORD = By.xpath(".//*[@id='password']");
+    private final By PAYPAL_LOGIN = By.xpath(".//*[@id='btnLogin']");
+    private final By PAYPAL_CHECKOUT_CONFIRM = By.xpath(".//*[@id='confirmButtonTop']");
+    private final By PAYPAL_EMAIL_ID_REVIEW = By.xpath(".//*[@id='paymentDetails']/div[1]/span");
+    
     static String placedProductName = null;
     static String orderID = null;
     static String productOrderIdAtOrdersHistory = null;
+    static String payPalEmailID = null;
     
     
     //------------------------This section has code for Production Only/ Not for QA----------------------------------------------
@@ -296,5 +305,61 @@ class SecureCheckoutAndPayment extends GenericClass{
           System.out.println("NO FRAME AVAILABLE");  
         }
     }
+    
+    public void selectPayPalPaymentMethod(HashMap<String, String> paypalSelect)
+    {
+        buttonClick(PAYPAL_SELECTOR);
+    }
+    
+    public void proceedWithPayPalCheckout(HashMap<String, String> paypalCheckout)
+    {
+        buttonClick(PAYPAL_CHECKOUT_BUTTON);
+        pageToLoad();
+    }
+    
+    public void enterPayPalPassword(HashMap<String, String> paypalPassword)
+    {
+        enterText(PAYPAL_PASSWORD,paypalPassword.get("PaypalPassword"));
+    }
+    
+    public void enterPayPalEmailID(HashMap<String, String> paypalEmail)
+    {
+        payPalEmailID = paypalEmail.get("PayPalEmail");
+        enterText(PAYPAL_EMAIL,payPalEmailID);
+    }
+    
+    public void clickPayPalLogin(HashMap<String, String> paypalLogin)
+    {
+        buttonClick(PAYPAL_LOGIN);
+        pageToLoad();
+    }
+    
+    public void confirmPayPalCheckout(HashMap<String, String> paypalConfirm)
+    {
+        buttonClick(PAYPAL_CHECKOUT_CONFIRM);
+        pageToLoad();
+    }
+    
+    public void verifyPayPalEmailIDReviewPage(HashMap<String, String> verifyPayPalEmail)
+    {
+        String actualPayPalEmailID = getTextFromAnElement(PAYPAL_EMAIL_ID_REVIEW);
+        Assert.assertTrue(payPalEmailID.equalsIgnoreCase(actualPayPalEmailID));
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

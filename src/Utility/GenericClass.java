@@ -98,7 +98,7 @@ public class GenericClass extends WebDriverProvider{
     
     public boolean isElementDisplayed(By xpath)
     {
-        webElementDisplay = driver.findElement(xpath).isDisplayed();;
+        webElementDisplay = driver.findElement(xpath).isDisplayed();
 		if(webElementDisplay){
 			return true;
 		}else{

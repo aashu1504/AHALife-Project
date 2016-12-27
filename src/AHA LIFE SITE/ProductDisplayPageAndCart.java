@@ -23,7 +23,7 @@ class ProductDisplayPageAndCart extends GenericClass{
     private final By QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[1]/div[3]");
     private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[2]/h4");
     private final By PRODUCT_NAME_AT_QUICK_VIEW_WINDOW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
-    private final By ADD_TO_BAG_QUICK_VIEW = By.xpath(".//form[@id='add-to-cart-form']/div[2]/input");
+    private final By ADD_TO_BAG_QUICK_VIEW = By.xpath("//input[@class='btn-orange-inner']");
     private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     
     

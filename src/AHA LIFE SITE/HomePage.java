@@ -24,8 +24,8 @@ class HomePage extends GenericClass{
     private final By FOOTER_BUTTON = By.xpath(".//*[@id='show-footer-btn']");
     private final By FOOTER_EMAIL_SUBSCRIPTION_EMAIL_ID = By.xpath(".//*[@id='footerSubscriptionEmailAddress']");
     private final By FOOTER_SUBSCRIBE_CLICK = By.xpath(".//li[@id='footerEmailSubscription']/form/input[2]");
-    private final By SUBSCRIPTION_CONFIRMATION_MESSAGE = By.xpath(".//*[@id='thankYouHeader']");
-    private final By SUBSCRIPTION_CONFIRMATION_WINDOW = By.xpath(".//*[@id='simpleRegModalConfirmationContents']");
+    private final By SUBSCRIPTION_CONFIRMATION_MESSAGE = By.xpath(".//*[@id='thankYouModal']/div/div/div[2]");
+    private final By SUBSCRIPTION_CONFIRMATION_WINDOW = By.xpath(".//*[@id='thankYouModal']");
     private final By GIFT_POPUP = By.xpath(".//*[@id='simpleRegModal']");
     private final By CLOSE_GIFT_POPUP = By.xpath(".//a[@id='id-close-auth-modal']/img");
     
