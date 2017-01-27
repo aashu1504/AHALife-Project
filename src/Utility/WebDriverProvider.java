@@ -36,7 +36,7 @@ public class WebDriverProvider {
         }
         else
         {
-            initializeFirefoxDriver();
+            initializeChromeDriver();
         }
         
     }

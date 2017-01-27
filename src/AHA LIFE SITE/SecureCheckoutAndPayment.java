@@ -4,6 +4,8 @@ import java.util.*;
 import Utility.GenericClass;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 class SecureCheckoutAndPayment extends GenericClass{
     
@@ -46,11 +48,12 @@ class SecureCheckoutAndPayment extends GenericClass{
     
     private final By PAYPAL_SELECTOR = By.xpath(".//*[@id='paypalSelector']");
     private final By PAYPAL_CHECKOUT_BUTTON = By.xpath(".//*[@id='paypalCheckoutBtnWrapper']/div");
-    private final By PAYPAL_EMAIL = By.xpath(".//input[@id='email']");
+    private final By PAYPAL_EMAIL = By.xpath(".//*[@id='email']");
     private final By PAYPAL_PASSWORD = By.xpath(".//*[@id='password']");
     private final By PAYPAL_LOGIN = By.xpath(".//*[@id='btnLogin']");
     private final By PAYPAL_CHECKOUT_CONFIRM = By.xpath(".//*[@id='confirmButtonTop']");
     private final By PAYPAL_EMAIL_ID_REVIEW = By.xpath(".//*[@id='paymentDetails']/div[1]/span");
+    private final By PAYPAL_I_FRAME = By.name("injectedUl");
     
     static String placedProductName = null;
     static String orderID = null;
@@ -322,9 +325,11 @@ class SecureCheckoutAndPayment extends GenericClass{
         enterText(PAYPAL_PASSWORD,paypalPassword.get("PaypalPassword"));
     }
     
-    public void enterPayPalEmailID(HashMap<String, String> paypalEmail)
+    public void enterPayPalEmailID(HashMap<String, String> paypalEmail) throws InterruptedException
     {
+        Thread.sleep(4000L);
         payPalEmailID = paypalEmail.get("PayPalEmail");
+        System.out.println("Paypal Id " + payPalEmailID);
         enterText(PAYPAL_EMAIL,payPalEmailID);
     }
     
@@ -334,32 +339,22 @@ class SecureCheckoutAndPayment extends GenericClass{
         pageToLoad();
     }
     
-    public void confirmPayPalCheckout(HashMap<String, String> paypalConfirm)
+    public void confirmPayPalCheckout(HashMap<String, String> paypalConfirm)  throws InterruptedException
     {
+        Thread.sleep(10000L);
         buttonClick(PAYPAL_CHECKOUT_CONFIRM);
         pageToLoad();
+    }
+    
+    public void switchToPaypalFrame(HashMap<String, String> paypalFrame)
+    {
+        switchToIFrame(PAYPAL_I_FRAME);
     }
     
     public void verifyPayPalEmailIDReviewPage(HashMap<String, String> verifyPayPalEmail)
     {
         String actualPayPalEmailID = getTextFromAnElement(PAYPAL_EMAIL_ID_REVIEW);
         Assert.assertTrue(payPalEmailID.equalsIgnoreCase(actualPayPalEmailID));
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    } 
     
 }

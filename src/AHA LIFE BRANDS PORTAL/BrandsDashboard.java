@@ -41,6 +41,7 @@ class BrandsDashboard extends GenericClass{
     private final By CHANGE_LOG_MESSAGE = By.xpath(".//*[@id='crudContent']/div/h2");
     private final By VIEW_STOREFRONT = By.xpath(".//*[@id='id-model-view']/div[3]/div[3]/a");
     private final By VIEW_PRODUCT_PAGE = By.xpath(".//*[@id='id-model-view']/div[1]/div[2]/a");
+    private final By AHA_CATEGORY_CLICK = By.xpath(".//a[@href='/admin/categories']");
     
     
     static String expectedBrandName = null;
@@ -301,6 +302,12 @@ class BrandsDashboard extends GenericClass{
     public void clickAHASelect(HashMap<String, String> ahaSelect)
     {
         buttonClick(AHA_TOPIC_SELECT);
+        pageToLoad();
+    }
+    
+    public void clickAHACategory(HashMap<String, String> ahaCategory)
+    {
+        buttonClick(AHA_CATEGORY_CLICK);
         pageToLoad();
     }
     

@@ -12,10 +12,16 @@ class AHASelect extends GenericClass{
     private final By ACTUAL_TOPIC_NAME = By.xpath(".//*[@id='crudListTable']/table/tbody/tr/td[2]/a");
     private final By TOPIC_SEARCH_INPUT = By.xpath(".//*[@id='crudList']/form/div/div[1]/div/div[1]/input");
     private final By TOPIC_NAME_TOPIC_PAGE = By.xpath(".//*[@id='object_CATEGORY_NAME']");
+    private final By SAVE_CONTINUE_BUTTON = By.xpath(".//input[@value='SAVE & CONTINUE EDITING']");
+    private final By TOPIC_ID = By.xpath(".//*[@id='crudListTable']/table/tbody/tr/td[1]/a");
+    private final By TOPIC_SAVE_MESSAGE = By.xpath(".//*[@id='id-page-content']/div[1]/div");
     
     static String expectedTopicName = null;
     static String actualTopicName = null;
     static String actualTopicNameAtTopicPage = null;
+    static String actualTopicId = null;
+    static String actualTopicSaveMessage = null;
+    static String expectedTopicSaveMessage = null;
     
     public void verifyNavigationToListOfAHASelects(HashMap<String, String> ahaSelectList)   //verify if list of aha select are visible
     {
@@ -50,7 +56,15 @@ class AHASelect extends GenericClass{
     
     public void clickTopicName(HashMap<String, String> topicNameClick)
     {
+        actualTopicName = getTextFromAnElement(ACTUAL_TOPIC_NAME);
+        actualTopicId = getTextFromAnElement(TOPIC_ID);
         buttonClick(ACTUAL_TOPIC_NAME);
+        pageToLoad();
+    }
+    
+    public void clickSaveAndContinueTopicPage(HashMap<String, String> saveClick)
+    {
+        buttonClick(SAVE_CONTINUE_BUTTON);
         pageToLoad();
     }
     
@@ -58,5 +72,14 @@ class AHASelect extends GenericClass{
     {
         actualTopicNameAtTopicPage = getAttributeValue(TOPIC_NAME_TOPIC_PAGE,"value");
         Assert.assertTrue(actualTopicNameAtTopicPage.equalsIgnoreCase(expectedTopicName));
+    }
+    
+    public void verifySuccessfullySavedTopicPage(HashMap<String, String> topicPageSave) 
+    {
+        actualTopicSaveMessage = getTextFromAnElement(TOPIC_SAVE_MESSAGE);
+        expectedTopicSaveMessage = "Category " + actualTopicId + " [" + actualTopicName + "] " + "has been saved";
+        System.out.println(actualTopicSaveMessage);
+        System.out.println(expectedTopicSaveMessage);
+        Assert.assertTrue(actualTopicSaveMessage.equalsIgnoreCase(expectedTopicSaveMessage));
     }
 }

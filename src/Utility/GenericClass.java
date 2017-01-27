@@ -193,5 +193,11 @@ public class GenericClass extends WebDriverProvider{
 		{
 			System.out.println("Error occurred while performing drag and drop operation " + e.getStackTrace());
 		}
-	}    
+	}
+    
+    public void switchToIFrame(By elementUniqueID)
+    {
+        WebElement frame = driver.findElement(elementUniqueID);
+        driver.switchTo().frame(frame);
+    }
 }

@@ -11,7 +11,7 @@ class Brand_ProductPage extends GenericClass{
     
     private final By PRODUCT_TAB = By.xpath(".//div[@id='storefrontHeader']/div[3]/a");
     private final By ADD_PRODUCT_SUB_TAB = By.xpath(".//div[@id='subNavWrapper']/ul/li[2]/a");
-    private final By PAGE_LABEL_EDIT_PRODUCT = By.xpath(".//*[@id='pageLabel']");
+    private final By PAGE_LABEL_EDIT_PRODUCT = By.xpath("//h1[@id='pageLink']");
     
     private final By PRODUCT_NAME = By.xpath(".//*[@id='model.name']");
     private final By PRODUCT_CATEGORY = By.xpath(".//*[@id='model.category']");
@@ -418,9 +418,11 @@ class Brand_ProductPage extends GenericClass{
             {
                    System.out.println("Product is SUCCESSFULLY SAVED.");
                     buttonClick(CATALOG_EDIT_DRAFT_PRODUCT);
-                	pageToLoad();                
+                	pageToLoad();  
+                   System.out.println("Edit Page Landed");              
                     if(getTextFromAnElement(PAGE_LABEL_EDIT_PRODUCT).equalsIgnoreCase("Edit a Product"))
                     {
+                        System.out.println("Clear Product Name Start");  
                         clearData(PRODUCT_NAME);
                         enterText(PRODUCT_NAME,newEditedProductName);
                         buttonClick(PRODUCT_SUBMITTED_FOR_REVIEW);
