@@ -55,5 +55,6 @@ class ViewAndInviteBrand extends GenericClass{
     public void clickApproveBrand(HashMap<String, String> approveClick)
     {
         buttonClick(APPORVE_BRAND);
+        pageToLoad();
     }
 }
