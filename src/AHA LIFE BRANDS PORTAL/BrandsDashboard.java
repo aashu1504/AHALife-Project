@@ -27,10 +27,12 @@ class BrandsDashboard extends GenericClass{
     private final By ACTUAL_SEARCHED_BRAND_ID = By.xpath(".//*[@id='crudListTable']/table/tbody/tr/td[1]/a");
     private final By ACTUAL_SEARCHED_PRODUCT_NAME = By.xpath(".//*[@id='crudListTable']/table/tbody/tr/td[3]/a");
     private final By ACTUAL_SEARCHED_PRODUCT_ID = By.xpath(".//*[@id='crudListTable']/table/tbody/tr/td[2]/a");
+    private final By ACTUAL_SEARCHED_BRAND_STATUS = By.xpath(".//*[@id='crudListTable']/table/tbody/tr/td[5]/a");
     private final By BRAND_NAME_BRAND_PAGE = By.xpath(".//*[@id='object_STOREFRONT_NAME']");
     private final By PRODUCT_NAME_PRODUCT_PAGE = By.xpath(".//*[@id='object_NAME']");
     private final By MANANGE_PRODUCTS = By.xpath("//a[@href='/admin/products']");
     private final By MANANGE_BRANDS = By.xpath("//a[@href='/admin/brands']");
+    private final By BRAND_APPLICATIONS = By.xpath(".//a[@href='/admin/brandapplications']");
     private final By BRAND_OR_PRODUCT_DATA_LIST = By.xpath(".//*[@id='crudListTable']/table/tbody/tr");
     private final By MANAGE_BRAND_PAGE_HEADER_ONE = By.xpath(".//*[@id='crudListTable']/table/thead/tr/th[1]/a");
     private final By MANAGE_PRODUCT_PAGE_HEADER_TWO = By.xpath(".//*[@id='crudListTable']/table/thead/tr/th[2]/a");
@@ -346,4 +348,16 @@ class BrandsDashboard extends GenericClass{
         buttonClick(MANAGE_AHANOIR_HOMEPAGE_FEED);
         pageToLoad();
     }
+    
+    public void clickBrandApplications(HashMap<String, String> brandApplications)
+    {
+        buttonClick(BRAND_APPLICATIONS);
+        pageToLoad();
+    }
+    
+    public String getBrandStatus(HashMap<String, String> brandState)
+    {
+        String brandStatus = getTextFromAnElement(ACTUAL_SEARCHED_BRAND_STATUS);
+        return brandStatus;
+    } 
 }

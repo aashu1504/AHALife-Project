@@ -13,8 +13,8 @@ class BrandsUserRegistration extends GenericClass{
     private final By GMAIL_SIGN_IN = By.xpath(".//*[@id='signIn']");
     private final By ENTER_SEARCH_STRING = By.xpath(".//*[@id='gbqfq']");
     private final By SEARCH = By.xpath(".//*[@id='gbqfb']");
-    private final By INVITE_EMAIL = By.xpath(".//div[@class='ae4 UI UJ']/div/div/table/tbody/tr[1]");
-    private final By INVITE_URL = By.xpath(".//div[@class='gs']/div[7]/div/div[2]/div[2]/table/tbody/tr/td/div/a");
+    private final By INVITE_EMAIL = By.xpath(".//span[@email='brands@ahalife.com']");
+    private final By INVITE_URL = By.xpath("//img[@alt='getStartedBtn']/parent::a");
     private final By INVITE_EMAIL_ID = By.xpath(".//*[@id='username']");
     private final By PASSWORD = By.xpath(".//*[@id='password']");
     private final By CONFIRM_PASSWORD = By.xpath(".//*[@id='passwordAgain']");
