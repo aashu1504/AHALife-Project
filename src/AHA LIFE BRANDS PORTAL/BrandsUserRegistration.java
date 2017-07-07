@@ -37,16 +37,19 @@ class BrandsUserRegistration extends GenericClass{
     
     public String getInviteURLFromGmail(HashMap<String, String> gmailCredentials) throws InterruptedException
     {  
+      Thread.sleep(10000L);
       enterText(GMAIL_USER_NAME,gmailCredentials.get("InviteEmailID"));
       buttonClick(GMAIL_NEXT);
       enterText(GMAIL_PASSWORD,gmailCredentials.get("GmailPassword"));
       buttonClick(GMAIL_SIGN_IN);
       pageToLoad();
+      Thread.sleep(10000L);
       enterText(ENTER_SEARCH_STRING,"brands@ahalife.com");
       buttonClick(SEARCH);
       pageToLoad();
-      Thread.sleep(4000L);
+      Thread.sleep(10000L);
       buttonClick(INVITE_EMAIL);
+      Thread.sleep(10000L);
       String inviteURL = getAttributeValue(INVITE_URL,"href");
       System.out.println(inviteURL);
       return inviteURL;

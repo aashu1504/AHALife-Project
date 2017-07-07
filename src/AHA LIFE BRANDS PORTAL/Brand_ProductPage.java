@@ -6,11 +6,14 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 class Brand_ProductPage extends GenericClass{
     
     private final By PRODUCT_TAB = By.xpath(".//div[@id='storefrontHeader']/div[3]/a");
-    private final By ADD_PRODUCT_SUB_TAB = By.xpath(".//div[@id='subNavWrapper']/ul/li[2]/a");
+    private final By ADD_PRODUCT_SUB_TAB = By.xpath(".//div[@id='subNavWrapper']/ul/li[3]/a");
     private final By PAGE_LABEL_EDIT_PRODUCT = By.xpath("//h1[@id='pageLink']");
     
     private final By PRODUCT_NAME = By.xpath(".//*[@id='model.name']");
@@ -175,6 +178,11 @@ class Brand_ProductPage extends GenericClass{
     
     public void clickUploadMainProductImage(HashMap<String, String> mainProductImage)
     {
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(MAIN_PRODUCT_IMAGE));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        // if the element is on bottom.
+		js.executeScript("scroll(0, 250)");
 		clickUploadImage(MAIN_PRODUCT_IMAGE);
     }
     

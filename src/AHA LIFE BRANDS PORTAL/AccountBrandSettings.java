@@ -37,6 +37,8 @@ class AccountBrandSettings extends GenericClass{
     
     public String getBrandNameFromAccountsTab(HashMap<String, String> brandNameAccountTab)
     {
+        driver.findElement(By.xpath(".//a[@href='/account/settings']")).click();
+        pageToLoad();
         brandNameAccountsTab = getAttributeValue(BRAND_NAME,"value");
         return brandNameAccountsTab;
     }

@@ -25,6 +25,8 @@ class ProductDisplayPageAndCart extends GenericClass{
     private final By PRODUCT_NAME_AT_QUICK_VIEW_WINDOW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
     private final By ADD_TO_BAG_QUICK_VIEW = By.xpath("//input[@class='btn-orange-inner']");
     private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
+    private final By COUNT_ITEM_QUANTITY_MY_BAG = By.xpath(".//input[@name='quantity']");
+    private final By UPDATE_BUTTON_MY_BAG = By.xpath(".//input[@value='Update']");
     
     
     static String productNameAtProductDisplayPage = null;
@@ -32,7 +34,11 @@ class ProductDisplayPageAndCart extends GenericClass{
     static String actualEmptyCartText = null;
     static String quickViewProductName = null;
     static String productNameAtQuickViewWindow = null;
-     
+    static Integer addToBagClickCount = null;
+    static String actualBagItemCount = null;
+    static String quantityToUpdate = null;
+    static String updatedBagItemCount = null;
+    
     public String getProductNameFromProductDisplayPage(HashMap<String, String> productDisplayName)
     {
         String product = getTextFromAnElement(PRODUCT_NAME);
@@ -66,9 +72,14 @@ class ProductDisplayPageAndCart extends GenericClass{
         buttonClick(CLOSE_QUICK_VIEW);
     }
     
-    public void clickAddToBagPDP(HashMap<String, String> addPDP)
+    public void clickAddToBagPDP(HashMap<String, String> addPDP) throws InterruptedException
     {
-        buttonClick(ADD_TO_BAG_PDP);
+        addToBagClickCount = Integer.parseInt(addPDP.get("AddToBagClickCount"));
+        for(int i=0; i<addToBagClickCount; i++)
+        {
+        	buttonClick(ADD_TO_BAG_PDP);
+            Thread.sleep(4000L);
+        }
     }
     
     public void clickMyBag(HashMap<String, String> myBag)
@@ -147,5 +158,37 @@ class ProductDisplayPageAndCart extends GenericClass{
         pageToLoad();
         actualEmptyCartText = getTextFromAnElement(ACTUAL_EMPTY_CART_TEXT);
         Assert.assertTrue((productRemove.get("ExpectedEmptyCartText")).equalsIgnoreCase(actualEmptyCartText));
+    }
+    
+    public void verifyItemQuantityInMyBag(HashMap<String, String> bagItemQuantity)
+    {
+        pageToLoad();
+        actualBagItemCount = getAttributeValue(COUNT_ITEM_QUANTITY_MY_BAG,"value");
+        System.out.println("Item added " + addToBagClickCount);
+        System.out.println("Items in my Bag " + actualBagItemCount);
+        Assert.assertTrue(Integer.toString(addToBagClickCount).equalsIgnoreCase(actualBagItemCount));
+    }
+    
+    public void enterQuantityCountToUpdate(HashMap<String, String> updateCount)
+    {
+        quantityToUpdate = updateCount.get("UpdateQuantity");
+        pageToLoad();
+        clearData(COUNT_ITEM_QUANTITY_MY_BAG);
+        enterText(COUNT_ITEM_QUANTITY_MY_BAG,quantityToUpdate);
+    }
+    
+    public void clickUpdateAtMyBag(HashMap<String, String> updateProductQuantity)
+    {
+        pageToLoad();
+        buttonClick(UPDATE_BUTTON_MY_BAG);
+    }
+    
+    public void verifyUpdatedItemQuantity(HashMap<String, String> updateBagItemQuantity)
+    {
+        pageToLoad();
+        updatedBagItemCount = getAttributeValue(COUNT_ITEM_QUANTITY_MY_BAG,"value");
+        System.out.println("Updated quantity visible " + updatedBagItemCount);
+        System.out.println("Actual update quantity " + quantityToUpdate);
+        Assert.assertTrue(updatedBagItemCount.equalsIgnoreCase(quantityToUpdate));
     }
 }

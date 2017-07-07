@@ -155,6 +155,7 @@ public class GenericClass extends WebDriverProvider{
     
     public void clearData(By elementUniqueID)
     {
+        
         driver.findElement(elementUniqueID).clear();
     }
     
