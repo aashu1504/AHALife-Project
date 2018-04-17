@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class GenericClass extends WebDriverProvider{
     
@@ -78,6 +79,7 @@ public class GenericClass extends WebDriverProvider{
     
     public void buttonClick(By elementUniqueID)
     {
+   
         driver.findElement(elementUniqueID).click();
     }
     
@@ -105,6 +107,14 @@ public class GenericClass extends WebDriverProvider{
 			return false;
 		}
     } 
+    
+     public void ScrollToViewElement(By xpath) throws InterruptedException
+    {
+         JavascriptExecutor jse = (JavascriptExecutor) driver;
+  		 jse.executeScript("arguments[0].scrollIntoView()", driver.findElement(xpath));
+  		 Thread.sleep(2000L);
+         
+     } 
     
     public int countOfElements(By xpath)
     {

@@ -16,11 +16,11 @@ class JoinAndLogin extends GenericClass{
     private final By JOIN_NOW_REGISTER = By.xpath(".//input[@value='Join Now']");
     private final By JOIN_FB_CONNECT = By.xpath(".//*[@id='fbConnectBtn']");
     private final By MY_PROFILE = By.xpath(".//*[@id='id-header-account-menu']/a/span");
-    //private final By MY_PROFILE1 = By.xpath(".//*[@id='id-header-account-menu']/a");
     private final By SIGNOUT_AHALIFE_SITE = By.xpath(".//*[@id='id-header-account-menu']/ul/li[5]/a");
     private final By EMAIL_ID = By.xpath(".//*[@id='loginUsername']");
     private final By PASSWORD = By.xpath(".//*[@id='loginPassword']");
     private final By SIGN_IN = By.xpath(".//*[@id='loginSubmitWrapper']/div/input");
+    private final By SIGN_IN_GUEST_CHECKOUT = By.xpath(".//*[@id='checkoutLoginForm']/div[5]/div/input");
     
     private final By SIGNIN_WITH_FB = By.xpath(".//*[@id='fbConnectBtn']");
     private final By FB_USER_NAME = By.xpath(".//input[@id='email']");
@@ -69,12 +69,20 @@ class JoinAndLogin extends GenericClass{
        
     public void clickSignIn(HashMap<String, String> signIn) throws InterruptedException
     {
-       //Thread.sleep(4000L);
+     
         buttonClick(SIGNIN_AHALIFE_SITE);
+    }
+    
+     public void clickSignInGuestCheckout(HashMap<String, String> signIn) throws InterruptedException
+    {
+       
+        buttonClick(SIGN_IN_GUEST_CHECKOUT);
+        pageToLoad();
     }
     
     public void enterEmailID(HashMap<String, String> signInEmailID)
     {
+        pageToLoad();
         enterText(EMAIL_ID,signInEmailID.get("EnterAHALifeSiteUserName"));
     }
     
@@ -91,6 +99,7 @@ class JoinAndLogin extends GenericClass{
     
     public void verifyLoginToAHASite(HashMap<String, String> loginVerify)
     {    
+//        expectedProfileText = "My Profile";
         expectedProfileText = loginVerify.get("MyProfileText");
         actualProfileText = getTextFromAnElement(MY_PROFILE);
         Assert.assertTrue(expectedProfileText.equalsIgnoreCase(actualProfileText));

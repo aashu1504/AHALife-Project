@@ -12,25 +12,32 @@ class ProductDisplayPageAndCart extends GenericClass{
     private final By ADD_TO_BAG_PDP = By.xpath(".//*[@id='buy-button']");
     private final By PRODUCT_NAME = By.xpath(".//div[@class='product-details']/div/h1");
     private final By MY_BAG_SITE = By.xpath(".//*[@id='id-header-top-level-menu']/li[6]/a");
-    private final By MY_BAG_NOIR = By.xpath(".//*[@id='id-header-top-level-menu']/li[5]/a");
-    private final By MY_BAG_LOGGED_IN = By.xpath(".//*[@id='id-header-top-level-menu']/li[4]/a");
+    private final By MY_BAG_LOGGED_IN = By.xpath(".//*[@id='id-header-top-level-menu']/li[5]/a");
     private final By CART_PRODUCT_NAME = By.xpath(".//*[@id='cart_products']/li/div[2]/h3");
+    private final By CART_PRODUCT_NAME1 = By.xpath(".//*[@id='productRow1']/div[2]/h3/a");
+    private final By CART_PRODUCT_NAME2 = By.xpath(".//*[@id='productRow2']/div[2]/h3/a");
     private final By BEGIN_CHECKOUT = By.xpath(".//*[@id='begin-checkout-button']/div/input");
-    private final By CONTINUE_AS_GUEST = By.xpath(".//*[@id='id-checkout-auth-continue']/div[2]/input");
+    private final By CONTINUE_AS_GUEST = By.xpath(".//*[@id='content']/div[3]/a/button");
     private final By CONTINUE_AS_REGISTERED_USER = By.xpath(".//*[@id='id-checkout-auth-login']/div[2]/input");
-    private final By REMOVE_ITEM_FROM_CART = By.xpath(".//*[@id='productRow1']/div[3]/div/div[2]/a");
+    private final By REMOVE_ITEM_FROM_CART = By.xpath(".//*[@id='productRow1']/div[2]/div[4]/a");
     private final By ACTUAL_EMPTY_CART_TEXT = By.xpath(".//div[@class='emptyBagText']");
-    private final By QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[1]/div[3]");
-    private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//div[@id='morefromBrand']/div/ul/li[1]/a/div[2]/h4");
-    private final By PRODUCT_NAME_AT_QUICK_VIEW_WINDOW = By.xpath(".//*[@id='id-product-quick-view']/div[3]/div[2]/a[1]");
-    private final By ADD_TO_BAG_QUICK_VIEW = By.xpath("//input[@class='btn-orange-inner']");
+    private final By MORE_PRODUCTS = By.xpath(".//*[@id='product']/div[2]/div/div[2]/div[5]");
+    private final By QUICK_VIEW = By.xpath(".//div[contains(@class,'open-quick-view')]");
+    private final By PRODUCT_NAME_QUICK_VIEW = By.xpath(".//p[contains(@class,'productName ng-binding')]");
+    private final By PRODUCT_NAME_AT_QUICK_VIEW_WINDOW = By.xpath(".//a[contains(@class,'item-name')]");
+    private final By ADD_TO_BAG_QUICK_VIEW = By.xpath(".//*[@class='btn-orange-inner']");
     private final By CLOSE_QUICK_VIEW = By.xpath(".//*[@id='id-close-quick-view']");
     private final By COUNT_ITEM_QUANTITY_MY_BAG = By.xpath(".//input[@name='quantity']");
     private final By UPDATE_BUTTON_MY_BAG = By.xpath(".//input[@value='Update']");
-    
+    private final By NOTHANKS_BUTTON = By.xpath(".//input[@value='Update']");
+   
     
     static String productNameAtProductDisplayPage = null;
     static String productNameAtCart = null;
+    static String productNameAtPDP1= null;
+    static String productNameAtPDP2= null;
+    static String productNameAtCart1 = null;
+    static String productNameAtCart2 = null;
     static String actualEmptyCartText = null;
     static String quickViewProductName = null;
     static String productNameAtQuickViewWindow = null;
@@ -42,13 +49,18 @@ class ProductDisplayPageAndCart extends GenericClass{
     public String getProductNameFromProductDisplayPage(HashMap<String, String> productDisplayName)
     {
         String product = getTextFromAnElement(PRODUCT_NAME);
+        System.out.println("Product Name At PDP:" + product);
         return product;
     }
     
-    public String clickQuickView(HashMap<String, String> quickView)
+    public String clickQuickView(HashMap<String, String> quickView)throws InterruptedException
     {
-        quickViewProductName = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);
+       
         buttonClick(QUICK_VIEW);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PRODUCT_NAME_QUICK_VIEW));
+        quickViewProductName = getTextFromAnElement(PRODUCT_NAME_QUICK_VIEW);   
+        System.out.println("QuickView Product Name:" + quickViewProductName);
         return quickViewProductName;
     }
     
@@ -84,18 +96,10 @@ class ProductDisplayPageAndCart extends GenericClass{
     
     public void clickMyBag(HashMap<String, String> myBag)
     {
-        pageToLoad();
-        if(isElementExist(MY_BAG_SITE))
-        {
+           pageToLoad();       
            buttonClick(MY_BAG_SITE);   
            pageToLoad();
-        }
-        else
-        {
-            buttonClick(MY_BAG_NOIR);    
-            pageToLoad();
-        }
-        
+    
     }
     
     public void clickMyBagWhenSignedIn(HashMap<String, String> myBagSignedIn)
@@ -119,6 +123,23 @@ class ProductDisplayPageAndCart extends GenericClass{
         Assert.assertTrue(productNameAtCart.equalsIgnoreCase(productAtCartFromQV.get("ProductNameQuickView")));
     }
     
+     public void verifyBothProductsAddedToCartAfterReview(HashMap<String, String> productAtCart)
+    {
+        pageToLoad();
+        productNameAtPDP1 = productAtCart.get("ProductNameAtPDP1");
+        productNameAtPDP2 = productAtCart.get("ProductNameAtPDP2");
+        productNameAtCart1 = getTextFromAnElement(CART_PRODUCT_NAME1);
+        productNameAtCart2 = getTextFromAnElement(CART_PRODUCT_NAME2);
+         
+        System.out.println("productNameAtPDP1 " + productNameAtPDP1 );
+        System.out.println("productNameAtPDP2 " + productNameAtPDP2 );
+        System.out.println("productNameAtCart1 " + productNameAtCart1);
+        System.out.println("productNameAtCart2 " + productNameAtCart2);
+         
+        Assert.assertTrue(productNameAtPDP1.equalsIgnoreCase(productNameAtCart1));
+        Assert.assertTrue(productNameAtPDP2.equalsIgnoreCase(productNameAtCart2));
+    }
+    
     public void navigateToProductPage(HashMap<String, String> productURL)
     {
         String websiteURL = productURL.get("WebsiteURL");
@@ -132,6 +153,10 @@ class ProductDisplayPageAndCart extends GenericClass{
         pageToLoad();
         buttonClick(BEGIN_CHECKOUT);
         pageToLoad();
+    }
+     public void clickNoThanks(HashMap<String, String> NoThanks)
+    {
+       buttonClick(NOTHANKS_BUTTON);
     }
     
     public void continueAsGuest(HashMap<String, String> guestContinue)

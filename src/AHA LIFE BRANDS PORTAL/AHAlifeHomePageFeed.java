@@ -28,7 +28,7 @@ class AHAlifeHomePageFeed extends GenericClass{
     
     static String videoModuleName = null;
     static String videoLinkUrl = null;
-    static String videoImageFileToUpload = "C:\\Users\\ashishu\\Desktop\\Testing_Images\\Flower.png";
+    static String videoImageFileToUpload = "D:\\Ahalife\\images\\glass.jpg";
     static List<String> ahaLifeFeedsList = null;
     
     public void dragVideoModuleForVideoFeedCreation(HashMap<String, String> dragVideo) throws InterruptedException

@@ -9,10 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
+import java.net.URL;
 
 class Brand_ProductPage extends GenericClass{
     
-    private final By PRODUCT_TAB = By.xpath(".//div[@id='storefrontHeader']/div[3]/a");
+	private final By PRODUCT_TAB = By.xpath(".//*[@id='storefrontHeader']/div[3]/a/div/div[1]");
     private final By ADD_PRODUCT_SUB_TAB = By.xpath(".//div[@id='subNavWrapper']/ul/li[3]/a");
     private final By PAGE_LABEL_EDIT_PRODUCT = By.xpath("//h1[@id='pageLink']");
     
@@ -35,10 +36,16 @@ class Brand_ProductPage extends GenericClass{
     private final By PRODUCT_SKU = By.xpath(".//*[@id='defaultSku.merchantSku']");
     private final By PRODUCT_GTIN = By.xpath(".//*[@id='defaultSku.asnUpc']");
     private final By PRODUCT_INVENTORY = By.xpath(".//*[@id='defaultSku.inventory']");
-    private final By PRODUCT_HEIGTH = By.xpath(".//*[@id='defaultSku.height']");
-    private final By PRODUCT_LENGTH = By.xpath(".//*[@id='defaultSku.length']");
-    private final By PRODUCT_WIDTH = By.xpath(".//*[@id='defaultSku.width']");
-    private final By PRODUCT_WEIGHT = By.xpath(".//*[@id='defaultSku.weight']");
+    private final By PRODUCT_HEIGTH = By.xpath(".//*[@id='defaultSku.productHeight']");
+    private final By PRODUCT_LENGTH = By.xpath(".//*[@id='defaultSku.productLength']");
+    private final By PRODUCT_WIDTH = By.xpath(".//*[@id='defaultSku.productWidth']");
+    private final By PRODUCT_WEIGHT = By.xpath(".//*[@id='defaultSku.productWeight']");
+    private final By PACKAGE_HEIGTH = By.xpath(".//*[@id='defaultSku.height']");
+    private final By PACKAGE_LENGTH = By.xpath(".//*[@id='defaultSku.length']");
+    private final By PACKAGE_WIDTH = By.xpath(".//*[@id='defaultSku.width']");
+    private final By PACKAGE_WEIGHT = By.xpath(".//*[@id='defaultSku.weight']");
+    private final By ROW_COUNT =  By.xpath(".//*[@id='tableParams']/tbody/tr");
+    
     private final By PRODUCT_SHIP_TIME = By.xpath(".//select[@name='defaultSku.shippingTime']");
     private final By PRODUCT_RETURN_POLICY = By.xpath(".//*[@id='defaultSku.returnPolicy']");
     private final By PRODUCT_SAVE_DRAFT = By.xpath(".//input[@value='SAVE']");
@@ -66,21 +73,29 @@ class Brand_ProductPage extends GenericClass{
     private final By SKUS_MASTER_ROW_DIMENSION = By.xpath(".//tr[@class='info']/td[11]/select");
     private final By SKUS_MASTER_ROW_WEIGHT = By.xpath(".//tr[@class='info']/td[12]/input");
     private final By SKUS_MASTER_ROW_WEIGHT_MEASURE = By.xpath(".//tr[@class='info']/td[13]/select");
-    private final By SKUS_MASTER_ROW_SHIPPING_TIME = By.xpath(".//tr[@class='info']/td[14]/select");
+    private final By SKUS_MASTER_ROW_SHIPPING_TIME = By.xpath(".//*[@id='mainProductInformationForm']/div[6]/div/div/div/b/div[1]/div/div/div/div/select");
+    private final By SKUS_MASTER_ROW_PACKAGE_HEIGHT = By.xpath(".//*[@id='mainProductInformationForm']/div[6]/div/div/div/div[2]/div/div/b/table/tbody/tr[1]/td[14]/div/div/input");
+    private final By SKUS_MASTER_ROW_PACKAGE_WIDTH = By.xpath(".//*[@id='mainProductInformationForm']/div[6]/div/div/div/div[2]/div/div/b/table/tbody/tr[1]/td[15]/div/div/input");
+    private final By SKUS_MASTER_ROW_PACKAGE_LENGTH = By.xpath(".//*[@id='mainProductInformationForm']/div[6]/div/div/div/div[2]/div/div/b/table/tbody/tr[1]/td[16]/div/div/input");
+    private final By SKUS_MASTER_ROW_PACKAGE_WEIGHT = By.xpath(".//*[@id='mainProductInformationForm']/div[6]/div/div/div/div[2]/div/div/b/table/tbody/tr[1]/td[18]/input");
+
     
     
     private final By PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE = By.xpath(".//div[@class='alert alert-success']");
-    private final By CATALOG_STATUS_OF_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[3]");
-    private final By CATALOG_PRODUCT_NAME_DRAFT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[4]/div/a");
-    private final By CATALOG_PRODUCT_NAME_SUBMITTED = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[4]/div/span");
-    private final By CATALOG_EDIT_DRAFT_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[11]/a[1]");
-    private final By CATALOG_COPY_SUBMITTED_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[11]/a[1]");
+    private final By CATALOG_EDIT_PRODUCT_LINK = null ;
     private final By COPY_OR_DELETE_PRODUCT = By.xpath(".//div[@class='help-box-footer']/div/div[1]/button");
-    private final By CATALOG_DELETE_DRAFT_PRODUCT = By.xpath(".//*[@id='tableParams']/tbody/tr[1]/td[11]/a[2]");
+    private final By CATALOG_STATUS_OF_PRODUCT = null;
+    private final By CATALOG_PRODUCT_NAME_DRAFT = null;
+    private final By CATALOG_PRODUCT_NAME_SUBMITTED = null;
+    private final By CATALOG_EDIT_DRAFT_PRODUCT = null;
+    private final By CATALOG_COPY_SUBMITTED_PRODUCT = null;
+    private final By CATALOG_DELETE_DRAFT_PRODUCT = null;
+    private final By CATALOG_COPY_PRODUCT_LINK = null;
+    
     
     
     static String productName = null;
-    static String imageFileToUpload = "C:\\Users\\ashishu\\Desktop\\Testing_Images\\Flower.png";
+    static String imageFileToUpload = "D:\\Ahalife\\images\\800wide.jpg";
     static String expectedSaveSuccessMessage = null;
     static String actualSaveSuccessMessage = null;
     
@@ -91,17 +106,29 @@ class Brand_ProductPage extends GenericClass{
     static String editedProductNameAtCatalogPage = null;
     static String newCopyOfProductName = null;
     static String copyFromProductName = null;
+    static String Catalog_Edited_Product_Name = null;
     static Integer skuRowCount = 0;
+    static Integer i ;
+    static Integer count = 0;
+    String xpath1= ".//*[@id='tableParams']/tbody/tr[";
+    String xpath2= "]";
+    String url = null;
+    public static String id = null;
+   
     
     
-    public void clickProductTab(HashMap<String, String> productTabClick)
+    public void clickProductTab(HashMap<String, String> productTabClick)throws InterruptedException
     {
+        Thread.sleep(4000L);
         buttonClick(PRODUCT_TAB);
         pageToLoad();
     }
     
-    public void clickAddProductSubTab(HashMap<String, String> addProductSubTabClick)
+    public void clickAddProductSubTab(HashMap<String, String> addProductSubTabClick)  throws InterruptedException
     {
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_PRODUCT_SUB_TAB));
+        ScrollToViewElement(ADD_PRODUCT_SUB_TAB);
         buttonClick(ADD_PRODUCT_SUB_TAB);
         pageToLoad();
     }
@@ -218,11 +245,6 @@ class Brand_ProductPage extends GenericClass{
         selectValueFromDropdown(PRODUCT_RETURN_POLICY,returnPolicy);
     }
     
-    public void clickSave(HashMap<String, String> save)
-    {
-        buttonClick(PRODUCT_SAVE_DRAFT);
-        pageToLoad();
-    } 
     
     public void clickSubmitForReview(HashMap<String, String> submit)
     {
@@ -409,106 +431,285 @@ class Brand_ProductPage extends GenericClass{
         enterText(PRODUCT_WEIGHT,weight.get("Weight"));
     }
     
-    public void verifyProductWithOrWithoutSkuIsSaved(HashMap<String, String> saveProd)  throws InterruptedException
-    { 
+       public void enterHeightForPackage(HashMap<String, String> height)
+    {
+        enterText(PACKAGE_HEIGTH,height.get("Height"));
+    }
+    
+    public void enterLengthForPackage(HashMap<String, String> length)
+    {
+        enterText(PACKAGE_LENGTH,length.get("Length"));
+    }
+    
+    public void enterWidthForPackage(HashMap<String, String> width)
+    {
+        enterText(PACKAGE_WIDTH,width.get("Width"));
+    }
+    
+    public void enterWeightForPackage(HashMap<String, String> weight)
+    {
+        enterText(PACKAGE_WEIGHT,weight.get("Weight"));
+    }
+    
+    
+    public void enterHeightForPackageWithVariants(HashMap<String, String> height)
+    {
+        enterText(SKUS_MASTER_ROW_PACKAGE_HEIGHT,height.get("Height"));
+    }
+    
+    public void enterLengthForPackageWithVariants(HashMap<String, String> length)
+    {
+        enterText(SKUS_MASTER_ROW_PACKAGE_LENGTH,length.get("Length"));
+    }
+    
+    public void enterWidthForPackageWithVariants(HashMap<String, String> width)
+    {
+        enterText(SKUS_MASTER_ROW_PACKAGE_WIDTH,width.get("Width"));
+    }
+    
+    public void enterWeightForPackageWithVariants(HashMap<String, String> weight)
+    {
+        enterText(SKUS_MASTER_ROW_PACKAGE_WEIGHT,weight.get("Weight"));
+    }
+    
+    public void clickSave(HashMap<String, String> save) throws InterruptedException
+    {
+        buttonClick(PRODUCT_SAVE_DRAFT);
+      
         Thread.sleep(4000L);
-        newEditedProductName = saveProd.get("NewProductNameWithoutSKU");
-        expectedSaveSuccessMessage = saveProd.get("ProductSaveSuccessMessage");
-        expectedSubmitForReviewSuccessMessage = saveProd.get("ProductSubmitForReviewSuccessMessage");
-        
-        actualSaveSuccessMessage = getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE);       
-        
-        if(expectedSaveSuccessMessage.equalsIgnoreCase(actualSaveSuccessMessage))
+       
+        clickProductTab(null);
+        Thread.sleep(5000L);
+        count= countOfElements(ROW_COUNT);
+        System.out.println("Row count = "+count);
+        for( i = 1; i <= count ; i++ )
         {
-            clickProductTab(null);
+            System.out.println("Loop count = "+i);
+            String FinalXpath= xpath1+i+xpath2;
+            String Catalog_Product_Name= FinalXpath + "/td[1]/following-sibling::td[3]/child::*/child::a";    
+            String Catalog_Status_Product = FinalXpath + "/td[1]/following-sibling::td[2]";
+            String Catalog_Edit_link= FinalXpath + "/td[1]/following-sibling::td[10]/child::a[1]/child::span";
+             
+             final By CATALOG_PRODUCT_NAME_DRAFT = By.xpath(Catalog_Product_Name);
+             final By CATALOG_EDIT_PRODUCT_LINK = By.xpath(Catalog_Edit_link);
+             final By CATALOG_STATUS_OF_PRODUCT = By.xpath(Catalog_Status_Product);
+          
             productNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_DRAFT);
             if((getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("DRAFT")) && (productNameAtCatalogPage.equalsIgnoreCase(productName)))
             {
-                   System.out.println("Product is SUCCESSFULLY SAVED.");
-                    buttonClick(CATALOG_EDIT_DRAFT_PRODUCT);
-                	pageToLoad();  
-                   System.out.println("Edit Page Landed");              
-                    if(getTextFromAnElement(PAGE_LABEL_EDIT_PRODUCT).equalsIgnoreCase("Edit a Product"))
-                    {
+               System.out.println("Product is SUCCESSFULLY SAVED.");
+               url = driver.getCurrentUrl();
+          	   System.out.println("Product page url "+url);
+               
+               break;
+            }
+           
+            else
+            {
+              System.out.println("Product not found at row "+i);
+            } 
+        } 
+       
+        
+    } 
+    
+    public String verifyProductWithOrWithoutSkuIsEdited(HashMap<String, String> saveProd) throws Exception
+    {
+        Thread.sleep(4000L);
+        i=1;
+        count= countOfElements(ROW_COUNT);
+        System.out.println("Row count = "+count);
+        
+        String FinalXpath= xpath1+i+xpath2;
+        String Catalog_Product_Name= FinalXpath + "/td[1]/following-sibling::td[3]/child::*/child::a";
+        
+        final By CATALOG_PRODUCT_NAME_DRAFT = By.xpath(Catalog_Product_Name);
+        
+        buttonClick(CATALOG_PRODUCT_NAME_DRAFT);
+        
+        url = driver.getCurrentUrl();
+        System.out.println("Product page url= "+url);
+        String[] parts = url.split("edit/");
+        System.out.println("parts= "+parts[1]);
+        id = parts[1];
+        System.out.println("string ID= "+id);
+        
+        
+       newEditedProductName = saveProd.get("NewProductNameWithoutSKU"); 
+        expectedSubmitForReviewSuccessMessage = saveProd.get("ProductSubmitForReviewSuccessMessage");
+               
+            pageToLoad();  
+            System.out.println("Edit Page Landed");              
+            if(getTextFromAnElement(PAGE_LABEL_EDIT_PRODUCT).equalsIgnoreCase("Edit a Product"))
+             {
                         System.out.println("Clear Product Name Start");  
                         clearData(PRODUCT_NAME);
                         enterText(PRODUCT_NAME,newEditedProductName);
+                                              
                         buttonClick(PRODUCT_SUBMITTED_FOR_REVIEW);
-                        Thread.sleep(3000L);
+                        System.out.println("New Edited ProductName= "+newEditedProductName); 
+                       
                         acceptAlert();
                         actualSubmitForReviewSuccessMessage = getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE);
                         if(expectedSubmitForReviewSuccessMessage.equalsIgnoreCase(actualSubmitForReviewSuccessMessage))
-                        {
-                         editedProductNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED);                            
-                        if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("SUBMITTED") && editedProductNameAtCatalogPage.equalsIgnoreCase(newEditedProductName))
-                        {
-                            System.out.println("Product Name has been EDITED and is SUCCESSFULLY SUBMITTED For REVIEW.");
-                            buttonClick(CATALOG_COPY_SUBMITTED_PRODUCT);
-                            Thread.sleep(3000L);
-                            buttonClick(COPY_OR_DELETE_PRODUCT);
-                            pageToLoad();
-                            newCopyOfProductName = getTextFromAnElement(CATALOG_PRODUCT_NAME_DRAFT);
-                            copyFromProductName = editedProductNameAtCatalogPage + " -copy";
-                            if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("DRAFT") && copyFromProductName.equalsIgnoreCase(newCopyOfProductName))
-                            {
-                               System.out.println("Product is SUCCESSFULLY COPIED.");
-                               buttonClick(CATALOG_DELETE_DRAFT_PRODUCT);
-                               Thread.sleep(3000L);
-                               buttonClick(COPY_OR_DELETE_PRODUCT);
-                               pageToLoad();
-                                if(getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE).equalsIgnoreCase(saveProd.get("ProductDeleteSuccessMessage")))
-                                {
-                                    if(!getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED).equalsIgnoreCase(newCopyOfProductName))
-                                    {
-                                      System.out.println("Product is SUCCESSFULLY DELETED.");
-                                      Assert.assertTrue(true);    
+                        {             
+                            
+                           
+                           System.out.println("Clicked on submit for review button"); 
+                           while( i <= count )
+                           {
+                                System.out.println("Loop count = "+i);
+                                FinalXpath= xpath1+i+xpath2;
+                                String Catalog_Product_Name_submitted = FinalXpath + "/td[1]/following-sibling::td[3]/child::*/child::span";
+                                String Catalog_Status_Product = FinalXpath + "/td[1]/following-sibling::td[2]";
+
+                                 final By CATALOG_PRODUCT_NAME_SUBMITTED = By.xpath(Catalog_Product_Name_submitted);
+                                 final By CATALOG_STATUS_OF_PRODUCT = By.xpath(Catalog_Status_Product);
+                                 editedProductNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED);  
+                                
+                                 System.out.println("New Edited ProductName= "+newEditedProductName); 
+                                 System.out.println("Catalog ProductName= "+editedProductNameAtCatalogPage); 
+                                 
+                                 if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("SUBMITTED"))
+                                  {
+                                     System.out.println("Product status matched!!");
+                                     
+                                     if(newEditedProductName.trim().equalsIgnoreCase(editedProductNameAtCatalogPage.trim()))
+                                     {                                         
+                                        System.out.println("Product Name has been EDITED and is SUCCESSFULLY SUBMITTED For REVIEW.");
+                                        break;
+                                                                                 
+                                     }
+                                     else
+                                        System.out.println("Edited Product NOT found at row "+i+" Product name= "+editedProductNameAtCatalogPage+" Status= " +getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT));
                                     }
-                                    else
-                                    {
-                                      System.out.println("Either Product is not deleted or some problem with the Name of product-from/to where it was copied");  
-                                      Assert.assertTrue(false);   
-                                    }
-                                }
-                                else
-                                {
-                                    System.out.println("Successfully Delete Message not shown to User.");
-                                    Assert.assertTrue(false);
-                                }
+                                  else
+                                  {
+                                       System.out.println("Product status NOT matched!!");
+
+                                  } 
+                                i++;
                             }
-                            else
-                            {
-                                System.out.println("The copied product did not have a status as DRAFT or there is a problem with copied product name.");
-                                Assert.assertTrue(false);
-                            }
-                        }
+                        }   
                         else
                         {
-                           System.out.println("Product was not seen with Submitted status in Product Catalog with status as SUBMITTED.There might be a possibilty that edit did not work for Product Name.");
-                           Assert.assertTrue(false); 
+                           System.out.println("Product was NOT Submitted For Review successfully and Success message did not came.");
+                          
                         }
-                        }
-                        else
-                        {
-                            System.out.println("Product was not Submitted For Review successfully and Success message did not came.");
-                            Assert.assertTrue(false); 
-                        }
-                    }
-                else
-                {
-                    System.out.println("User was not able to navigate to Edit Page. Some problem with EDIT PRODUCT");
-                    Assert.assertTrue(false);
                 }
-            }
             else
             {
-                System.out.println("Product was not created in Product Catalog with status as DRAFT while Save");
-                Assert.assertTrue(false);
+                System.out.println("User was NOT able to navigate to Edit Page. Some problem with EDIT PRODUCT");
             }
-        }
-        else
-        {
-            System.out.println("Product was not save successfully and save success message did not came.");
-            Assert.assertTrue(false);
-        }
+        return id;
+                       
     }
+    
+    public void verifyProductWithOrWithoutSkuIsCopied(HashMap<String, String> saveProd)  throws InterruptedException
+    {
+        
+        i=1;
+        count= countOfElements(ROW_COUNT);
+        System.out.println("Row count = "+count);
+        while( i <= count )
+         {
+            System.out.println("Loop count = "+i);
+           
+ 			String FinalXpath= xpath1+i+xpath2;
+            System.out.println("FinalXpath = "+FinalXpath);
+            
+            String Catalog_Copy_Product_link = FinalXpath + "/td[1]/following-sibling::td[10]/child::a";
+            String Catalog_Status_Product = FinalXpath + "/td[1]/following-sibling::td[2]";
+            String Catalog_Product_Name= FinalXpath + "/td[1]/following-sibling::td[3]/child::*/child::a";
+            String Catalog_Product_Name_submitted = FinalXpath + "/td[1]/following-sibling::td[3]/child::*/child::span";
+             
+            final By CATALOG_COPY_PRODUCT_LINK = By.xpath(Catalog_Copy_Product_link);
+            final By CATALOG_STATUS_OF_PRODUCT = By.xpath(Catalog_Status_Product);
+            final By CATALOG_PRODUCT_NAME_SUBMITTED = By.xpath(Catalog_Product_Name_submitted);
+            final By CATALOG_PRODUCT_NAME_DRAFT = By.xpath(Catalog_Product_Name);
+            
+            editedProductNameAtCatalogPage = getTextFromAnElement(CATALOG_PRODUCT_NAME_SUBMITTED);  
+      
+            if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("SUBMITTED"))
+            {   
+                 System.out.println("before copy button click ");
+                 buttonClick(CATALOG_COPY_PRODUCT_LINK);
+                 System.out.println("after copy button click ");
+                 Thread.sleep(3000L);
+                 buttonClick(COPY_OR_DELETE_PRODUCT);
+                 pageToLoad();
+                
+                 newCopyOfProductName = getTextFromAnElement(CATALOG_PRODUCT_NAME_DRAFT);
+                 copyFromProductName = editedProductNameAtCatalogPage + " -copy";
+                
+                 System.out.println("newCopyOfProductName = "+newCopyOfProductName);
+                 System.out.println("copyFromProductName = "+copyFromProductName);
+            
+
+                if(getTextFromAnElement(CATALOG_STATUS_OF_PRODUCT).equalsIgnoreCase("DRAFT") && copyFromProductName.trim().equalsIgnoreCase(newCopyOfProductName.trim()))
+                 {
+                    System.out.println("Product is SUCCESSFULLY COPIED.");
+                    break;
+                 }
+                else
+                      System.out.println("Product is NOT SUCCESSFULLY COPIED."); 
+            }
+            else
+                i++;
+            
+          }
+        
+    }
+    public void verifyProductWithOrWithoutSkuIsDeleted(HashMap<String, String> saveProd)  throws InterruptedException
+    {
+        i=1;
+        count= countOfElements(ROW_COUNT);
+        System.out.println("Row count = "+count);
+        while( i <= count )
+         {
+            System.out.println("Loop count = "+i);
+           
+ 			String FinalXpath= xpath1+i+xpath2;
+            System.out.println("FinalXpath = "+FinalXpath);
+            
+            String Catalog_Delete_Product_link = FinalXpath + "/td[1]/following-sibling::td[10]/child::a[2]/child::span";
+            String Catalog_Product_Name_draft= FinalXpath + "/td[1]/following-sibling::td[3]/child::*/child::a";
+            
+            final By CATALOG_DELETE_PRODUCT_LINK = By.xpath(Catalog_Delete_Product_link);
+            final By CATALOG_PRODUCT_NAME_DRAFT = By.xpath(Catalog_Product_Name_draft);
+
+            String Catalog_Product_Name_Deleted= getTextFromAnElement(CATALOG_PRODUCT_NAME_DRAFT);
+            System.out.println("Catalog Product= "+Catalog_Product_Name_Deleted);
+            System.out.println("Product to delete= "+saveProd.get("ProductNameWithoutSKU").trim());
+      
+            
+            if(Catalog_Product_Name_Deleted.trim().equalsIgnoreCase(saveProd.get("ProductNameWithoutSKU").trim()))
+            {   
+                 System.out.println("Product to delete= "+saveProd.get("ProductNameWithoutSKU").trim());
+                 buttonClick(CATALOG_DELETE_PRODUCT_LINK);
+                
+                 Thread.sleep(3000L);
+                 buttonClick(COPY_OR_DELETE_PRODUCT);
+                 pageToLoad();
+                
+                 String Catalog_Product_Name_submitted= FinalXpath + "/td[1]/following-sibling::td[3]/child::*/child::span";
+                 final By CATALOG_PRODUCT_NAME_SUBMITTED = By.xpath(Catalog_Product_Name_submitted);
+                                 
+                 if(getTextFromAnElement(PRODUCT_SAVE_OR_SUBMIT_SUCCESS_MESSAGE).equalsIgnoreCase(saveProd.get("ProductDeleteSuccessMessage")))
+                  {
+                     System.out.println("Product Delete Success Message displayed!!"  ); 
+                     break;
+                  }
+                }
+                else
+                { 
+                    System.out.println("Product to be deleted not found ");
+                    i++;
+                }
+            
+          }
+        System.out.println("Product is deleted successfully!");
+    }
+    
+   
 }

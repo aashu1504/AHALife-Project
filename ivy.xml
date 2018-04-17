@@ -1,7 +1,8 @@
 <ivy-module version="2.0">
     <info organisation="org.apache" module="redwoodhq-ivy"/>
     <dependencies>
-        <dependency org="org.seleniumhq.selenium" name="selenium-java" rev="2.48.2"/>
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency org="org.seleniumhq.selenium" name="selenium-java" rev="3.6.0"/>
         <dependency org="org.testng" name="testng" rev="6.4"/>
         <dependency org="org.apache.poi" name="poi" rev="3.14"/>
         <dependency org="mysql" name="mysql-connector-java" rev="5.1.38"/>

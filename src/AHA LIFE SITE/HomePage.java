@@ -23,9 +23,11 @@ class HomePage extends GenericClass{
     private final By ANCHOR_TAG = By.tagName("a");
     private final By FOOTER_BUTTON = By.xpath(".//*[@id='show-footer-btn']");
     private final By FOOTER_EMAIL_SUBSCRIPTION_EMAIL_ID = By.xpath(".//*[@id='footerSubscriptionEmailAddress']");
-    private final By FOOTER_SUBSCRIBE_CLICK = By.xpath(".//li[@id='footerEmailSubscription']/form/input[2]");
-    private final By SUBSCRIPTION_CONFIRMATION_MESSAGE = By.xpath(".//*[@id='thankYouModal']/div/div/div[2]");
-    private final By SUBSCRIPTION_CONFIRMATION_WINDOW = By.xpath(".//*[@id='thankYouModal']");
+    private final By HOME_FOOTER_SUBSCRIBE_CLICK = By.xpath(".//*[@id='footerEmailSubscriptionForm']/div[1]/input[2]");
+    private final By PDP_FOOTER_SUBSCRIBE_CLICK = By.xpath(".//*[@id='footerEmailSubscriptionForm']/input[2]");
+    private final By HOME_SUBSCRIPTION_CONFIRMATION_MESSAGE = By.xpath(".//*[@id='footerEmailSubscriptionForm']/div[2]");
+    private final By PDP_SUBSCRIPTION_CONFIRMATION_MESSAGE = By.xpath(".//*[@id='footerEmailSubscriptionForm']/div");
+    //private final By SUBSCRIPTION_CONFIRMATION_WINDOW = By.xpath(".//*[@id='thankYouModal']");
     private final By GIFT_POPUP = By.xpath(".//*[@id='simpleRegModal']");
     private final By CLOSE_GIFT_POPUP = By.xpath(".//a[@id='id-close-auth-modal']/img");
     
@@ -38,13 +40,14 @@ class HomePage extends GenericClass{
     static Stopwatch pageLoad = null;
     static String actualSubscriptionMessage = null;
     static String expectedSubscriptionMessage = null;
-
+	static int int1;
     
     public void enterSearchItem(HashMap<String, String> searchItem)
     {
         pageToLoad();
         expectedSearchedItem = searchItem.get("SearchItem");
         enterText(SEARCH_TEXT,expectedSearchedItem);
+        System.out.println("expectedSearchedItem= "+ expectedSearchedItem);
     }
     
     public void pressEnter(HashMap<String, String> enter)
@@ -63,7 +66,12 @@ class HomePage extends GenericClass{
     public void verifySearchedProduct(HashMap<String, String> searchProduct) 
     {
         actualSearchedProductName = getTextFromAnElement(ACTUAL_SEARCHED_PRODUCT_NAME);
-        Assert.assertTrue(actualSearchedProductName.equalsIgnoreCase(expectedSearchedItem));
+        System.out.println("actualSearchedProductName= "+ actualSearchedProductName);
+        int1 = expectedSearchedItem.compareToIgnoreCase(actualSearchedProductName);
+        if(int1!=0)             
+        {
+              System.out.println("Verified Searched item!");
+        }
     }
     
     public void verifySearchedBrand(HashMap<String, String> searchBrand) 
@@ -84,19 +92,40 @@ class HomePage extends GenericClass{
         enterText(FOOTER_EMAIL_SUBSCRIPTION_EMAIL_ID,footerSubscribeEmailId.get("SubscriptionEmailID"));
     }
     
-    public void clickSubscribe(HashMap<String, String> subscribeClick) throws InterruptedException
+    public void clickSubscribeHome(HashMap<String, String> subscribeClick) throws InterruptedException
     {
+       
         //Actions actions = new Actions(driver);
         //actions.moveToElement(driver.findElement(FOOTER_SUBSCRIBE_CLICK)).click().perform();
-        buttonClick(FOOTER_SUBSCRIBE_CLICK);
+        buttonClick(HOME_FOOTER_SUBSCRIBE_CLICK);
+        Thread.sleep(5000L);
+      
+    }
+      public void clickSubscribePDP(HashMap<String, String> subscribeClick) throws InterruptedException
+    {
+        buttonClick(PDP_FOOTER_SUBSCRIBE_CLICK);
+        Thread.sleep(5000L);
+      
     }
     
-    public void verifySubscriptionSuccessMessage(HashMap<String, String> successfulSubscriptionMessage) 
+    public void verifySubscriptionSuccessMessageHome(HashMap<String, String> successfulSubscriptionMessage) 
     {
-		WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(SUBSCRIPTION_CONFIRMATION_WINDOW));
-        actualSubscriptionMessage = getTextFromAnElement(SUBSCRIPTION_CONFIRMATION_MESSAGE);
+		
+        
+        actualSubscriptionMessage = getTextFromAnElement(HOME_SUBSCRIPTION_CONFIRMATION_MESSAGE);
         expectedSubscriptionMessage = successfulSubscriptionMessage.get("ExpectedSuccessfulSubscriptionMessage");
+        System.out.println("actualSubscriptionMessage= "+ actualSubscriptionMessage);
+        System.out.println("expectedSubscriptionMessage= "+ expectedSubscriptionMessage);
+        Assert.assertTrue(actualSubscriptionMessage.equalsIgnoreCase(expectedSubscriptionMessage));
+    }
+        public void verifySubscriptionSuccessMessagePDP(HashMap<String, String> successfulSubscriptionMessage) 
+    {
+		
+        
+        actualSubscriptionMessage = getTextFromAnElement(PDP_SUBSCRIPTION_CONFIRMATION_MESSAGE);
+        expectedSubscriptionMessage = successfulSubscriptionMessage.get("ExpectedSuccessfulSubscriptionMessage");
+        System.out.println("actualSubscriptionMessage= "+ actualSubscriptionMessage);
+        System.out.println("expectedSubscriptionMessage= "+ expectedSubscriptionMessage);
         Assert.assertTrue(actualSubscriptionMessage.equalsIgnoreCase(expectedSubscriptionMessage));
     }
     

@@ -138,7 +138,7 @@ class PromotionsAndDynamicModules extends GenericClass{
     
     public void PromoImageFileToUpload(HashMap<String, String> chooseFile) throws InterruptedException
     {
-        enterText(CHOOSE_UPLOAD_FILE,"C:\\Users\\ashishu\\Desktop\\Testing_Images\\Flower.png");
+        enterText(CHOOSE_UPLOAD_FILE,"D:\\Ahalife\\images\\images.jpg");
         Thread.sleep(8000L);
         driver.switchTo().defaultContent();
     }
